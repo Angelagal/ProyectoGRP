@@ -627,7 +627,7 @@
 		<field name="fechaContable" type="date-time"/>
 		<field name="monto" type="currency-amount-precise"/>
 		<field name="acctgTransId" type="id"/>
-		<prim-key field="IntComId"/>
+		<prim-key field="intComId"/>
 		<prim-key field="proyectoId"/>
 		
 		<relation type="one" fk-name="ID_PROYECTO" title="idproyecto"
