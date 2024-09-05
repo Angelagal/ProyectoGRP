@@ -90,7 +90,7 @@ under the License.
     <!-- ================================================================== -->
 
     <target name="classes" depends="prepare">
-        <javac17 includeantruntime="false"/>
+        <javac18 includeantruntime="false"/>
     </target>
 
     <target name="jar" depends="classes">
