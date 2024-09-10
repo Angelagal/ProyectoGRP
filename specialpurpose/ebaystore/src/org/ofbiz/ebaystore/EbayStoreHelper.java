@@ -96,7 +96,7 @@ import com.ebay.soap.eBLBaseComponents.VATDetailsType;
 
 import org.ofbiz.ebay.EbayHelper;
 
-import sun.net.www.content.text.Generic;
+// import sun.net.www.content.text.Generic; -- Se comenta debido a que en versiones superiores a JDK 8 esta clase se encuentra en un paquete no soportado públicamente y su uso no es recomendado, además de causar conflictos en la compilación.
 
 public class EbayStoreHelper {
     private static final String configFileName = "ebayStore.properties";
