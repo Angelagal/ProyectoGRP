@@ -66,8 +66,8 @@ under the License.
   </javac>
  </presetdef>
 
- <presetdef name="javac18">
-  <default-javac compiler="javac1.8" target="1.8" source="1.8" encoding="UTF-8" sourcepathref="src-path">
+ <presetdef name="javac9">
+  <default-javac compiler="javac9" target="9" source="9" encoding="UTF-8" sourcepathref="src-path">
    <!--
    <compilerarg value="-Xlint:unchecked"/>
    -->

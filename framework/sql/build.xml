@@ -58,7 +58,7 @@ under the License.
     </target>
 
     <target name="classes" depends="prepare,gen-src">
-        <javac18 includeantruntime="false"/>
+        <javac9 includeantruntime="false"/>
     </target>
 
     <target name="jar" depends="classes">
