@@ -155,18 +155,18 @@ public class AuthorizeResponse {
     }
 
     private List<String> splitResp(String r, String delim) {
-        int s1=0, s2=-1;
-        List<String> out = new ArrayList<String>(40);
+        int s1 = 0, s2 = -1;
+        List<String> out = new ArrayList<>(40);
         out.add("empty");
         while (true) {
             s2 = r.indexOf(delim, s1);
             if (s2 != -1) {
                 out.add(r.substring(s1, s2));
             } else {
-                //the end part of the string (string not pattern terminated)
-                String _ = r.substring(s1);
-                if (_ != null && !_.equals("")) {
-                    out.add(_);
+                // Parte final de la cadena (cadena no terminada por patrón)
+                String remainder = r.substring(s1);
+                if (remainder != null && !remainder.equals("")) {
+                    out.add(remainder);
                 }
                 break;
             }
@@ -180,5 +180,6 @@ public class AuthorizeResponse {
     public String toString() {
         return response.toString();
     }
+
 
 }
