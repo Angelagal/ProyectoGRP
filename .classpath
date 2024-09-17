@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry exported="true" kind="con" path="GROOVY_SUPPORT"/>
-	<!--<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 7 [1.7.0_79]"/>-->
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 7 [1.7.0_79]"/>
 	<classpathentry kind="lib" path="applications/content/lib/lucene-core-2.4.1.jar"/>
-	<classpathentry kind="lib" path="framework/base/lib/ant-1.10.15.jar"/>
-	<!--<classpathentry kind="lib" path="framework/base/lib/ant-1.7.1.jar"/>-->
-	<classpathentry kind="lib" path="framework/base/lib/ant-junit-1.10.15.jar"/>
-	<!--<classpathentry kind="lib" path="framework/base/lib/ant-junit-1.7.1.jar"/>-->
-	<classpathentry kind="lib" path="framework/base/lib/ant-launcher-1.10.15.jar"/>
-	<!--<classpathentry kind="lib" path="framework/base/lib/ant-launcher-1.7.1.jar"/>-->
-	<classpathentry kind="lib" path="framework/base/lib/ant-trax-1.8.0.jar"/>
-	<!--<classpathentry kind="lib" path="framework/base/lib/ant-trax-1.7.1.jar"/>-->
-	<classpathentry kind="lib" path="framework/base/lib/ant/ant-apache-bsf-1.10.15.jar"/>
-	<!--<classpathentry kind="lib" path="framework/base/lib/ant/ant-apache-bsf-1.7.1.jar"/>-->
-	<classpathentry kind="lib" path="framework/base/lib/ant/ant-nodeps-1.8.1.jar"/>
-	<!--<classpathentry kind="lib" path="framework/base/lib/ant/ant-nodeps-1.7.1.jar"/>-->
+	<classpathentry kind="lib" path="framework/base/lib/ant-1.7.1.jar"/>
+	<classpathentry kind="lib" path="framework/base/lib/ant-junit-1.7.1.jar"/>
+	<classpathentry kind="lib" path="framework/base/lib/ant-launcher-1.7.1.jar"/>
+	<classpathentry kind="lib" path="framework/base/lib/ant-trax-1.7.1.jar"/>
+	<classpathentry kind="lib" path="framework/base/lib/ant/ant-apache-bsf-1.7.1.jar"/>
+	<classpathentry kind="lib" path="framework/base/lib/ant/ant-nodeps-1.7.1.jar"/>
 	<classpathentry kind="lib" path="framework/base/lib/antisamy-bin.1.2.jar"/>
 	<classpathentry kind="lib" path="framework/base/lib/avalon-framework-4.2.0.jar"/>
 	<classpathentry kind="lib" path="framework/base/lib/avalon-util-exception-1.0.0.jar"/>
@@ -89,7 +82,7 @@
 	<classpathentry kind="lib" path="framework/base/lib/scripting/asm-util-3.2.jar"/>
 	<classpathentry kind="lib" path="framework/base/lib/scripting/bsf-2.4.0.jar"/>
 	<classpathentry kind="lib" path="framework/base/lib/scripting/bsh-2.0b4.jar"/>
-	<classpathentry kind="lib" path="framework/base/lib/scripting/groovy-1.7-rc-2.jar"/>-->
+	<classpathentry kind="lib" path="framework/base/lib/scripting/groovy-1.7-rc-2.jar"/>
 	<classpathentry kind="lib" path="framework/base/lib/scripting/jakarta-oro-2.0.8.jar"/>
 	<classpathentry kind="lib" path="framework/base/lib/scripting/jython-nooro.jar"/>
 	<classpathentry kind="lib" path="framework/birt/lib/chartengineapi.jar"/>
