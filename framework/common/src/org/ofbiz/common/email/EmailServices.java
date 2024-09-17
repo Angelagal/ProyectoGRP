@@ -213,9 +213,8 @@ public class EmailServices {
             }
             if (UtilValidate.isNotEmpty(socketFactoryClass)) {
                 props.put("mail.smtp.socketFactory.class", socketFactoryClass);
-                // Elimina la línea que agrega el proveedor de seguridad
+                Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
             }
-
             if (UtilValidate.isNotEmpty(socketFactoryFallback)) {
                 props.put("mail.smtp.socketFactory.fallback", socketFactoryFallback);
             }
