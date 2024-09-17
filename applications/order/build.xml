@@ -58,10 +58,10 @@ under the License.
     <!-- ================================================================== -->
 
     <target name="classes" depends="prepare">
-        <javac9 includeantruntime="false">
+        <javac18 includeantruntime="false">
             <!-- exclude the payment processor packages; comment if you have libs -->
             <exclude name="org/ofbiz/order/thirdparty/taxware/**"/>
-        </javac9>
+        </javac18>
     </target>
 
     <target name="jar" depends="classes">

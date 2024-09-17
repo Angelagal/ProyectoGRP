@@ -47,6 +47,6 @@ under the License.
     <!-- ================================================================== -->
 
     <target name="classes" depends="prepare">
-        <javac9 classpathref="local.class.path" includeantruntime="false"/>
+        <javac18 classpathref="local.class.path" includeantruntime="false"/>
     </target>
 </project>
