@@ -62,12 +62,12 @@
       <#assign bgcolor = StringUtil.wrapString(Static["org.opentaps.common.util.UtilConfig"].getSectionBgColor(opentapsApplicationName, sectionName))/>
       <#assign fgcolor = StringUtil.wrapString(Static["org.opentaps.common.util.UtilConfig"].getSectionFgColor(opentapsApplicationName, sectionName))/>
       <style type="text/css">
-h1, h2, .gwt-screenlet-header, .sectionHeader, .subSectionHeader, .subSectionTitle, .formSectionHeader, .formSectionHeaderTitle, .screenlet-header, .boxhead, .boxtop, div.boxtop, .toggleButtonDisabled, .tundra .dijitDialogTitleBar, .shortcutGroup td, .screenlet-title-bar {color: ${fgcolor}; background-color: ${bgcolor}; background-image:url(/opentaps_images/panels/top-bottom-${bgcolor?replace("#", "")}.gif); }
+h1, h2, .gwt-screenlet-header, .sectionHeader, .subSectionHeader, .subSectionTitle, .formSectionHeader, .formSectionHeaderTitle, .screenlet-header, .boxhead, .boxtop, div.boxtop, .toggleButtonDisabled, .tundra .dijitDialogTitleBar, .shortcutGroup td, .screenlet-title-bar {color: ${fgcolor}; background-color: ${bgcolor};  }
 .screenlet-header .boxhead, .subSectionHeader .subSectionTitle, .boxtop .boxhead { background:transparent;}
 div.sectionTabBorder, ul.sectionTabBar li.sectionTabButtonSelected a {color: ${fgcolor};}
 div.sectionTabBorder {background: ${bgcolor} !important;}
-.x-panel-tl, .x-panel-tr, .titleBar .x-panel-br, .titleBar .x-panel-bl { background-image:url(/opentaps_images/panels/corners-sprite-${bgcolor?replace("#", "")}.gif) !important; }
-div.sectionTabBorder, .x-panel-tc, .titleBar .x-panel-bc { background-image:url(/opentaps_images/panels/top-bottom-${bgcolor?replace("#", "")}.gif) !important; }
+.x-panel-tl, .x-panel-tr, .titleBar .x-panel-br, .titleBar .x-panel-bl { background-color:#235B4E !important; }
+div.sectionTabBorder, .x-panel-tc, .titleBar .x-panel-bc { background-color:#235B4E !important; }
 .x-panel-tl .x-panel-header, .frameSectionHeader .pageNumber {color: ${fgcolor} !important; }
 .x-panel-noborder .x-panel-header-noborder { border:none !important; }
 ul.sectionTabBar li.sectionTabButtonUnselected .x-panel-tl,

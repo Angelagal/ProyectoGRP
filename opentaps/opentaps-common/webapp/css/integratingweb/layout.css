@@ -22,12 +22,13 @@ margin:10px 0 0 318px;}
 
 
 #form h2{
-background-color:#942839;
-font-size:1em;
-color:#FFFFFF;
-width:236px;
-padding:6px 0 6px 6px;
-}
+    background-color:#235B4E !important;
+    text-align: center;
+    font-size:1em;
+    color:#FFFFFF;
+    width:236px;
+    padding:6px 0 6px 6px;
+    }
 
 #form h3{
 margin-top:15px;}

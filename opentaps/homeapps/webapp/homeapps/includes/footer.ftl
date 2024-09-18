@@ -16,7 +16,7 @@
 -->
 <#--/* @author: Michele Orru' (michele.orru@integratingweb.com) */-->
 
-
+<#if userLogin?exists>
 </div><#-- end of container-->
 <div id="footer">
   <#--> <div id="appDescr">Welcome to opentaps Open Source ERP + CRM, 
@@ -25,3 +25,4 @@
 
 </body>
 </html>
+</#if>
