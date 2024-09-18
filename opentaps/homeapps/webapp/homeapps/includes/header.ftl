@@ -113,10 +113,9 @@
 		
 		#wrapper{
 			position: fixed;
-			width:95% !important;
 			margin-top:5%;
 			margin-left:4%;
-			width:90% !important;
+			width:100% !important;
 			position:realative;
 			display:flex;
 		}
