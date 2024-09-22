@@ -17,311 +17,267 @@
 <#--/* @author: Michele Orru' (michele.orru@integratingweb.com) */-->
 <#if !userLogin?exists>
 	<style type="text/css">
-	
-		body{
-		    background: url("/images/FondoAntenas4K.jpg");
-		    height: 100%;
-		    width: 100%;
-		    background-position: center;
-		    background-repeat:repeat no-repeat;
-		    background-size: cover;
+		.bodyLogin {
+			font-family: Helvetica;
+		    background: url("/images/FondoAntenas4K.jpg") !important;
+		    background-position: center center !important;
+		    background-repeat: no-repeat !important;
+		    background-size: cover !important;
+		    background-attachment: fixed !important;
+		    background-color: #929495 !important;
+		    background-blend-mode: overlay !important;
 		}
 		
-		#wrapper{
-		    text-align: center;
-		    display: flex;
-		    flex-wrap: wrap;
-		    flex-direction: column ;
-		    align-items: center ;
-		    justify-content: center ;
-		    gap: 3rem;
-		    width: 100% ;
-		    height: 100% ;
-		    margin-top: 50px;
+		.container {
+			align-items: center;
 		}
 		
-		
-		#form{
-		  font-size: 18px;
-		  text-align: center;
-		  width: 30%;
-		  height: auto;
-		  padding: 4em;
-		  border: white 1px solid;
-		  border-radius: 10px;
-		  background-color: #ffffff;
-		  margin-top: 1%;
-		  align-content: center;
-		  align-items: center;
-		  transition: 0.6s;
+		.container {
+			display: flex !important;
+		    flex-wrap: wrap !important;
+		    flex-direction: column !important;
+		    align-items: center !important;
+		    justify-content: center !important;
+		    gap: 3rem !important;
+		    width: 100% !important;
+		    height: 100% !important;
 		}
 		
-		
-		.titulo{
-		    font-size: 33px;
-		    font-family: sans-serif;
-		    font-weight:100;
+		.card {
+			width: 45% !important;
+		    height: auto !important;
+		    padding: 3em !important;
+		    border: #f0f4f8 1px solid !important;
+		    border-radius: 10px !important;
+		    background-color: #f0f4f8 !important;
+		    margin-top: 10% !important;
+		    align-content: center !important;
+		    align-items: center !important;
+		    transition: 0.5s !important;
 		}
-				
-		  @media screen and (max-width: 850px) {
-		    .loginCard {
-		      width: 100%;
-		      margin-top: 10%;
-		      min-width: 300px;
-		    }
-		  }
-				  
-		  .q-pa-lg:hover {
-		    background-color: #9f2241 !important;
-		    color: white !important; 
-		  }
-				
-		  .ingre{
-		    font-size: 14px;
-		    font-family: sans-serif;
-		    font-weight:100;
-		  }
-		  
-		  input {
-		    width: 80%;
-		    border: none;
-		    padding: 15px;
-		  }
 		
-		  input:hover{
-		    border: border solid 1px color black;
-
-		  }
-      .pac{
-        margin-top:20px;
-      }
-		  .decorativeSubmit {
-		    text-align:center;
-		    width:30%;
-		    margin-top: 25px;
-		    padding: 16px 30px;
-		    color: #235B4E;
-		    cursor: #235B4E;
-		    font-size: 18px;
-		    font-weight:300;
-		    font-family: Arial, Helvetica, sans-serif;
-		  }
+		.inicioSesion {
+			color: #206c4a;
+			margin: 10px 0px !important;
+		}
 		
-		 
-		  .decorativeSubmit:hover{
-		    background-color: #9f2241;
-		    color: white;
-		  }
+		.btn-primary {
+			background: #206c4a !important;
+			padding: 8px 25px !important;
+		}
 		
-		  #forgotpasswd {
-		    display: none;
-		  }
-
-      #recoverPassword{
-        text-align:center;
-        width:70%;
-        padding: 16px 40px !important;
-
-      }
-		  
-      .enlace{
-        margin-top:15px;
-
-      }
-
-		  .enlace a {
-		    text-decoration:none;
-		    color:#10312B;
-		    font-size: 19px;
-		    font-family: Roboto;
-		  }
+		.btn-primary:hover {
+			opacity: 0.8 !important;
+		}
 		
-		  .enlace a:hover{
-		    color: #DDC9A3;
-		  }
-
-      ::placeholder{
-        font-size:19px;
-      }
-   
-
+		.user-icon {
+		    padding: 10px 18px !important;
+		    margin: 0px !important;
+		}
+		
+		.key-icon {
+			padding: 10px 12px !important;
+		}
+		
+		.serviceError {
+			color: red !important;
+			font-size: 8pt !important;
+		}
+		
+		#forgotpasswd {
+	    	display: none;
+	  	}
 	</style>
+ 	<#-- if login -->
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+		<link rel="shortcut icon" href="<@ofbizContentUrl>/opentaps_images/favicon.ico</@ofbizContentUrl>">
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			 <#-- TODO: find the way to import CSS from css component folder For now we are getting CSS from the opentaps_css directory inside opentaps-common. -->
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		</head>
+		<body class="bodyLogin">
+		      <div class="container text-center">
+		      	<div class="card">
+				  <div class="card-body">
+				    <div id="logo">
+				    	<img src="<@ofbizContentUrl>${configProperties.get("opentaps.logoLogin")}</@ofbizContentUrl>" width="200" height="200" align="center"/>
+				    </div>
+				    <h2 class="inicioSesion">${uiLabelMap.OpentapsLoginGreeting}</h2>
+				    <p style="font-size: 13pt !important;">Ingresa tus credenciales para acceder al sistema</p>
+				    <#-- handles service error messages -->
+					      <#if requestAttributes.errorMessageList?has_content><#assign errorMessageList=requestAttributes.errorMessageList></#if>
+					      <#if requestAttributes.eventMessageList?has_content><#assign eventMessageList=requestAttributes.eventMessageList></#if>
+					      <#if requestAttributes.serviceValidationException?exists><#assign serviceValidationException = requestAttributes.serviceValidationException></#if>
+					      <#if requestAttributes.uiLabelMap?has_content><#assign uiLabelMap = requestAttributes.uiLabelMap></#if>
+					
+					      <#if !errorMessage?has_content>
+					        <#assign errorMessage = requestAttributes._ERROR_MESSAGE_?if_exists/>
+					      </#if>
+					      <#if !errorMessageList?has_content>
+					        <#assign errorMessageList = requestAttributes._ERROR_MESSAGE_LIST_?if_exists/>
+					      </#if>
+					      <#if !eventMessage?has_content>
+					        <#assign eventMessage = requestAttributes._EVENT_MESSAGE_?if_exists/>
+					      </#if>
+					      <#if !eventMessageList?has_content>
+					        <#assign eventMessageList = requestAttributes._EVENT_MESSAGE_LIST_?if_exists/>
+					      </#if>
+					
+					      <#-- display the error messages -->
+					      <#if (errorMessage?has_content || errorMessageList?has_content)>
+					        <div id="errorDiv" class="serviceError alert alert-danger">
+					          <p>${uiLabelMap.CommonFollowingErrorsOccurred}:</p>
+					          <#if errorMessage?has_content && errorMessage != "null">
+					            <p>${errorMessage}</p>
+					          </#if>
+					          <#if errorMessageList?has_content>
+					            <#list errorMessageList as errorMsg>
+					              <#if errorMsg?exists && errorMsg != "null">
+					                <p>${errorMsg}</p>
+					              </#if>
+					            </#list>
+					          </#if>
+					        </div>
+					      </#if>
+			
+					      <#-- display the event messages -->
+					      <#if (eventMessage?has_content || eventMessageList?has_content)>
+					        <div id="errorDiv" class="serviceError alert alert-danger">
+					          <p>${uiLabelMap.CommonFollowingOccurred}:</p>
+					          <#if eventMessage?has_content && eventMessage != "null">
+					            <p>${eventMessage}</p>
+					          </#if>
+					          <#if eventMessageList?has_content && eventMessageList != "null">
+					            <#list eventMessageList as eventMsg>
+					              <#if errorMsg?exists && errorMsg != "null">
+					                <p>${eventMsg}</p>
+					              </#if>
+					            </#list>
+					          </#if>
+					        </div>
+					      </#if>
+				    <#-- Error end -->
+				      
+				    <#-- form -->
+				    <form id="login" method="post" action="<@ofbizUrl>login${previousParams?if_exists}</@ofbizUrl>">
+					  <div class="row">
+					  	<div class="col-12">
+					  		<label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+							  <div class="input-group mb-2 mr-sm-2">
+							    <div class="input-group-prepend">
+							      <div class="input-group-text user-icon">
+							      	<i class="fa fa-user my-1"></i>
+							      </div>
+							    </div>
+							    <input class="form-control" type="text" id="username" placeholder="Nombre de usuario" name="USERNAME" size="50"/>
+							  </div>
+					  	</div>
+					  </div>
+					  <div class="row">
+					  	<div class="col-12">
+					  		<label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+							  <div class="input-group mb-2 mr-sm-2">
+							    <div class="input-group-prepend">
+							      <div class="input-group-text key-icon">
+							      	<i class="material-symbols-outlined">key</i>
+							      </div>
+							    </div>
+							    <input class="form-control" type="password" id="password" placeholder="Password" name="PASSWORD" size="50"/>
+							  </div>
+					  	</div>
+					  </div>
+					  <div class="row">
+					  	<div class="col-12 mt-4">
+					  		<button class="btn btn-primary" type="submit">
+						  		${uiLabelMap.CommonLogin} <i class="fa fa-sign-in" aria-hidden="true"></i>
+					  		</button>
+					  	</div>
+					  </div>
+					</form>
+					<div class="row mt-3">
+						<div class="col-12">
+							<h6 class="enlace"><a href="javascript:forgotPasswd()">${uiLabelMap.CommonForgotYourPassword}?</a></h6>
+						</div>
+					</div>
+					<form id="forgotpasswd" method="post" action="<@ofbizUrl>forgotpassword${previousParams?if_exists}</@ofbizUrl>">
+					  <hr>
+					  <h6>${uiLabelMap.CommonForgotPassword}</h6>
+			          <div class="row">
+			          	<div class="col-12">
+					        <input type="text" class="form-control" id="username" name="USERNAME" placeholder="${uiLabelMap.CommonUsername}" size="50" />
+			          	</div>
+			          </div>
+			          <div class="row mt-4">
+			          	<div class="col-12">
+			          		<input type="submit" class="btn btn-primary" name="EMAIL_PASSWORD" value="${uiLabelMap.CommonEmailPassword}"/>
+			          	</div>
+			          </div>
+				    </form>
+				  </div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				function forgotPasswd(){
+			        //if the errorDiv is present, increase the heigth of the container
+			        if(document.getElementById('errorDiv')){
+			           document.getElementById('container').style.height='540px';
+			           document.getElementById('form').style.height='380px';
+			        }
+			
+			        var forgotPasswdForm = document.getElementById('forgotpasswd');
+			        forgotPasswdForm.style.display='block';
+			    }
+			</script>
+		</body>
+	</html>
 </#if>
+<#-- if login -->
 
-
-<script type="text/javascript">
-	function forgotPasswd(){
-        //if the errorDiv is present, increase the heigth of the container
-        if(document.getElementById('errorDiv')){
-           document.getElementById('container').style.height='540px';
-           document.getElementById('form').style.height='380px';
-        }
-
-        var forgotPasswdForm = document.getElementById('forgotpasswd');
-        forgotPasswdForm.style.display='block';
-    }
-</script>
-<div id="wrapper">
-
-  <div id="form">
-    <#-- if user is authenticated -->
-    <#if userLogin?exists>
-      <h2 id="Bienvenida">${uiLabelMap.CommonWelcome} <br />${firstName} ${lastName}</h2>
-      <br />
-      <form id="logout" method="post" action="<@ofbizUrl>logout${previousParams?if_exists}</@ofbizUrl>">
-        <input style="background-color: #10312B; color:#FFFFFF; margin:3px; height:50px; " class="decorativeSubmit" type="submit"  value="${uiLabelMap.CommonLogout}" />
-      </form>
-  <style>
-
-  #button{
-  margin: 0px !important;
-  padding:0px !important;  
-}
-
-</style>
-
-      <#-- if user IS NOT authenticated, shows login form -->
-    <#else>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-      <div id="logo"><img src="<@ofbizContentUrl>${configProperties.get("opentaps.logoLogin")}</@ofbizContentUrl>" width="200" height="200" align="center"/></div>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-      <h2>${uiLabelMap.OpentapsLoginGreeting}</h2>
-
-      <#-- handles service error messages -->
-
-      <#if requestAttributes.errorMessageList?has_content><#assign errorMessageList=requestAttributes.errorMessageList></#if>
-      <#if requestAttributes.eventMessageList?has_content><#assign eventMessageList=requestAttributes.eventMessageList></#if>
-      <#if requestAttributes.serviceValidationException?exists><#assign serviceValidationException = requestAttributes.serviceValidationException></#if>
-      <#if requestAttributes.uiLabelMap?has_content><#assign uiLabelMap = requestAttributes.uiLabelMap></#if>
-
-      <#if !errorMessage?has_content>
-        <#assign errorMessage = requestAttributes._ERROR_MESSAGE_?if_exists/>
-      </#if>
-      <#if !errorMessageList?has_content>
-        <#assign errorMessageList = requestAttributes._ERROR_MESSAGE_LIST_?if_exists/>
-      </#if>
-      <#if !eventMessage?has_content>
-        <#assign eventMessage = requestAttributes._EVENT_MESSAGE_?if_exists/>
-      </#if>
-      <#if !eventMessageList?has_content>
-        <#assign eventMessageList = requestAttributes._EVENT_MESSAGE_LIST_?if_exists/>
-      </#if>
-
-      <#-- display the error messages -->
-      <#if (errorMessage?has_content || errorMessageList?has_content)>
-        <div id="errorDiv" class="serviceError">
-          <p>${uiLabelMap.CommonFollowingErrorsOccurred}:</p>
-          <#if errorMessage?has_content && errorMessage != "null">
-            <p>${errorMessage}</p>
-          </#if>
-          <#if errorMessageList?has_content>
-            <#list errorMessageList as errorMsg>
-              <#if errorMsg?exists && errorMsg != "null">
-                <p>${errorMsg}</p>
-              </#if>
-            </#list>
-          </#if>
-        </div>
-      </#if>
-
-      <#-- display the event messages -->
-      <#if (eventMessage?has_content || eventMessageList?has_content)>
-        <div id="errorDiv" class="serviceError">
-          <p>${uiLabelMap.CommonFollowingOccurred}:</p>
-          <#if eventMessage?has_content && eventMessage != "null">
-            <p>${eventMessage}</p>
-          </#if>
-          <#if eventMessageList?has_content && eventMessageList != "null">
-            <#list eventMessageList as eventMsg>
-              <#if errorMsg?exists && errorMsg != "null">
-                <p>${eventMsg}</p>
-              </#if>
-            </#list>
-          </#if>
-        </div>
-      </#if>
-
-
-      <#-- handles service error messages -->
-
-      <form id="login" method="post" action="<@ofbizUrl>login${previousParams?if_exists}</@ofbizUrl>">
-        <label class="ingre">Ingrese sus accesos</label>
-        
-        
-        <div class="pac">
-          <p class="material-symbols-outlined">person</p>
-          <input class="inputLogin" type="text" id="username" placeholder="Nombre de usuario" name="USERNAME" size="50"/>
-        </div>
-        <div class="pac">
-          <p class="material-symbols-outlined">key</p>
-          <input class="inputLogin" type="password" id="password" placeholder="Password" name="PASSWORD" size="50"/>
-        </div>
-        <input class="decorativeSubmit" type="submit" value="${uiLabelMap.CommonLogin}" />
-        
-      </form>
-
-      <h3 class="enlace"><a href="javascript:forgotPasswd()">${uiLabelMap.CommonForgotYourPassword}?</a></h3>
-
-      <form id="forgotpasswd" method="post" action="<@ofbizUrl>forgotpassword${previousParams?if_exists}</@ofbizUrl>">
-        <p class="top">
-          <input class="inputLogin" placeholder="Ingrese su correo electronico" type="text" id="username" name="USERNAME" size="50"/> <br />
-        </p>
-        <p>
-          <input type="submit" name="EMAIL_PASSWORD" id="recoverPassword" class="decorativeSubmit" value="${uiLabelMap.CommonEmailPassword}"/>
-        </p>
-      </form>
-
-    </#if>
-    <br/><br/>
-    <!-- <@include location="component://opentaps-common/webapp/common/includes/latestnews.ftl"/> -->
-  </div>
-
-<div class="modulos">
-
-  <#if apps?exists>
-    <div id="row">
-      <#assign appIndex = 0 />
-      <#list apps as app>
-        <#if (!app.hide?exists || app.hide != "Y") && app.linkUrl?has_content>
-          <#assign appIndex = appIndex + 1 />
-          <div id="button" class="${app.applicationId}" onmouseover="javascript:writeAppDetails('${app.shortName!app.applicationId}','${app.applicationName!app.applicationId}','${app.description!app.applicationId}')">
-            <#if app.imageUrl?has_content>
-              <a id="Titulos" href="${app.linkUrl}<#if externalKeyParam?exists>?${externalKeyParam}</#if>">
-                <img src="${app.imageUrl}" onmouseover="this.src='${app.imageHoverUrl!app.imageUrl}'" onmouseout="this.src='${app.imageUrl}'" />
-              </a>
-            </#if>
-            
-            <div id="texto" for="${app.applicationId}">
-              <a style="color: black;" href="${app.linkUrl}<#if externalKeyParam?exists>?${externalKeyParam}</#if>" >
-                ${app.shortName!app.applicationId}
-              </a>
-            </div>
-
-            
-          </div>
-          <#if !app_has_next>
-            
-            </div>
-            
-          <#elseif appIndex % 1 == 0>
-            </div> 
-            <div id="row"> 
-          </#if>
-        </#if>
-      </#list>
-    </div>     
-    </#if>
-    
- <#-- end of the latest row-->
-
-</div>  <#-- end of wrapper-->
-<div>
-
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-</div>
+<#-- if user is authenticated -->
+<#if userLogin?exists>
+	<div id="container">
+		<div id="form">
+	      	<h2 id="Bienvenida">${uiLabelMap.CommonWelcome} <br />${firstName} ${lastName}</h2>
+	      	<hr>
+	      	<form id="logout" method="post" action="<@ofbizUrl>logout${previousParams?if_exists}</@ofbizUrl>">
+	        	<input class="decorativeSubmit" type="submit" value="${uiLabelMap.CommonLogout}" />
+	      	</form>
+	    	<!-- <@include location="component://opentaps-common/webapp/common/includes/latestnews.ftl"/> -->
+		</div>
+		<div class="modulos">
+			<div id="row">
+		    	<#assign appIndex = 0 />
+		      	<#list apps as app>
+		      		<#if (app.applicationId != "warehouse" && app.applicationId != "controlPatrimonial" && app.applicationId != "purchasing" && app.applicationId != "viaticos"
+		      			&& app.applicationId != "gastosReserva" && app.applicationId != "obras" && app.applicationId != "crmsfa" && app.applicationId != "" && app.applicationId != "proyectos")>
+						<#if (!app.hide?exists || app.hide != "Y") && app.linkUrl?has_content>
+					    	<#assign appIndex = appIndex + 1 />
+				        	<div id="button" class="${app.applicationId}" onmouseover="javascript:writeAppDetails('${app.shortName!app.applicationId}','${app.applicationName!app.applicationId}','${app.description!app.applicationId}')">
+					        	<#if app.imageUrl?has_content>
+					              <a id="Titulos" href="${app.linkUrl}<#if externalKeyParam?exists>?${externalKeyParam}</#if>">
+					                <img src="${app.imageUrl}" onmouseover="this.src='${app.imageHoverUrl!app.imageUrl}'" onmouseout="this.src='${app.imageUrl}'" />
+					              </a>
+					            </#if>
+					            <div id="texto" for="${app.applicationId}">
+					            	<a style="color: black;" href="${app.linkUrl}<#if externalKeyParam?exists>?${externalKeyParam}</#if>" >
+					                	${app.shortName!app.applicationId}
+					              	</a>
+					            </div>
+				          	</div>
+					        <#if !app_has_next>
+				          		</div>
+				          	<#elseif appIndex % 1 == 0>
+				            	</div><div id="row"> 
+					        </#if>
+						</#if>
+					</#if>
+		      	</#list>
+		    </div>
+    	</div>
+    </div>
+</#if>

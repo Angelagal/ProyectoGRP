@@ -1,8 +1,9 @@
 BODY {
 	background: #FFF;
 	text-decoration: none;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: Helvetica, sans-serif;
 	margin: 0;
+	
 }
 
 UL {
@@ -4237,7 +4238,8 @@ td.x-date-mp-sep {
 }
 
 .x-panel-tc {
-	
+	background: transparent url(/opentaps_images/gray/panel/top-bottom.gif)
+		repeat-x 0 0;
 	overflow: hidden;
 }
 
@@ -4246,13 +4248,17 @@ td.x-date-mp-sep {
 }
 
 .x-panel-tl {
+	background: transparent
+		url(/opentaps_images/gray/panel/corners-sprite.gif) no-repeat 0 0;
 	padding-left: 6px;
 	zoom: 1px;
 	border-bottom: 0 none !important;
 }
 
 .x-panel-tr {
-	
+	background: transparent
+		url(/opentaps_images/gray/panel/corners-sprite.gif) no-repeat right 0;
+	zoom: 1px;
 	padding-right: 6px;
 }
 

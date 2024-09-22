@@ -3,32 +3,40 @@
 
 #logo{
 width:241px;
-height:49px;
+height:45px !important;
 margin:15px 0 15px 32px;
 float:left;}
 
+#logo-img {
+	height: 45px !important;
+}
+
 #title{
-height:43px;
-width:100%;
-background-color:#CCCCCC;
-float:left;}
+	height:43px;
+	width:100%;
+	background-color:#10312B;
+	float:left;
+	text-align: right;
+}
 
 #title h1{
-font-size:1.4em;
-font-family:Arial, Helvetica, sans-serif;
-color:#333333;
-margin:10px 0 0 318px;}
+	font-size:1.4em;
+	font-family:Arial, Helvetica, sans-serif;
+	color:white;
+	margin: 10px 19px 0 318px;
+}
 
 
 
 #form h2{
-    background-color:#235B4E !important;
+	color:#206c4a;
+	font-size:1em;
+	width:236px;
+	padding:6px 0 6px 6px;
+	padding: 15px 11px;
+    border-radius: 5px;
     text-align: center;
-    font-size:1em;
-    color:#FFFFFF;
-    width:236px;
-    padding:6px 0 6px 6px;
-    }
+}
 
 #form h3{
 margin-top:15px;}

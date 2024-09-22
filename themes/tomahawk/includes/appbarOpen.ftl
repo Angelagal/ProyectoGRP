@@ -60,8 +60,11 @@ under the License.
                   <#assign selected = true>
                 </#if>
                 <#assign thisURL = thisApp>
-                <#if thisApp != "/">
+                <#if thisApp != "/" && display.title != "Inicio">
                   <#assign thisURL = StringUtil.wrapString(thisURL) + "/control/main">
+                </#if>
+                <#if thisApp != "/" && display.title == "Inicio">
+                  <#assign thisURL = StringUtil.wrapString(thisURL) + "control/main">
                 </#if>
                 <#if layoutSettings.suppressTab?exists && display.name == layoutSettings.suppressTab>
                   <!-- do not display this component-->

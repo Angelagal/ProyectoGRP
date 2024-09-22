@@ -62,17 +62,17 @@
       <#assign bgcolor = StringUtil.wrapString(Static["org.opentaps.common.util.UtilConfig"].getSectionBgColor(opentapsApplicationName, sectionName))/>
       <#assign fgcolor = StringUtil.wrapString(Static["org.opentaps.common.util.UtilConfig"].getSectionFgColor(opentapsApplicationName, sectionName))/>
       <style type="text/css">
-h1, h2, .gwt-screenlet-header, .sectionHeader, .subSectionHeader, .subSectionTitle, .formSectionHeader, .formSectionHeaderTitle, .screenlet-header, .boxhead, .boxtop, div.boxtop, .toggleButtonDisabled, .tundra .dijitDialogTitleBar, .shortcutGroup td, .screenlet-title-bar {color: ${fgcolor}; background-color: ${bgcolor};  }
-.screenlet-header .boxhead, .subSectionHeader .subSectionTitle, .boxtop .boxhead { background:transparent;}
-div.sectionTabBorder, ul.sectionTabBar li.sectionTabButtonSelected a {color: ${fgcolor};}
-div.sectionTabBorder {background: ${bgcolor} !important;}
-.x-panel-tl, .x-panel-tr, .titleBar .x-panel-br, .titleBar .x-panel-bl { background-color:#235B4E !important; }
-div.sectionTabBorder, .x-panel-tc, .titleBar .x-panel-bc { background-color:#235B4E !important; }
-.x-panel-tl .x-panel-header, .frameSectionHeader .pageNumber {color: ${fgcolor} !important; }
-.x-panel-noborder .x-panel-header-noborder { border:none !important; }
-ul.sectionTabBar li.sectionTabButtonUnselected .x-panel-tl,
-ul.sectionTabBar li.sectionTabButtonUnselected .x-panel-tr { background-image:url(/opentaps_images/panels/corners-sprite-bw.gif) !important; }
-ul.sectionTabBar li.sectionTabButtonUnselected .x-panel-tc { background-image:url(/opentaps_images/panels/top-bottom-bw.gif) !important; }
+		h1, h2, .gwt-screenlet-header, .sectionHeader, .subSectionHeader, .subSectionTitle, .formSectionHeader, .formSectionHeaderTitle, .screenlet-header, .boxhead, .boxtop, div.boxtop, .toggleButtonDisabled, .tundra .dijitDialogTitleBar, .shortcutGroup td, .screenlet-title-bar {color: ${fgcolor}; }
+		.screenlet-header .boxhead, .subSectionHeader .subSectionTitle, .boxtop .boxhead { background:transparent;}
+		div.sectionTabBorder, ul.sectionTabBar li.sectionTabButtonSelected a {color: ${fgcolor};}
+		div.sectionTabBorder {background: ${bgcolor} !important;}
+		.x-panel-tl, .x-panel-tr, .titleBar .x-panel-br, .titleBar .x-panel-bl { background-color:#235B4E !important; }
+		div.sectionTabBorder, .x-panel-tc, .titleBar .x-panel-bc { background-color:#235B4E !important; }
+		.x-panel-tl .x-panel-header, .frameSectionHeader .pageNumber {color: ${fgcolor} !important; }
+		.x-panel-noborder .x-panel-header-noborder { border:none !important; }
+		ul.sectionTabBar li.sectionTabButtonUnselected .x-panel-tl,
+		ul.sectionTabBar li.sectionTabButtonUnselected .x-panel-tr { background-image:url(/opentaps_images/panels/corners-sprite-bw.gif) !important; }
+		ul.sectionTabBar li.sectionTabButtonUnselected .x-panel-tc { background-image:url(/opentaps_images/panels/top-bottom-bw.gif) !important; }
       </style>
 
       <script type="text/javascript">
@@ -105,8 +105,56 @@ ul.sectionTabBar li.sectionTabButtonUnselected .x-panel-tc { background-image:ur
       <meta name="gwt:property" content="locale=${locale}"/>
     </#if>
 </head>
-
-
+<style type="text/css">
+	#header{
+		height:60px;
+		background: linear-gradient(156deg, rgba(245, 239, 232, 1) 12%, rgba(235, 221, 205, 1) 36%, rgba(218, 182, 142, 1) 72%, rgba(214, 176, 135, 1) 98%, rgba(210, 186, 158, 1) 100%);
+		padding: 15px 32px 0;
+	}
+	
+	#logo-header {
+		text-align: right;
+		padding: 5px 15px 0px 0;
+	}
+	
+	#imagenLogin {
+		height: 65px;
+		float: right;
+		margin-right: -17px;
+		margin-top: -10px;
+	}
+	
+	#logo-img {
+	    height: 45px !important;
+	}
+	
+	#title{
+		height:43px;
+		width:100%;
+		background-color:#10312B;
+		float:left;
+		text-align: right;
+	}
+	
+	#title h1{
+		font-size:1.4em;
+		font-family:Arial, Helvetica, sans-serif;
+		color:white;
+		margin: 10px 19px 0 318px;
+	}
+</style>
+		<div id="header">
+	    	<div id="logo">
+	    		<img id="logo-img" src="<@ofbizContentUrl>${configProperties.get("opentaps.logo")}</@ofbizContentUrl>" />
+	    		<img id="imagenLogin" src="<@ofbizContentUrl>${configProperties.get("opentaps.logoLogin")}</@ofbizContentUrl>" /></div>
+	    	</div>
+	    	<div id="title">
+	        	<h1>
+	                <#-- <span id="appId" style="color:#FF3300">${uiLabelMap.opentaps}</span> -->
+	                <span id="appName">${uiLabelMap.OpentapsProductName}</span>
+	            </h1>
+	        </div>
+	    </div>
 <body>
   <#assign callInEventIcon = Static["org.ofbiz.base.util.UtilProperties"].getPropertyValue("voip.properties", "voip.icon.callInEvent")>
   <#if gwtScripts?exists>

@@ -56,7 +56,7 @@ under the License.
                 </#if>
                 <#assign thisURL = thisApp>
                 <#if thisApp != "/">
-                  <#assign thisURL = thisURL + "/control/main">
+                  <#assign thisURL = thisURL + "control/main">
                 </#if>
                 <#if layoutSettings.suppressTab?exists && display.name == layoutSettings.suppressTab>
                   <!-- do not display this component-->

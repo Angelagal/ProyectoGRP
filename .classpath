@@ -296,5 +296,6 @@
 	<classpathentry kind="lib" path="applications/content/lib/poi-ooxml-schemas-3.14-20160307.jar"/>
 	<classpathentry kind="lib" path="applications/content/lib/poi-scratchpad-3.14-20160307.jar"/>
 	<classpathentry kind="lib" path="framework/base/lib/freemarker-2.3.25.jar"/>
+	<classpathentry kind="con" path="GROOVY_DSL_SUPPORT"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -2165,7 +2165,7 @@
         <value xml:lang="cs">Email heslo</value>
         <value xml:lang="de">E-Mail Passwort</value>
         <value xml:lang="en">Email Password</value>
-        <value xml:lang="es">Enviar Contraseña por Correo</value>
+        <value xml:lang="es">Enviar contraseña por correo</value>
         <value xml:lang="fr">Envoyez-moi mon mot de passe par courriel</value>
         <value xml:lang="hi_IN">ईमेल पासवर्ड</value>
         <value xml:lang="it">Invia password per email</value>
@@ -2176,6 +2176,23 @@
         <value xml:lang="th">รหัสผ่านอีเมล</value>
         <value xml:lang="zh">电子邮件密码</value>
         <value xml:lang="zh_CN">电子邮件密码</value>
+    </property>
+    <property key="CommonForgotPassword">
+        <value xml:lang="ar">استعادة كلمة المرور</value>
+        <value xml:lang="cs">Obnovit heslo</value>
+        <value xml:lang="de">Passwort wiederherstellen</value>
+        <value xml:lang="en">Recover password</value>
+        <value xml:lang="es">Recuperar contraseña</value>
+        <value xml:lang="fr">Récupérer le mot de passe</value>
+        <value xml:lang="hi_IN">पासवर्ड पुनर्प्राप्त करा</value>
+        <value xml:lang="it">Recupera la password</value>
+        <value xml:lang="nl">Wachtwoord herstellen</value>
+        <value xml:lang="pt">Recuperar senha</value>
+        <value xml:lang="ro">Recuperați parola</value>
+        <value xml:lang="ru">Восстановить пароль</value>
+        <value xml:lang="th">กู้คืนรหัสผ่าน</value>
+        <value xml:lang="zh">恢复密码</value>
+        <value xml:lang="zh_CN">恢复密码</value>
     </property>
     <property key="CommonEmailTo">
         <value xml:lang="ar">بريد الإلكتروني إلى</value>
@@ -3790,7 +3807,7 @@
         <value xml:lang="cs">Přihlásit</value>
         <value xml:lang="de">Anmelden</value>
         <value xml:lang="en">Login</value>
-        <value xml:lang="es">Enviar</value>
+        <value xml:lang="es">Acceder</value>
         <value xml:lang="fr">Connexion</value>
         <value xml:lang="hi_IN">लॉगइन</value>
         <value xml:lang="it">Accedi</value>
@@ -3826,7 +3843,7 @@
         <value xml:lang="cs">Odhlásit</value>
         <value xml:lang="de">Abmelden</value>
         <value xml:lang="en">Logout</value>
-        <value xml:lang="es">Desconectar</value>
+        <value xml:lang="es">Cerrar sesión</value>
         <value xml:lang="fr">Déconnexion</value>
         <value xml:lang="hi_IN">लॉगआउट करें</value>
         <value xml:lang="it">Logout</value>

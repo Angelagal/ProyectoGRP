@@ -2,31 +2,48 @@
 /* CSS Document */
 
 body{
-font-family:Arial, Helvetica, sans-serif;
+font-family:Helvetica, sans-serif;
 }
+
 #top {
-height:30px;
-background:#333333;
+	height:30px;
+	background:#333333;
 }
+
 #container{
-height:1000px;
-width:100%;
-background-color:#FFFFFF;
-margin:0 0 0 0;}
+	height:75px;
+	width:100%;
+	background-color:#FFFFFF;
+	margin:0 0 0 0;
+}
 
 #header{
-height:122px;}
+	height:75px;
+	background: linear-gradient(156deg, rgba(245, 239, 232, 1) 12%, rgba(235, 221, 205, 1) 36%, rgba(218, 182, 142, 1) 72%, rgba(214, 176, 135, 1) 98%, rgba(210, 186, 158, 1) 100%);
+}
 
-#wrapper{
-float:left;
-width:1000px;}
+#logo-header {
+	text-align: right;
+	padding: 5px 15px 0px 0;
+}
+
+#imagenLogin {
+	height: 65px;
+}
+
+#container{
+	text-align: center;
+}
 
 #form{
-float:left;
-width:260px;
-height:875px;
-border-right:2px dotted #333333;
-margin:30px 0 0 32px;}
+	float:left;
+	width:280px;
+	height:880px;
+	margin: 0px 0 0 15px;
+	border-right: 1px solid #CCC;
+	padding: 10px;
+	box-shadow: 3px 0 1px -2px #CCC;
+}
 
 #button{
 margin-bottom:25px;
