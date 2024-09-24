@@ -42,13 +42,20 @@ under the License.
             <#assign selected = true>
           </#if>
           <#assign thisURL = thisApp>
-          <#if thisApp != "/">
-            <#assign thisURL = thisURL + "/control/main">
+          <#if thisApp != "/" && display.title != "Inicio">
+          	<#assign thisURL = StringUtil.wrapString(thisURL) + "/control/main">
+          </#if>
+          <#if thisApp != "/" && display.title == "Inicio">
+          	<#assign thisURL = StringUtil.wrapString(thisURL) + "control/main">
           </#if>
           <#if layoutSettings.suppressTab?exists && display.name == layoutSettings.suppressTab>
             <!-- do not display this component-->
             <#else>
+            <#if (display.description != "CommonControlPatrimonialOC" && display.description != "CommonBIOC" && display.description != "CommonObrasOC" && display.description != "CommonPurchasingOC"
+            	 && display.description != "CommonPurchasingOC" && display.description != "CommonViaticosOC" && display.description != "CommonWarehouseOC" && display.description != "Gastos a Reserva"
+            	  && display.description != "Proyectos")>
             <li<#if selected> class="selected"</#if>><a href="${thisURL}${externalKeyParam}" <#if uiLabelMap?exists> title="${uiLabelMap[display.description]}">${uiLabelMap[display.title]}<#else> title="${display.description}">${display.title}</#if></a></li>
+            </#if>
           </#if>
         </#if>
       </#list>

@@ -79,6 +79,18 @@ under the License.
     </#if>
     <#if lastParameters?exists><#assign parametersURL = "&amp;" + lastParameters></#if>
 </head>
+<header id="header">
+	<#if layoutSettings.headerImageUrl?exists>
+      <#assign headerImageUrl = layoutSettings.headerImageUrl>
+    <#elseif layoutSettings.commonHeaderImageUrl?exists>
+      <#assign headerImageUrl = layoutSettings.commonHeaderImageUrl>
+    <#elseif layoutSettings.VT_HDR_IMAGE_URL?exists>
+      <#assign headerImageUrl = layoutSettings.VT_HDR_IMAGE_URL.get(0)>
+    </#if>
+    <#if headerImageUrl?exists>
+      <img id="logo-img" alt="${layoutSettings.companyName}" src="<@ofbizContentUrl>${StringUtil.wrapString(headerImageUrl)}</@ofbizContentUrl>"/>
+    </#if>
+</header>
 <#if layoutSettings.headerImageLinkUrl?exists>
   <#assign logoLinkURL = "${layoutSettings.headerImageLinkUrl}">
 <#else>
@@ -133,9 +145,9 @@ under the License.
         <#elseif layoutSettings.VT_HDR_IMAGE_URL?exists>
           <#assign headerImageUrl = layoutSettings.VT_HDR_IMAGE_URL.get(0)>
         </#if>
-        <#if headerImageUrl?exists>
+        <#-- <#if headerImageUrl?exists>
           <li class="logo-area"><a href="<@ofbizUrl>${logoLinkURL}</@ofbizUrl>"><img alt="${layoutSettings.companyName}" src="<@ofbizContentUrl>${StringUtil.wrapString(headerImageUrl)}</@ofbizContentUrl>"/></a></li>
-        </#if>
+        </#if> -->
         <li/>
         <#if layoutSettings.middleTopMessage1?has_content && layoutSettings.middleTopMessage1 != " ">
           <li class="h4">
@@ -149,10 +161,12 @@ under the License.
         </#if>
         <li class="control-area"<#if layoutSettings.headerRightBackgroundUrl?has_content> background="${layoutSettings.headerRightBackgroundUrl}"</#if>>
           <#if userLogin?exists>
+          <#-- 
             <p class="expanded">
               <a href="<@ofbizUrl>logout</@ofbizUrl>">${uiLabelMap.CommonLogout}</a>&nbsp;&nbsp;
               <a href="javascript:document.setUserPreferenceCompactHeaderY.submit()">&nbsp;&nbsp;</a>
            </p>
+           -->
            <form name="setUserPreferenceCompactHeaderY" method="post" action="<@ofbizUrl>setUserPreference</@ofbizUrl>" onsubmit="javascript:submitFormDisableSubmits(this)">
              <input name="userPrefGroupTypeId" value="GLOBAL_PREFERENCES" type="hidden"/>
              <input name="userPrefTypeId" value="COMPACT_HEADER" type="hidden"/>
@@ -170,7 +184,7 @@ under the License.
 			      	
 			        <b>${uiLabelMap.ProductOrganization}</b>:&nbsp;${groupName}&nbsp; 
 					<b>${uiLabelMap.FormFieldTitleCiclo}</b>:&nbsp;${cicloId}&nbsp; 
-			        ( <a href="selectOrganizationForm">${uiLabelMap.CommonChange}</a> )
+			        <#-- ( <a href="selectOrganizationForm">${uiLabelMap.CommonChange}</a> ) -->
 			      </div>
 			<#--
             <#if layoutSettings.topLines?has_content>

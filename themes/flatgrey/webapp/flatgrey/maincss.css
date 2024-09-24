@@ -75,7 +75,7 @@ ul.dots {
 /* ===== Basic Element Styles ===== */
 
 a, a:visited {
-color: #333;
+color: white;
 font-weight: bold;
 }
 
@@ -228,7 +228,7 @@ float:right;
 }
 
 DIV.boxtop {
-background-color: #942839;
+background-color: #235B4E;
 border-color: #999999;
 border-style: solid;
 margin: 0 auto 0 auto;
@@ -676,7 +676,7 @@ width: 100%;
 }
 
 .page-title {
-color:#942839;
+color:#235B4E;
 margin-bottom:0.5em;
 font-size:1.6em;
 font-weight:bold;
@@ -933,10 +933,20 @@ text-align: center;
 /* ==================================== */
 
 #masthead {
-background-color: #FFFFFF;
-color: #000000;
-font-weight: bold;
-height: 1%; /* IE fix */
+    background-color: #10312B;
+    color: white;
+	font-weight: bold;
+	height: 1%; /* IE fix */
+}
+
+#header{
+	height:75px;
+	background: linear-gradient(156deg, rgba(245, 239, 232, 1) 12%, rgba(235, 221, 205, 1) 36%, rgba(218, 182, 142, 1) 72%, rgba(214, 176, 135, 1) 98%, rgba(210, 186, 158, 1) 100%);
+}
+
+#logo-img {
+	height: 45px;
+	margin: 15px 32px !important;
 }
 
 #masthead ul li {
@@ -1013,7 +1023,7 @@ color: #D4D0C8;
 #main-navigation ul a:hover,
 #main-navigation ul .selected a,
 #main-navigation ui .selected a:hover {
-background:transparent url(/opentaps_images/panels/top-bottom-669933.gif) repeat-x 0 0;
+background: #235B4E;
 color: white;
 text-decoration: none;
 }
@@ -1027,7 +1037,7 @@ text-decoration: none;
 
 #secondary-navigation a {
 padding: 0 1em 0 1em;
-border: 0.05em solid #942839;
+border: 0.05em solid #235B4E;
 color: #ffffff;
 background-image: url(/images/gradient_sub_uns.gif);
 background-repeat: repeat-x;
@@ -1035,7 +1045,7 @@ background-repeat: repeat-x;
 
 #secondary-navigation .disabled {
 padding: 0 1em 0 1em;
-border: 0.05em solid #942839;
+border: 0.05em solid #235B4E;
 background-image: url(/images/gradient_sub_uns.gif);
 background-repeat: repeat-x;
 color: #D4D0C8;
@@ -1043,7 +1053,7 @@ color: #D4D0C8;
 
 #secondary-navigation a.selected,
 #secondary-navigation a:hover {
-background-color: #942839;
+background-color: #235B4E;
 background-image: url(/images/gradient_sub_sel.gif);
 background-repeat: repeat-x;
 border-bottom: 0.05em solid #2626c1;
@@ -1056,7 +1066,7 @@ color: #ffffff;
 /* ========================================================= */
 
 #app-navigation {
-background-color: #942839;
+background-color: #235B4E;
 background-repeat: repeat-y;
 height: 1%; /* IE fix */
 margin: 1em;
@@ -1104,13 +1114,13 @@ padding: 0 1em 0 1em;
 
 #app-navigation ul .selected,
 #app-navigation ul .selected a {
-background-color: #942839;	
+background-color: #235B4E;	
 background-repeat: repeat-x;
 color: #ffffff;
 }
 
 #app-navigation ul a:hover {
-background-color: #942839;	
+background-color: #235B4E;	
 background-repeat: repeat-x;
 border-bottom: 0.05em solid #2626c1;
 text-decoration: none;
@@ -1122,7 +1132,7 @@ color: #ffffff;
 /* ================================================= */
 
 .screenlet-title-bar {
-background-color: #942839;	
+background-color: #235B4E;	
 background-repeat: repeat-x;
 color: #ffffff;
 height: 1%; /* IE fix */
@@ -1193,7 +1203,7 @@ color: #ffff66;
 }
 
 .screenlet-title-bar ul li:hover {
-background-color: #942839;	
+background-color: #235B4E;	
 background-repeat: repeat-x;
 }
 
@@ -1229,7 +1239,7 @@ cursor: default;
 .screenlet-title-bar ul .h1:hover,
 .screenlet-title-bar ul .h2:hover,
 .screenlet-title-bar ul .h3:hover {
-background-color: #942839;	
+background-color: #235B4E;	
 }
 
 /* login screenlet decorator */
@@ -1363,7 +1373,7 @@ float: right;
 .button-style-1 ul li,
 .tabContainer ul li {
 background-color: #ffffff;
-color: #942839;	
+color: #235B4E;	
 }
 
 .button-style-1 a,
@@ -1377,7 +1387,7 @@ color: #000099;
 .button-style-1 .selected,
 .button-style-1 ul .selected,
 .button-style-1 ul .selected a {
-background-color: #942839;	
+background-color: #235B4E;	
 color: #ffffff;
 }
 
@@ -1409,14 +1419,14 @@ color: #000099;
 
 .button-style-2 ul .selected a,
 .button-style-2 .selected {
-background-color: #942839;
+background-color: #235B4E;
 color: #ffffff;
 }
 
 .button-style-2 ul a:hover,
 .button-style-2 a:hover,
 a.button-style-2:hover {
-background-color: #942839;
+background-color: #235B4E;
 color: #ffffff;
 text-decoration: none;
 }
@@ -1447,7 +1457,7 @@ display:table;
 }
 
 .tab-bar ul li {
-background-color: #942839;
+background-color: #235B4E;
 margin: 0;
 padding: 0;
 }
@@ -1606,7 +1616,7 @@ visibility: collapse;
 /* ===== Alternate table header style ===== */
 .basic-table .header-row-2 th,
 .basic-table .header-row-2 td {
-background-color: #942839;
+background-color: #235B4E;
 border-bottom: 0;
 border-left: 0.1em solid #cccccc;
 color: #ffffff;
@@ -1683,11 +1693,11 @@ z-index: 999;
 .calendar_date_select .cds_buttons {
     text-align: center;
     padding: 5px 0px;
-    background-color: #942839;
+    background-color: #235B4E;
 }
 
 .calendar_date_select .cds_footer {
-background-color: #942839;
+background-color: #235B4E;
 padding: 3px;
 font-size: 11px;
 color:#23190f;
@@ -1700,7 +1710,7 @@ padding: 0px;
 }
 
 .calendar_date_select .cds_header {
-background-color: #942839;
+background-color: #235B4E;
 padding:5px 0;
 _border-bottom: 1px solid #d68a12;
 text-align: center;
