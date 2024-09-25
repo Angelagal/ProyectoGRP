@@ -53,7 +53,7 @@ under the License.
             <#else>
             <#if (display.description != "CommonControlPatrimonialOC" && display.description != "CommonBIOC" && display.description != "CommonObrasOC" && display.description != "CommonPurchasingOC"
             	 && display.description != "CommonPurchasingOC" && display.description != "CommonViaticosOC" && display.description != "CommonWarehouseOC" && display.description != "Gastos a Reserva"
-            	  && display.description != "Proyectos")>
+            	  && display.description != "Proyectos" && display.description != "CommonCatalogOC")>
             <li<#if selected> class="selected"</#if>><a href="${thisURL}${externalKeyParam}" <#if uiLabelMap?exists> title="${uiLabelMap[display.description]}">${uiLabelMap[display.title]}<#else> title="${display.description}">${display.title}</#if></a></li>
             </#if>
           </#if>

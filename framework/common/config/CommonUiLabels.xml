@@ -9996,8 +9996,8 @@
     </property>
 
     <property key="OpentapsProductName">
-        <value xml:lang="en">Sistema de Información Presupuestal  y Armonización Contable</value>
-        <value xml:lang="es">Sistema de Información Presupuestal  y Armonización Contable</value>
+        <value xml:lang="en">Sistema de Gestión de Recursos de Planificación (GRP)</value>
+        <value xml:lang="es">Sistema de Gestión de Recursos de Planificación (GRP)</value>
     </property>
 	
 	<property key="CommonTimePeriodsClosed">
