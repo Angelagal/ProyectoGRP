@@ -34,7 +34,7 @@
         <section>
             <actions>
                 <set field="pageTitleLabel" value="OpentapsMyHome"/>
-                <set field="sectionHeaderUiLabel" value="EL COLEGIO DE SAN LUIS, A.C. ( 1 ) Finanzas"/> 
+                <set field="sectionHeaderUiLabel" value="FINANCIERA PARA EL BIENESTAR (1) FINANZAS"/> 
                 <script location="component://financials/webapp/financials/WEB-INF/actions/dashboard/dashboard.bsh"/>
             </actions>
             <widgets>

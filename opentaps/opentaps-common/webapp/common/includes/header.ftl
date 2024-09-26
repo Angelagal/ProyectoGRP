@@ -225,7 +225,7 @@
           <a class="linktext" style="vertical-align:text-top;" href="javascript:showKeyboardShortcutsHelp();" title="${uiLabelMap.OpentapsHelpShortcuts}">${uiLabelMap.OpentapsHelpShortcuts}</a>
         </#if>
       <#if requestAttributes.userLogin?has_content>
-      <#-- | --> <a href="<@ofbizUrl>logout</@ofbizUrl>" class="linktext">${uiLabelMap.CommonLogout}</a>
+      <#-- | --> <a href="/control/logout" class="linktext">${uiLabelMap.CommonLogout}</a>
       </#if> 
      </div>
     <#-- change facility or organization -->

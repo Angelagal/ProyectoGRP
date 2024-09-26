@@ -28,10 +28,8 @@
         recibido(s) con la factura o nota de remisión número</value>
     </property>   
     <property key="ConstanciaParaEfectos">
-    	<value xml:lang="en">Para efectos de realizar el pago, el proveedor deberá entregar a El Colegio de San
-  													Luis, A.C. el comprobante fiscal correspondiente.</value>
-    	<value xml:lang="es">Para efectos de realizar el pago, el proveedor deberá entregar a El Colegio de San
-  													Luis, A.C. el comprobante fiscal correspondiente.</value>
+    	<value xml:lang="en">Para efectos de realizar el pago, el proveedor deberá entregar a La Financiera para el Bienestar el comprobante fiscal correspondiente.</value>
+    	<value xml:lang="es">Para efectos de realizar el pago, el proveedor deberá entregar a La Financiera para el Bienestar el comprobante fiscal correspondiente.</value>
     </property>
     
     <property key="ConstanciaCorrespondienteA">

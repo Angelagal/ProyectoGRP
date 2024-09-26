@@ -35,7 +35,7 @@
         <section>
             <actions>
                 <set field="pageTitleLabel" value="OpentapsMyHome"/>
-                <set field="sectionHeaderUiLabel" value="EL COLEGIO DE SAN LUIS, A.C. ( 1 ) Adquisiciones"/>
+                <set field="sectionHeaderUiLabel" value="FINANCIERA PARA EL BIENESTAR (1) ADQUICICIONES"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId" default-value="0"/>
                 
                 <!-- Data required by dashboard -->

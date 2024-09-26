@@ -34,7 +34,7 @@
         <section>
             <actions>
                 <set field="pageTitleLabel" value="OpentapsMyHome"/>  
-                <set field="sectionHeaderUiLabel" value="EL COLEGIO DE SAN LUIS, A.C. ( 1 ) Almacen"/>
+                <set field="sectionHeaderUiLabel" value="FINANCIERA PARA EL BIENESTAR (1) ALMACÉN"/>
 <!--                 <set field="facilityId" from-field="parameters.facilityId"/> -->
 <!--                 <set field="refresh" from-field="parameters.refresh"/> -->
 
