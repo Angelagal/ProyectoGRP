@@ -105,7 +105,7 @@
       <meta name="gwt:property" content="locale=${locale}"/>
     </#if>
 </head>
-<style type="text/css">
+<#--<style type="text/css">
 	#header{
 		height:60px;
 		background: linear-gradient(156deg, rgba(245, 239, 232, 1) 12%, rgba(235, 221, 205, 1) 36%, rgba(218, 182, 142, 1) 72%, rgba(214, 176, 135, 1) 98%, rgba(210, 186, 158, 1) 100%);
@@ -142,19 +142,20 @@
 		color:white;
 		margin: 10px 19px 0 318px;
 	}
-</style>
-		<div id="header">
+</style>-->
+  <@include location="component://homeapps/webapp/homeapps/includes/header.ftl"/>
+		<#--<div id="header">
 	    	<div id="logo">
 	    		<img id="logo-img" src="<@ofbizContentUrl>${configProperties.get("opentaps.logo")}</@ofbizContentUrl>" />
 	    		<img id="imagenLogin" src="<@ofbizContentUrl>${configProperties.get("opentaps.logoLogin")}</@ofbizContentUrl>" /></div>
 	    	</div>
 	    	<div id="title">
-	        	<h1>
+	        	<h1>-->
 	                <#-- <span id="appId" style="color:#FF3300">${uiLabelMap.opentaps}</span> -->
-	                <span id="appName">${uiLabelMap.OpentapsProductName}</span>
+	                <#--<span id="appName">${uiLabelMap.OpentapsProductName}</span>
 	            </h1>
 	        </div>
-	    </div>
+	  </div>-->
 <body>
   <#assign callInEventIcon = Static["org.ofbiz.base.util.UtilProperties"].getPropertyValue("voip.properties", "voip.icon.callInEvent")>
   <#if gwtScripts?exists>
