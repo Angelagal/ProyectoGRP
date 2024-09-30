@@ -97,6 +97,35 @@ under the License.
   <#assign logoLinkURL = "${layoutSettings.commonHeaderImageLinkUrl}">
 </#if>
 <body>
+<style>
+  #appName{
+    font-size: 1.4em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+  }
+
+  #contenedor nav{
+    height: 108% !important;
+  }
+  #contenedor nav a{
+    font-weight: normal !important;
+  }
+  .decorativeSubmit1{
+		background:none !important;
+    color:#ffffff !important;
+    border: none !important;
+    text-decoration:none !important;
+    font-weight: normal !important;
+  }
+  #menu{
+    top: 5.0em !important;
+  }
+  #menu-abrir, #menu-cerrar{
+    font-size:1.5em !important;
+		font-weight:bold !important;
+  }
+</style>
+<#include "component://homeapps/webapp/homeapps/includes/header.ftl"/>
   <div class="page-container">
   <div class="hidden">
     <a href="#column-container" title="${uiLabelMap.CommonSkipNavigation}" accesskey="2">

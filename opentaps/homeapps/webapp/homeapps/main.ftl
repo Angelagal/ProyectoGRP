@@ -87,6 +87,40 @@
 		#forgotpasswd {
 	    	display: none;
 	  	}
+
+		/***************/
+
+		#logo_inicio{
+			width: 200px;
+			height: 200px;
+		}
+
+		.texto, .enlace a{
+				font-size: 13pt !important;
+			}
+
+		/*******Diseño Responsivo********/
+		
+		@media(max-width: 1000px) {
+			#logo_inicio{
+          		width: 100px !important;
+         		height: 100px !important;
+        	}
+		}
+
+		@media(max-width: 767px) {
+			.card {
+				width: 70% !important;
+			}
+
+			.inicioSesion{
+				font-size: 20px;
+			}
+
+			.texto, .enlace a, .texto2{
+				font-size: 10pt !important;
+			}
+		}
 	</style>
  	<#-- if login -->
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -94,6 +128,7 @@
 		<link rel="shortcut icon" href="<@ofbizContentUrl>/opentaps_images/favicon.ico</@ofbizContentUrl>">
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<meta name="viewport" content="width=device-witdh, initial-scale=1.0"/>
 			 <#-- TODO: find the way to import CSS from css component folder For now we are getting CSS from the opentaps_css directory inside opentaps-common. -->
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -105,10 +140,10 @@
 		      	<div class="card">
 				  <div class="card-body">
 				    <div id="logo">
-				    	<img src="<@ofbizContentUrl>${configProperties.get("opentaps.logoLogin")}</@ofbizContentUrl>" width="200" height="200" align="center"/>
+				    	<img id="logo_inicio" src="<@ofbizContentUrl>${configProperties.get("opentaps.logoLogin")}</@ofbizContentUrl>" align="center"/>
 				    </div>
 				    <h2 class="inicioSesion">${uiLabelMap.OpentapsLoginGreeting}</h2>
-				    <p style="font-size: 13pt !important;">Ingresa tus credenciales para acceder al sistema</p>
+				    <p class="texto" style="">Ingresa tus credenciales para acceder al sistema</p>
 				    <#-- handles service error messages -->
 					      <#if requestAttributes.errorMessageList?has_content><#assign errorMessageList=requestAttributes.errorMessageList></#if>
 					      <#if requestAttributes.eventMessageList?has_content><#assign eventMessageList=requestAttributes.eventMessageList></#if>
@@ -206,7 +241,7 @@
 					</div>
 					<form id="forgotpasswd" method="post" action="<@ofbizUrl>forgotpassword${previousParams?if_exists}</@ofbizUrl>">
 					  <hr>
-					  <h6>${uiLabelMap.CommonForgotPassword}</h6>
+					  <h6 class="texto2">${uiLabelMap.CommonForgotPassword}</h6>
 			          <div class="row">
 			          	<div class="col-12">
 					        <input type="text" class="form-control" id="username" name="USERNAME" placeholder="${uiLabelMap.CommonUsername}" size="50" />
@@ -260,7 +295,7 @@
 				        	<div id="button" class="${app.applicationId}" onmouseover="javascript:writeAppDetails('${app.shortName!app.applicationId}','${app.applicationName!app.applicationId}','${app.description!app.applicationId}')">
 					        	<#if app.imageUrl?has_content>
 					              <a id="Titulos" href="${app.linkUrl}<#if externalKeyParam?exists>?${externalKeyParam}</#if>">
-					                <img src="${app.imageUrl}" onmouseover="this.src='${app.imageHoverUrl!app.imageUrl}'" onmouseout="this.src='${app.imageUrl}'" />
+					                <img class="imagen" src="${app.imageUrl}" onmouseover="this.src='${app.imageHoverUrl!app.imageUrl}'" onmouseout="this.src='${app.imageUrl}'" />
 					              </a>
 					            </#if>
 					            <div id="texto" for="${app.applicationId}">
