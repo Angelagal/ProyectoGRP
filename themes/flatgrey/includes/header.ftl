@@ -79,18 +79,6 @@ under the License.
     </#if>
     <#if lastParameters?exists><#assign parametersURL = "&amp;" + lastParameters></#if>
 </head>
-<header id="header">
-	<#if layoutSettings.headerImageUrl?exists>
-      <#assign headerImageUrl = layoutSettings.headerImageUrl>
-    <#elseif layoutSettings.commonHeaderImageUrl?exists>
-      <#assign headerImageUrl = layoutSettings.commonHeaderImageUrl>
-    <#elseif layoutSettings.VT_HDR_IMAGE_URL?exists>
-      <#assign headerImageUrl = layoutSettings.VT_HDR_IMAGE_URL.get(0)>
-    </#if>
-    <#if headerImageUrl?exists>
-      <img id="logo-img" alt="${layoutSettings.companyName}" src="<@ofbizContentUrl>${StringUtil.wrapString(headerImageUrl)}</@ofbizContentUrl>"/>
-    </#if>
-</header>
 <#if layoutSettings.headerImageLinkUrl?exists>
   <#assign logoLinkURL = "${layoutSettings.headerImageLinkUrl}">
 <#else>
@@ -123,6 +111,9 @@ under the License.
   #menu-abrir, #menu-cerrar{
     font-size:1.5em !important;
 		font-weight:bold !important;
+  }
+  #logo {
+  	margin: 0 !important;
   }
 </style>
 <#include "component://homeapps/webapp/homeapps/includes/header.ftl"/>
