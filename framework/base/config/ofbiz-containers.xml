@@ -250,7 +250,7 @@ under the License.
                 (like Safari) it breaks access via HTTPS, so until that problem is fixed
                 the default will be false -->
             <property name="clientAuth" value="false"/>
-            <property name="keystoreFile" value="framework/base/config/keystore.jks"/>
+            <property name="keystoreFile" value="framework/base/config/ofbizssl.jks"/>
             <property name="keystorePass" value="changeit"/>
             <property name="keystoreType" value="JKS"/>
             <property name="sslProtocol" value="TLS"/>

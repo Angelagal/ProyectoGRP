@@ -66,8 +66,8 @@ context.put("ciclo", ciclo);
 for (UsoClave usage : usages) {
 
     usageConfigurations.put(usage, repository.getFirst(repository.findList(EstructuraClave.class, repository.map(
-          EstructuraClave.Fields.organizationPartyId, organizationPartyId,
-        EstructuraClave.Fields.ciclo, ciclo,
+          EstructuraClave.Fields.organizationPartyId, organizationPartyId.toString(),
+        EstructuraClave.Fields.ciclo, ciclo.toString(),
           EstructuraClave.Fields.acctgTagUsageTypeId, usage.getAcctgTagUsageTypeId()))));
 }
 
