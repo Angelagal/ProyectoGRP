@@ -32,7 +32,7 @@
                             ${uiLabelMap.EF0}
                         </a>
                     </li>
-                    <li>
+                    <#--<li>
                         <a href="http://localhost:8080/pentaho/api/repos/%3Ahome%3AFINABIEN%3AContables%3AEF1.1%2BEstado%2Bde%2BSituaci%25C3%2583%25C2%25B3n%2BFinanciera.prpt/viewer" target="_blank">
                             EF1.1 Estado de Situacion Financiera
                         </a>
@@ -51,7 +51,7 @@
                         <a href="http://localhost:8080/pentaho/api/repos/%3Ahome%3AFINABIEN%3AContables%3AEF3.2%2BEstado%2Bde%2BActividades%2BAnual.prpt/viewer" target="_blank">
                             ${uiLabelMap.EF32}
                         </a>
-                    </li>     
+                    </li>-->     
     </@displayReportGroup>
 
   </td>
