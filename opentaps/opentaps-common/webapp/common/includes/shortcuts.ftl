@@ -25,10 +25,8 @@
           <#if sg.showAsDisabled() || shortcut.showAsDisabled()>
             <li class="disabled"><div>${uiLabelMap.get(shortcut.uiLabel!)}</div></li>
           <#else>
-          	<#if shortcut.linkUrl == "reports" || shortcut.linkUrl == "reportsPresEgre" || shortcut.linkUrl == "reportsCatalogos" || shortcut.linkUrl == "reportsConac">
-	            <#assign shortcutClass = (parameters.thisRequestUri?default("") == shortcut.linkUrl!)?string("class=\"selected\"", "")/>
-	            <li><a href="<@ofbizUrl>${shortcut.linkUrl}</@ofbizUrl>" ${shortcutClass}>${uiLabelMap.get(shortcut.uiLabel!)}</a></li>
-	        </#if>
+            <#assign shortcutClass = (parameters.thisRequestUri?default("") == shortcut.linkUrl!)?string("class=\"selected\"", "")/>
+            <li><a href="<@ofbizUrl>${shortcut.linkUrl}</@ofbizUrl>" ${shortcutClass}>${uiLabelMap.get(shortcut.uiLabel!)}</a></li>
           </#if>
         </#list>
       </ul>
