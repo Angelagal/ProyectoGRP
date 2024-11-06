@@ -36,52 +36,155 @@ under the License.
 -->
 
 <style type="text/css">
-<#assign bgcolor = StringUtil.wrapString(Static["org.opentaps.common.util.UtilConfig"].getSectionBgColor(opentapsApplicationName, sectionName))/>
-<#assign fgcolor = StringUtil.wrapString(Static["org.opentaps.common.util.UtilConfig"].getSectionFgColor(opentapsApplicationName, sectionName))/>
-.x-panel-tl, .x-panel-tr, .titleBar .x-panel-br, .titleBar .x-panel-bl { background-image:url(/opentaps_images/panels/corners-sprite-${bgcolor?replace("#", "")}.gif) !important; }
-.x-panel-tc, .titleBar .x-panel-bc { background-image:url(/opentaps_images/panels/top-bottom-${bgcolor?replace("#", "")}.gif) !important; }
-.x-panel-tl .x-panel-header, .frameSectionHeader .pageNumber {color: ${fgcolor} !important; }
-.x-panel-noborder .x-panel-header-noborder { border:none !important; }
-<#-- center the section titles -->
-.x-panel-header {float:none !important;}
+		.bodyLogin {
+			font-family: Helvetica;
+		    background: url("/images/FondoAntenas4K.jpg") !important;
+		    background-position: center center !important;
+		    background-repeat: no-repeat !important;
+		    background-size: cover !important;
+		    background-attachment: fixed !important;
+		    background-color: #929495 !important;
+		    background-blend-mode: overlay !important;
+		}
+		
+		.container {
+			align-items: center;
+		}
+		
+		.container {
+			display: flex !important;
+		    flex-wrap: wrap !important;
+		    flex-direction: column !important;
+		    align-items: center !important;
+		    justify-content: center !important;
+		    gap: 3rem !important;
+		    width: 100% !important;
+		    height: 100% !important;
+		}
+		
+		.card {
+			width: 45% !important;
+		    height: auto !important;
+		    padding: 3em !important;
+		    border: #f0f4f8 1px solid !important;
+		    border-radius: 10px !important;
+		    background-color: #f0f4f8 !important;
+		    margin-top: 10% !important;
+		    align-content: center !important;
+		    align-items: center !important;
+		    transition: 0.5s !important;
+		}
+		
+		.inicioSesion {
+			color: #206c4a;
+			margin: 10px 0px !important;
+		}
+		
+		.btn-primary {
+			background: #206c4a !important;
+			padding: 8px 25px !important;
+		}
+		
+		.btn-primary:hover {
+			opacity: 0.8 !important;
+		}
+		
+		.user-icon {
+		    padding: 10px 18px !important;
+		    margin: 0px !important;
+		}
+		
+		.key-icon {
+			padding: 10px 12px !important;
+		}
+		
+		.serviceError {
+			color: red !important;
+			font-size: 8pt !important;
+		}
+		
+		#forgotpasswd {
+	    	display: none;
+	  	}
+
+		/***************/
+
+		#logo_inicio{
+			width: 200px;
+			height: 200px;
+		}
+
+		.texto, .enlace a{
+				font-size: 13pt !important;
+			}
+
+		/*******Diseño Responsivo********/
+		
+		@media(max-width: 1000px) {
+			#logo_inicio{
+          		width: 100px !important;
+         		height: 100px !important;
+        	}
+		}
+
+		@media(max-width: 767px) {
+			.card {
+				width: 70% !important;
+			}
+
+			.inicioSesion{
+				font-size: 20px;
+			}
+
+			.texto, .enlace a, .texto2{
+				font-size: 10pt !important;
+			}
+		}
 </style>
 
 <@import location="component://opentaps-common/webapp/common/includes/lib/opentapsFormMacros.ftl"/>
-
-<div class="form" style="padding-top: 125px; padding-bottom: 125px;">
-
-<#assign username = requestParameters.USERNAME?default((sessionAttributes.autoUserLogin.userLoginId)?default(""))>
-
-<div align="center">
-    <@frameSection title="${uiLabelMap.CommonPasswordChange}" style="width: 300px; margin-left: auto; margin-right: auto;text-align: center;" innerStyle="text-align: center;">
-    <form method="post" action="<@ofbizUrl>login</@ofbizUrl>" name="loginform">
-      <input type="hidden" name="requirePasswordChange" value="Y"/>
-      <input type="hidden" name="USERNAME" value="${username}"/>
-      <table cellspacing="0">
-        <tr>
-          <td align="right"><@display text="${uiLabelMap.CommonCurrentPassword}&nbsp;" class="tabletext"/></td>
-          <td align="left"><input type="password" name="PASSWORD" value="" size="20" class="inputBox"/></td>
-        </tr>
-        <tr>
-          <td align="right"><@display text="${uiLabelMap.CommonNewPassword}&nbsp;" class="tabletext"/></td>
-          <td align="left"><input type="password" name="newPassword" value="" size="20" class="inputBox"/></td>
-        </tr>
-        <tr>
-          <td align="right"><@display text="${uiLabelMap.OpentapsConfirmPassword}&nbsp;" class="tabletext"/></td>
-          <td align="left"><input type="password" name="newPasswordVerify" value="" size="20" class="inputBox"/></td>
-        </tr>
-        <tr>
-          <td colspan="2" align="center">
-            <input type="submit" value="${uiLabelMap.PartyChangePassword}" class="loginButton"/>
-          </td>
-        </tr>
-      </table>
-    </form>
-    </@frameSection>
-</div>
-
-<script language="JavaScript" type="text/javascript">
-  document.loginform.PASSWORD.focus();
-</script>
-
-</div>
+	<head>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	</head>
+	<body class="bodyLogin">
+		<#assign username = requestParameters.USERNAME?default((sessionAttributes.autoUserLogin.userLoginId)?default(""))>
+		<div class="container text-center">
+	      	<div class="card">
+			  <div class="card-body">
+			    <div id="logo" class="mb-2">
+			    	<img id="logo_inicio" src="<@ofbizContentUrl>${configProperties.get("opentaps.logoLogin")}</@ofbizContentUrl>" align="center"/>
+			    </div>
+			    <@frameSection title="${uiLabelMap.CommonPasswordChange}" style="width: auto;" innerStyle="text-align: center;">
+				    <form method="post" action="<@ofbizUrl>login</@ofbizUrl>" name="loginform">
+				      <input type="hidden" name="requirePasswordChange" value="Y"/>
+				      <input type="hidden" name="USERNAME" value="${username}"/>
+				      <table cellspacing="0">
+				        <tr>
+				          <td align="right"><@display text="${uiLabelMap.CommonCurrentPassword}&nbsp;" class="tabletext"/></td>
+				          <td align="left"><input type="password" class="form-control my-2" name="PASSWORD" value="" size="20" class="inputBox"/></td>
+				        </tr>
+				        <tr>
+				          <td align="right"><@display text="${uiLabelMap.CommonNewPassword}&nbsp;" class="tabletext"/></td>
+				          <td align="left"><input type="password" class="form-control mb-2" name="newPassword" value="" size="20" class="inputBox"/></td>
+				        </tr>
+				        <tr>
+				          <td align="right"><@display text="${uiLabelMap.OpentapsConfirmPassword}&nbsp;" class="tabletext"/></td>
+				          <td align="left"><input type="password" class="form-control mb-2" name="newPasswordVerify" value="" size="20" class="inputBox"/></td>
+				        </tr>
+				        <tr>
+				          <td colspan="2" align="center">
+				            <input type="submit" class="btn btn-primary mt-4" value="${uiLabelMap.PartyChangePassword}" class="loginButton"/>
+				          </td>
+				        </tr>
+				      </table>
+				    </form>
+				</@frameSection>
+			  </div	>
+			</div>
+			<script language="JavaScript" type="text/javascript">
+			  document.loginform.PASSWORD.focus();
+			</script>
+	</body>

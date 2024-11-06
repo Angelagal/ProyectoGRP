@@ -650,7 +650,7 @@ a.offlnk {
 	font-weight: 700;
 	color: #FFF;
 	width: 100%;
-	background: #000;
+	background:#235B4E;
 	padding: 2px;
 }
 
@@ -1090,12 +1090,7 @@ DIV.col-right {
 	padding: 0;
 }
 
-DIV.contentarea {
-	background-color: #FFF;
-	margin-top: 10px;
-	min-height: 500px;
-	_height: 500px;
-}
+
 
 DIV.endcolumns {
 	clear: both;
@@ -4182,12 +4177,11 @@ td.x-date-mp-sep {
 }
 
 .x-panel-header {
-	color: #333;
+	color: #FFFFFF;
 	font: bold 11px tahoma, arial, verdana, sans-serif;
 	border: 1px solid #d0d0d0;
 	line-height: 15px;
-	background: transparent
-		url(/opentaps_images/gray/panel/white-top-bottom.gif) repeat-x 0 -1px;
+	background-color: #235B4E;
 	overflow: hidden;
 	zoom: 1px;
 	padding: 5px 3px 4px 5px;
@@ -4212,10 +4206,10 @@ td.x-date-mp-sep {
 }
 
 .x-panel-tl .x-panel-header {
-	color: #333;
-	font: bold 11px tahoma, arial, verdana, sans-serif;
+	color: white;
+	font: bold 14px tahoma, arial, verdana, sans-serif;
 	border: 0 none;
-	background: transparent;
+	background: #235B4E;
 	padding: 5px 0 4px;
 }
 
@@ -4238,28 +4232,26 @@ td.x-date-mp-sep {
 }
 
 .x-panel-tc {
-	background: transparent url(/opentaps_images/gray/panel/top-bottom.gif)
-		repeat-x 0 0;
-	overflow: hidden;
+    background-color: #235B4E
+	; /* Color de fondo deseado */
+    overflow: hidden; /* Mantiene el comportamiento de desbordamiento */
 }
+
 
 .ext-strict .ext-ie7 .x-panel-tc {
 	overflow: visible;
 }
 
 .x-panel-tl {
-	background: transparent
-		url(/opentaps_images/gray/panel/corners-sprite.gif) no-repeat 0 0;
+	background-color:#235B4E;
 	padding-left: 6px;
 	zoom: 1px;
 	border-bottom: 0 none !important;
 }
 
-.x-panel-tr {
-	background: transparent
-		url(/opentaps_images/gray/panel/corners-sprite.gif) no-repeat right 0;
-	zoom: 1px;
-	padding-right: 6px;
+.x-panel-tr :hover {
+	background-color:#10312B	;
+	
 }
 
 .x-panel-bc {
@@ -5091,7 +5083,7 @@ ul.ofbizErrorMessagesList {
 }
 
 ul.sectionTabBar a {
-	color: #444;
+	color: white;
 	text-decoration: none;
 	padding-left: 2px;
 	padding-right: 2px;
@@ -5112,7 +5104,7 @@ ul.sectionTabBar li {
 }
 
 div.sectionTabBorder {
-	height: 0.5em;
+	height: 0.0em;
 	clear: left;
 	margin: 0;
 }
@@ -5527,6 +5519,7 @@ ul.shortcuts {
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	font-size: 10pt !important;
 }
 
 ul.shortcuts li {
@@ -6189,8 +6182,8 @@ table.shortcutHelp td.shortcutKey {
 	font-size: 8pt;
 	font-weight: 700;
 	text-decoration: none;
-	color: #FFF;
-	background-color: #235B4E;
+	color: #FFFFFF;
+	background-color:#235B4E;
 	margin: 0;
 }
 
@@ -6609,7 +6602,7 @@ A.buttontextbig:hover,.smallSubmit:active,.smallSubmit:hover,.mediumSubmit:activ
 
 a.headersmalllink:hover,a.offlnk:hover,ul.sectionTabBar a:hover,.orderByHeaderLink:hover,.calendar_date_select td.weekend div
 	{
-	color: red;
+	color: white;
 }
 
 .viewOneTR2,.viewManyTR1 {

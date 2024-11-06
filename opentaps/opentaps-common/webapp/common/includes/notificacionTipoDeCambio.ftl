@@ -37,21 +37,7 @@
 						}
 					</style>
 							
-					<table cellpadding="0" cellspacing="0" border="0" width="100%">
-					  <tbody>
-					    <tr>
-					      <td>
-					        <ul class="numRequisicion">
-					        <li><span class="navTitleRequisicion">${uiLabelMap.OpentapsTipoDeCambioPendiente}:</span></li>					              
-						            
-						            <#assign text = contador/>
-						            <li><a href="<@ofbizUrl>exchangeRates</@ofbizUrl>" title="">Clic aqui</a></li>
-						            							          		      			      
-					        </ul>
-					      </td>
-					    </tr>
-					  </tbody>
-					</table>
+					
 				</#if>
 			</#if>	
 		</#if>

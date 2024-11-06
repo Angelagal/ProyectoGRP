@@ -62,8 +62,8 @@
       <#assign bgcolor = StringUtil.wrapString(Static["org.opentaps.common.util.UtilConfig"].getSectionBgColor(opentapsApplicationName, sectionName))/>
       <#assign fgcolor = StringUtil.wrapString(Static["org.opentaps.common.util.UtilConfig"].getSectionFgColor(opentapsApplicationName, sectionName))/>
       <style type="text/css">
-		h1, h2, .gwt-screenlet-header, .sectionHeader, .subSectionHeader, .subSectionTitle, .formSectionHeader, .formSectionHeaderTitle, .screenlet-header, .boxhead, .boxtop, div.boxtop, .toggleButtonDisabled, .tundra .dijitDialogTitleBar, .shortcutGroup td, .screenlet-title-bar {color: ${fgcolor}; }
-		.screenlet-header .boxhead, .subSectionHeader .subSectionTitle, .boxtop .boxhead { background:transparent;}
+		h1, h2, .gwt-screenlet-header, .sectionHeader, .subSectionHeader, .subSectionTitle, .formSectionHeader, .formSectionHeaderTitle, .screenlet-header, .boxhead, .boxtop, div.boxtop, .toggleButtonDisabled, .tundra .dijitDialogTitleBar, .shortcutGroup td, .screenlet-title-bar {color: #235B4E}
+		.screenlet-header .boxhead, .subSectionHeader .subSectionTitle, .boxtop .boxhead { background:#235B4E;}
 		div.sectionTabBorder, ul.sectionTabBar li.sectionTabButtonSelected a {color: ${fgcolor};}
 		div.sectionTabBorder {background: ${bgcolor} !important;}
 		.x-panel-tl, .x-panel-tr, .titleBar .x-panel-br, .titleBar .x-panel-bl { background-color:#235B4E !important; }
@@ -71,8 +71,9 @@
 		.x-panel-tl .x-panel-header, .frameSectionHeader .pageNumber {color: ${fgcolor} !important; }
 		.x-panel-noborder .x-panel-header-noborder { border:none !important; }
 		ul.sectionTabBar li.sectionTabButtonUnselected .x-panel-tl,
-		ul.sectionTabBar li.sectionTabButtonUnselected .x-panel-tr { background-image:url(/opentaps_images/panels/corners-sprite-bw.gif) !important; }
-		ul.sectionTabBar li.sectionTabButtonUnselected .x-panel-tc { background-image:url(/opentaps_images/panels/top-bottom-bw.gif) !important; }
+		ul.sectionTabBar li.sectionTabButtonUnselected .x-panel-tr { background-color:#235B4E }
+		ul.sectionTabBar li.sectionTabButtonUnselected .x-panel-tc { background-color: #235B4E
+}
       </style>
 
       <script type="text/javascript">

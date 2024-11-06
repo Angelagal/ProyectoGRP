@@ -42,6 +42,8 @@
  *@version    $Rev: 314 $
  *@since      2.1
 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		
 <#assign previousParams = sessionAttributes._PREVIOUS_PARAMS_?if_exists/>
 <#if previousParams?has_content>
   <#assign previousParams = "?" + previousParams/>
@@ -55,55 +57,84 @@
 </#if>
 
 <style type="text/css">
+  
+  .bodyLogin {
+			font-family: Helvetica;
+		    background: url("/images/FondoAntenas4K.jpg") !important;
+		    background-position: center center !important;
+		    background-repeat: no-repeat !important;
+		    background-size: cover !important;
+		    background-attachment: fixed !important;
+		    background-color: #929495 !important;
+		    background-blend-mode: overlay !important;
+		}
+    .container{
+        display:flex;
+		    flex-wrap: wrap !important;
+		    flex-direction: column !important;
+		    align-items: center !important;
+		    justify-content: center !important;
+		    
+		    
+		    
+    }
+    div.form{
+  	    width: 35% !important;
+		    height: auto !important;
+		    padding: 3em !important;
+		    border: #f0f4f8 1px solid !important;
+		    border-radius: 8px !important;
+		    background-color: #f0f4f8 !important;
+		    margin-top: 8% !important;
+		    align-items: center !important;
+		    justify-content: center !important;
+        margin-left:34%;
+
+    }
+    #logo_inicio{
+			width: 200px;
+			height: 200px;
+      margin-bottom:20px;
+		}
+
+    .tabletext{
+      font-size:14px;
+      font-family:sans-serif;
+
+    }
+
+.loginButton{
+background: #206c4a !important;
+			padding: 4px 12px !important;
+}
+
+
 <#assign fgcolor = "#FFFFFF"/>
 <#assign bgcolor = "#942839"/>
-.x-panel-tl, .x-panel-tr, .titleBar .x-panel-br, .titleBar .x-panel-bl { background-image:url(/opentaps_images/panels/corners-sprite-${bgcolor?replace("#", "")}.gif) !important; }
-.x-panel-tc, .titleBar .x-panel-bc { background-image:url(/opentaps_images/panels/top-bottom-${bgcolor?replace("#", "")}.gif) !important; }
-.x-panel-tl .x-panel-header, .frameSectionHeader .pageNumber {color: ${fgcolor} !important; }
-.x-panel-noborder .x-panel-header-noborder { border:none !important; }
-<#-- center the section titles -->
-.x-panel-header {float:none !important;}
 
-.gray-panel-header {
-    background: gray;
-    color: white;
-    font:bold 11px tahoma,arial,verdana,sans-serif;
-    padding:5px 2px 4px 20px;
-    border:1px gray;
-    line-height:15px;
-}
 
-.rss-frame-section {
-    width: 100%; 
-    margin-left: auto; 
-    margin-right: auto;
-    margin-top: 20px;
-}
 
-.rss-tabletext {
-font-size: 10px;
-text-decoration: none;
-font-family: Verdana, Arial, Helvetica, sans-serif;
-}
 
-.rss-frame-section-body
-{
-background-color:#FFFFFF;
-padding:4px;
-border: 1px solid #999999;
-}
+
 
 </style>
+
+<body class="bodyLogin">
+  <div class="container">
 <@import location="component://opentaps-common/webapp/common/includes/lib/opentapsFormMacros.ftl"/>
 
 <#assign greetingLabel = opentapsApplicationName?default("opentaps")?cap_first + "LoginGreeting"/>
 <#include "keyboard-shortcuts.ftl"/>
-<div class="form" style="padding-top: 125px; padding-bottom: 125px;">
-
+<div class="form">
+  
   <div align="center">
+       <div id="logo">
+				    	<img id="logo_inicio" src="<@ofbizContentUrl>${configProperties.get("opentaps.logoLogin")}</@ofbizContentUrl>" align="center"/>
+	     </div>
     <@frameSection title="${uiLabelMap.get(greetingLabel)}" style="width: 300px; margin-left: auto; margin-right: auto;text-align: center;" innerStyle="text-align: center;">
-        <form method="post" action="<@ofbizUrl>login${previousParams?if_exists}</@ofbizUrl>" name="loginform" style="margin: 0;">
-          <table width="100%" border="0" cellpadding="0" cellspacing="2">
+        
+        <form method="post" action="<@ofbizUrl>login${previousParams?if_exists}</@ofbizUrl>" name="loginform" class="form" style="margin: 0;">
+          <table width="50%" border="0" cellpadding="0" cellspacing="2">
             <tr>
               <td align="right">
                 <span class="tabletext">${uiLabelMap.CommonUsername}&nbsp;</span>
@@ -118,6 +149,8 @@ border: 1px solid #999999;
               </td>
               <td align="left">
                 <input type="password" class="inputBox" name="PASSWORD" value="" size="20"/>
+
+               
               </td>
             </tr>
             <tr>
@@ -129,7 +162,7 @@ border: 1px solid #999999;
         </form>
     </@frameSection>
   </div>
-
+<#--
   <div align="center">
     <@frameSection title="${uiLabelMap.CommonForgotYourPassword}?" style="width: 300px; margin-left: auto; margin-right: auto; margin-top: 20px;" innerStyle="text-align: center;">
         <form method="post" action="<@ofbizUrl>forgotpassword${previousParams}</@ofbizUrl>" name="forgotpassword" style="margin: 0;">
@@ -138,6 +171,7 @@ border: 1px solid #999999;
         </form>
     </@frameSection>
   </div>
+  -->
 
   <script type="text/javascript">
   /*<![CDATA[*/
@@ -149,4 +183,6 @@ border: 1px solid #999999;
   /*]]>*/
   </script>
 </div>
+  </div>
+</body>
 <!-- <@include location="component://opentaps-common/webapp/common/includes/latestnews.ftl"/> -->

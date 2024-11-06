@@ -164,11 +164,15 @@ under the License.
         <field name="partyId"><hidden value="${partyId}"/></field>
         <field name="userLoginId"><hidden/></field>
         <field name="groupId" title="${uiLabelMap.CommonGroup}">
+            
             <drop-down allow-empty="false">
+                              />
                 <entity-options entity-name="SecurityGroup" description="${groupId} ${description}">
                     <entity-order-by field-name="groupId"/>
                 </entity-options>
+             
             </drop-down>
+          
         </field>
         <field name="submitButton" title="${uiLabelMap.CommonAdd}"><submit button-type="button"/></field>
     </form>

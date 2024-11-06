@@ -93,6 +93,7 @@ font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
 body {
+    
 font-size: 70%;
 position: relative;
 line-height: 1;
@@ -121,15 +122,17 @@ padding: 0.1em 0 0.1em 0;
 
 input[type="submit"], input[type="button"],
 input[type="reset"] {
-background:transparent url(/opentaps_images/gray/panel/top-bottom.gif) repeat-x 0;
-border: #999999 solid 0.1em;
-color: #000000;
-font-size: 1em;
-font-weight: bold;
+    background: #235B4E;
+    border: #999999 solid 0.1em;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 11px;
 }
 
 input[type="submit"]:hover {
-color: #ff0000;
+background:#10312B;
 cursor: pointer;
 text-decoration: underline;
 }
@@ -709,11 +712,7 @@ float: right;
 width: auto;
 }
 
-DIV.contentarea {
-background-color: #FFFFFF;
-border: solid #000000 0.1em;
-margin: 1em;
-}
+
 
 DIV.endcolumns {
 /* deprecated - use .clear */
@@ -998,8 +997,16 @@ margin: 1em;
 /* ================================================== */
 
 #main-navigation {
-overflow:hidden;zoom:1;color:#333;font:bold 11px tahoma,arial,verdana,sans-serif;padding:5px 3px 4px 5px;border:1px solid #d0d0d0;line-height:15px;background:transparent url(/opentaps_images/gray/panel/white-top-bottom.gif) repeat-x 0 -1px;
+    overflow: hidden;
+    zoom: 1;
+    color: #333;
+    font: bold 11px Tahoma, Arial, Verdana, sans-serif;
+    padding: 5px 3px 4px 5px;
+    line-height: 15px;
+    background-color: #10312B; /* Color deseado */
+    border: none; /* Sin borde */
 }
+
 
 #main-navigation ul {
 display: inline; /* IE Fix */
@@ -1012,8 +1019,12 @@ border-left: black;
 }
 
 #main-navigation ul a {
-background:transparent url(/opentaps_images/gray/panel/top-bottom.gif) repeat-x 0 0;overflow:hidden;padding:5px 3px 4px 5px;
+    background-color: #10312B; /* Color deseado */
+    overflow: hidden;
+    padding: 5px 3px 4px 5px;
 }
+
+/* aquiii */
 
 #main-navigation ul .disabled {
 /* disabled tab */
@@ -1136,7 +1147,7 @@ background-color: #235B4E;
 background-repeat: repeat-x;
 color: #ffffff;
 height: 1%; /* IE fix */
-min-height: 1.5em;
+min-height: 3em;
 }
 
 .screenlet-title-bar .h1,
