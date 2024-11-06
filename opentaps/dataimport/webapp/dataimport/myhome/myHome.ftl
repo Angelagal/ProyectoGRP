@@ -58,6 +58,7 @@
                  reportHref="setupReport?reportId=SUPPL_IMP&amp;sectionName=myHome"
                  reportLabel=uiLabelMap.OpentapsReport/>
   </tr>
+  <!--
   <tr>
     <@importForm importService="importProducts"
                  sectionLabel="DataImportImportProducts"
@@ -67,6 +68,8 @@
                  reportHref="setupReport?reportId=PROD_IMP&amp;sectionName=myHome"
                  reportLabel=uiLabelMap.OpentapsReport/>
   </tr>
+  -->
+  <!--
   <tr>
     <@importForm importService="importProductInventory"
                  sectionLabel="DataImportImportInventory"
@@ -76,6 +79,7 @@
                  reportHref="setupReport?reportId=INVENT_IMP&amp;sectionName=myHome"
                  reportLabel=uiLabelMap.OpentapsReport/>
   </tr>
+  -->
   <tr>
     <@importForm importService="importGlAccounts"
                  sectionLabel="DataImportImportGlAccounts"
@@ -204,6 +208,7 @@
                  reportHref="setupReport?reportId=SALDO_INICIAL_AUX&amp;sectionName=myHome"                 
                  reportLabel=uiLabelMap.OpentapsReport/>
   </tr> 
+  <!--
   <tr>
   <@importForm importService="importUser"
                  sectionLabel="DataImportUser"
@@ -213,6 +218,7 @@
                  reportHref="setupReport?reportId=USUARIOS&amp;sectionName=myHome"
                  reportLabel=uiLabelMap.OpentapsReport/>
   </tr> 
+  -->
   <!--<tr>
   <@importForm importService="importAfectacionEgreso"
                  sectionLabel="DataImportAfectacionEgreso"
@@ -222,6 +228,7 @@
                  reportHref="setupReport?reportId=AFECTACION_EGRESO&amp;sectionName=myHome"
                  reportLabel=uiLabelMap.OpentapsReport/>
   </tr>-->
+  <!--
   <tr>
   <@importForm   importService="importFixedAsset"
                  sectionLabel="DataImportFixedAsset"
@@ -231,6 +238,8 @@
                  reportHref="setupReport?reportId=ACTIVOFIJO&amp;sectionName=myHome"
                  reportLabel=uiLabelMap.OpentapsReport/>
   </tr>
+  -->
+  <!--
   <tr>
   <@importForm   importService="importLevantaActFijo"
                  sectionLabel="DataImportLevantaFixedAsset"
@@ -240,6 +249,7 @@
                  reportHref="setupReport?reportId=ACTIVOFIJO&amp;sectionName=myHome"
                  reportLabel=uiLabelMap.OpentapsReport/>
   </tr>
+  -->
   <tr>
   <@importForm   importService="importValidacionPresupuestal"
                  sectionLabel="DataImportValidacionPresupuestal"
@@ -313,6 +323,7 @@
     <td>&nbsp;</td>
     <@displayLinkCell href="setupReport?reportId=REC_ING&amp;sectionName=myHome" text=uiLabelMap.OpentapsReport class="buttontext" />
   </tr> 
+  <!--
   <tr>
   <@importForm importService="importRequisicion"
                  sectionLabel="DataImportDetalleRequisicion"
@@ -322,6 +333,7 @@
                  reportHref="setupReport?reportId=REQUISICION&amp;sectionName=myHome"
                  reportLabel=uiLabelMap.OpentapsReport/>
   </tr> 
+  -->
   <tr>
   <@importForm importService="importCompensada"
                  sectionLabel="DataImportAfectacionCompensada"
@@ -332,6 +344,7 @@
                  reportLabel=uiLabelMap.OpentapsReport/>
   </tr>
   <tr>
+  <!--
   <@importForm importService="importHistorialBienes"
                  sectionLabel="DataImportHistorialBienes"
                  label=uiLabelMap.DataImportHistorialBienes
@@ -340,6 +353,7 @@
                  reportHref="setupReport?reportId=HISTORIALBIENES&amp;sectionName=myHome"
                  reportLabel=uiLabelMap.OpentapsReport/>
   </tr> 
+  -->
   <tr>
   <@importForm importService="importPagoExterno"
                  sectionLabel="DataImportPagoExterno"
