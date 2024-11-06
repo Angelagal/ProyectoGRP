@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry exported="true" kind="con" path="GROOVY_SUPPORT"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 7 [1.7.0_79]"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="applications/content/lib/lucene-core-2.4.1.jar"/>
 	<classpathentry kind="lib" path="framework/base/lib/ant-1.7.1.jar"/>
 	<classpathentry kind="lib" path="framework/base/lib/ant-junit-1.7.1.jar"/>
