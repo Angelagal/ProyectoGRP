@@ -48,10 +48,10 @@ public class ConsultarMomentos {
 		Delegator delegator = ac.getDelegator();
 		List<Map<String, Object>> tiposClave = new FastList<Map<String, Object>>();
 		Map<String, Object> tipos = new HashMap<String, Object>();
-		tipos.put("id", "Ingreso");
+		tipos.put("id", "INGRESO");
 		tiposClave.add(tipos);
 		tipos = new HashMap<String, Object>();
-		tipos.put("id", "Egreso");
+		tipos.put("id", "EGRESO");
 		tiposClave.add(tipos);
 		ac.put("tiposClave", tiposClave);
 		
