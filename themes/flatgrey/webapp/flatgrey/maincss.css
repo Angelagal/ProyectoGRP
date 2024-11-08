@@ -1095,8 +1095,8 @@ display: inline; /* IE Fix */
 }
 
 #app-navigation ul li ul li {
-background:transparent url(/opentaps_images/gray/panel/top-bottom.gif);
-background-repeat: repeat-x;
+background-color:#235B4E;
+
 border-right: 0.1em solid #999999;
 border-top: 0.1em solid #999999;
 float: left;
@@ -1116,10 +1116,9 @@ color: #D4D0C8;
 }
 
 #app-navigation ul a {
-border-bottom: 0.05em solid #ffffff;
-color: #515151;
+color: #ffffff;
 display: block;
-font-size: 1em;
+font-size: 16px;
 padding: 0 1em 0 1em;
 }
 
@@ -1131,10 +1130,10 @@ color: #ffffff;
 }
 
 #app-navigation ul a:hover {
-background-color: #235B4E;	
+background-color: #10312B !important;	
 background-repeat: repeat-x;
-border-bottom: 0.05em solid #2626c1;
 text-decoration: none;
+
 color: #ffffff;
 }
 
