@@ -114,13 +114,10 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 			<meta name="viewport" content="width=device-witdh, initial-scale=1.0"/>
 			 <#-- TODO: find the way to import CSS from css component folder For now we are getting CSS from the opentaps_css directory inside opentaps-common. -->
-		    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />-->
-	            <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
-		    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
-		    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">-->
-			<!---Repositorio local --->
-			<link rel="stylesheet" href="/opentaps_images/resources/bootstrap/bootstrap.min.css">
-			<link rel="stylesheet" href="/opentaps_images/resources/fonts/font-awesome.css">		
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 		</head>
 		<body class="bodyLogin">
 		      <div class="container text-center">
@@ -192,9 +189,9 @@
 					  		<label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
 							  <div class="input-group mb-2 mr-sm-2">
 							    <div class="input-group-prepend">
-							    	<div class="input-group-text key-icon">						
-									<img src="/opentaps_images/incUser.png" width="45px" heigth="45px">
-  								</div>
+							      <div class="input-group-text user-icon">
+							      	<i class="fa fa-user my-1"></i>
+							      </div>
 							    </div>
 							    <input class="form-control" type="text" id="username" placeholder="Nombre de usuario" name="USERNAME" size="50"/>
 							  </div>
@@ -206,7 +203,7 @@
 							  <div class="input-group mb-2 mr-sm-2">
 							    <div class="input-group-prepend">
 							      <div class="input-group-text key-icon">
-							      	<img src="/opentaps_images/key.png" width="45px" heigth="45px">
+							      	<i class="material-symbols-outlined">key</i>
 							      </div>
 							    </div>
 							    <input class="form-control" type="password" id="password" placeholder="Password" name="PASSWORD" size="50"/>
@@ -215,10 +212,8 @@
 					  </div>
 					  <div class="row">
 					  	<div class="col-12 mt-4">
-					  		<button style="background-color:#155E29; color:white; border:none; padding: 10px 20px; border-radius: 2px;" type="submit">
-						  		${uiLabelMap.CommonLogin} 
-
-                                                               <img src="/opentaps_images/sign.png" width="45px" heigth="45px">
+					  		<button class="btn btn-primary" type="submit">
+						  		${uiLabelMap.CommonLogin} <i class="fa fa-sign-in" aria-hidden="true"></i>
 					  		</button>
 					  	</div>
 					  </div>
