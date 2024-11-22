@@ -143,6 +143,7 @@
 					      <#if !errorMessageList?has_content>
 					        <#assign errorMessageList = requestAttributes._ERROR_MESSAGE_LIST_?if_exists/>
 					      </#if>
+						  
 					      <#if !eventMessage?has_content>
 					        <#assign eventMessage = requestAttributes._EVENT_MESSAGE_?if_exists/>
 					      </#if>
@@ -150,10 +151,11 @@
 					        <#assign eventMessageList = requestAttributes._EVENT_MESSAGE_LIST_?if_exists/>
 					      </#if>
 					
-					      <#-- display the error messages -->
+					      <#-- display the error messages Este error -->
 					      <#if (errorMessage?has_content || errorMessageList?has_content)>
 					        <div id="errorDiv" class="serviceError alert alert-danger">
 					          <p>${uiLabelMap.CommonFollowingErrorsOccurred}:</p>
+							  
 					          <#if errorMessage?has_content && errorMessage != "null">
 					            <p>${errorMessage}</p>
 					          </#if>
@@ -168,9 +170,14 @@
 					      </#if>
 			
 					      <#-- display the event messages -->
+						  
+						
 					      <#if (eventMessage?has_content || eventMessageList?has_content)>
-					        <div id="errorDiv" class="serviceError alert alert-danger">
-					          <p>${uiLabelMap.CommonFollowingOccurred}:</p>
+					        
+							<div id="errorDivv" class="serviceError alert alert-danger" style="background-color:#87b89d !important; border-color:#235B4E !important;">
+							
+					          <p style= "color:black; !important">${uiLabelMap.CommonFollowingOccurred}</p>
+							
 					          <#if eventMessage?has_content && eventMessage != "null">
 					            <p>${eventMessage}</p>
 					          </#if>

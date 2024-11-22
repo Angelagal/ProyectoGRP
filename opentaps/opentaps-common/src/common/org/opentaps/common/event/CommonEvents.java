@@ -17,6 +17,8 @@
 package org.opentaps.common.event;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -82,7 +84,6 @@ import org.opentaps.common.util.UtilMessage;
 public final class CommonEvents {
 
     private CommonEvents() { }
-
     private static final String MODULE = CommonEvents.class.getName();
 
     /**
@@ -481,7 +482,7 @@ public final class CommonEvents {
 
     /**
      * The forgot password event handler which is common in all applications.
-     *
+     * 
      * @param request a <code>HttpServletRequest</code> value
      * @param response a <code>HttpServletResponse</code> value
      * @return a <code>String</code> value
@@ -568,18 +569,23 @@ public final class CommonEvents {
             request.setAttribute("_ERROR_MESSAGE_", errMsg);
             return "error";
         }
-
+        
         // construct the body
-        StringBuffer body = new StringBuffer(subject + userLoginId + "\n\n");
+        StringBuffer body = new StringBuffer("<span style='color: black;'>" + subject + userLoginId + "</span>" + "\n\n");
+        
         if (useEncryption) {
-            body.append("Se ha generado una nueva contrase\u00f1a: ").append(passwordToSend).append("\n\n");
+            body.append("<p style='color: black; margin-bottom: 35px'>A continuación, puede encontrar su contraseña temporal para iniciar sesión en el sistema de Gestión de Recursos de Planificación (GRP) de la Financiera para el Bienestar:</p><hr>");
+            body.append("<h2 style='text-align: center; margin: 30px 0px'>").append(passwordToSend).append("</h2><hr>");
+            body.append("<p style='color: black; margin-top: 35px'>Gracias,\nSu equipo de Centros de Cómputo y Equipamiento Informático</p>");
         } else {
             body.append("Su contrase\u00f1a es: ").append(passwordToSend).append("\n\n");
         }
-        body.append("Cuando ingrese al sistema, favor de cambiar su contrase\u00f1a.\n");
+
+        String boton = "<div action='https://localhost/control/main' style='text-align: center;'><button type='submit' style='margin-top: 20px; padding:15px 40px; background: #155E29; color: white; border: 1px solid #155E29; border-radius: 2px;'><a href='https://localhost/control/main' style='text-decoration: none; color:white;'>INICIE SESIÓN EN SU CUENTA</a></button></div>";
+        body.append(boton);
 
         // send the email
-        Map<String, Object> input = UtilMisc.<String, Object>toMap("subject", subject + userLoginId, "sendFrom", sendFrom, "contentType", "text/plain");
+        Map<String, Object> input = UtilMisc.<String, Object>toMap("subject", subject + userLoginId, "sendFrom", sendFrom, "contentType", "text/html");
         input.put("sendTo", emails.toString());
         input.put("body", body.toString());
 
