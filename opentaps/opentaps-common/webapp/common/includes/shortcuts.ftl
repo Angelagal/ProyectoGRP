@@ -26,7 +26,7 @@
             <li class="disabled"><div>${uiLabelMap.get(shortcut.uiLabel!)}</div></li>
           <#else>
           	<#if shortcut.linkUrl != "reportsLeyIng" && shortcut.linkUrl != "reportsAnaliticos" && shortcut.linkUrl != "reportsCuentasAux" && shortcut.linkUrl != "reportsFirma"
-          		 && shortcut.linkUrl != "reportesLDF" && shortcut.linkUrl != "ContabilidadElec" && shortcut.linkUrl != "MuestraReportes">
+          		 && shortcut.linkUrl != "reportesLDF" && shortcut.linkUrl != "ContabilidadElec" && shortcut.linkUrl != "MuestraReportes" && shortcut.uiLabel != "ConfiguraReporteXML" && shortcut.uiLabel != "FinancialsFirmantes">
 	            <#assign shortcutClass = (parameters.thisRequestUri?default("") == shortcut.linkUrl!)?string("class=\"selected\"", "")/>
 	            <li><a href="<@ofbizUrl>${shortcut.linkUrl}</@ofbizUrl>" ${shortcutClass}>${uiLabelMap.get(shortcut.uiLabel!)}</a></li>
 			</#if>
