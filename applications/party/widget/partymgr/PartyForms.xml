@@ -24,7 +24,7 @@ under the License.
     <form name="EditPerson" type="single" target="updatePerson" default-map-name="personInfo"
         focus-field-name="salutation" header-row-style="header-row" default-table-style="basic-table">
         <alt-target use-when="personInfo==null" target="createPerson"/>
-        <auto-fields-service service-name="updatePerson"/>
+<!--        <auto-fields-service service-name="updatePerson"/>-->
         <field use-when="personInfo!=null" name="partyId" title="${uiLabelMap.PartyIdPerson}" tooltip="${uiLabelMap.CommonNotModifRecreat}"><display/></field>
 <!--         <field use-when="personInfo==null&amp;&amp;partyId==null" name="partyId" title="${uiLabelMap.PartyPartyId}"><ignored/></field> -->
 		<field use-when="personInfo==null" name="partyId" title="${uiLabelMap.PartyIdPerson}"><text size="20" maxlength="20"/></field>
