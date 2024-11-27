@@ -4223,9 +4223,10 @@ Element.addMethods();
 function validaFormatoNumero(numero)  {
 	var expresion = new RegExp("^\\-?[0-9]*\\.?[0-9]+$");
     var res = expresion.test(numero.value);
-    if(!res){
+    if(!res|| res == null || res >= 1){
     	numero.value='0';
-    	numero.focus();
-    	alert("N\u00FAmero no v\u00E1lido.");
+    	
     }
 };
+
+

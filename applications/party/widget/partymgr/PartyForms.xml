@@ -27,16 +27,20 @@ under the License.
 <!--        <auto-fields-service service-name="updatePerson"/>-->
         <field use-when="personInfo!=null" name="partyId" title="${uiLabelMap.PartyIdPerson}" tooltip="${uiLabelMap.CommonNotModifRecreat}"><display/></field>
 <!--         <field use-when="personInfo==null&amp;&amp;partyId==null" name="partyId" title="${uiLabelMap.PartyPartyId}"><ignored/></field> -->
-		<field use-when="personInfo==null" name="partyId" title="${uiLabelMap.PartyIdPerson}"><text size="20" maxlength="20"/></field>
+		<field use-when="personInfo==null" name="partyId" title="Código RUSP"><text size="20" maxlength="20"/></field>
         <field use-when="personInfo==null&amp;&amp;partyId!=null" name="partyId" title="${uiLabelMap.PartyPartyId}" tooltip="${uiLabelMap.CommonCannotBeFound}: [${partyId}]"><display also-hidden="false"/></field>
         <field name="firstName" title="${uiLabelMap.PartyFirstName}" tooltip="${uiLabelMap.CommonRequired}" widget-style="required"><text size="40" maxlength="60"/></field>
         <field name="lastName" title="${uiLabelMap.PartyLastName}" tooltip="${uiLabelMap.CommonRequired}" widget-style="required"><text size="40" maxlength="60"/></field>
+        <!-- 
         <field name="gender">
             <drop-down allow-empty="true">
                 <option key="M" description="${uiLabelMap.CommonMale}"/>
                 <option key="F" description="${uiLabelMap.CommonFemale}"/>
             </drop-down>
         </field>
+        -->
+        
+        <!-- 
         <field name="maritalStatus">
             <drop-down allow-empty="true">
                 <option key="S" description="${uiLabelMap.PartyMaritalStatusSingle}"/>
@@ -46,6 +50,9 @@ under the License.
                 <option key="W" description="${uiLabelMap.PartyMaritalStatusWidowed}"/>
             </drop-down>
         </field>
+        -->
+
+        <!-- 
         <field name="employmentStatusEnumId">
             <drop-down allow-empty="true">
                 <entity-options entity-name="Enumeration" key-field-name="enumId" description="${description} [${enumCode}]">
@@ -54,6 +61,8 @@ under the License.
                 </entity-options>
             </drop-down>
         </field>
+         -->
+        <!-- 
         <field name="residenceStatusEnumId">
             <drop-down allow-empty="true">
                 <entity-options entity-name="Enumeration" key-field-name="enumId" description="${description} [${enumCode}]">
@@ -62,10 +71,14 @@ under the License.
                 </entity-options>
             </drop-down>
         </field>
+        -->
+        <!-- 
         <field name="existingCustomer">
             <drop-down allow-empty="true"><option key="Y" description="${uiLabelMap.CommonY}"/><option key="N" description="${uiLabelMap.CommonN}"/></drop-down>
         </field>
+         -->
         <!-- CHRV 01/09/2014 Inicio: Se agrega el drop-down para escoger el area, con relacion a la clasificacion administrativa -->
+        <!-- 
         <field name="areaId">
             <drop-down allow-empty="false">
                 <entity-options entity-name="PartyAndGroup" key-field-name="partyId" description="${partyId} - ${groupName}">
@@ -76,7 +89,9 @@ under the License.
                 </entity-options>
             </drop-down>
         </field>
+        -->
         <!-- CHRV 01/09/2014 Fin: Se agrega el drop-down para escoger el area, con relacion a la clasificacion administrativa -->
+          
         <field name="preferredCurrencyUomId">
             <drop-down allow-empty="true" no-current-selected-key="${defaultOrganizationPartyCurrencyUomId}">
                 <entity-options key-field-name="uomId" description="${description} - ${abbreviation}" entity-name="Uom">
@@ -85,7 +100,9 @@ under the License.
                 </entity-options>
             </drop-down>
         </field>
+        
         <field name="statusId" use-when="person==null"><hidden/></field>
+        
         <field name="statusId" use-when="person!=null">
             <drop-down allow-empty="false">
                 <entity-options description="${description}" entity-name="StatusItem">
@@ -94,6 +111,7 @@ under the License.
                 </entity-options>
             </drop-down>
         </field>
+
         <field name="statusId" use-when="person!=null &amp;&amp; leadDescription!=null">
             <drop-down allow-empty="false">
                 <entity-options description="${description}" entity-name="StatusItem">
@@ -102,8 +120,9 @@ under the License.
                 </entity-options>
             </drop-down>
         </field>
-        <field name="saldoInicial" use-when="personInfo==null" title="${uiLabelMap.AccountingSaldoInicial}" event="onchange" action="validaFormatoNumero(this);"><text></text></field>
+                <field name="saldoInicial" use-when="personInfo==null" title="${uiLabelMap.AccountingSaldoInicial}" event="onchange" action="validaFormatoNumero(this);" value="0"><text></text></field>
         <field name="saldoInicial" use-when="personInfo!=null"><display></display></field>
+        
         <field name="ciclo"><ignored/></field>
         <field name="organizationPartyId"><hidden value="${parameters.organizationPartyId}" /></field>
         <field name="submitButton" title="${uiLabelMap.CommonSave}"><submit button-type="button"/></field>
@@ -165,7 +184,9 @@ under the License.
                 <option key="I" description="Inactivo"/>
             </drop-down>  
         </field>
-        <field name="saldoInicial" use-when="partyGroup==null" title="${uiLabelMap.AccountingSaldoInicial}" event="onchange" action="validaFormatoNumero(this);" ><text/></field>
+
+        
+        <field name="saldoInicial" use-when="partyGroup==null" title="${uiLabelMap.AccountingSaldoInicial}" event="onchange" action="validaFormatoNumero(this);" value="0"><text/></field>
         <field name="saldoInicial" use-when="partyGroup!=null"><display></display></field>
         <field name="organizationPartyId"><hidden value="${parameters.organizationPartyId}" /></field>
         <field name="submitButton" title="${uiLabelMap.CommonSave}"><submit button-type="button"/></field>
