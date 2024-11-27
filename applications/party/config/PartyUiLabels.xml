@@ -3977,7 +3977,7 @@
     <property key="PartyContactInfo">
         <value xml:lang="de">Kontaktinformation</value>
         <value xml:lang="en">Contact Info</value>
-        <value xml:lang="es">Información de contacto</value>
+        <value xml:lang="es">Código RUSP</value>
         <value xml:lang="fr">Source du contact</value>
         <value xml:lang="hi_IN">संपर्क जानकारी</value>
         <value xml:lang="it">Informazioni contatto</value>
@@ -4007,7 +4007,7 @@
         <value xml:lang="cs">Kontaktní informace</value>
         <value xml:lang="de">Kontaktinformation</value>
         <value xml:lang="en">Contact Information</value>
-        <value xml:lang="es">Información de contacto</value>
+        <value xml:lang="es">Código RUSP</value>
         <value xml:lang="fr">Coordonnées</value>
         <value xml:lang="hi_IN">सम्पर्क सूचना</value>
         <value xml:lang="it">Informazioni contatto</value>

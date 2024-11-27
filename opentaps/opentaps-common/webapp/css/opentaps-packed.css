@@ -80,7 +80,7 @@ DIV.tabletexthidden {
 }
 
 A.tabletext,DIV.tabletext,SPAN.tabletext,P.tabletext,.tabletext {
-	font-size: 10px;
+	font-size: 12px;
 	text-decoration: none;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 }
