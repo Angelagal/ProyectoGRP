@@ -602,6 +602,36 @@
         <attribute type="Integer" mode="OUT" name="importedRecords" optional="true"/>
     </service>
     
+    <service name="importMODIFO" engine="java" auth="true" use-transaction="false" transaction-timeout="43200"
+        location="org.opentaps.dataimport.domain.ImportarModifo" invoke="importMODIFO">
+        <!-- No es congruente poner tiempo de transaccion, sin embargo si no se agrega genera timeout -->
+        <description>
+            Importar MODIFO
+        </description>
+        <attribute name="organizationPartyId" type="String" mode="IN" optional="false" entity-name="PartyGroup" field-name="groupName" />
+        <attribute name="tipoClave" type="String" mode="IN" optional="false"/>
+        <attribute name="eventoContable" type="String" mode="IN" optional="false"/>
+        <attribute name="fechaContable" type="String" mode="IN" optional="false"/>
+        <attribute name="descripcion" type="String" mode="IN" optional="false"/>
+        <attribute name="tipoMovimiento" type="String" mode="IN" optional="true"/>
+        <attribute type="Integer" mode="OUT" name="importedRecords" optional="true"/>
+    </service>
+    
+    <service name="importFacturas" engine="java" auth="true" use-transaction="false" transaction-timeout="43200"
+        location="org.opentaps.dataimport.domain.ImportarFacturas" invoke="importFacturas">
+        <!-- No es congruente poner tiempo de transaccion, sin embargo si no se agrega genera timeout -->
+        <description>
+            Importar Facturas
+        </description>
+        <attribute name="organizationPartyId" type="String" mode="IN" optional="false" entity-name="PartyGroup" field-name="groupName" />
+        <attribute name="tipoClave" type="String" mode="IN" optional="false"/>
+        <attribute name="eventoContable" type="String" mode="IN" optional="false"/>
+        <attribute name="fechaContable" type="String" mode="IN" optional="false"/>
+        <attribute name="descripcion" type="String" mode="IN" optional="false"/>
+        <attribute name="tipoMovimiento" type="String" mode="IN" optional="true"/>
+        <attribute type="Integer" mode="OUT" name="importedRecords" optional="true"/>
+    </service>
+    
     <service name="importEjercidoNomina" engine="java" auth="true" use-transaction="false" transaction-timeout="43200"
         location="org.opentaps.dataimport.domain.EjercidoNominaImportService" invoke="importEjercidoNomina">
         <description>

@@ -199,7 +199,8 @@
   				reportHref="setupReport?reportId=ORDENES_COBRO&amp;sectionName=myHome"
   				reportLabel=uiLabelMap.OpentapsReport />
   </tr>
-  <tr>-->
+  -->
+  <tr>
   <@importForm importService="importSaldoInicialAuxiliar"
                  sectionLabel="DataImportSaldosInicialesAuxiliares"
                  label=uiLabelMap.DataImportSaldosInicialesAuxiliares
@@ -263,6 +264,24 @@
     <@importForm importService="importCompromisoDevengoNomina"
                  sectionLabel="DataImportImportCompDevNomina"
                  label=uiLabelMap.NominaCDP
+                 submitLabel=uiLabelMap.DataImportImport
+                 processed=compDevNomPresProcessed notProcessed=compDevNomPresNotProcessed
+                 reportHref="setupReport?reportId=COMP_DEV_NOMINA&amp;sectionName=myHome"
+                 reportLabel=uiLabelMap.OpentapsReport/>
+  </tr>
+  <tr>
+    <@importForm importService="importMODIFO"
+                 sectionLabel="DataImportMODIFO"
+                 label=uiLabelMap.DataImportMODIFO
+                 submitLabel=uiLabelMap.DataImportImport
+                 processed=compDevNomPresProcessed notProcessed=compDevNomPresNotProcessed
+                 reportHref="setupReport?reportId=COMP_DEV_NOMINA&amp;sectionName=myHome"
+                 reportLabel=uiLabelMap.OpentapsReport/>
+  </tr>
+  <tr>
+    <@importForm importService="importFacturas"
+                 sectionLabel="DataImportFacturas"
+                 label=uiLabelMap.DataImportFacturas
                  submitLabel=uiLabelMap.DataImportImport
                  processed=compDevNomPresProcessed notProcessed=compDevNomPresNotProcessed
                  reportHref="setupReport?reportId=COMP_DEV_NOMINA&amp;sectionName=myHome"
