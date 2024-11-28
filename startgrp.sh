@@ -1,6 +1,9 @@
 #!/bin/bash
 
+# Ruta del log de OfBiz
 OFBIZ_LOG="runtime/logs/console.log"
+
+# Eliminar el archivo de log anterior
 rm -f "$OFBIZ_LOG"
 
 # Ajustes de memoria
@@ -17,6 +20,10 @@ VMARGS="$MEMIF $MISC $DEBUG $GC_OPTS"
 # Configuración de biblioteca criptográfica
 VMARGS="-Xbootclasspath/p:applications/accounting/lib/cryptix.jar $VMARGS"
 
-# Ejecutar OfBiz
-java $VMARGS -jar ofbiz.jar | tee "$OFBIZ_LOG"
+# Ejecutar GRP en segundo plano con nohup
+echo "Iniciando GRP en segundo plano..."
+nohup java $VMARGS -jar ofbiz.jar > "$OFBIZ_LOG" 2>&1 &
+echo "Proceso iniciado. Revisa los logs en $OFBIZ_LOG"
 
+# Opcional: Mostrar el PID del proceso iniciado
+echo "PID del proceso: $!"
