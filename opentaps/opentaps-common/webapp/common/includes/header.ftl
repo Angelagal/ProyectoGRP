@@ -106,25 +106,7 @@
       <meta name="gwt:property" content="locale=${locale}"/>
     </#if>
 </head>
-<#--<style type="text/css">
-	#header{
-		height:60px;
-		background: linear-gradient(156deg, rgba(245, 239, 232, 1) 12%, rgba(235, 221, 205, 1) 36%, rgba(218, 182, 142, 1) 72%, rgba(214, 176, 135, 1) 98%, rgba(210, 186, 158, 1) 100%);
-		padding: 15px 32px 0;
-	}
-	
-	#logo-header {
-		text-align: right;
-		padding: 5px 15px 0px 0;
-	}
-	
-	#imagenLogin {
-		height: 65px;
-		float: right;
-		margin-right: -17px;
-		margin-top: -10px;
-	}
-	
+<style type="text/css">
 	#logo-img {
 	    height: 45px !important;
 	}
@@ -143,20 +125,9 @@
 		color:white;
 		margin: 10px 19px 0 318px;
 	}
-</style>-->
-  <@include location="component://homeapps/webapp/homeapps/includes/header.ftl"/>
-		<#--<div id="header">
-	    	<div id="logo">
-	    		<img id="logo-img" src="<@ofbizContentUrl>${configProperties.get("opentaps.logo")}</@ofbizContentUrl>" />
-	    		<img id="imagenLogin" src="<@ofbizContentUrl>${configProperties.get("opentaps.logoLogin")}</@ofbizContentUrl>" /></div>
-	    	</div>
-	    	<div id="title">
-	        	<h1>-->
-	                <#-- <span id="appId" style="color:#FF3300">${uiLabelMap.opentaps}</span> -->
-	                <#--<span id="appName">${uiLabelMap.OpentapsProductName}</span>
-	            </h1>
-	        </div>
-	  </div>-->
+  
+</style>
+<@include location="component://flatgrey/includes/appbar.ftl"/>
 <body>
   <#assign callInEventIcon = Static["org.ofbiz.base.util.UtilProperties"].getPropertyValue("voip.properties", "voip.icon.callInEvent")>
   <#if gwtScripts?exists>
@@ -216,7 +187,7 @@
 
     <div class="insideHeaderText">
       <#if requestAttributes.userLogin?has_content>
-        <b>${userLogin.userLoginId}</b> |
+        <#--<b>${userLogin.userLoginId}</b> |-->
       </#if>
       <#-- user, profile, shortcuts, logout buttons -->
       <#if requestAttributes.userLogin?has_content>
@@ -227,7 +198,7 @@
           <a class="linktext" style="vertical-align:text-top;" href="javascript:showKeyboardShortcutsHelp();" title="${uiLabelMap.OpentapsHelpShortcuts}">${uiLabelMap.OpentapsHelpShortcuts}</a>
         </#if>
       <#if requestAttributes.userLogin?has_content>
-      <#-- | --> <a href="/control/logout" class="linktext">${uiLabelMap.CommonLogout}</a>
+      <#-- |  <a href="/control/logout" class="linktext">${uiLabelMap.CommonLogout}</a>-->
       </#if> 
      </div>
     <#-- change facility or organization -->
@@ -245,7 +216,7 @@
       <div class="insideHeaderSubtext">
         <b>${uiLabelMap.ProductOrganization}</b>:&nbsp;${applicationSetupOrganization.groupName}&nbsp; 
 		<b>${uiLabelMap.FormFieldTitleCiclo}</b>:&nbsp;${cicloId}&nbsp; 
-        (<@displayLink text="${uiLabelMap.CommonChange}" href="selectOrganizationForm"/>)
+        <#--(<@displayLink text="${uiLabelMap.CommonChange}" href="selectOrganizationForm"/>)-->
       </div>
     </#if>
   

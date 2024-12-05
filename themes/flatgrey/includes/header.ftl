@@ -116,14 +116,14 @@ under the License.
   	margin: 0 !important;
   }
 </style>
-<#include "component://homeapps/webapp/homeapps/includes/header.ftl"/>
+<div>
   <div class="page-container">
   <div class="hidden">
     <a href="#column-container" title="${uiLabelMap.CommonSkipNavigation}" accesskey="2">
       ${uiLabelMap.CommonSkipNavigation}
     </a>
   </div>
-  <div id="masthead">
+  <div id="masthead" style="display:none;">
     <ul>
       <#if (userPreferences.COMPACT_HEADER)?default("N") == "Y">
         <li class="logo-area">
@@ -223,7 +223,7 @@ under the License.
           <#else/>
             <#--<p>${uiLabelMap.CommonWelcome}! <a href="<@ofbizUrl>${checkLoginUrl}</@ofbizUrl>">${uiLabelMap.CommonLogin}</a></p>-->
           </#if> 
-          <#--
+      <#--    
          <ul id="preferences-menu">
             <li class="first"><a href="<@ofbizUrl>Preferences</@ofbizUrl>">${uiLabelMap.CommonPreferences}</a></li>
             <li class="first"><a href="<@ofbizUrl>ListLocales</@ofbizUrl>">${uiLabelMap.CommonLanguageTitle} : ${locale.getDisplayName(locale)}</a></li>

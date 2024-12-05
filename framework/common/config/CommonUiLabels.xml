@@ -10049,7 +10049,7 @@
     </property>
     <property key="CommonFinancialsOC">
         <value xml:lang="en">Financials</value>
-        <value xml:lang="es">Finanzas</value>
+        <value xml:lang="es">Control Presupuestal Contable</value>
     </property>
     <property key="CommonObrasOC">
         <value xml:lang="en">Construction</value>
@@ -10073,7 +10073,7 @@
     </property>
     <property key="CommonPartyOC">
         <value xml:lang="en">Party</value>
-        <value xml:lang="es">Admón. del Sistema</value>
+        <value xml:lang="es">Administración del Sistema</value>
     </property>
     <property key="CommonCatalogOC">
         <value xml:lang="en">Catalogs</value>
