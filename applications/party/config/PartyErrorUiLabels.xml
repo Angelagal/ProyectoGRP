@@ -446,7 +446,7 @@
     <property key="party.id_generation_failure">
         <value xml:lang="de">FEHLER: Neue Akteur ID konnte nicht erstellt werden</value>
         <value xml:lang="en">ERROR: Failure generating new party ID</value>
-        <value xml:lang="es">ERROR: Error al generar nuevo código de participante</value>
+        <value xml:lang="es">ERROR: Error al generar nuevo RUSP</value>
         <value xml:lang="fr">ERREUR: Echec lors de la génération d'un nouvelle identifiant acteur</value>
         <value xml:lang="hi_IN">त्रुटि: नया पार्टी क्रमांक बनाने में असफल</value>
         <value xml:lang="it">ERRORE: Fallita generazione nuovo codice soggetto</value>

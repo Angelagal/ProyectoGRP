@@ -27,7 +27,7 @@ under the License.
 <!--        <auto-fields-service service-name="updatePerson"/>-->
         <field use-when="personInfo!=null" name="partyId" title="${uiLabelMap.PartyIdPerson}" tooltip="${uiLabelMap.CommonNotModifRecreat}"><display/></field>
 <!--         <field use-when="personInfo==null&amp;&amp;partyId==null" name="partyId" title="${uiLabelMap.PartyPartyId}"><ignored/></field> -->
-		<field use-when="personInfo==null" name="partyId" title="Código RUSP"><text size="20" maxlength="20"/></field>
+		<field use-when="personInfo==null" name="partyId" title="RUSP"><text size="20" maxlength="20"/></field>
         <field use-when="personInfo==null&amp;&amp;partyId!=null" name="partyId" title="${uiLabelMap.PartyPartyId}" tooltip="${uiLabelMap.CommonCannotBeFound}: [${partyId}]"><display also-hidden="false"/></field>
         <field name="firstName" title="${uiLabelMap.PartyFirstName}" tooltip="${uiLabelMap.CommonRequired}" widget-style="required"><text size="40" maxlength="60"/></field>
         <field name="lastName" title="${uiLabelMap.PartyLastName}" tooltip="${uiLabelMap.CommonRequired}" widget-style="required"><text size="40" maxlength="60"/></field>

@@ -334,6 +334,7 @@
         <value xml:lang="th">รหัสประเภทผลการติดต่อ</value>
         <value xml:lang="zh">沟通事件类型标识</value>
     </property>
+
     <property key="MarketingContactListCommStatus">
         <value xml:lang="en">Contact List Communication Status</value>
         <value xml:lang="pt_BR">Estado da comunicação com Lista de contatos</value>
@@ -486,7 +487,7 @@
     <property key="MarketingContactListPartyId">
         <value xml:lang="de">Teilnehmer ID</value>
         <value xml:lang="en">Party Id</value>
-        <value xml:lang="es">Código de participante</value>
+        <value xml:lang="es">RUSP</value>
         <value xml:lang="fr">Réf. d'abonné à la liste de contact</value>
         <value xml:lang="it">Codice membro lista contatti</value>
         <value xml:lang="nl">ID Deelnemer</value>
