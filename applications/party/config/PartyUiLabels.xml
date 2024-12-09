@@ -3977,7 +3977,7 @@
     <property key="PartyContactInfo">
         <value xml:lang="de">Kontaktinformation</value>
         <value xml:lang="en">Contact Info</value>
-        <value xml:lang="es">Código RUSP</value>
+        <value xml:lang="es">Información de contacto</value>
         <value xml:lang="fr">Source du contact</value>
         <value xml:lang="hi_IN">संपर्क जानकारी</value>
         <value xml:lang="it">Informazioni contatto</value>
@@ -4007,7 +4007,7 @@
         <value xml:lang="cs">Kontaktní informace</value>
         <value xml:lang="de">Kontaktinformation</value>
         <value xml:lang="en">Contact Information</value>
-        <value xml:lang="es">Código RUSP</value>
+        <value xml:lang="es">Información de contacto</value>
         <value xml:lang="fr">Coordonnées</value>
         <value xml:lang="hi_IN">सम्पर्क सूचना</value>
         <value xml:lang="it">Informazioni contatto</value>
@@ -7905,7 +7905,7 @@
     <property key="PartyOrganizationPartyId">
         <value xml:lang="de">Organisation Akteur ID</value>
         <value xml:lang="en">Organization Party ID</value>
-        <value xml:lang="es">Código de participante</value>
+        <value xml:lang="es">RUSP</value>
         <value xml:lang="fr">Organisation de l'acteur</value>
         <value xml:lang="hi_IN">संगठन पार्टी क्रमांक</value>
         <value xml:lang="it">Codice Organizzazione</value>
@@ -8128,7 +8128,7 @@
         <value xml:lang="ar">دليل الصلة</value>
         <value xml:lang="de">Akteur ID</value>
         <value xml:lang="en">Party ID</value>
-        <value xml:lang="es">Código de participante</value>
+        <value xml:lang="es">RUSP</value>
         <value xml:lang="fr">Acteur</value>
         <value xml:lang="hi_IN">पार्टी क्रमांक</value>
         <value xml:lang="it">Codice soggetto</value>
@@ -8144,7 +8144,7 @@
     <property key="PartyPartyIdMissing">
         <value xml:lang="de">Akteur ID fehlt</value>
         <value xml:lang="en">Party ID missing</value>
-        <value xml:lang="es">Falta el código de participante</value>
+        <value xml:lang="es">Falta el RUSP</value>
         <value xml:lang="fr">Acteur disparu</value>
         <value xml:lang="hi_IN">पार्टी क्रमांक गायब है</value>
         <value xml:lang="it">Soggetto mancante</value>
@@ -11117,6 +11117,6 @@
     </property>
 	<property key="PartyIdPerson">
         <value xml:lang="en">Person id</value>
-		<value xml:lang="es">Código de persona</value>
+		<value xml:lang="es">RUSP</value>
     </property>
 </resource>
