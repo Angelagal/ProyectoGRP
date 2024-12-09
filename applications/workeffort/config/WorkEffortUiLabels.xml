@@ -1632,7 +1632,7 @@
     <property key="WorkEffortByPartyId">
         <value xml:lang="de">Nach Akteur</value>
         <value xml:lang="en">By Party</value>
-        <value xml:lang="es">Ver por RUSP</value>
+        <value xml:lang="es">Ver por código de participante</value>
         <value xml:lang="fr">Par acteur</value>
         <value xml:lang="it">Per Codice Soggetto</value>
         <value xml:lang="nl">Op relatie</value>

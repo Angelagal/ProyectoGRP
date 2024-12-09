@@ -1135,7 +1135,7 @@
     <property key="FormFieldTitle_carrierPartyId">
         <value xml:lang="de">Transportunternehmen Akteur ID</value>
         <value xml:lang="en">Carrier Party Id</value>
-        <value xml:lang="es">RUSP del transportista</value>
+        <value xml:lang="es">Código de participante del transportista</value>
         <value xml:lang="fr">Réf. de transporteur (acteur)</value>
         <value xml:lang="it">Corriere</value>
         <value xml:lang="nl">Vervoerder Id</value>
@@ -1271,7 +1271,7 @@
     <property key="FormFieldTitle_companyPartyId">
         <value xml:lang="de">Unternehmen Akteur ID</value>
         <value xml:lang="en">Comp. Party Id</value>
-        <value xml:lang="es">RUSP de la empresa</value>
+        <value xml:lang="es">Código de participante de la empresa</value>
         <value xml:lang="fr">Réf. de l'entreprise</value>
         <value xml:lang="it">Az.</value>
         <value xml:lang="ru">Код компании участника</value>
@@ -2423,7 +2423,7 @@
     <property key="FormFieldTitle_manufacturerPartyId">
         <value xml:lang="de">Hersteller Akteur ID</value>
         <value xml:lang="en">Manufacturer Party Id</value>
-        <value xml:lang="es">RUSP del fabricante</value>
+        <value xml:lang="es">Código de participante del fabricante</value>
         <value xml:lang="fr">Réf. de fabricant</value>
         <value xml:lang="it">Codice Soggetto Produttore</value>
         <value xml:lang="ro">Cod Subiect Producator</value>
@@ -2714,7 +2714,7 @@
     <property key="FormFieldTitle_overrideOrgPartyId">
         <value xml:lang="de">Organisation Akteur ID übersteuern</value>
         <value xml:lang="en">Override Org Party Id</value>
-        <value xml:lang="es">Reemplazar RUSP original</value>
+        <value xml:lang="es">Reemplazar código de participante original</value>
         <value xml:lang="fr">Remplacer la réf. originelle d'acteur</value>
         <value xml:lang="it">Sostituisce Organizzazione</value>
         <value xml:lang="th">ยกเลิกรหัสกลุ่มองค์กร</value>
@@ -6609,7 +6609,7 @@
     <property key="ProductActionTypeOrderAdjustmentTypeQuantityItemPartyLimit">
         <value xml:lang="de">Aktionstyp, Auftragsanpassung Typ, Menge, Position ID, Akteur ID Limite</value>
         <value xml:lang="en">ActionType, Order Adjustment Type, Quantity, Item ID, Party ID Limit</value>
-        <value xml:lang="es">Tipo de Acción, Tipo de Ajuste de Órden, Cantidad, Código de Artículo, RUSP Límite</value>
+        <value xml:lang="es">Tipo de Acción, Tipo de Ajuste de Órden, Cantidad, Código de Artículo, Código de participante Límite</value>
         <value xml:lang="fr">Type d'actions, type d'ajustements de commande, quantité, article, ref. d'acteur limite</value>
         <value xml:lang="it">Tipo Azione, Tipo Aggiustamento Ordine, Quantità, Numero Riga, Codice Soggetto e Limite</value>
         <value xml:lang="ro">Tip Actiune, Tip modificare Comanda, Cantitate, Numar Linie, Cod Subiect si Limita</value>
@@ -6620,7 +6620,7 @@
     <property key="ProductActionUpdateFields">
         <value xml:lang="de">Aktionstyp, Menge, Betrag, Position ID, Akteur ID</value>
         <value xml:lang="en">ActionType, Quantity, Amount, Item ID, Party ID</value>
-        <value xml:lang="es">Tipo de Acción, Cantidad, Monto, Código de Artículo, RUSP</value>
+        <value xml:lang="es">Tipo de Acción, Cantidad, Monto, Código de Artículo, Código de Participante</value>
         <value xml:lang="fr">Type d'actions, quantité, amount, article, acteur</value>
         <value xml:lang="it">Tipo Azione, Quantità, Importo, Numero Riga, Codice Soggetto</value>
         <value xml:lang="ro">Tip Actiune, Cantitate, Valoare, Numar Linie, Cod Subiect</value>
@@ -7005,7 +7005,7 @@
     <property key="ProductAddPartyId">
         <value xml:lang="de">Akteur ID hinzufügen</value>
         <value xml:lang="en">Add Party Id</value>
-        <value xml:lang="es">Añadir RUSP</value>
+        <value xml:lang="es">Añadir Código de Participante</value>
         <value xml:lang="fr">Ajouter une réf. d'acteur</value>
         <value xml:lang="it">Aggiungi Codice Soggetto</value>
         <value xml:lang="ro">Adauga Cod Subiect</value>
@@ -7719,7 +7719,7 @@
     <property key="ProductAssociatePartyToCategory">
         <value xml:lang="de">Akteur zu Kategorie zuordnen (Akteur ID eingeben, Typ wählen und optional Von Datum eingeben)</value>
         <value xml:lang="en">Associate Party to Category (enter Party ID, select Type, then enter optional From Date)</value>
-        <value xml:lang="es">Asociar Participante a Categoría (ingrese RUSP, seleccione Tipo, luego ingrese fecha de inicio opcional)</value>
+        <value xml:lang="es">Asociar Participante a Categoría (ingrese Código de Participante, seleccione Tipo, luego ingrese fecha de inicio opcional)</value>
         <value xml:lang="fr">Associer l'acteur à la catégorie (entrer une réf. acteur, sélectionner le type, en option : une date de départ)</value>
         <value xml:lang="it">Associare Soggetto alla Categoria (inserire Codice Soggetto, seleziona Tipo, allora inserire opzionalmente Da Data)</value>
         <value xml:lang="ro">Asociare Subiectul la Categorie (introduceti Cod Subiect, selectioneaza Tip, dupa care introduceti optional De la Data)</value>
@@ -14805,7 +14805,7 @@
     <property key="ProductNoteOnPartyId">
         <value xml:lang="de">ANMERKUNG zu Akteur ID</value>
         <value xml:lang="en">NOTE on Party ID</value>
-        <value xml:lang="es">NOTA en RUSP</value>
+        <value xml:lang="es">NOTA en código de participante</value>
         <value xml:lang="fr">Note à propos de l'acteur</value>
         <value xml:lang="it">NOTA su Codice Soggetto</value>
         <value xml:lang="ro">NOTA pentru Cod Subiect</value>
@@ -15568,7 +15568,7 @@
     <property key="ProductPartyFreeShipping">
         <value xml:lang="de">Die Akteur ID des Transportunternehmens für Gratis Lieferungen (falls leer werden die Gratis Lieferungen einem beliebigen Transportunternehmen zugeordnet).</value>
         <value xml:lang="en">The Party ID for Free Shipping actions is Carrier Party ID to give free shipping for (if blank any Carrier Parties may receive free shipping).</value>
-        <value xml:lang="es">El RUSP en la acción de envío gratis es el código del transportista al que se le dará envío gratis (si se deja en blanco cualquier transportista puede recibir envío gratis)</value>
+        <value xml:lang="es">El código de participante en la acción de envío gratis es el código del transportista al que se le dará envío gratis (si se deja en blanco cualquier transportista puede recibir envío gratis)</value>
         <value xml:lang="fr">Acteur (transporteur) pour l'envoi gratuit (si blanc, n'importe lequel des transporteurs peut effectuer les livraison gratuites).</value>
         <value xml:lang="it">Codice Soggetto per azioni di Spedizioni Gratuite è Codice Corriere per dare spedizioni gratuite (se vuoto qualsiasi Corriere potrebbe ricevere spedizioni gratuite).</value>
         <value xml:lang="ro">Codul Subiectilor pentru actiuni de Expediere Gratuite este Codul Curierului pentru expedieri gratuite (daca este gol orice Curier ar putea primi expedieri gratuite).</value>

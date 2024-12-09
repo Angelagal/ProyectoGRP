@@ -486,7 +486,7 @@
     <property key="MarketingContactListPartyId">
         <value xml:lang="de">Teilnehmer ID</value>
         <value xml:lang="en">Party Id</value>
-        <value xml:lang="es">RUSP</value>
+        <value xml:lang="es">Código de participante</value>
         <value xml:lang="fr">Réf. d'abonné à la liste de contact</value>
         <value xml:lang="it">Codice membro lista contatti</value>
         <value xml:lang="nl">ID Deelnemer</value>

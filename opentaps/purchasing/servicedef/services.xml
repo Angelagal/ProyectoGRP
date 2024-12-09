@@ -24,7 +24,7 @@
     location="org.opentaps.purchasing.supplier.SupplierServices" invoke="createSupplier">
     <description>Creates a supplier and contact data. Postal address will have the GENERAL_LOCATION, SHIPPING_LOCATION, SHIP_ORIG_LOCATION,
         PAYMENT_LOCATION and BILLING_LOCATION contactMechTypeIds.</description>
-        <attribute name="partyId" type="String" mode="IN" optional="true" description="RUSP"/>
+        <attribute name="partyId" type="String" mode="IN" optional="true" description="Código de participante"/>
         <attribute name="groupName" type="String" mode="IN" optional="false" description="Nombre del proveedor"/>
         <attribute name="roleTypeId" type="String" mode="IN" optional="false"/>
         <attribute name="federalTaxId" type="String" mode="IN" optional="true"/>
