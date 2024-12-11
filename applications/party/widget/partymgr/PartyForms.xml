@@ -310,6 +310,7 @@ under the License.
                 </entity-options>
             </drop-down>
         </field>
+
         <field name="roleTypeIdValidFrom" title="${uiLabelMap.PartyRelationshipValidFromRoleType}">
             <drop-down allow-empty="true">
                 <entity-options entity-name="RoleType" key-field-name="roleTypeId" description="${description}">
@@ -1041,13 +1042,11 @@ under the License.
         default-title-style="tableheadtext" default-widget-style="tabletext"
         odd-row-style="alternate-row" default-table-style="basic-table hover-bar"
         default-tooltip-style="tabletext">
-        <field name="roleTypeId" title="${uiLabelMap.PartyRoleTypeId}"><display/></field>
         <field name="description" title="${uiLabelMap.PartyRole}"><display/></field>
         <field name="parentTypeId"><display-entity entity-name="RoleType" key-field-name="roleTypeId" description="${description}"/></field>
         <field name="remove">
             <hyperlink target="deleterole" description="${uiLabelMap.CommonRemove}">
                 <parameter param-name="partyId"/>
-                <parameter param-name="roleTypeId"/>
             </hyperlink>
         </field>
     </form>
@@ -1064,11 +1063,7 @@ under the License.
     </form>
     <form name="AddRoleType" type="single" title="Add a new roletype" target="createroletype"  list-name="parentRoleList">
         <field name="roleTypeId" title="${uiLabelMap.PartyRoleTypeId}" required-field="true" entry-name="dummy" position="1"><text/></field>
-        <field name="parentTypeId" position="2">
-            <drop-down allow-empty="true">
-                <list-options list-name="parentRoleList" key-name="roleTypeId" description="${description}"/>
-            </drop-down>
-        </field>
+        
         <field name="description" title="${uiLabelMap.CommonDescription}" required-field="true"><text/></field>
         <field name="save" title="${uiLabelMap.CommonSave}"><submit/></field>
     </form>
@@ -1228,7 +1223,7 @@ under the License.
                 </sub-hyperlink>
             </display-entity>
         </field>
-        <field name="roleTypeId" title="${uiLabelMap.PartyRoleTypeId}"><display-entity entity-name="RoleType"/></field>
+        
         <field name="fromDate"><display/></field>
         <field name="thruDate"><display/></field>
         <field name="sequenceNum"><display/></field>

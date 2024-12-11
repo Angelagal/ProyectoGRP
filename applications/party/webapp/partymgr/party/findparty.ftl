@@ -76,14 +76,18 @@ under the License.
         <input type="hidden" name="hideFields" value="Y"/>
         <table class="basic-table" cellspacing="0">
           <tr>
+          <#--
             <td class="label">${uiLabelMap.PartyContactInformation}</td>
+            
             <td>
               <input type="radio" name="extInfo" value="N" onclick="javascript:refreshInfo();" <#if extInfo == "N">checked="checked"</#if>/>${uiLabelMap.CommonNone}&nbsp;
               <input type="radio" name="extInfo" value="P" onclick="javascript:refreshInfo();" <#if extInfo == "P">checked="checked"</#if>/>${uiLabelMap.PartyPostal}&nbsp;
               <input type="radio" name="extInfo" value="T" onclick="javascript:refreshInfo();" <#if extInfo == "T">checked="checked"</#if>/>${uiLabelMap.PartyTelecom}&nbsp;
               <input type="radio" name="extInfo" value="O" onclick="javascript:refreshInfo();" <#if extInfo == "O">checked="checked"</#if>/>${uiLabelMap.CommonOther}&nbsp;
             </td>
+            
           </tr>
+          -->
           <tr>
             <td class="label">${uiLabelMap.PartyPartyId}</td>
             <td><input type="text" name="partyId" value="${parameters.partyId?if_exists}"/></td>
@@ -106,6 +110,7 @@ under the License.
           </tr>
           <tr>
             <td class="label">${uiLabelMap.PartyRoleType}</td>
+            
             <td>
               <select name="roleTypeId">
                 <#if currentRole?has_content>
@@ -114,11 +119,15 @@ under the License.
                 </#if>
                 <option value="ANY">${uiLabelMap.CommonAnyRoleType}</option>
                 <#list roleTypes as roleType>
-                  <option value="${roleType.roleTypeId}">${roleType.get("description",locale)}</option>
-                </#list>
+                	<#if roleType.roleTypeId == "EMPLOYEE" || roleType.roleTypeId == "ACCOUNTANT" || roleType.roleTypeId == "PRESUPUESTO">
+                  		<option value="${roleType.roleTypeId}">${roleType.get("description",locale)}</option>
+                  	</#if>
+                </#list>
               </select>
             </td>
+           
           </tr>
+          <!--
           <tr>
             <td class="label">${uiLabelMap.PartyType}</td>
             <td>
@@ -135,9 +144,12 @@ under the License.
             </td>
           </tr>
           <tr>
+          -->
+          <!--
             <td class="label">${uiLabelMap.ProductInventoryItemId}</td>
             <td><input type="text" name="inventoryItemId" value="${parameters.inventoryItemId?if_exists}"/></td>
           </tr>
+          
           <tr>
             <td class="label">${uiLabelMap.ProductSerialNumber}</td>
             <td><input type="text" name="serialNumber" value="${parameters.serialNumber?if_exists}"/></td>
@@ -146,6 +158,7 @@ under the License.
             <td class="label">${uiLabelMap.ProductSoftIdentifier}</td>
             <td><input type="text" name="softIdentifier" value="${parameters.softIdentifier?if_exists}"/></td>
           </tr>
+          -->
           <#if extInfo == "P">
             <tr><td colspan="3"><hr /></td></tr>
             <tr>
