@@ -14,8 +14,8 @@ cd /home/grp_app/MotorContable/ || { echo "Error: No se pudo acceder al director
 
 # Descartar cambios locales
 echo "Descartando cambios locales..."
-git checkout -- .  # Descarta cambios en archivos rastreados
-git clean -f       # Elimina archivos sin seguimiento
+git reset --hard  # Restaura todos los archivos rastreados al último commit
+git clean -fd     # Elimina archivos y directorios sin seguimiento
 echo "Cambios locales descartados exitosamente."
 
 # Mensaje indicando que se actualizará el repositorio
