@@ -120,7 +120,8 @@ under the License.
                 </entity-options>
             </drop-down>
         </field>
-                <field name="saldoInicial" use-when="personInfo==null" title="${uiLabelMap.AccountingSaldoInicial}" event="onchange" action="validaFormatoNumero(this);" value="0"><text></text></field>
+<!--        <field name="saldoInicial" use-when="personInfo==null" title="${uiLabelMap.AccountingSaldoInicial}" event="onchange" action="validaFormatoNumero(this);" value="0"><text></text></field>-->
+        <field name="saldoInicial"><hidden value="0" /></field>
         <field name="saldoInicial" use-when="personInfo!=null"><display></display></field>
         
         <field name="ciclo"><ignored/></field>
