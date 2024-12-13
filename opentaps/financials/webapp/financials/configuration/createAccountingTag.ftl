@@ -37,6 +37,16 @@
 	
 	function responseCrear(data) 
 	{
+		var fecha_ini = document.getElementById("fechaInicio").value;
+		fecha_ini = fecha_ini.replace(/\D/g, ' ');
+		var componentes = fecha_ini.split(' ');
+		var fechaIni = new Date(componentes[2]+"/"+componentes[1]+"/"+componentes[0]);
+		
+		var fecha_fin = document.getElementById("fechaFin").value;
+		fecha_fin = fecha_fin.replace(/\D/g, ' ');
+		var componentes1 = fecha_fin.split(' ');
+		var fechaFin = new Date(componentes1[2]+"/"+componentes1[1]+"/"+componentes1[0]);	
+
 		for (var key in data) 
 			{
 				if(data[key]=="ERROR")
@@ -44,17 +54,22 @@
 					alert(data['mensajeError']);
 					break;
 				}
-				else
+				else if(fechaIni < fechaFin)
 				{	
 					alert("El elemento ha sido creado");
 					document.getElementById('buscarClasificacion').submit();
+					break;
+				}else if(fechaIni >= fechaFin){
+					alert("La fecha inicial no puede ser mayor o igual a la final");
+					break;
+				}else if((fechaIni != " ") && (fechaFin != " ")){
+					alert("Las fechas no pueden estar vacias");
 					break;
 				}	
 			}
 	}
 
  </script> 
-
 
 <@frameSection title=uiLabelMap.FinancialsCreateAccountingTag>
   <form method="post" name="buscarClasificacion" id="buscarClasificacion">
@@ -70,6 +85,6 @@
 	<@inputDateRow title=uiLabelMap.FormFieldTitle_datefrom name="fechaInicio" size=12 default="" titleClass="requiredField" id="fechaInicio"/>
 	<@inputDateRow title=uiLabelMap.FormFieldTitle_dateThru name="fechaFin" size=12 default="" titleClass="requiredField" id="fechaFin"/>
 	<@inputButtonNoSubmitRow title=uiLabelMap.CommonCreate onClick="crearClasificacion();" />
-    </table>
+	</table>
 	</form>
 </@frameSection>
