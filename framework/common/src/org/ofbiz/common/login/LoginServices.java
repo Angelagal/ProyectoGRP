@@ -63,7 +63,7 @@ public class LoginServices {
 
     public static final String module = LoginServices.class.getName();
     public static final String resource = "SecurityextUiLabels";
-    public static final String REGEX_PASSWORD = "^[A-Za-z0-9]{8,16}$";
+    public static final String REGEX_PASSWORD = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z0-9]{8,16}$";
 
     /** Login service to authenticate username and password
      * @return Map of results including (userLogin) GenericValue object
