@@ -101,7 +101,9 @@ under the License.
                     <select name="contactMechPurposeTypeId">
                       <option></option>
                       <#list mechMap.purposeTypes as contactMechPurposeType>
-                        <option value="${contactMechPurposeType.contactMechPurposeTypeId}">${contactMechPurposeType.get("description",locale)}</option>
+                        <#if contactMechPurposeType.contactMechPurposeTypeId = "PRIMARY_EMAIL">
+                          <option  value="${contactMechPurposeType.contactMechPurposeTypeId}">${contactMechPurposeType.get("description",locale)}</option>
+                        </#if>
                       </#list>
                     </select>
                   </td>
