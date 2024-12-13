@@ -537,6 +537,7 @@
                         <if-compare field="party.partyTypeId" operator="equals" value="PERSON"/>
                     </condition>
                     <widgets>
+                        <!--
                         <screenlet title="${uiLabelMap.PartyListRelatedAccounts}" navigation-menu-name="addRelContactAccounts">
                             <include-menu name="addRelContactAccounts" location="component://party/widget/partymgr/PartyMenus.xml"/>
                             <section>
@@ -549,6 +550,7 @@
                             </section>
                             <include-form name="ListRelatedAccounts" location="component://party/widget/partymgr/PartyForms.xml"/>
                         </screenlet>
+                        -->
                     </widgets>
                 </section>
             </widgets>

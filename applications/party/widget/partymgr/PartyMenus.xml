@@ -68,11 +68,13 @@
                 <parameter param-name="partyId"/>
             </link>
         </menu-item>
+        <!--
         <menu-item name="preferences" title="${uiLabelMap.CommonPreferences}">
             <link target="Preferences">
                 <parameter param-name="partyId"/>
             </link>
         </menu-item>
+        -->
         <menu-item name="viewroles" title="${uiLabelMap.PartyRoles}">
             <link target="viewroles">
                 <parameter param-name="partyId"/>
@@ -83,6 +85,7 @@
                 <parameter param-name="partyId"/>
             </link>
         </menu-item> -->
+        <!--
         <menu-item name="linkparty" title="${uiLabelMap.PartyLink}">
             <link target="linkparty">
                 <parameter param-name="partyId"/>
@@ -93,6 +96,7 @@
                 <parameter param-name="partyId"/>
             </link>
         </menu-item>
+         -->
         <!-- <menu-item name="viewvendor" title="${uiLabelMap.PartyVendor}">
             <link target="viewvendor">
                 <parameter param-name="partyId"/>
@@ -177,14 +181,16 @@
                 <parameter param-name="partyId"/>
             </link>
         </menu-item> -->
+        <!--
         <menu-item name="finAccounts" title="${uiLabelMap.AccountingFinAccounts}">
-            <!-- <condition>
+             <condition>
                 <if-service-permission service-name="acctgBasePermissionCheck" main-action="VIEW"/>
-            </condition> -->
+            </condition> 
             <link target="/accounting/control/ListCompanies" url-mode="inter-app">
                 <parameter param-name="ownerPartyId" from-field="partyId"/>
             </link>
         </menu-item>
+        -->
         <!-- <menu-item name="PartyCommEvents" title="${uiLabelMap.PartyCommunications}" >
             <link target="ListPartyCommEvents">
                 <parameter param-name="partyId"/>
