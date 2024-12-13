@@ -63,6 +63,7 @@ public class LoginServices {
 
     public static final String module = LoginServices.class.getName();
     public static final String resource = "SecurityextUiLabels";
+    public static final String REGEX_PASSWORD = "^[A-Za-z0-9]{8,16}$";
 
     /** Login service to authenticate username and password
      * @return Map of results including (userLogin) GenericValue object
@@ -667,6 +668,9 @@ public class LoginServices {
         if (newPassword != null) {
             checkNewPassword(userLoginToUpdate, currentPassword, newPassword, newPasswordVerify,
                 passwordHint, errorMessageList, adminUser, locale);
+        } else {
+        	errMsg = UtilProperties.getMessage(resource,"loginservices.password_or_verify_missing", locale);
+            return ServiceUtil.returnError(errMsg);
         }
 
         if (errorMessageList.size() > 0) {
@@ -986,10 +990,15 @@ public class LoginServices {
             minPasswordLength = 0;
         }
 
-        if (newPassword != null) {
-            if (!(newPassword.length() >= minPasswordLength)) {
-                Map<String, String> messageMap = UtilMisc.toMap("minPasswordLength", Integer.toString(minPasswordLength));
-                errMsg = UtilProperties.getMessage(resource,"loginservices.password_must_be_least_characters_long", messageMap, locale);
+        if (newPassword != null && !newPassword.isEmpty()) {
+//            if (!(newPassword.length() >= minPasswordLength)) {
+//                Map<String, String> messageMap = UtilMisc.toMap("minPasswordLength", Integer.toString(minPasswordLength));
+//                errMsg = UtilProperties.getMessage(resource,"loginservices.password_must_be_least_characters_long", messageMap, locale);
+//                errorMessageList.add(errMsg);
+//            }
+            
+            if (!(newPassword.matches(REGEX_PASSWORD))) {
+                errMsg = UtilProperties.getMessage(resource,"loginservices.password_regex", locale);
                 errorMessageList.add(errMsg);
             }
             if (userLogin != null && newPassword.equalsIgnoreCase(userLogin.getString("userLoginId"))) {

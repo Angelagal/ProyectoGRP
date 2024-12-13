@@ -591,10 +591,22 @@
         <value xml:lang="th">ความยาวตัวอักษรของรหัสผ่านต้องเป็นอย่างน้อยที่สุด ${minPasswordLength} .</value>
         <value xml:lang="zh">密码必须至少有${minPasswordLength} 个字符。</value>
     </property>
+    <property key="loginservices.password_regex">
+        <value xml:lang="de">Das Passwort muß aus mindestens ${minPasswordLength} Zeichen bestehen.</value>
+        <value xml:lang="en">The password is alphanumeric and is between 8 and 16 characters.</value>
+        <value xml:lang="es">El password debe ser alfanumérico y tener entre 8 y 16 caracteres.</value>
+        <value xml:lang="fr">Le mot de passe doit être d'au moins ${minPasswordLength} caractères.</value>
+        <value xml:lang="it">La password deve essere lunga almeno ${minPasswordLength} caratteri.</value>
+        <value xml:lang="nl">Wachtwoord moet op zijn minst ${minPasswordLength} karakters lang zijn.</value>
+        <value xml:lang="ro">Parola trebuie sa fie lunga de cel putin ${minPasswordLength} caractere.</value>
+        <value xml:lang="ru">Длина пароля должна быть как минимум ${minPasswordLength} символов.</value>
+        <value xml:lang="th">ความยาวตัวอักษรของรหัสผ่านต้องเป็นอย่างน้อยที่สุด ${minPasswordLength} .</value>
+        <value xml:lang="zh">密码必须至少有${minPasswordLength} 个字符。</value>
+    </property>
     <property key="loginservices.password_or_verify_missing">
         <value xml:lang="de">Das Passwort oder zweite Eingabe des Passwortes fehlt.</value>
         <value xml:lang="en">Password or verify password missing.</value>
-        <value xml:lang="es">Falta password o verificación de password</value>
+        <value xml:lang="es">Falta password o verificación de password.</value>
         <value xml:lang="fr">Le mot de passe ou la vérification de mot de passe manque</value>
         <value xml:lang="it">La password o verifica password è mancante.</value>
         <value xml:lang="nl">Wachtwoord of herhaal wachtwoord is leeg</value>

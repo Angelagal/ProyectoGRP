@@ -440,7 +440,7 @@ under the License.
                 <set field="tabButtonItem" value="viewprofile"/>
                 <set field="headerItem" value="find"/>
                 <set field="labelTitleProperty" value="PageTitleEditPersonalInformation"/>
-
+				<set field="layoutSettings.javaScripts[]" value="/partymgr/js/CrearPersona.js" global="true"/>
                 <set field="donePage" from-field="parameters.DONE_PAGE" default-value="viewprofile"/>
                 <set field="partyId" from-field="parameters.partyId"/>
                 <entity-one entity-name="PartyAndPerson" value-field="personInfo"/>
@@ -485,7 +485,6 @@ under the License.
                 <set field="titleProperty" value="PageTitleEditGroupInformation"/>
                 <set field="tabButtonItem" value="viewprofile"/>
                 <set field="labelTitleProperty" value="PageTitleEditGroupInformation"/>
-
                 <set field="donePage" from-field="parameters.DONE_PAGE" default-value="viewprofile"/>
                 <set field="partyId" from-field="parameters.partyId"/>
                 <set field="userLoginId" from-field="parameters.userLoginId"/>
