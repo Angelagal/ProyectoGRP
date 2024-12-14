@@ -1117,7 +1117,7 @@ DIV.screenlet {
 
 DIV.screenlet-header {
 	vertical-align: middle;
-	padding: 1px 4px;
+	padding: 1px 2px;
 }
 
 DIV.screenlet-body {
@@ -1129,8 +1129,7 @@ DIV.screenlet-body {
 #column-container {
 	position: relative;
 	background-color: #FFF;
-	width: 100%;
-	min-height: 500px;
+	min-height: 300px;
 	margin: auto;
 }
 
@@ -6180,11 +6179,11 @@ table.shortcutHelp td.shortcutKey {
 .screenlet-title-bar {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
-	font-weight: 700;
+	font-weight: 660;
 	text-decoration: none;
 	color: #FFFFFF;
 	background-color:#235B4E;
-	margin: 0;
+	margin: 0px;
 }
 
 .autocomplete ul {

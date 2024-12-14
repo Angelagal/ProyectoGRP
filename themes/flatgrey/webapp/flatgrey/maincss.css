@@ -769,6 +769,10 @@ position: relative;
 margin-bottom: 0.5em;
 }
 
+#column-container h1{
+    font-size: 15px;
+}
+
 #column-container h1,
 #column-container .h1 {
 color: #000000;
@@ -1077,18 +1081,32 @@ color: #ffffff;
 /* ========================================================= */
 
 #app-navigation {
-background-color: #235B4E;
+background-color: white;
 background-repeat: repeat-y;
 height: 1%; /* IE fix */
-margin: 1em;
+margin: 2em;
 }
 
 #app-navigation h1,
 #app-navigation h2,
 #app-navigation h3 {
 color: #ffffff;
-padding: 0.4em;
 }
+
+#app-navigation h2{
+    font-size: 18px;
+    background-color: #235B4E;
+    margin-top: 3.5%;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    padding: 0.4em;
+    font-weight: 200; 
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+
+}
+
+
+
 
 #app-navigation ul {
 display: inline; /* IE Fix */
@@ -1096,10 +1114,8 @@ display: inline; /* IE Fix */
 
 #app-navigation ul li ul li {
 background-color:#235B4E;
-
-border-right: 0.1em solid #999999;
-border-top: 0.1em solid #999999;
 float: left;
+padding: 0.5em;
 }
 
 #app-navigation .opposed li,
@@ -1127,13 +1143,25 @@ padding: 0 1em 0 1em;
 background-color: #235B4E;	
 background-repeat: repeat-x;
 color: #ffffff;
+
 }
 
-#app-navigation ul a:hover {
-background-color: #10312B !important;	
+#app-navigation li :hover {
+background-color: #10312B !important;
 background-repeat: repeat-x;
 text-decoration: none;
-
+color: #ffffff;
+}
+#app-navigation li a:hover {
+    background-color: #10312B !important;
+    background-repeat: repeat-x;
+    text-decoration: none;
+    color: #ffffff;
+    }
+#app-navigation li .selected:hover {
+background-color: #10312B !important;
+background-repeat: repeat-x;
+text-decoration: none;
 color: #ffffff;
 }
 
@@ -1464,12 +1492,13 @@ padding: 0.1em;
 the top of the main content area */
 .tab-bar {
 display:table;
+margin-left: 25px;
 }
 
 .tab-bar ul li {
 background-color: #235B4E;
 margin: 0;
-padding: 0;
+padding: 2px;
 }
 
 .tab-bar ul a,
@@ -1481,10 +1510,11 @@ color: #ffffff;
 .tab-bar ul .selected,
 .tab-bar ul .selected a,
 .tab-bar ul .selected a:hover {
-background:transparent url(/opentaps_images/gray/panel/top-bottom.gif) repeat-x 0 0;
-color: #515151;
+background-color:#10312B;
+color: white;
 text-decoration: none;
 }
+
 
 .tab-bar ul .disabled {
 color: #D4D0C8;
