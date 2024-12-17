@@ -42,7 +42,7 @@ under the License.
                             <widgets>
                                 <screenlet title="${uiLabelMap.PartySecurityGroupsList}">
                                     <container style="button-bar">
-                                        <link target="EditSecurityGroup" style="textbutton create" text="${uiLabelMap.PartyNewSecurityGroup}"/>
+                                        <!-->link target="EditSecurityGroup" style="textbutton create" text="${uiLabelMap.PartyNewSecurityGroup}"/>-->
                                         <!-- <link target="EditCertIssuerProvisions" style="textbutton" text="${uiLabelMap.PartyCertIssuers}"/> -->
                                     </container>
                                     <include-form name="ListSecurityGroups" location="component://party/widget/partymgr/SecurityForms.xml"/>
@@ -170,8 +170,9 @@ under the License.
                             <widgets>
                                 <screenlet title="${uiLabelMap.PageTitleEditIssuerProvisions}">
                                     <container style="button-bar">
-                                        <link target="EditSecurityGroup" style="buttontext create" text="${uiLabelMap.PartyNewSecurityGroup}"/>
-                                        <link target="EditCertIssuerProvisions" style="buttontext" text="${uiLabelMap.PartyCertIssuers}"/>
+                                        <!--<link target="EditSecurityGroup" style="buttontext create" text="${uiLabelMap.PartyNewSecurityGroup}"/>-->
+
+                                        <!-- <link target="EditCertIssuerProvisions" style="buttontext" text="${uiLabelMap.PartyCertIssuers}"/> -->
                                     </container>
                                     <container>
                                         <include-form name="CertIssuerList" location="component://party/widget/partymgr/SecurityForms.xml"/>

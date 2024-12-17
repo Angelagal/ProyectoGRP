@@ -181,7 +181,7 @@
     <property key="loginevents.unable_to_login_this_application">
         <value xml:lang="de">Anmeldung bei der Anwendung nicht erfolgreich</value>
         <value xml:lang="en">You cannot login to this application</value>
-        <value xml:lang="es">No puedo conectarse a esta aplicación (faltan permisos)</value>
+        <value xml:lang="es">No puede conectarse a esta aplicación (faltan permisos)</value>
         <value xml:lang="fr">Impossible de se connecter à cette application.</value>
         <value xml:lang="it">L'autenticazione per questa applicazione non è stata completata (permessi non sufficienti).</value>
         <value xml:lang="nl">Het inloggen kan niet voltooid worden (niet bevoegd)</value>
