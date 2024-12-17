@@ -191,9 +191,11 @@ under the License.
                                 </entity-condition>
                             </actions>
                             <widgets>
+                                <!--
                                 <screenlet title="${uiLabelMap.PartyNewRoleType}">
                                     <include-form name="AddRoleType" location="component://party/widget/partymgr/PartyForms.xml"/>
                                 </screenlet>
+                                -->
                             </widgets>
                         </section>
                     </decorator-section>
