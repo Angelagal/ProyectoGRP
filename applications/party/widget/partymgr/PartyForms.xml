@@ -1042,23 +1042,25 @@ under the License.
         <field position="1" name="totalToBeReceived" use-when="finanSummary.get(&quot;totalToBeReceived&quot;)!=null" title="${uiLabelMap.PartyToBePaidTo} ${parameters.partyId}"><display type="currency" currency="${actualCurrencyUomId}"/></field>
     </form>
     <form name="ViewPartyRoles" type="list" list-name="partyRoles" target="viewroles"
-        default-title-style="tableheadtext" default-widget-style="tabletext"
-        odd-row-style="alternate-row" default-table-style="basic-table hover-bar"
-        default-tooltip-style="tabletext">
-        <field name="description" title="${uiLabelMap.PartyRole}"><display/></field>
-        <field name="parentTypeId"><display-entity entity-name="RoleType" key-field-name="roleTypeId" description="${description}"/></field>
-        <field name="remove">
-            <hyperlink target="deleterole" description="${uiLabelMap.CommonRemove}">
-                <parameter param-name="partyId"/>
-            </hyperlink>
-        </field>
-    </form>
+    default-title-style="tableheadtext" default-widget-style="tabletext"
+    odd-row-style="alternate-row" default-table-style="basic-table hover-bar"
+    default-tooltip-style="tabletext">
+    <field name="roleTypeId" title="${uiLabelMap.PartyRoleTypeId}"><display/></field>
+    <field name="description" title="${uiLabelMap.PartyRole}"><display/></field>
+    <field name="parentTypeId"><display-entity entity-name="RoleType" key-field-name="roleTypeId" description="${description}"/></field>
+    <field name="remove">
+        <hyperlink target="deleterole" description="${uiLabelMap.CommonRemove}">
+            <parameter param-name="partyId"/>
+            <parameter param-name="roleTypeId"/>
+        </hyperlink>
+    </field>
+</form>
     <form name="AddPartyRole" type="single" title="Add a role to party" target="addrole/viewroles">
         <field name="partyId"><hidden value="${parameters.partyId}"/></field>
         <field name="roleTypeId">
             <drop-down allow-empty="false">
                 <entity-options entity-name="RoleType" description="${description}">
-                	<entity-constraint name="roleTypeId" operator="in" value="EMPLOYEE,ACCOUNTANT,PRESUPUESTO"/>
+                	<entity-constraint name="roleTypeId" operator="in" value="EMPLOYEE,ACCOUNTANT,PRESUPUESTO,ADMIN"/>
 <!--	                Ocultar un sólo valor-->
 <!--	                <entity-constraint name="roleTypeId" operator="not-equals" value="MANAGER"/>-->
                     <entity-order-by field-name="description"/>
@@ -1100,7 +1102,7 @@ under the License.
 
         <field name="submit" title="${uiLabelMap.CommonSubmit}"><submit/></field>
     </form>
-    <!-- Ini CHRV 22/05/2014 Se crea una nueva forma para las preferencias de cada Party -->
+    <!-- Ini CHRV 22/05/2014 Se crea una nueva forma para la preferencias de cada Pasrty -->
     <form name="ListPreferenceParty" type="list" target="updatePreferenceParty" list-name="userPreferenceList"
         odd-row-style="alternate-row" default-table-style="basic-table hover-bar" separate-columns="true" use-row-submit="true" >
         <row-actions>
@@ -1212,42 +1214,42 @@ under the License.
         </field>
     </form>
     <form name="ListProductStoreRole" type="list" list-name="listIt" paginate-target="FindProductStoreRoles" default-entity-name="ProductStoreRole" separate-columns="true"
-            odd-row-style="alternate-row" header-row-style="header-row-2" default-table-style="basic-table hover-bar">
-        <actions>
-            <service service-name="performFind" result-map="result" result-map-list="listIt">
-                <field-map field-name="inputFields" from-field="parameters"/>
-                <field-map field-name="entityName" value="ProductStoreRole"/>
-                <field-map field-name="orderBy" from-field="parameters.sortField"/>
-                <field-map field-name="viewIndex" from-field="viewIndex"/>
-                <field-map field-name="viewSize" from-field="viewSize"/>
-            </service>
-        </actions>
-        <field name="productStoreId" title="${uiLabelMap.ProductStoreId}">
-            <display-entity entity-name="ProductStore" key-field-name="productStoreId" description="${storeName}">
-                <sub-hyperlink target="/catalog/control/EditProductStore" target-type="inter-app" description="${storeName} (${productStoreId})" >
-                    <parameter param-name="productStoreId"/>
-                </sub-hyperlink>
-            </display-entity>
-        </field>
-        
-        <field name="fromDate"><display/></field>
-        <field name="thruDate"><display/></field>
-        <field name="sequenceNum"><display/></field>
-        <field name="editLink" widget-style="buttontext" title="${uiLabelMap.CommonEdit}">
-           <hyperlink target="FindProductStoreRoles" description="${uiLabelMap.CommonEdit}">
-                <parameter param-name="partyId"/>
-                <parameter param-name="productStoreId"/>
-                <parameter param-name="roleTypeId"/>
-                <parameter param-name="fromDate"/>
-            </hyperlink>
-        </field>
-        <field name="deleteLink" widget-style="buttontext" title="${uiLabelMap.CommonDelete}">
-            <hyperlink target="storeRemoveRole" description="${uiLabelMap.CommonDelete}">
-                <parameter param-name="partyId"/>
-                <parameter param-name="productStoreId"/>
-                <parameter param-name="roleTypeId"/>
-                <parameter param-name="fromDate"/>
-            </hyperlink>
-        </field>
-    </form>
+    odd-row-style="alternate-row" header-row-style="header-row-2" default-table-style="basic-table hover-bar">
+<actions>
+    <service service-name="performFind" result-map="result" result-map-list="listIt">
+        <field-map field-name="inputFields" from-field="parameters"/>
+        <field-map field-name="entityName" value="ProductStoreRole"/>
+        <field-map field-name="orderBy" from-field="parameters.sortField"/>
+        <field-map field-name="viewIndex" from-field="viewIndex"/>
+        <field-map field-name="viewSize" from-field="viewSize"/>
+    </service>
+</actions>
+<field name="productStoreId" title="${uiLabelMap.ProductStoreId}">
+    <display-entity entity-name="ProductStore" key-field-name="productStoreId" description="${storeName}">
+        <sub-hyperlink target="/catalog/control/EditProductStore" target-type="inter-app" description="${storeName} (${productStoreId})" >
+            <parameter param-name="productStoreId"/>
+        </sub-hyperlink>
+    </display-entity>
+</field>
+<field name="roleTypeId" title="${uiLabelMap.PartyRoleTypeId}"><display-entity entity-name="RoleType"/></field>
+<field name="fromDate"><display/></field>
+<field name="thruDate"><display/></field>
+<field name="sequenceNum"><display/></field>
+<field name="editLink" widget-style="buttontext" title="${uiLabelMap.CommonEdit}">
+   <hyperlink target="FindProductStoreRoles" description="${uiLabelMap.CommonEdit}">
+        <parameter param-name="partyId"/>
+        <parameter param-name="productStoreId"/>
+        <parameter param-name="roleTypeId"/>
+        <parameter param-name="fromDate"/>
+    </hyperlink>
+</field>
+<field name="deleteLink" widget-style="buttontext" title="${uiLabelMap.CommonDelete}">
+    <hyperlink target="storeRemoveRole" description="${uiLabelMap.CommonDelete}">
+        <parameter param-name="partyId"/>
+        <parameter param-name="productStoreId"/>
+        <parameter param-name="roleTypeId"/>
+        <parameter param-name="fromDate"/>
+    </hyperlink>
+</field>
+</form>
 </forms>

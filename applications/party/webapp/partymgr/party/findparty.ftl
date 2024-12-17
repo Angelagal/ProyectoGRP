@@ -257,9 +257,9 @@ under the License.
           <#if softIdentifier?default("") != "">
             <td>${uiLabelMap.ProductSoftIdentifier}</td>
           </#if>
-          <td>${uiLabelMap.PartyRelatedCompany}</td>
+          <!--<td>${uiLabelMap.PartyRelatedCompany}</td>-->
           <td>${uiLabelMap.PartyType}</td>
-          <td>${uiLabelMap.PartyMainRole}</td>
+          <!-- <td>${uiLabelMap.PartyMainRole}</td>-->
           <td>&nbsp;</td>
         </tr>
         <#assign alt_row = false>
@@ -317,6 +317,7 @@ under the License.
             <#if softIdentifier?default("") != "">
               <td>${partyRow.softIdentifier?if_exists}</td>
             </#if>
+            <!--
             <#if partyType?exists>
               <td>
                   <#if partyType.partyTypeId?has_content && partyType.partyTypeId=="PERSON">
@@ -331,14 +332,17 @@ under the License.
                        </#if>
                   </#if>
               </td>
+            -->
               <td><#if partyType.description?exists>${partyType.get("description", locale)}<#else>???</#if></td>
            <#else>
             <td></td><td></td>
            </#if>
+           <!--
             <td>
               <#assign mainRole = dispatcher.runSync("getPartyMainRole", Static["org.ofbiz.base.util.UtilMisc"].toMap("partyId", partyRow.partyId, "userLogin", userLogin))/>
               ${mainRole.description?if_exists}
             </td>
+            -->
             <td class="button-col align-float">
               <a href="<@ofbizUrl>viewprofile?partyId=${partyRow.partyId}</@ofbizUrl>">${uiLabelMap.CommonDetails}</a>
               <#if security.hasRolePermission("ORDERMGR", "_VIEW", "", "", session)>
