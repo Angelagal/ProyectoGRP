@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Mensaje inicial
-echo "Verificando la conexión SSH con GitHub..."
+echo "=== Verificando la conexión SSH con GitHub ==="
 
 # Verificar la conexión SSH con GitHub
 ssh -T git@github.com
@@ -20,9 +20,22 @@ echo "Cambios locales descartados exitosamente."
 
 # Mensaje indicando que se actualizará el repositorio
 echo "Actualizando el repositorio local con los últimos cambios del repositorio remoto..."
-
-# Actualizar el repositorio local con los cambios remotos
 git pull origin main || { echo "Error: No se pudo actualizar el repositorio."; exit 1; }
 
+# Limpiar el sistema
+echo "Limpiando el sistema..."
+ant clean || { echo "Error: Falló el proceso de limpieza con 'ant clean'."; exit 1; }
+echo "Sistema limpiado exitosamente."
+
+# Construir el sistema
+echo "Construyendo el sistema..."
+ant build || { echo "Error: Falló el proceso de construcción con 'ant build'."; exit 1; }
+echo "Sistema construido exitosamente."
+
+# Levantar el sistema
+echo "Levantando el sistema..."
+./startgrp.sh || { echo "Error: Falló al intentar levantar el sistema con 'startgrp.sh'."; exit 1; }
+echo "Sistema levantado exitosamente."
+
 # Mensaje final
-echo "Actualización completada exitosamente."
+echo "=== Proceso completado exitosamente ==="
