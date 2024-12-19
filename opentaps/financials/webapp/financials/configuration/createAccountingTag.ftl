@@ -61,9 +61,13 @@
 					break;
 				}else if(fechaIni >= fechaFin){
 					alert("La fecha inicial no puede ser mayor o igual a la final");
+					document.buscarClasificacion.fechaInicio.value = " ";
+          			document.buscarClasificacion.fechaFin.value = " ";
 					break;
 				}else if((fechaIni != " ") && (fechaFin != " ")){
-					alert("Las fechas no pueden estar vacias");
+					alert("Fechas vacias o formato incorrecto");
+					document.buscarClasificacion.fechaInicio.value = " ";
+          			document.buscarClasificacion.fechaFin.value = " ";
 					break;
 				}	
 			}
@@ -82,9 +86,11 @@
 	<@inputTextRow title=uiLabelMap.CommonName name="enumCode" size=40 maxlength=255 titleClass="requiredField" id="enumCode"/>
 	<@inputTextRow title=uiLabelMap.CommonDescription name="description" size=60 maxlength=255 titleClass="requiredField" id="description"/>	
 	<@inputTextRow title=uiLabelMap.ClaveSuperior  size=10 name="parentEnumId" size=10  id="parentEnumId"/>
-	<@inputDateRow title=uiLabelMap.FormFieldTitle_datefrom name="fechaInicio" size=12 default="" titleClass="requiredField" id="fechaInicio"/>
+	<@inputDateRow title=uiLabelMap.FormFieldTitle_datefrom name="fechaInicio" size=12 default="" titleClass="requiredField" />
+	<!--<input type="date" id="fechaInicio"></input>-->
 	<@inputDateRow title=uiLabelMap.FormFieldTitle_dateThru name="fechaFin" size=12 default="" titleClass="requiredField" id="fechaFin"/>
 	<@inputButtonNoSubmitRow title=uiLabelMap.CommonCreate onClick="crearClasificacion();" />
+	
 	</table>
 	</form>
 </@frameSection>

@@ -27,6 +27,34 @@
 	}
 </script>
 
+<script>
+  function validarFecha(){
+    var fecha_ini = document.getElementById("fechaInicial").value;
+		fecha_ini = fecha_ini.replace(/\D/g, ' ');
+		var componentes = fecha_ini.split(' ');
+		var fechaIni = new Date(componentes[2]+"/"+componentes[1]+"/"+componentes[0]);
+		
+		var fecha_fin = document.getElementById("fechaFinal").value;
+		fecha_fin = fecha_fin.replace(/\D/g, ' ');
+		var componentes1 = fecha_fin.split(' ');
+		var fechaFin = new Date(componentes1[2]+"/"+componentes1[1]+"/"+componentes1[0]);
+
+    if(fechaIni < fechaFin)
+				{	
+					alert("Generando busqueda");
+					document.getElementById('buscarClasificacion').submit();
+				}else if(fechaIni >= fechaFin){
+					alert("La fecha inicial no puede ser mayor o igual a la final");
+					document.BuscaAfectacion.fechaInicial.value = " ";
+					document.BuscaAfectacion.fechaFinal.value = " ";
+				}else if((fechaIni != " ") && (fechaFin != " ")){
+					alert("Fechas vacias o formato incorrecto");
+					document.BuscaAfectacion.fechaInicial.value = " ";
+					document.BuscaAfectacion.fechaFinal.value = " ";
+				}	
+  }
+</script>
+
 <@frameSection title=uiLabelMap.FinancialsConsultarMomento>
 
 <@form name="BuscaAfectacion" url="">
@@ -43,10 +71,10 @@
 			</td>
       	</tr>
 		<@inputTextRow name="numeroPoliza" title=uiLabelMap.FormFieldTitle_numeroPoliza />
-		<@inputDateRow name="fechaTransaccion" title=uiLabelMap.FinancialsTransactionDate form="BuscaAfectacion" />
-		<@inputDateRow name="fechaContable" title=uiLabelMap.FinancialsAccountigDate form="BuscaAfectacion" />
+		<@inputDateRow name="fechaTransaccion" title=uiLabelMap.FinancialsTransactionDate form="BuscaAfectacion" id="fechaInicial" />
+		<@inputDateRow name="fechaContable" title=uiLabelMap.FinancialsAccountigDate form="BuscaAfectacion" id="fechaFinal"/>
 		<@inputTextRow name="comentario" title=uiLabelMap.FormFieldTitleComentario />
-		<@inputSubmitRow title=uiLabelMap.CommonFind/> 
+		<@inputSubmitRow title=uiLabelMap.CommonFind onClick="validarFecha();"/> 
 	</table>
 </@form>
 <@paginate name="listAfectacionListBuilder" list=afectacionListBuilder rememberPage=false>

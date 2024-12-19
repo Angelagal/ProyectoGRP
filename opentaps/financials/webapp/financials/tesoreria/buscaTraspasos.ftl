@@ -48,6 +48,35 @@
 		}
 </script>
 
+<script>
+  function validarFecha(){
+    var fecha_ini = document.getElementById("fechaContableDesde").value;
+		fecha_ini = fecha_ini.replace(/\D/g, ' ');
+		var componentes = fecha_ini.split(' ');
+		var fechaIni = new Date(componentes[2]+"/"+componentes[1]+"/"+componentes[0]);
+		
+		var fecha_fin = document.getElementById("fechaContableHasta").value;
+		fecha_fin = fecha_fin.replace(/\D/g, ' ');
+		var componentes1 = fecha_fin.split(' ');
+		var fechaFin = new Date(componentes1[2]+"/"+componentes1[1]+"/"+componentes1[0]);
+
+   if(fechaIni < fechaFin)
+				{	
+					alert("Generando busqueda");
+					document.buscaTraspasos.fechaContableDesde.value = " ";
+          			document.buscaTraspasos.fechaContableHasta.value = " ";
+				}else if(fechaIni >= fechaFin){
+					alert("La fecha inicial no puede ser mayor o igual a la final");
+          			document.buscaTraspasos.fechaContableDesde.value = " ";
+          			document.buscaTraspasos.fechaContableHasta.value = " ";
+				}else if((fechaIni != " ") && (fechaFin != " ")){
+					alert("Fechas vacias o formato incorrecto");
+          			document.buscaTraspasos.fechaContableDesde.value = " ";
+          			document.buscaTraspasos.fechaContableHasta.value = " ";
+				}		
+  }
+</script>
+
 <form name="buscaTraspasos" method="post" action="">
   <@inputHidden name="performFind" value="Y"/>
   <table class="twoColumnForm">
@@ -64,7 +93,7 @@
       <@inputSelectRow title=uiLabelMap.BancoDestino required=false list=bancos  displayField="nombreBanco" name="bancoDestino" id="bancoDestino" key="bancoId"
 								default=bancoId?if_exists onChange="buscaCuentasBancarias('bancoDestino','cuentaDestino')" />
 	  <@inputSelectRow title=uiLabelMap.CuentaDestino name="cuentaDestino" id="cuentaDestino" list=([]) />
-      <@inputSubmitRow title=uiLabelMap.CommonFind />
+      <@inputSubmitRow title=uiLabelMap.CommonFind onClick="validarFecha();"/>
     </tbody>
   </table>
 </form>

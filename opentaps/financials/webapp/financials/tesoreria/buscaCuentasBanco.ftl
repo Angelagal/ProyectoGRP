@@ -15,6 +15,35 @@
  * along with Opentaps.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
+<script>
+  function validarFecha(){
+    var fecha_ini = document.getElementById("fechaInicialPeriodo").value;
+		fecha_ini = fecha_ini.replace(/\D/g, ' ');
+		var componentes = fecha_ini.split(' ');
+		var fechaIni = new Date(componentes[2]+"/"+componentes[1]+"/"+componentes[0]);
+		
+		var fecha_fin = document.getElementById("fechaFinalPeriodo").value;
+		fecha_fin = fecha_fin.replace(/\D/g, ' ');
+		var componentes1 = fecha_fin.split(' ');
+		var fechaFin = new Date(componentes1[2]+"/"+componentes1[1]+"/"+componentes1[0]);
+
+    if(fechaIni < fechaFin)
+		{	
+			alert("Generando busqueda");
+			document.buscaTraspasos.fechaInicialPeriodo.value = " ";
+			document.buscaTraspasos.fechaFinalPeriodo.value = " ";
+		}else if(fechaIni >= fechaFin){
+			alert("La fecha inicial no puede ser mayor o igual a la final");
+			document.buscaTraspasos.fechaInicialPeriodo.value = " ";
+			document.buscaTraspasos.fechaFinalPeriodo.value = " ";
+		}else if((fechaIni != " ") && (fechaFin != " ")){
+			document.buscaTraspasos.fechaInicialPeriodo.value = " ";
+			document.buscaTraspasos.fechaFinalPeriodo.value = " ";
+        	alert("Fechas vacias o formato incorrecto");
+        }	
+  }
+</script>
+
 <@import location="component://opentaps-common/webapp/common/includes/lib/opentapsFormMacros.ftl"/>
 
 
@@ -26,7 +55,7 @@
 	  <#assign diaActual = Static["org.ofbiz.base.util.UtilDateTime"].nowSqlDate()>
 	  <#assign inicioMes = Static["org.ofbiz.base.util.UtilDateTime"].getMonthStart(diaActual)>
  	  <@inputDateRangeRow title=uiLabelMap.FinancialPeriodo fromName="fechaInicialPeriodo" thruName="fechaFinalPeriodo" defaultFrom=inicioMes defaultThru=diaActual/>
-      <@inputSubmitRow title=uiLabelMap.CommonFind />
+      <@inputSubmitRow title=uiLabelMap.CommonFind onClick="validarFecha();"/>
 	</tbody>
 	</table>
 </form>

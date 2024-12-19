@@ -5,9 +5,40 @@
 	function cambiaTipo(){
 		document.getElementById("performFind").value = "N";
 		document.getElementById("ConsultaClavesPresupuestalesPoliza").submit();		
+    
 	}	
 	// -->
 </script>
+
+<script>
+  function validarFecha(){
+    var fecha_ini = document.getElementById("fechaInicialPeriodo").value;
+		fecha_ini = fecha_ini.replace(/\D/g, ' ');
+		var componentes = fecha_ini.split(' ');
+		var fechaIni = new Date(componentes[2]+"/"+componentes[1]+"/"+componentes[0]);
+		
+		var fecha_fin = document.getElementById("fechaFinalPeriodo").value;
+		fecha_fin = fecha_fin.replace(/\D/g, ' ');
+		var componentes1 = fecha_fin.split(' ');
+		var fechaFin = new Date(componentes1[2]+"/"+componentes1[1]+"/"+componentes1[0]);
+
+    if(fechaIni < fechaFin)
+				{	
+					alert("Generando busqueda");
+          document.ConsultaClavesPresupuestalesPoliza.fechaInicialPeriodo.value = " ";
+          document.ConsultaClavesPresupuestalesPoliza.fechaFinalPeriodo.value = " ";
+				}else if(fechaIni >= fechaFin){
+					alert("La fecha inicial no puede ser mayor o igual a la final");
+          document.ConsultaClavesPresupuestalesPoliza.fechaInicialPeriodo.value = " ";
+          document.ConsultaClavesPresupuestalesPoliza.fechaFinalPeriodo.value = " ";
+				}else if((fechaIni != " ") && (fechaFin != " ")){
+					document.ConsultaClavesPresupuestalesPoliza.fechaInicialPeriodo.value = " ";
+          document.ConsultaClavesPresupuestalesPoliza.fechaFinalPeriodo.value = " ";
+          alert("Fechas vacias o formato incorrecto");
+        }
+  }
+</script>
+
 
 <form id="ConsultaClavesPresupuestalesPoliza" name="ConsultaClavesPresupuestalesPoliza" method="post" action="">
   <@inputHidden id="performFind" name="performFind" value="Y"/>
@@ -22,7 +53,8 @@
       <@inputSelectRow title=uiLabelMap.FinancialsTipoPoliza required=false list=listaTipoPoliza  displayField="description" name="tipoPolizaId" key="tipoPolizaId" />	
 	  <@displayTitleCell title=uiLabelMap.FinancialsMovimiento/>
 	  <@inputSelectHashCell hash= {"D":"Cargo", "C":"Abono", "A":"Ambos"} id="tipoMovimiento" name="tipoMovimiento"/>	
-      <@inputSubmitRow title=uiLabelMap.CommonFind />
+      <@inputSubmitRow title=uiLabelMap.CommonFind onClick="validarFecha();"/>
+      ${uiLabelMap.CommonFind}
     </tbody>
   </table>
 </form>

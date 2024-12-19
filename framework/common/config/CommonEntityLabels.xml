@@ -7244,6 +7244,7 @@
         <value xml:lang="zh">已计划</value>
     </property>
     <property key="StatusItem.description.LEAD_ASSIGNED">
+        <value xml:lang="es">Asignado</value>
         <value xml:lang="en">Assigned</value>
         <value xml:lang="fr">Affecté</value>
         <value xml:lang="it">Assegnato</value>
@@ -7599,12 +7600,14 @@
         <value xml:lang="zh">已发送邀请</value>
     </property>
     <property key="StatusItem.description.PARTY_DISABLED">
+        <value xml:lang="es">Deshabilitado</value>
         <value xml:lang="en">Disabled</value>
         <value xml:lang="fr">Désactivé</value>
         <value xml:lang="it">Disabilitato</value>
         <value xml:lang="zh">已禁用</value>
     </property>
     <property key="StatusItem.description.PARTY_ENABLED">
+        <value xml:lang="es">Habilitado</value>
         <value xml:lang="en">Enabled</value>
         <value xml:lang="fr">Activé</value>
         <value xml:lang="it">Abilitato</value>
