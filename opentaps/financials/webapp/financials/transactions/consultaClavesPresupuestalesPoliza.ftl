@@ -54,7 +54,6 @@
 	  <@displayTitleCell title=uiLabelMap.FinancialsMovimiento/>
 	  <@inputSelectHashCell hash= {"D":"Cargo", "C":"Abono", "A":"Ambos"} id="tipoMovimiento" name="tipoMovimiento"/>	
       <@inputSubmitRow title=uiLabelMap.CommonFind onClick="validarFecha();"/>
-      ${uiLabelMap.CommonFind}
     </tbody>
   </table>
 </form>

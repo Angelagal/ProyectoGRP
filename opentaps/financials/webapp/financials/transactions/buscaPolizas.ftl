@@ -35,7 +35,6 @@
 <form name="BuscaPoliza" >
   <table class="twoColumnForm">
     <tbody>
-    <input type="Date"></input>
       <@inputTextRow title=uiLabelMap.NumeroDePoliza name="poliza" size="20" maxlength="20"/>
       <@inputSelectRow title=uiLabelMap.FinancialsTipoPoliza required=false list=listaTipoPoliza  displayField="description" name="tipoPolizaId" key="tipoPolizaId" />
       <@inputAutoCompletePartyRow title="${uiLabelMap.PurchArea}" name="areaId" />
