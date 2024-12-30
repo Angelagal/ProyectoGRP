@@ -943,13 +943,13 @@ public class ServiceDispatcher {
                     message = ServiceUtil.getErrorMessage(permResp);
                 }
                 if (UtilValidate.isEmpty(message)) {
-                    message = "You do not have permission to invoke the service [" + origService.name + "]";
+                    message = "No tienes permiso para realizar esta operación, comunícate con el administrador del sistema";
                 }
                 throw new ServiceAuthException(message);
             }
         } else {
             if (!origService.evalPermissions(dctx, context)) {
-                throw new ServiceAuthException("You do not have permission to invoke the service [" + origService.name + "]");
+                throw new ServiceAuthException("No tienes permiso para realizar esta operación, comunícate con el administrador del sistema");
             }
         }
 

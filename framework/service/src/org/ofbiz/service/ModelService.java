@@ -546,7 +546,9 @@ public class ModelService extends AbstractMap<String, Object> implements Seriali
                     String errMsg = UtilProperties.getMessage(ServiceUtil.resource, "ModelService.following_required_parameter_missing", locale);
                     String descriptionMissed = requiredDescription.get(missingKey);
                     boolean tieneDescripcion = (descriptionMissed != null && !descriptionMissed.isEmpty());
-                    message = errMsg + " [" + (tieneDescripcion? descriptionMissed : missingKey )+ "]";
+                    message = errMsg + " [" + (
+                    		tieneDescripcion ? descriptionMissed : 
+                    			missingKey.equals("groupName") ? "Nombre del grupo" : missingKey )+ "]";
                 }
                 missingMsg.add(message);
             }

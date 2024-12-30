@@ -23,7 +23,7 @@
     <property key="ModelService.following_required_parameter_missing">
         <value xml:lang="de">Der folgende benötigte Parameter fehlt:</value>
         <value xml:lang="en">The following required parameter is missing:</value>
-        <value xml:lang="es">Se necesita ingresar el siguiente parametro :</value>
+        <value xml:lang="es">Se necesita ingresar el siguiente parámetro :</value>
         <value xml:lang="fr">Le paramètre requis suivant manque :</value>
         <value xml:lang="it">Il seguente parametro richiesto è mancante:</value>
         <value xml:lang="nl">De volgende vereiste parameters werden niet gevonden:</value>
