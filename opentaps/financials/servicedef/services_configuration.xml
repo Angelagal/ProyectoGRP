@@ -369,7 +369,7 @@
     </service>    
     
     <service name="servicioPatrimonio" engine="java" location="com.opensourcestrategies.financials.transactions.CrearOperacionPatrimonial" invoke="creaPatrimonio">
-        <description>Creación de la Operación Patrimonial</description>
+        <description>Creación de la Operación</description>
         <implements service="lineasContables"/>
         <attribute name="fechaContable" mode="IN" type="java.sql.Timestamp" optional="true"/>
         <attribute name="userLogin" mode="IN" type="org.ofbiz.entity.GenericValue" optional="true"/>

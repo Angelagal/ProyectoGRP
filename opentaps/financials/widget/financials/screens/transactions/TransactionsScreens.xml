@@ -705,8 +705,8 @@
     <screen name="Patrimonio">
         <section>
             <actions>
-                <set field="pageTitleLabel" value="Operación patrimonial"/>  
-                <set field="sectionHeaderUiLabel" value="Operación patrimonial"/>  
+                <set field="pageTitleLabel" value="Operación"/>  
+                <set field="sectionHeaderUiLabel" value="Operación"/>  
                 <script location="component://financials/webapp/financials/WEB-INF/actions/transactions/getDatosPatrimonio.bsh"/>  
 <!--                 <java location="com.opensourcestrategies.financials.transactions.CrearOperacionPatrimonial" invoke="creaPatrimonio"/>                 -->
             </actions>

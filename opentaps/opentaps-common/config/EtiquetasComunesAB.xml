@@ -246,7 +246,7 @@
     </property>
 	<property key="CuentasPatrimoniales">
     	<value xml:lang="en">Equity Accounts</value>
-    	<value xml:lang="es">Cuentas Patrimoniales</value>
+    	<value xml:lang="es">Cuentas</value>
     </property>    
 	<property key="CuentaCargo">
     	<value xml:lang="en">Debit Account</value>
@@ -346,7 +346,8 @@
     </property>
     <property key="AfectacionPatrimonial">
     	<value xml:lang="en">Asset allocation</value>
-    	<value xml:lang="es">Afectación patrimonial</value>
+    	<value xml:lang="es">Afectación</value>
+
     </property>  
     <property key="NumeroAfectacion">
     	<value xml:lang="en">Number allocation</value>
