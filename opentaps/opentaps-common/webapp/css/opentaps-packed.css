@@ -288,7 +288,7 @@ A.tableheadbutton:hover {
 
 A.buttontext,.buttontextdisabled {
 	background-color: #fff;
-	border: #999 solid 1px;
+	border: 2px solid #6F7271 !important;
 	white-space: nowrap;
 	font-size: 10px;
 	margin: 0 0.1em;
@@ -687,28 +687,52 @@ a.offlnk {
 }
 
 .basic-form select,.basic-form input[type="text"],.inputBox {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-weight: 400;
-	background: #FFF url("/opentaps_images/text-bg.gif") repeat-x scroll 0 0;
-	font-size: 8pt;
-	border: #999 solid 1px;
-	margin: 2px;
+	box-shadow: 0 0 0 0 #6F7271;
+	color: #6F7271;
+	background-color: #fff;
+	font-size: 11px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: 1px solid #6F7271 !important;
+    border-color: #6c757d !important;
+    background-color: #fff;
+    color: #404041;
+    font-weight: 300 !important;
+    width: auto;
+    height: auto !important;
+    padding: 5px 10px;
+	user-select: none;
+	margin-bottom: 2px;
+
 }
 
 .basic-form input[type="submit"],.basic-form input[type="reset"],.smallSubmit,.smallSubmit:visited,.smallSubmitDisabled
 	{
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 8pt;
-	text-decoration: none;
-	color: #235B4E;
-	background: #FFF;
-	border: #999 solid 1px;
-	margin: 2px;
-	padding: 0 6px;
+		box-shadow: 0 0 0 0 #6F7271;
+		color: #6F7271;
+		background-color: #fff;
+		font-size: 11px;
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		border: 2px solid #6F7271 !important;
+		border-color: #6c757d !important;
+		background-color: #fff;
+		color: #404041;
+		font-weight: 300 !important;
+		width: auto;
+		height: auto !important;
+		padding: 5px 10px;
+		user-select: none;
+		margin-bottom: 3px;
+		text-decoration: none;
+}
+.basic-form input[type="submit"]:hover,.basic-form input[type="reset"]:hover,.smallSubmit:hover,.smallSubmitDisabled:hover{
+	background-color:#797d7f !important;
+	border: 2px solid #6F7271 !important;
+	color: white !important;
+	text-decoration: none !important;
 }
 
 .basic-table tr .smallSubmit,.basic-table tr .smallSubmitDisabled {
-	line-height: 1.8em;
+	line-height: 2.5em;
 }
 
 .mediumSubmit,.largeSubmit,.loginButton {
@@ -827,7 +851,7 @@ BODY.lookupBody {
 
 .basic-table tr .label,.basic-table tr .group-label {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 10px;
+	font-size: 14px;
 	font-weight: 700;
 	text-decoration: none;
 	color: #000;
@@ -842,13 +866,24 @@ BODY.lookupBody {
 }
 
 .basic-table tr .button-col a {
+	box-shadow: 0 0 0 0 #6F7271;
+	border: 2px solid #6F7271;
+	color: #6F7271;
 	background-color: #fff;
-	border: #999 solid 1px;
-	color: #235B4E;
-	float: left;
-	white-space: nowrap;
-	margin: 0 0.1em;
-	padding: 0.1em 0.4em;
+	font-size: 11px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: 2px solid #6F7271 !important;
+    border-color: #6c757d !important;
+    background-color: #fff;
+    color: #404041;
+    font-weight: 300 !important;
+    width: auto;
+    height: auto !important;
+    padding: 3px 8px;
+	user-select: none;
+	margin-bottom: 1px;
+	margin-top: 1px;
+
 }
 
 .basic-table tr .smallSubmit,.basic-table tr .smallSubmit:visited {
@@ -6210,23 +6245,25 @@ table.shortcutHelp td.shortcutKey {
 
 a.buttontext,a.exportExcelButton,.loginButton,.subMenuButton,.smallSubmit,.buttonDangerous,.subMenuButtonDangerous
 	{
-	display: inline-block;
-	color: #000 !important;
-	font-family: Tahoma, Verdana, Arial;
+	box-shadow: 0 0 0 0 #6F7271;
+	color: #6F7271;
+	background-color: #fff;
 	font-size: 11px;
-	font-weight: 400;
-	height: 21px !important;
-	border-left: 1px solid #AAA;
-	border-right: 1px solid #AAA;
-	border-top: 0 none !important;
-	border-bottom: 0 none !important;
-	cursor: pointer;
-	line-height: 21px !important;
-	padding: 0 5px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: 2px solid #6F7271 !important;
+    border-color: #6c757d !important;
+    background-color: #fff;
+    color: #404041;
+    font-weight: 300 !important;
+    width: auto;
+    height: auto !important;
+    padding: 5px 10px;
+	user-select: none;
+	margin-bottom: 0;
 }
 
 .loginButton,input.smallSubmit,button.subMenuButton {
-	padding: 0 5px 2px;
+	padding: 5px 10px;
 }
 
 a.smallSubmit {
@@ -6234,43 +6271,39 @@ a.smallSubmit {
 	padding-bottom: 0 !important;
 }
 
-a.buttontext,a.exportExcelButton,.loginButton,.subMenuButton,.smallSubmit
+a.buttontext:hover a.exportExcelButton,.loginButton:hover,.subMenuButton:hover,.smallSubmit:hover
 	{
-	background: transparent url(/opentaps_images/buttons/btn-sprite.gif)
-		repeat-x scroll 0 -42px !important;
+		background-color:#797d7f;
+	border: 2px solid #6F7271 !important;
+	color: white !important;
+	text-decoration: none !important;
 }
 
 .buttonDangerous,.subMenuButtonDangerous {
 	background: transparent url(/opentaps_images/buttons/btn-sprite.gif)
-		repeat-x scroll 0 -315px !important;
-	border-left: 1px solid #fe8484 !important;
-	border-right: 1px solid #fe8484 !important;
+	repeat-x scroll 0 -315px !important;
+	border: 2px solid #6F7271 !important;
 	color: #000 !important;
 }
 
 a.buttontext:active,a.buttontext:hover,a.exportExcelButton:active,a.exportExcelButton:hover,.loginButton:active,.loginButton:hover,.subMenuButton:active,.subMenuButton:hover,.smallSubmit:active,.smallSubmit:hover
 	{
-	background: transparent url(/opentaps_images/buttons/btn-sprite.gif)
-		repeat-x scroll 0 -105px !important;
-	border-left: 1px solid #568bc4 !important;
-	border-right: 1px solid #568bc4 !important;
-	color: #000 !important;
+	background-color:#797d7f;
+	border: 2px solid #6F7271 !important;
+	color: white !important;
 	text-decoration: none !important;
 }
 
 a.buttontextdisabled,.smallSubmitDisabled {
 	color: #666 !important;
-	border-left: 1px solid #AAA !important;
-	border-right: 1px solid #AAA !important;
+	border: 2px solid #6F7271 !important;
 }
 
 a.buttontextdisabled:active,a.buttontextdisabled:hover,.smallSubmitDisabled:active,.smallSubmitDisabled:hover
 	{
-	background: transparent url(/opentaps_images/buttons/btn-sprite.gif)
-		repeat-x scroll 0 -42px !important;
+	background:;
 	color: #666 !important;
-	border-left: 1px solid #AAA !important;
-	border-right: 1px solid #AAA !important;
+	border: 2px solid #6F7271 !important;
 	text-decoration: none !important;
 }
 
@@ -6288,7 +6321,8 @@ a.buttontextdisabled:active,a.buttontextdisabled:hover,.smallSubmitDisabled:acti
 }
 
 .frameSectionHeader .x-panel-tc .sectionHeaderTitle {
-	font-size: 14pt;
+	font-size: 18pt;
+	font-weight: 400 !important;
 }
 
 .frameSectionBody {

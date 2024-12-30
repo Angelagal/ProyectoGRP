@@ -28,9 +28,13 @@ under the License.
           <td class="label">${uiLabelMap.PartySelectContactType}</td>
           <td>
             <select name="preContactMechTypeId">
+             
               <#list mechMap.contactMechTypes as contactMechType>
+              <#if contactMechType.contactMechTypeId = "EMAIL_ADDRESS">
                 <option value="${contactMechType.contactMechTypeId}">${contactMechType.get("description",locale)}</option>
+              </#if>
               </#list>
+              
             </select>
             <a href="javascript:document.createcontactmechform.submit()" class="smallSubmit">${uiLabelMap.CommonCreate}</a>
           </td>

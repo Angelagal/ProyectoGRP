@@ -122,19 +122,29 @@ padding: 0.1em 0 0.1em 0;
 
 input[type="submit"], input[type="button"],
 input[type="reset"] {
-    background: #235B4E;
-    border: #999999 solid 0.1em;
-    color: white;
-    font-size: 13px;
-    font-weight: bold;
-    padding: 5px;
-    margin-top: 11px;
+    box-shadow: 0 0 0 0 #6F7271;
+	border: 2px solid #6F7271;
+	color: #6F7271;
+	background-color: #fff;
+	font-size: 11px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: 2px solid #6F7271 !important;
+    border-color: #6c757d !important;
+    background-color: #fff;
+    color: #404041;
+    font-weight: 300 !important;
+    width: auto;
+    height: auto !important;
+    padding: 5px 10px;
+	user-select: none;
+	margin-bottom: 0;
 }
 
 input[type="submit"]:hover {
-background:#10312B;
-cursor: pointer;
-text-decoration: underline;
+    background-color:#797d7f;
+	border: 2px solid #6F7271 !important;
+	color: white !important;
+	text-decoration: none !important;
 }
 
 input[type="file"] {
@@ -195,18 +205,29 @@ font-weight: bold;
 /* The "smallSubmit" class can be used to decorate
 links (A elements) and make them similar to form's buttons. */
 .smallSubmit, .smallSubmit:visited {
-background:transparent url(/opentaps_images/gray/panel/top-bottom.gif) repeat-x 0;
-border: #999999 solid 0.1em;
-color: #000000;
-font-size: 1em;
-font-weight: bold;
-margin: 0.2em;
-padding: 0.1em 0.2em 0.1em 0.2em;
+    box-shadow: 0 0 0 0 #6F7271;
+	border: 2px solid #6F7271;
+	color: #6F7271;
+	background-color: #fff;
+	font-size: 11px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: 2px solid #6F7271 !important;
+    border-color: #6c757d !important;
+    background-color: #fff;
+    color: #404041;
+    font-weight: 300 !important;
+    width: auto;
+    height: auto !important;
+    padding: 5px 10px;
+	user-select: none;
+	margin-bottom: 0;
 }
 
 .smallSubmit:hover {
-color: #ff0000;
-text-decoration: none;
+    background-color:#797d7f;
+	border: 2px solid #6F7271 !important;
+	color: white !important;
+	text-decoration: none !important;
 }
 
 .smallSubmit:active {
@@ -272,8 +293,10 @@ font-size: 1.1em;
 }
 
 A.boxheadbutton:hover {
-color: #ff0000;
-text-decoration: none;
+    background-color:#797d7f;
+	border: 2px solid #6F7271 !important;
+	color: white !important;
+	text-decoration: none !important;
 }
 
 .boxoutside {
@@ -324,7 +347,7 @@ A.buttontext, .buttontextdisabled {
 background-color: #ffffff;
 border: #999999 solid 0.1em;
 font-weight: bold;
-line-height: 1.8em;
+line-height: 2.5em;
 margin: 0.2em;
 padding: 0.1em 0.4em 0.1em 0.4em;
 /*white-space: nowrap;*/
@@ -335,7 +358,10 @@ color: #333333;
 }
 
 A.buttontext:hover {
-color: #ff0000;
+    background-color:#797d7f;
+	border: 2px solid #6F7271 !important;
+	color: white !important;
+	text-decoration: none !important;
 }
 
 A.linktext {
@@ -343,7 +369,10 @@ color: #000099;
 }
 
 A.linktext:hover {
-color: #ff0000;
+    background-color:#797d7f;
+	border: 2px solid #6F7271 !important;
+	color: white !important;
+	text-decoration: none !important;
 
 }
 
@@ -465,7 +494,10 @@ color: #CCCCCC;
 }
 
 A.buttontextbig:hover {
-color: #ff0000;
+    background-color:#797d7f;
+	border: 2px solid #6F7271 !important;
+	color: white !important;
+	text-decoration: none !important;
 }
 
 A IMG.imageborder {
@@ -486,7 +518,10 @@ color: #000099;
 }
 
 .errorMessage {
-color: #ff0000;
+    background-color:#797d7f;
+	border: 2px solid #6F7271 !important;
+	color: white !important;
+	text-decoration: none !important;
 }
 
 .mediumSubmit, .largeSubmit, .loginButton {
@@ -499,7 +534,10 @@ margin: 0.2em;
 }
 
 .mediumSubmit:hover,.largeSubmit:hover,.loginButton:hover {
-color: #ff0000;
+    background-color:#797d7f;
+	border: 2px solid #6F7271 !important;
+	color: white !important;
+	text-decoration: none !important;
 }
 
 .smallAltSubmit,.mediumAltSubmit,.largeAltSubmit {
@@ -770,7 +808,7 @@ margin-bottom: 0.5em;
 }
 
 #column-container h1{
-    font-size: 15px;
+    font-size: 18px;
 }
 
 #column-container h1,
@@ -1344,17 +1382,19 @@ padding-left: 1em;
 }
 
 .basic-nav ul a {
-color: #000099;
-font-size: 1.1em;
+color: #10312B;
+font-size: 1.5em;
+margin-top: 0.5em;
 }
 
 .basic-nav ul .selected,
 .basic-nav ul .selected a {
-color: #0000ff;
+    color: #10312B;
 }
 
 .basic-nav ul a:hover {
-color: #0000ff;
+color: #98989A;
+text-decoration: none;
 }
 
 .basic-nav ul .disabled,
@@ -1392,8 +1432,9 @@ display: block;
 
 .button-bar ul a,
 .button-bar a {
-padding: 0.1em 0.5em 0.1em 0.5em;
+padding: 0.5em 1em 0.5em 1em;
 white-space: nowrap;
+font-size: 14px;
 }
 
 .button-bar ul a:hover {
@@ -1450,9 +1491,22 @@ color: #000099;
 .button-style-2 ul a,
 .button-style-2 a,
 a.button-style-2 {
-background-color: #ffffff;
-border: solid #000099 0.1em;
-color: #000099;
+    box-shadow: 0 0 0 0 #6F7271;
+	border: 2px solid #6F7271;
+	color: #6F7271;
+	background-color: #fff;
+	font-size: 11px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: 2px solid #6F7271 !important;
+    border-color: #6c757d !important;
+    background-color: #fff;
+    color: #404041;
+    font-weight: 300 !important;
+    width: auto;
+    height: auto !important;
+    padding: 5px 10px;
+	user-select: none;
+	margin-bottom: 0;
 }
 
 .button-style-2 ul .selected a,
@@ -1631,22 +1685,32 @@ white-space: nowrap;
 
 .basic-table tr .smallSubmit,
 .basic-table tr .smallSubmit:visited {
-background-color: #ffffff;
-border: #999999 solid 0.1em;
-color: #000000;
-font-size: 1em;
-font-weight: bold;
-margin: 0.2em;
-padding: 0.1em 0.2em 0.1em 0.2em;
-white-space: nowrap;
+box-shadow: 0 0 0 0 #6F7271;
+	border: 2px solid #6F7271;
+	color: #6F7271;
+	background-color: #fff;
+	font-size: 11px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: 2px solid #6F7271 !important;
+    border-color: #6c757d !important;
+    background-color: #fff;
+    color: #404041;
+    font-weight: 300 !important;
+    width: auto;
+    height: auto !important;
+    padding: 5px 10px;
+	user-select: none;
+	margin-bottom: 0;
 }
 
 .basic-table tr .button-col a:hover,
 .basic-table tr .button-col a:active,
 .basic-table tr .smallSubmit:hover,
 .basic-table tr .smallSubmit:active {
-color: #ff0000;
-text-decoration: none;
+    background-color:#797d7f;
+	border: 2px solid #6F7271 !important;
+	color: white !important;
+	text-decoration: none !important;
 }
 
 .basic-table .collapsed {

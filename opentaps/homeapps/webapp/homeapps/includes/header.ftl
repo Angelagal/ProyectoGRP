@@ -113,18 +113,20 @@
 				
 				<nav>
 					<ul>
-						<li>
-							<svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
-							<a href="/control/login<#if externalKeyParam?exists>?${externalKeyParam}</#if>">Inicio</a>
+						<li class="menu-item">
+							<svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+							<a href="/control/login<#if externalKeyParam?exists>?${externalKeyParam}</#if>" onmouseover="this.style.backgroundColor='#f0f0f0'" 
+   onmouseout="this.style.backgroundColor='transparent'" class="menu-link">Inicio </a>
 						</li>
 						<#assign appIndex = 0 />
 							<#list apps as app>                            
 								<#if (app.applicationId == "financials")>
 									<#if (!app.hide?exists || app.hide != "Y") && app.linkUrl?has_content>
 										<#assign appIndex = appIndex + 1 />
-										<li>
-											<svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed"><path d="M480-40q-112 0-206-51T120-227v107H40v-240h240v80h-99q48 72 126.5 116T480-120q75 0 140.5-28.5t114-77q48.5-48.5 77-114T840-480h80q0 91-34.5 171T791-169q-60 60-140 94.5T480-40Zm-36-160v-52q-47-11-76.5-40.5T324-370l66-26q12 41 37.5 61.5T486-314q33 0 56.5-15.5T566-378q0-29-24.5-47T454-466q-59-21-86.5-50T340-592q0-41 28.5-74.5T446-710v-50h70v50q36 3 65.5 29t40.5 61l-64 26q-8-23-26-38.5T482-648q-35 0-53.5 15T410-592q0 26 23 41t83 35q72 26 96 61t24 77q0 29-10 51t-26.5 37.5Q583-274 561-264.5T514-250v50h-70ZM40-480q0-91 34.5-171T169-791q60-60 140-94.5T480-920q112 0 206 51t154 136v-107h80v240H680v-80h99q-48-72-126.5-116T480-840q-75 0-140.5 28.5t-114 77q-48.5 48.5-77 114T120-480H40Z"/></svg>
-											<a href="${app.linkUrl}<#if externalKeyParam?exists>?${externalKeyParam}</#if>" >${app.shortName!app.applicationId}</a>
+										<li class="menu-item">
+											<svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#e8eaed"><path d="M480-40q-112 0-206-51T120-227v107H40v-240h240v80h-99q48 72 126.5 116T480-120q75 0 140.5-28.5t114-77q48.5-48.5 77-114T840-480h80q0 91-34.5 171T791-169q-60 60-140 94.5T480-40Zm-36-160v-52q-47-11-76.5-40.5T324-370l66-26q12 41 37.5 61.5T486-314q33 0 56.5-15.5T566-378q0-29-24.5-47T454-466q-59-21-86.5-50T340-592q0-41 28.5-74.5T446-710v-50h70v50q36 3 65.5 29t40.5 61l-64 26q-8-23-26-38.5T482-648q-35 0-53.5 15T410-592q0 26 23 41t83 35q72 26 96 61t24 77q0 29-10 51t-26.5 37.5Q583-274 561-264.5T514-250v50h-70ZM40-480q0-91 34.5-171T169-791q60-60 140-94.5T480-920q112 0 206 51t154 136v-107h80v240H680v-80h99q-48-72-126.5-116T480-840q-75 0-140.5 28.5t-114 77q-48.5 48.5-77 114T120-480H40Z"/></svg>
+											<a href="${app.linkUrl}<#if externalKeyParam?exists>?${externalKeyParam}</#if>"onmouseover="this.style.backgroundColor='#f0f0f0'" 
+   onmouseout="this.style.backgroundColor='transparent'" class="menu-link">${app.shortName!app.applicationId} </a>
 										</li>
 										<#if !app_has_next>	
 										<#elseif appIndex % 1 == 0>		 
@@ -137,9 +139,10 @@
 								<#if (app.applicationId == "party")>
 									<#if (!app.hide?exists || app.hide != "Y") && app.linkUrl?has_content>
 										<#assign appIndex = appIndex + 1 />
-										<li>
-											<svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed"><path d="M40-120v-80h880v80H40Zm120-120q-33 0-56.5-23.5T80-320v-440q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v440q0 33-23.5 56.5T800-240H160Zm0-80h640v-440H160v440Zm0 0v-440 440Z"/></svg>
-											<a href="${app.linkUrl}<#if externalKeyParam?exists>?${externalKeyParam}</#if>" >${app.shortName!app.applicationId}</a>
+										<li class="menu-item" >
+											<svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#e8eaed"><path d="M40-120v-80h880v80H40Zm120-120q-33 0-56.5-23.5T80-320v-440q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v440q0 33-23.5 56.5T800-240H160Zm0-80h640v-440H160v440Zm0 0v-440 440Z"/></svg>
+											<a href="${app.linkUrl}<#if externalKeyParam?exists>?${externalKeyParam}</#if>" onmouseover="this.style.backgroundColor='#f0f0f0'" 
+   onmouseout="this.style.backgroundColor='transparent'"  class="menu-link" >${app.shortName!app.applicationId} </a>
 										</li>
 										<#if !app_has_next>
 										<#elseif appIndex % 1 == 6>
@@ -152,9 +155,10 @@
 								<#if (app.applicationId == "dataimport")>
 									<#if (!app.hide?exists || app.hide != "Y") && app.linkUrl?has_content>
 										<#assign appIndex = appIndex + 1 />
-										<li>
-											<svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed"><path d="M200-120q-17 0-28.5-11.5T160-160v-40h-40v-160q0-17 11.5-28.5T160-400h40v-280q0-66 47-113t113-47q66 0 113 47t47 113v400q0 33 23.5 56.5T600-200q33 0 56.5-23.5T680-280v-280h-40q-17 0-28.5-11.5T600-600v-160h40v-40q0-17 11.5-28.5T680-840h80q17 0 28.5 11.5T800-800v40h40v160q0 17-11.5 28.5T800-560h-40v280q0 66-47 113t-113 47q-66 0-113-47t-47-113v-400q0-33-23.5-56.5T360-760q-33 0-56.5 23.5T280-680v280h40q17 0 28.5 11.5T360-360v160h-40v40q0 17-11.5 28.5T280-120h-80Z"/></svg>
-											<a  href="${app.linkUrl}<#if externalKeyParam?exists>?${externalKeyParam}</#if>" >${app.shortName!app.applicationId}</a>
+										<li class="menu-item">
+											<svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#e8eaed"><path d="M200-120q-17 0-28.5-11.5T160-160v-40h-40v-160q0-17 11.5-28.5T160-400h40v-280q0-66 47-113t113-47q66 0 113 47t47 113v400q0 33 23.5 56.5T600-200q33 0 56.5-23.5T680-280v-280h-40q-17 0-28.5-11.5T600-600v-160h40v-40q0-17 11.5-28.5T680-840h80q17 0 28.5 11.5T800-800v40h40v160q0 17-11.5 28.5T800-560h-40v280q0 66-47 113t-113 47q-66 0-113-47t-47-113v-400q0-33-23.5-56.5T360-760q-33 0-56.5 23.5T280-680v280h40q17 0 28.5 11.5T360-360v160h-40v40q0 17-11.5 28.5T280-120h-80Z"/></svg>
+											<a href="${app.linkUrl}<#if externalKeyParam?exists>?${externalKeyParam}</#if>" onmouseover="this.style.backgroundColor='#f0f0f0'" 
+   onmouseout="this.style.backgroundColor='transparent'"  class="menu-link" >${app.shortName!app.applicationId} </a>
 										</li>
 										<#if !app_has_next>
 										<#elseif appIndex % 1 == 6>
@@ -167,9 +171,10 @@
 								<#if (app.applicationId == "webtools")>
 									<#if (!app.hide?exists || app.hide != "Y") && app.linkUrl?has_content>
 										<#assign appIndex = appIndex + 1 />
-										<li>
-											<svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"/></svg>
-											<a  href="${app.linkUrl}<#if externalKeyParam?exists>?${externalKeyParam}</#if>" >${app.shortName!app.applicationId}</a>
+										<li class="menu-item">
+											<svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#e8eaed"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"/></svg>
+											<a href="${app.linkUrl}<#if externalKeyParam?exists>?${externalKeyParam}</#if>" onmouseover="this.style.backgroundColor='#f0f0f0'" 
+   onmouseout="this.style.backgroundColor='transparent'"  class="menu-link">${app.shortName!app.applicationId} </a>
 										</li>
 										<#if !app_has_next>
 										<#elseif appIndex % 1 == 6>
@@ -177,12 +182,12 @@
 									</#if>
 								</#if>
 							</#list>
-						<li>
+						<li class="menu-item">
 							<form id="logout" method="post" action="<@ofbizUrl>logout${previousParams?if_exists}</@ofbizUrl>">
-								<svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed">
+								<svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#e8eaed">
 									<path d="M200-120q-33 0-56.5-23.5T120-200v-160h80v160h560v-560H200v160h-80v-160q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm220-160-56-58 102-102H120v-80h346L364-622l56-58 200 200-200 200Z"/>
 								</svg>
-					        	<a href="/control/logout" class="decorativeSubmit1">${uiLabelMap.CommonLogout}</a>
+					        	<a href="/control/logout" class="decorativeSubmit1" class="menu-link" >${uiLabelMap.CommonLogout} </a>
 					      	</form>
 						</li>
 						</ul>	
@@ -293,7 +298,7 @@
 					}
 
 					.decorativeSubmit1:hover, #contenedor nav ul li:hover{
-					background-color:#235B4E !important;
+					background-color:#white !important;
 
 					}
 
@@ -521,6 +526,35 @@
 						justify-content: center;
 					}
 				}
+
+.menu-item {
+	display: flex;
+	align-items: center;
+    padding: 13px;
+	width:100% !important;
+	color: #fbfcfc !important;
+	
+}
+
+.menu-link { 
+    font-size: 20px !important;
+    text-decoration: none !important;
+    color: #fbfcfc !important;
+    background-color: transparent !important;
+    transition: background-color 0.9s !important;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	
+}
+
+.menu-item:hover {
+    background-color:#797d7f;
+	border-radius: 8px;
+}
+
+.menu-item svg {
+	margin-left: 13px !important;
+	
+}
 
 			</style>
 	</#if>
