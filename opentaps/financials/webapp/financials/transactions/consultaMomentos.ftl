@@ -14,7 +14,7 @@
 	<table class="twoColumnForm">
 	<tbody>
 		<@inputSelectRow title=uiLabelMap.FinancialTipoClave key="id" displayField="id" list=tiposClave name="ingresoEgreso" defaultOptionText=ingresoEgreso?if_exists onChange="cambiaTipo()"/>
-		<@displayCvesPresupRow tagTypes=tagTypes titleClass="requiredField" activas=false/>
+		<@displayCvesPresupRow tagTypes=tagTypes  activas=false/>
 		<@inputSelectRow title=uiLabelMap.FinancialMomento required=true list=momentos  displayField="description" name="momentoId" default=momentoId?if_exists />
 		<@inputSubmitRow title=uiLabelMap.CommonFind />
 	</tbody>

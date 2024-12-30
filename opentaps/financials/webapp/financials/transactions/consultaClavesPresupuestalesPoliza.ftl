@@ -47,7 +47,7 @@
       <@displayTitleCell title=uiLabelMap.FinancialTipoClave />
       <@inputSelectCell key="id" displayField="id" list=tiposClave name="ingresoEgreso" defaultOptionText=ingresoEgreso?if_exists onChange="cambiaTipo()"/>
 	  <@inputSelectRow title=uiLabelMap.FinancialMomento required=false list=momentos  displayField="description" name="momentoId" default=momentoId?if_exists />
-      <@displayCvesPresupRow tagTypes=tagTypes titleClass="requiredField"/>
+      <@displayCvesPresupRow tagTypes=tagTypes />
 	  <@inputDateRangeRow title=uiLabelMap.FinancialsFechaContable fromName="fechaInicialPeriodo" thruName="fechaFinalPeriodo" />
 	  <@inputTextRow title=uiLabelMap.NumeroDePoliza name="poliza" size="20" maxlength="20"/>
       <@inputSelectRow title=uiLabelMap.FinancialsTipoPoliza required=false list=listaTipoPoliza  displayField="description" name="tipoPolizaId" key="tipoPolizaId" />	

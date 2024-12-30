@@ -19,7 +19,12 @@
 <@import location="component://opentaps-common/webapp/common/includes/lib/opentapsFormMacros.ftl"/>
 
 <#-- TODO: probably some kind of permission checking to see that this userLogin can view such and such reports -->
-
+<style>
+  A.buttontext{
+    color: #235B4E;
+    padding: 0px;
+}
+</style>
 <div class="tabletext">
 
 <script type="text/javascript">
@@ -57,10 +62,29 @@ function submitViewBalance(form) {
 
 <#if openTimePeriods?has_content>
 <p>${uiLabelMap.CommonOpenTimePeriods}
-<ul type="circle">
+<ul type="circle" id="anio">
 <#list openTimePeriods as timePeriod>
-<li>${timePeriod.periodName?if_exists} <#if timePeriod.periodNum?has_content>${timePeriod.periodNum?string("####")}</#if> (${timePeriod.getRelatedOne("PeriodType").description} ${uiLabelMap.CommonFrom} ${getLocalizedDate(timePeriod.fromDate, "DATE_ONLY")} ${uiLabelMap.CommonTo} ${getLocalizedDate(timePeriod.thruDate, "DATE_ONLY")})
+  <#--<li>${timePeriod.periodName?if_exists} <#if timePeriod.periodNum?has_content>${timePeriod.periodNum?string("####")}</#if> (${timePeriod.getRelatedOne("PeriodType").description} ${uiLabelMap.CommonFrom} ${getLocalizedDate(timePeriod.fromDate, "DATE_ONLY")} ${uiLabelMap.CommonTo} ${getLocalizedDate(timePeriod.thruDate, "DATE_ONLY")})-->
+  <script>
+    document.addEventListener
+    ('DOMContentLoaded', (event) =>
+      {
+        const mes = "${timePeriod.periodName?if_exists}";
+        const fecha_ciclo = "${getLocalizedDate(timePeriod.fromDate, "DATE_ONLY")}";
+        fecha_ini = fecha_ciclo.replace(/\D/g, ' ');
+        var componentes = fecha_ini.split(' ');
+        var ciclo = (componentes[6]);
+        const anio = document.getElementById("anio");
+        if (mes == ""){
+          anio.innerHTML += "<li>A&ntilde;o Fiscal" + mes + " " + ciclo + " </li>"; 
+        }if (mes != ""){
+          anio.innerHTML += "<li>" + mes + " " + ciclo + " </li>";
+        }
+      }
+    );
+  </script>
 </#list>
+
 </ul></p>
 <p>
 <#else>

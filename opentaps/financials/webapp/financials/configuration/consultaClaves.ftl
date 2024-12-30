@@ -15,7 +15,7 @@
     <tbody>
       <@displayTitleCell title=uiLabelMap.FinancialTipoClave />
       <@inputSelectCell key="id" displayField="id" list=tiposClave name="ingresoEgreso" defaultOptionText=ingresoEgreso?if_exists onChange="cambiaTipo()"/>
-      <@displayCvesPresupRow tagTypes=tagTypes titleClass="requiredField"/>
+      <@displayCvesPresupRow tagTypes=tagTypes />
       <@inputSubmitRow title=uiLabelMap.CommonFind />
     </tbody>
   </table>

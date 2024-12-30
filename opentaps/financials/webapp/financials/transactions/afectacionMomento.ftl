@@ -60,7 +60,7 @@
 <@form name="BuscaAfectacion" url="">
 	<table>
 	  <tr>
-        <@displayTitleCell title=uiLabelMap.FinancialTipoAfectacion titleClass="requiredField"/>
+        <@displayTitleCell title=uiLabelMap.FinancialTipoAfectacion/>
         <@inputSelectHashCell hash= {"":"","CONTABILIDAD_E":"EGRESO", "CONTABILIDAD_I":"INGRESO"} id="moduloId" name="moduloId" onChange="cargaEventos(this.value);"/>
       </tr> 
 		<tr>
