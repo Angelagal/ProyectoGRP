@@ -64,8 +64,8 @@ function submitViewBalance(form) {
 <p>${uiLabelMap.CommonOpenTimePeriods}
 <ul type="circle" id="anio">
 <#list openTimePeriods as timePeriod>
-  <li>${timePeriod.periodName?if_exists} <#if timePeriod.periodNum?has_content>${timePeriod.periodNum?string("####")}</#if> (${timePeriod.getRelatedOne("PeriodType").description} ${uiLabelMap.CommonFrom} ${getLocalizedDate(timePeriod.fromDate, "DATE_ONLY")} ${uiLabelMap.CommonTo} ${getLocalizedDate(timePeriod.thruDate, "DATE_ONLY")})
-  <!--<script>
+  <#--<li>${timePeriod.periodName?if_exists} <#if timePeriod.periodNum?has_content>${timePeriod.periodNum?string("####")}</#if> (${timePeriod.getRelatedOne("PeriodType").description} ${uiLabelMap.CommonFrom} ${getLocalizedDate(timePeriod.fromDate, "DATE_ONLY")} ${uiLabelMap.CommonTo} ${getLocalizedDate(timePeriod.thruDate, "DATE_ONLY")})-->
+  <script>
     document.addEventListener
     ('DOMContentLoaded', (event) =>
       {
@@ -82,7 +82,7 @@ function submitViewBalance(form) {
         }
       }
     );
-  </script>-->
+  </script>
 </#list>
 
 </ul></p>
