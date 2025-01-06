@@ -169,6 +169,8 @@ public class PartyServices {
             	newPartyMap.put("saldoInicial", saldoInicial);
             }
             
+            newPartyMap.put("geoId", context.get("geografica"));
+            
             party = delegator.makeValue("Party", newPartyMap);
             toBeStored.add(party);
 
@@ -322,6 +324,7 @@ public class PartyServices {
         party.setNonPKFields(context);
 
         party.set("statusId", oldStatusId);
+        party.set("geoId", context.get("geografica"));
 
         try {
             person.store();

@@ -81,6 +81,7 @@ under the License.
         <attribute name="externalId" type="String" mode="IN" optional="true"/>
         <attribute name="statusId" type="String" mode="IN" optional="true"/>
         <attribute name="saldoInicial" type="BigDecimal" mode="IN" optional="true"/>
+        <attribute name="geografica" type="String" mode="IN" optional="true"/>
         <attribute name="organizationPartyId" mode="IN" type="String" />
     </service>
     <service name="createPersonAndUserLogin" engine="simple" require-new-transaction="true"
@@ -105,6 +106,7 @@ under the License.
         <attribute name="description" type="String" mode="IN" optional="true"/>
         <attribute name="externalId" type="String" mode="IN" optional="true"/>
         <attribute name="statusId" type="String" mode="IN" optional="true"/>
+        <attribute name="geografica" type="String" mode="IN" optional="true"/>
         <attribute name="saldoInicial" type="BigDecimal" mode="IN" optional="true"/>
         <override name="firstName" optional="false"/>
         <override name="lastName" optional="false"/>

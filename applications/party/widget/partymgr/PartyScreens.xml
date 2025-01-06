@@ -445,6 +445,7 @@ under the License.
 				<set field="layoutSettings.javaScripts[]" value="/partymgr/js/CrearPersona.js" global="true"/>
                 <set field="donePage" from-field="parameters.DONE_PAGE" default-value="viewprofile"/>
                 <set field="partyId" from-field="parameters.partyId"/>
+<!--                <property-to-field field="defaultStateGeoId" resource="general" property="state.geo.id.default" default="YUCATAN"/>-->
                 <entity-one entity-name="PartyAndPerson" value-field="personInfo"/>
             </actions>
             <widgets>

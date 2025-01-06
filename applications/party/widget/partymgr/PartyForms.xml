@@ -90,35 +90,14 @@ under the License.
             </drop-down>
         </field>
 
-        <field name="Geografica">
-            <drop-down allow-empty="false">
-                <entity-options entity-name="Geo" key-field-name="geoId" description="${uiLabelMap.CommonCountry}: [${geoId}] ${geoName}">
-                    <entity-constraint name="geoTypeId" value="COUNTRY"/>
-                    <entity-order-by field-name="geoId"/>
-                </entity-options>
-                <entity-options entity-name="Geo" key-field-name="geoId" description="${uiLabelMap.CommonState}: [${geoId}] ${geoName}">
-                    <entity-constraint name="geoTypeId" value="STATE"/>
-                    <entity-order-by field-name="geoId"/>
-                </entity-options>
-                <entity-options entity-name="Geo" key-field-name="geoId" description="${uiLabelMap.CommonProvince}: [${geoId}] ${geoName}">
-                    <entity-constraint name="geoTypeId" value="PROVINCE"/>
-                    <entity-order-by field-name="geoId"/>
-                </entity-options>
-                <entity-options entity-name="Geo" key-field-name="geoId" description="${uiLabelMap.CommonCounty}: [${geoId}] ${geoName}">
-                    <entity-constraint name="geoTypeId" value="COUNTY"/>
-                    <entity-order-by field-name="geoId"/>
-                </entity-options>
-                <entity-options entity-name="Geo" key-field-name="geoId" description="${uiLabelMap.CommonCountyCity}: [${geoId}] ${geoName}">
-                    <entity-constraint name="geoTypeId" value="COUNTY_CITY"/>
-                    <entity-order-by field-name="geoId"/>
-                </entity-options>
-                <entity-options entity-name="Geo" key-field-name="geoId" description="${uiLabelMap.CommonCity}: [${geoId}] ${geoName}">
-                    <entity-constraint name="geoTypeId" value="CITY"/>
-                    <entity-order-by field-name="geoId"/>
-                </entity-options>
-            </drop-down>
-        </field>
-        
+        <field name="geografica">
+		    <drop-down allow-empty="false" no-current-selected-key="${stateProvinceGeoId}">
+		        <entity-options entity-name="Geo" key-field-name="geoId" description="${uiLabelMap.CommonState}: H ${stateProvinceGeoId} [${geoId}] ${geoName}">
+		            <entity-constraint name="geoTypeId" value="STATE" />
+		            <entity-order-by field-name="geoId" />
+		        </entity-options>
+		    </drop-down>
+		</field>
         
         <!-- CHRV 01/09/2014 Fin: Se agrega el drop-down para escoger el area, con relacion a la clasificacion administrativa -->
         
