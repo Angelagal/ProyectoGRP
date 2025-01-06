@@ -99,13 +99,24 @@ function onRunSyncChange() {
     <table class="twoColumnForm">
       <#list serviceParameters as serviceParameter>
         <#if serviceParameter.optional == "N">
-          <@inputTextRow title="${uiLabelMap.get(serviceParameter.name)}(${uiLabelMap.get(serviceParameter.type)})" name="${serviceParameter.name}" default="${serviceParameter.value!serviceParameter.defaultValue!}" titleClass="requiredField" tooltip=serviceParameter.description/>
-          <#else>
-            <@inputTextRow title="${uiLabelMap.get(serviceParameter.name)}(${uiLabelMap.get(serviceParameter.type)})" name="${serviceParameter.name}" default="${serviceParameter.value!serviceParameter.defaultValue!}" tooltip=serviceParameter.description/>
-          </#if>
-        </#list>
-
-        <@inputIndicatorRow title=uiLabelMap.DataImportSync name="_RUN_SYNC_" onChange="onRunSyncChange()"/>
+        	<#if serviceParameter.name != "tipoClave">
+          		<@inputTextRow title="${uiLabelMap.get(serviceParameter.name)}(${uiLabelMap.get(serviceParameter.type)})" name="${serviceParameter.name}" default="${serviceParameter.value!serviceParameter.defaultValue!}" titleClass="requiredField" tooltip=serviceParameter.description/>
+          	</#if>
+	    <#else>
+	      <@inputTextRow title="${uiLabelMap.get(serviceParameter.name)}(${uiLabelMap.get(serviceParameter.type)})" name="${serviceParameter.name}" default="${serviceParameter.value!serviceParameter.defaultValue!}" tooltip=serviceParameter.description/>
+	    </#if>
+      </#list>
+		
+		<tr>
+			<td class="titleCell"><span class="requiredField">tipoClave</span><td>
+			<select class="inputBox" id="tipoClave" name="tipoClave">
+				<option value="INGRESO">INGRESO</option>
+				<option value="EGRESO">EGRESO</option>
+			</select>
+		</tr>
+		
+        <#-- <@inputIndicatorRow title=uiLabelMap.DataImportSync name="_RUN_SYNC_" onChange="onRunSyncChange()" /> -->
+        <input type="hidden" value="Y" title=uiLabelMap.DataImportSync name="_RUN_SYNC_" onChange="onRunSyncChange()" />
 
         <tr id="jobRow" class="hidden">
           <@displayCell text="${uiLabelMap.DataImportJobName}" class="tableheadtext" blockClass="titleCell"/>
