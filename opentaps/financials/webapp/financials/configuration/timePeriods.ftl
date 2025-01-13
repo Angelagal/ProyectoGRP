@@ -41,9 +41,27 @@ function submitViewBalance(form) {
 
 <#if closedTimePeriods?has_content>
 <p>${uiLabelMap.CommonTimePeriodsClosed}
-<ul type="circle">
+<ul type="circle" id="anio1">
 <#list closedTimePeriods as timePeriod>
-<li>${timePeriod.periodName?if_exists} <#if timePeriod.periodNum?has_content>${timePeriod.periodNum?string("####")}</#if> (${timePeriod.getRelatedOne("PeriodType").description} ${uiLabelMap.CommonFrom} ${timePeriod.fromDate} ${uiLabelMap.CommonTo} ${timePeriod.thruDate})
+<!--<li>${timePeriod.periodName?if_exists} <#if timePeriod.periodNum?has_content>${timePeriod.periodNum?string("####")}</#if> (${timePeriod.getRelatedOne("PeriodType").description} ${uiLabelMap.CommonFrom} ${timePeriod.fromDate} ${uiLabelMap.CommonTo} ${timePeriod.thruDate})-->
+  <script>
+    document.addEventListener
+    ('DOMContentLoaded', (event) =>
+      {
+        const mes = "${timePeriod.periodName?if_exists}";
+        const fecha_ciclo = "${getLocalizedDate(timePeriod.fromDate, "DATE_ONLY")}";
+        fecha_ini = fecha_ciclo.replace(/\D/g, ' ');
+        var componentes = fecha_ini.split(' ');
+        var ciclo = (componentes[6]);
+        const anio = document.getElementById("anio1");
+        if (mes == ""){
+          anio.innerHTML += "<li>A&ntilde;o Fiscal" + mes + " " + ciclo + " </li>"; 
+        }if (mes != ""){
+          anio.innerHTML += "<li>" + mes + " " + ciclo + " </li>";
+        }
+      }
+    );
+  </script>
 </#list>
 </ul></p>
 <p>
