@@ -28,9 +28,9 @@
 		<field name="caracteristicas" type="id-vlong"/>
 		<field name="medioPago" type="id-vlong"/>
 		<field name="cargo" type="id"/>
-		<field name="cuentaCargo" type="id"/>
+		<field name="cuentaCargo" type="id-vlong"/>
 		<field name="abono" type="id"/>
-		<field name="cuentaAbono" type="id"/>	
+		<field name="cuentaAbono" type="id-vlong"/>	
 		<!--usuario-->
         <field name="userLoginId" type="id-vlong-ne"></field> 
 		<field name="importStatusId" type="id-ne"><description>Status of record import.  Null is the same as DATAIMP_NOT_PROC.</description></field>
@@ -42,10 +42,10 @@
         </field>          
 		<prim-key field="matrizIngresoId"/>
 		<relation type="one" fk-name="FK_CAR_MAT_ING" title="cargomating" rel-entity-name="GlAccount">
-        	<key-map field-name="cuentaCargo" rel-field-name="glAccountId"/>
+        	<key-map field-name="cargo" rel-field-name="glAccountId"/>
       	</relation>
       	<relation type="one" fk-name="FK_ABO_MAT_ING" title="abonomating" rel-entity-name="GlAccount">    	
-        	<key-map field-name="cuentaAbono" rel-field-name="glAccountId"/>
+        	<key-map field-name="abono" rel-field-name="glAccountId"/>
       	</relation>
 		<relation type="one" fk-name="FK_USR_SES_USRMI" rel-entity-name="UserLogin">
         	<key-map field-name="userLoginId"/>
