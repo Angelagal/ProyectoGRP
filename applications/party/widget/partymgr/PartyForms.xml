@@ -29,7 +29,8 @@ under the License.
 <!--         <field use-when="personInfo==null&amp;&amp;partyId==null" name="partyId" title="${uiLabelMap.PartyPartyId}"><ignored/></field> -->
 		<field use-when="personInfo==null" name="partyId" title="RUSP" tooltip="${uiLabelMap.CommonRequired}"><text size="20" maxlength="20"/></field>
         <field use-when="personInfo==null&amp;&amp;partyId!=null" name="partyId" title="${uiLabelMap.PartyPartyId}" tooltip="${uiLabelMap.CommonCannotBeFound}: [${partyId}]"><display also-hidden="false"/></field>
-        <field name="employeeNum" title="${uiLabelMap.EmployeeNumber}" tooltip="${uiLabelMap.CommonRequired}" widget-style="required"><text size="10" maxlength="10"/></field>
+        <field use-when="personInfo==null" name="employeeNum" title="${uiLabelMap.EmployeeNumber}" tooltip="${uiLabelMap.CommonRequired}" widget-style="required"><text size="10" maxlength="10"/></field>
+		<field use-when="personInfo!=null" name="employeeNum" title="${uiLabelMap.EmployeeNumber}" tooltip="${uiLabelMap.CommonNotModifRecreat}"><display/></field>   
         <field name="firstName" title="${uiLabelMap.PartyFirstName}" tooltip="${uiLabelMap.CommonRequired}" widget-style="required"><text size="40" maxlength="60"/></field>
         <field name="lastName" title="${uiLabelMap.PartyLastName}" tooltip="${uiLabelMap.CommonRequired}" widget-style="required"><text size="40" maxlength="60"/></field>
         <!-- 

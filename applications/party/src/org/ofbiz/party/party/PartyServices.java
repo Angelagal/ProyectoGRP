@@ -66,7 +66,8 @@ public class PartyServices {
 
     public static final String module = PartyServices.class.getName();
     public static final String resource = "PartyErrorUiLabels";
-
+    public static final String REGEX_EMPLOYEE_NUMBER = "^[a-zA-Z0-9]{3,10}$";
+    
     /**
      * Deletes a Party.
      * @param ctx The DispatchContext that this service is operating in.
@@ -114,6 +115,7 @@ public class PartyServices {
 
         String partyId = (String) context.get("partyId");
         String description = (String) context.get("description");
+        String employeeNum = (String) context.get("employeeNum");
 
         // if specified partyId starts with a number, return an error
         if (UtilValidate.isNotEmpty(partyId) && partyId.matches("\\d+")) {
@@ -146,6 +148,12 @@ public class PartyServices {
                 return ServiceUtil.returnError(UtilProperties.getMessage(resource, "person.create.party_exists_not_person_type", locale));
             }
         } else {
+        	if (employeeNum == null || employeeNum.isEmpty()) {
+        		return ServiceUtil.returnError(UtilProperties.getMessage(resource, "person.create.employee_number_empty", locale));
+        	} else if (!employeeNum.matches(REGEX_EMPLOYEE_NUMBER)) {
+        		return ServiceUtil.returnError(UtilProperties.getMessage(resource, "person.create.employee_number_regex", locale));
+        	}
+        	
             // create a party if one doesn't already exist with an initial status from the input
             String statusId = (String) context.get("statusId");
             if (statusId == null) {

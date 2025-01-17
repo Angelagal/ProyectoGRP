@@ -1043,6 +1043,14 @@
         <value xml:lang="th">ไม่สามารถสร้างบุคคลได้ เมื่อใช้รหัสกลุ่มผู้ใช้เดิมกับบุคคลนี้</value>
         <value xml:lang="zh">无法创建人员，已经存在指定会员标识的人员</value>
     </property>
+    <property key="person.create.employee_number_empty">
+        <value xml:lang="en">Employee number is required</value>
+        <value xml:lang="es">El número de empleado es obligatorio</value>
+    </property>
+    <property key="person.create.employee_number_regex">
+        <value xml:lang="en">The employee number must be alphanumeric and between 3 and 10 characters</value>
+        <value xml:lang="es">El número de empleado debe ser alfanumérico y tener entre 3 y 10 caracteres</value>
+    </property>
     <property key="person.update.not_found">
         <value xml:lang="de">Daten zur Person können nicht aktualisiert werden (Person nicht gefunden).</value>
         <value xml:lang="en">Could not update person information (person not found)</value>
