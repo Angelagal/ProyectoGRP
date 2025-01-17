@@ -82,6 +82,7 @@ under the License.
         <attribute name="statusId" type="String" mode="IN" optional="true"/>
         <attribute name="saldoInicial" type="BigDecimal" mode="IN" optional="true"/>
         <attribute name="geografica" type="String" mode="IN" optional="true"/>
+        <attribute name="employeeNum" type="String" mode="IN" optional="true"/>
         <attribute name="organizationPartyId" mode="IN" type="String" />
     </service>
     <service name="createPersonAndUserLogin" engine="simple" require-new-transaction="true"

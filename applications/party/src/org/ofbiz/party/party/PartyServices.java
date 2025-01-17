@@ -170,6 +170,7 @@ public class PartyServices {
             }
             
             newPartyMap.put("geoId", context.get("geografica"));
+            newPartyMap.put("employeeNum", context.get("employeeNum"));
             
             party = delegator.makeValue("Party", newPartyMap);
             toBeStored.add(party);

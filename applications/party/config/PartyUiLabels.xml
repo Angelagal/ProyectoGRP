@@ -5601,6 +5601,10 @@
         <value xml:lang="th">ชื่อ</value>
         <value xml:lang="zh">名字</value>
     </property>
+    <property key="EmployeeNumber">
+        <value xml:lang="en">Employee number</value>
+        <value xml:lang="es">Número de empleado</value>
+    </property>
     <property key="PartyFirstNameMissing">
         <value xml:lang="cs">Chybí jméno</value>
         <value xml:lang="de">Vorname fehlt</value>
