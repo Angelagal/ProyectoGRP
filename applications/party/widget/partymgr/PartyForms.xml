@@ -27,12 +27,12 @@ under the License.
 <!--        <auto-fields-service service-name="updatePerson"/>-->
         <field use-when="personInfo!=null" name="partyId" title="${uiLabelMap.PartyIdPerson}" tooltip="${uiLabelMap.CommonNotModifRecreat}"><display/></field>
 <!--         <field use-when="personInfo==null&amp;&amp;partyId==null" name="partyId" title="${uiLabelMap.PartyPartyId}"><ignored/></field> -->
-		<field use-when="personInfo==null" name="partyId" title="RUSP" tooltip="${uiLabelMap.CommonRequired}"><text size="20" maxlength="20"/></field>
+		<field use-when="personInfo==null" name="partyId" title="${uiLabelMap.PartyOrganizationPartyId} *" ><text size="20" maxlength="20"/></field>
         <field use-when="personInfo==null&amp;&amp;partyId!=null" name="partyId" title="${uiLabelMap.PartyPartyId}" tooltip="${uiLabelMap.CommonCannotBeFound}: [${partyId}]"><display also-hidden="false"/></field>
-        <field use-when="personInfo==null" name="employeeNum" title="${uiLabelMap.EmployeeNumber}" tooltip="${uiLabelMap.CommonRequired}" widget-style="required"><text size="10" maxlength="10"/></field>
+        <field use-when="personInfo==null" name="employeeNum" title="${uiLabelMap.EmployeeNumber} *"  widget-style="required"><text size="10" maxlength="10"/></field>
 		<field use-when="personInfo!=null" name="employeeNum" title="${uiLabelMap.EmployeeNumber}" tooltip="${uiLabelMap.CommonNotModifRecreat}"><display/></field>   
-        <field name="firstName" title="${uiLabelMap.PartyFirstName}" tooltip="${uiLabelMap.CommonRequired}" widget-style="required"><text size="40" maxlength="60"/></field>
-        <field name="lastName" title="${uiLabelMap.PartyLastName}" tooltip="${uiLabelMap.CommonRequired}" widget-style="required"><text size="40" maxlength="60"/></field>
+        <field name="firstName" title="${uiLabelMap.PartyFirstName} *"  widget-style="required"><text size="40" maxlength="60"/></field>
+        <field name="lastName" title="${uiLabelMap.PartyLastName} *"  widget-style="required"><text size="40" maxlength="60"/></field>
         <!-- 
         <field name="gender">
             <drop-down allow-empty="true">
@@ -144,8 +144,12 @@ under the License.
             <hyperlink target="${donePage}" also-hidden="false" description="${uiLabelMap.CommonCancelDone}">
                 <parameter param-name="partyId"/>
             </hyperlink>
-        </field>
+        </field>  
+        <field name="* Campos obligatorios">
+            <display/>
+        </field>         
     </form>
+    
 
   <form name="EditPartyGroup" type="single" target="updatePartyGroup" default-map-name="partyGroup"
         focus-field-name="groupName" header-row-style="header-row" default-table-style="basic-table">
@@ -1263,4 +1267,9 @@ under the License.
     </hyperlink>
 </field>
 </form>
+<field name="* Campos obligatorios" class="color" style="fill:#ff0000;stroke:blue">
+    <display/>
+</field>
 </forms>
+
+

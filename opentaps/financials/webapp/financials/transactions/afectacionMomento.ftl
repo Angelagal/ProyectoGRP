@@ -48,7 +48,6 @@
 					document.BuscaAfectacion.fechaInicial.value = " ";
 					document.BuscaAfectacion.fechaFinal.value = " ";
 				}else if((fechaIni != " ") && (fechaFin != " ")){
-					alert("Fechas vacias o formato incorrecto");
 					document.BuscaAfectacion.fechaInicial.value = " ";
 					document.BuscaAfectacion.fechaFinal.value = " ";
 				}	
@@ -60,7 +59,7 @@
 <@form name="BuscaAfectacion" url="">
 	<table>
 	  <tr>
-        <@displayTitleCell title=uiLabelMap.FinancialTipoAfectacion/>
+        <@displayTitleCell title=uiLabelMap.FinancialTipoAfectacion + " *"/>
         <@inputSelectHashCell hash= {"":"","CONTABILIDAD_E":"EGRESO", "CONTABILIDAD_I":"INGRESO"} id="moduloId" name="moduloId" onChange="cargaEventos(this.value);"/>
       </tr> 
 		<tr>
@@ -77,6 +76,7 @@
 		<@inputSubmitRow title=uiLabelMap.CommonFind onClick="validarFecha();"/> 
 	</table>
 </@form>
+<strong style="font-size: 12px;color: grey;">* Campos obligatorios</strong>
 <@paginate name="listAfectacionListBuilder" list=afectacionListBuilder rememberPage=false>
     <#noparse>
         <@navigationHeader/>
