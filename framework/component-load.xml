@@ -34,14 +34,14 @@ under the License.
     <load-component component-location="entityext"/>
     <!-- This is superseded by Pentaho in opentaps but the other ofbiz components depend on it ... -->
     <load-component component-location="bi"/>
-    <load-component component-location="birt"/>
+<!--    <load-component component-location="birt"/>-->
     <load-component component-location="webapp"/>
     <load-component component-location="guiapp"/>
     <load-component component-location="widget"/>
     <load-component component-location="appserver"/>
     <load-component component-location="testtools"/>
     <load-component component-location="webtools"/>
-    <load-component component-location="webslinger"/>
+<!--    <load-component component-location="webslinger"/>-->
     <load-component component-location="images"/>
     <load-component component-location="example"/>
     <load-component component-location="exampleext"/>
