@@ -50,6 +50,9 @@
         <value xml:lang="en">External payments</value>
         <value xml:lang="es">Pagos a externos</value>
     </property>
-    
+    <property key="ReporteModifo">
+        <value xml:lang="en">Report MODIFO</value>
+        <value xml:lang="es">Reporte de MODIFO</value>
+    </property>
 
 </resource>

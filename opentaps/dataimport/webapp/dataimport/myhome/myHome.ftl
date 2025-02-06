@@ -274,8 +274,8 @@
                  sectionLabel="DataImportMODIFO"
                  label=uiLabelMap.DataImportMODIFO
                  submitLabel=uiLabelMap.DataImportImport
-                 processed=compDevNomPresProcessed notProcessed=compDevNomPresNotProcessed
-                 reportHref="setupReport?reportId=COMP_DEV_NOMINA&amp;sectionName=myHome"
+                 processed=modifoProcessed notProcessed=modifoNotProcessed
+                 reportHref="setupReport?reportId=MODIFO&amp;sectionName=myHome"
                  reportLabel=uiLabelMap.OpentapsReport/>
   </tr>
   <tr>

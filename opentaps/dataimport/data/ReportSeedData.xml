@@ -44,7 +44,7 @@
     <ReportRegistry reportId="USUARIOS" shortName="Reporte de Importación de Usuarios" description="" reportLocation="component://dataimport/webapp/dataimport/reports/repository/UserImportReport.jrxml"/>
     <ReportRegistry reportId="ACTIVOFIJO" shortName="Reporte de Importación de Activo Fijo" description="" reportLocation="component://dataimport/webapp/dataimport/reports/repository/FixedAssetImportReport.jrxml"/>
     
-    <ReportRegistry reportId="COMP_DEV_NOMINA" shortName="Reporte de Importación del Comp y/o Dev Nomina Presupuestal" description="" reportLocation="component://dataimport/webapp/dataimport/reports/repository/CompDevNomImportReport.jrxml"/>
+    <ReportRegistry reportId="MODIFO" shortName="Reporte de MODIFO" description="" reportLocation="component://dataimport/webapp/dataimport/reports/repository/ModifoReport.jrxml"/>
     <ReportRegistry reportId="COMP_DEV_NOMINA_CONT" shortName="Reporte de Importación del Comp y/o Dev Nomina Contable" description="" reportLocation="component://dataimport/webapp/dataimport/reports/repository/CompDevContNomImportReport.jrxml"/>
     <ReportRegistry reportId="EJER_NOMINA" shortName="Reporte de Importación del Ejercido Nomina Presupuestal" description="" reportLocation="component://dataimport/webapp/dataimport/reports/repository/EjerNomImportReport.jrxml"/>
     <ReportRegistry reportId="EJER_NOMINA_CONT" shortName="Reporte de Importación del Ejercido Nomina Contable" description="" reportLocation="component://dataimport/webapp/dataimport/reports/repository/EjerNomContImportReport.jrxml"/>
@@ -88,5 +88,6 @@
     <ReportGroupMember reportGroupId="DATAIMP_FORM" reportId="COMPENSADA" sequenceNum="31"/>
     
     <ReportGroupMember reportGroupId="DATAIMP_FORM" reportId="INGRESO" sequenceNum="32"/>
+    <ReportGroupMember reportGroupId="DATAIMP_FORM" reportId="MODIFO" sequenceNum="33"/>
     
 </entity-engine-xml>

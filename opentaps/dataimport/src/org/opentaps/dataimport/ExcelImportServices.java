@@ -66,6 +66,7 @@ import org.opentaps.base.entities.DataImportHistorialBienes;
 import org.opentaps.base.entities.DataImportIngreso;
 import org.opentaps.base.entities.DataImportInventory;
 import org.opentaps.base.entities.DataImportLevantaActFijo;
+import org.opentaps.base.entities.DataImportModifo;
 import org.opentaps.base.entities.DataImportOperPatr;
 import org.opentaps.base.entities.DataImportOperacionDiaria;
 import org.opentaps.base.entities.DataImportOrdenesCobro;
@@ -144,6 +145,8 @@ public final class ExcelImportServices extends DomainService {
     
     private static final String EXCEL_HISTORIAL_BIENES = "Historial de bienes";
     
+    private static final String EXCEL_MODIFO = "MODIFO";
+    
     private static List<String> CUCOP = new ArrayList<String>();    
     
     private static final List<String> EXCEL_TABS = Arrays.asList(EXCEL_PRODUCT_TAB, EXCEL_SUPPLIERS_TAB,
@@ -159,7 +162,7 @@ public final class ExcelImportServices extends DomainService {
                                                                  EXCEL_COMP_DEV_NOM_PRES, EXCEL_COMP_DEV_NOM_CONT,
                                                                  EXCEL_EJER_NOM_PRES, EXCEL_EJER_NOM_CONT,EXCEL_OPER_PATRI, EXCEL_VAL_PRES,
                                                                  EXCEL_INGRESO, EXCEL_DEV_ING, EXCEL_REC_ING, EXCEL_REQUISICION,
-                                                                 EXCEL_COMPENSADA, EXCEL_HISTORIAL_BIENES, EXCEL_PAGO_EXTERNO);
+                                                                 EXCEL_COMPENSADA, EXCEL_HISTORIAL_BIENES, EXCEL_PAGO_EXTERNO, EXCEL_MODIFO);
 
     private String uploadedFileName;
     private static Logger logger = Logger.getLogger(ExcelImportServices.class);	
@@ -2119,6 +2122,73 @@ public final class ExcelImportServices extends DomainService {
 		return devengados;
 	}
 	
+	/**
+     * Importacion de datos de Pago a externos
+     * @param sheet
+     * @return
+     * @throws RepositoryException
+     * @throws InfrastructureException
+     */
+    protected Collection<? extends EntityInterface> crearDataImportModifo(Sheet sheet)  throws RepositoryException, InfrastructureException {
+    	int sheetLastRowNumber = sheet.getLastRowNum();
+    	List<DataImportModifo> listPagoBecas = FastList.newInstance();
+		LedgerRepositoryInterface ledger_repo = this.getDomainsDirectory().getLedgerDomain().getLedgerRepository();
+    	
+        for (int j = 1; j <= sheetLastRowNumber; j++) {
+            Row row = sheet.getRow(j);
+            
+            if (isNotEmpty(row)) {
+                int rowNum = row.getRowNum() + 1;
+                String id = readStringCellPoint(row, 0);
+                
+                if (UtilValidate.isEmpty(id) || id.indexOf(" ") > -1 || id.equalsIgnoreCase("clasificacion1")) {
+                    Debug.logWarning("La fila numero " + rowNum + " no ha sido importada : El ID es invalido [" + id + "].", MODULE);
+                    continue;
+                }
+                
+                DataImportModifo PagoBeca = new DataImportModifo();
+                int cellNumber = 0;
+                
+                PagoBeca.setDataImportModifoId(ledger_repo.getNextSeqId("DataImportModifo"));
+                PagoBeca.setRenglon(Long.valueOf(rowNum));
+                PagoBeca.setClasificacion1(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClasificacion2(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClasificacion3(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClasificacion4(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClasificacion5(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClasificacion6(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClasificacion7(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClasificacion8(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClasificacion9(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClasificacion10(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClasificacion11(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClasificacion12(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClasificacion13(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClasificacion14(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClasificacion15(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setClavePresupuestal(getClavePresupuestal(PagoBeca));
+                PagoBeca.setNombreExterno(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setFechaContable(getFecha(row.getCell(cellNumber++)));
+                PagoBeca.setConceptoPago(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setCuentaBancariaId(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setMonto(this.readBigDecimalCell(row, cellNumber++));
+                PagoBeca.setMoneda(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setMetodoPago(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setNumeroCheque(this.readStringCellPoint(row, cellNumber++));
+                PagoBeca.setMesId(
+                	UtilFormatOut.formatPaddedNumber(UtilDateTime.getMonth(UtilDateTime.toTimestamp(PagoBeca.getFechaContable()), timeZone, locale) + 1, 2)
+                );
+                PagoBeca.setCiclo(
+					UtilFormatOut.formatPaddedNumber(UtilDateTime.getYear(UtilDateTime.toTimestamp(PagoBeca.getFechaContable()), timeZone, locale), 4)
+				);
+                PagoBeca.setUserLoginId(obtenUsuario());
+                listPagoBecas.add(PagoBeca);
+            }
+        }
+    	
+    	return listPagoBecas;
+    }
+	
 	protected Collection<? extends EntityInterface> createDataImportRecIng(
 			Sheet sheet) throws RepositoryException, InfrastructureException {
 
@@ -2585,7 +2655,11 @@ public final class ExcelImportServices extends DomainService {
 						deleteEntities("DataImportPagoExterno");
 						entitiesToCreate.addAll(crearDataImportPagoExterno(sheet));
 					}
-                    
+					else if (EXCEL_MODIFO.equals(excelTab)) {
+						deleteEntities("DataImportModifo");
+						entitiesToCreate
+								.addAll(crearDataImportModifo(sheet));
+					} 
                 }
             }
 

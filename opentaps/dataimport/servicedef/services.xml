@@ -603,7 +603,7 @@
     </service>
     
     <service name="importMODIFO" engine="java" auth="true" use-transaction="false" transaction-timeout="43200"
-        location="org.opentaps.dataimport.domain.ImportarModifo" invoke="importMODIFO">
+        location="org.opentaps.dataimport.domain.ImportarModifo" invoke="importModifo">
         <!-- No es congruente poner tiempo de transaccion, sin embargo si no se agrega genera timeout -->
         <description>
             Importar MODIFO
