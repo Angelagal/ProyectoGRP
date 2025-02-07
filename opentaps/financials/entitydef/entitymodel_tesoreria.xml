@@ -1323,7 +1323,21 @@
 		<relation type="one" fk-name="FK_DBO_PEXT_ACCTG" rel-entity-name="AcctgTrans">
 			<key-map field-name="acctgTransId"/>
 		</relation>		
-	</entity>                             
+	</entity>
+	
+	<entity entity-name="Facturas" package-name="com.absoluciones.tesoreria">
+		<field name="facturasId" type="id-ne" />
+        <field name="clavePresupuestal" type="description"/>
+        <field name="userLoginId" type="id-vlong-ne" />
+        <field name="acctgTransId" type="id-ne" />
+        <prim-key field="facturasId" />
+		<relation type="one" fk-name="FK_DBO_PEXT_USR" rel-entity-name="UserLogin">
+			<key-map field-name="userLoginId"/>
+		</relation>
+		<relation type="one" fk-name="FK_DBO_PEXT_ACCTG" rel-entity-name="AcctgTrans">
+			<key-map field-name="acctgTransId"/>
+		</relation>		
+	</entity>
              
 </entitymodel>
 

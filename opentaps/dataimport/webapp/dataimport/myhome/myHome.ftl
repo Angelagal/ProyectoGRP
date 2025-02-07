@@ -283,8 +283,8 @@
                  sectionLabel="DataImportFacturas"
                  label=uiLabelMap.DataImportFacturas
                  submitLabel=uiLabelMap.DataImportImport
-                 processed=compDevNomPresProcessed notProcessed=compDevNomPresNotProcessed
-                 reportHref="setupReport?reportId=COMP_DEV_NOMINA&amp;sectionName=myHome"
+                 processed=facturasProcessed notProcessed=facturasNotProcessed
+                 reportHref="setupReport?reportId=FACTURAS&amp;sectionName=myHome"
                  reportLabel=uiLabelMap.OpentapsReport/>
   </tr>
   <tr>

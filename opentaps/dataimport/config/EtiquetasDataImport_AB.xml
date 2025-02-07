@@ -54,5 +54,9 @@
         <value xml:lang="en">Report MODIFO</value>
         <value xml:lang="es">Reporte de MODIFO</value>
     </property>
+    <property key="ReporteFacturas">
+        <value xml:lang="en">Invoices Report</value>
+        <value xml:lang="es">Reporte de Facturas</value>
+    </property>
 
 </resource>

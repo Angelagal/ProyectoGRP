@@ -7,12 +7,14 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
+import java.util.Map.Entry;
 
 import org.ofbiz.base.util.Debug;
 import org.ofbiz.base.util.UtilDateTime;
 import org.ofbiz.base.util.UtilMisc;
 import org.ofbiz.base.util.UtilNumber;
 import org.ofbiz.base.util.UtilValidate;
+import org.ofbiz.common.AB.UtilCommon;
 import org.ofbiz.entity.Delegator;
 import org.ofbiz.entity.GenericEntityException;
 import org.ofbiz.entity.GenericValue;
@@ -25,6 +27,7 @@ import org.ofbiz.entity.util.EntityUtil;
 import org.ofbiz.entity.util.LineaMotorContable;
 import org.ofbiz.service.DispatchContext;
 import org.ofbiz.service.GenericServiceException;
+import org.ofbiz.service.LocalDispatcher;
 import org.ofbiz.service.ServiceUtil;
 import org.opentaps.dataimport.UtilImport;
 
@@ -35,313 +38,294 @@ import javolution.util.FastMap;
 
 public class ImportarFacturas {
 	
-	private static final String MODULE = CompromisoDevengoNominaImportService.class.getName();
-	private static String organizationPartyId;
-	private static String tipoClave;
-	private static String eventoContableId;
-	private static Timestamp fechaContable;
-	private static String descripcion;
-	private static String tipoMovimiento;
-	private static String userLoginId;
-	public int importedRecords;
+	private static String MODULE = ImportarFacturas.class.getName();
 
+	private static String eventoContableId;
+	private static String organizationPartyId;
+	private static String tipoClave = "INGRESO";
+	private static GenericValue userLogin;
+	private static String userLoginId;
+	
 	/**
-	 * Metodo que importa el el compromiso devengo nomina , hace el impacto contable-presupuestal
+	 * Metodo para importar facturas
 	 * @param dctx
 	 * @param context
 	 * @return
 	 */
-	public static Map<String, Object> importCompromisoDevengoNomina(DispatchContext dctx, Map<String, ?> context) {
-		
-		Locale locale = (Locale) context.get("locale");
-		TimeZone timeZone =  (TimeZone) context.get("timeZone");
+	public static Map<String, Object> importFacturas(DispatchContext dctx, Map<String, ?> context) {
+		boolean error = false;
 		Delegator delegator = dctx.getDelegator();
-		
-		
+		LocalDispatcher dispatcher = dctx.getDispatcher();
 		Map<String, Object> regreso = ServiceUtil.returnSuccess();
+		System.out.println("ENTRA AL METODO");
 		
+		eventoContableId = (String) context.get("eventoContable");
+		organizationPartyId = (String) context.get("organizationPartyId");
+		userLogin = (GenericValue) context.get("userLogin");
+		userLoginId = userLogin.getString("userLoginId");
+				
 		try {
-			
-			organizationPartyId = (String)context.get("organizationPartyId");
-			tipoClave = (String) context.get("tipoClave");
-			eventoContableId = (String) context.get("eventoContable");
-			String fecha = (String) context.get("fechaContable");
-			fechaContable = UtilDateTime.stringToTimeStamp(fecha, "dd-MM-yyyy", timeZone, locale);
-			descripcion = (String) context.get("descripcion");
-			tipoMovimiento = (String) context.get("tipoMovimiento");
-			userLoginId = ((GenericValue) context.get("userLogin")).getString("userLoginId");
-			
-			Calendar fechaCalendario = UtilDateTime.toCalendar(fechaContable);
-			
-			int mes = fechaCalendario.get(Calendar.MONTH)+1;
-			int anio = fechaCalendario.get(Calendar.YEAR);
-			
-			if(tipoMovimiento == null){
-				tipoMovimiento = "INTERNA";
+			GenericValue partyOrganization = delegator.findByPrimaryKeyCache("Party", UtilMisc.toMap("partyId", organizationPartyId));
+			if (UtilValidate.isEmpty(partyOrganization)){
+				throw new GenericEntityException("El identificador de la organizaci\u00f3n es incorrecto");
 			}
 			
-			// Lista de las lineasMotor.
-			List<LineaMotorContable> listLineaMotor = new FastList<LineaMotorContable>();
+			GenericValue EventoContable = delegator.findByPrimaryKeyCache("EventoContable", UtilMisc.toMap("acctgTransTypeId", eventoContableId));
 			
-			boolean error = false;
-			boolean tieneAuxAbono = false;
-			boolean tieneAuxCargo = false;
+			if (UtilValidate.isEmpty(EventoContable)) {
+				throw new GenericEntityException("El evento contable no se encuentra configurado en el sistema");
+			}
 			
-			/*
-			 * Presupuesto
-			 */
+			List<GenericValue> listLineasPresupuestales = delegator.findByCondition("LineaPresupuestal",
+							EntityCondition.makeCondition("acctgTransTypeId", EntityOperator.EQUALS, eventoContableId),
+							UtilMisc.toList("momentoCompara","comparacion","secuencia", "catalogoAbono"), UtilMisc.toList("secuencia"));
+			// ---- Obtiene la linea primer presupuestal , presupuestalmente de donde se obtiene el dinero
+			GenericValue PrimeraLineaPresupuestal = EntityUtil.getFirst(listLineasPresupuestales);
 			
-			GenericValue LineaPresupuestal = getLineaPresupuestalMatriz(delegator);
-			GenericValue LineaPresupuestalCopia = null;
-			
-			GenericValue PrimeraLineaPresupuestal = EntityUtil.getFirst(delegator.findByCondition("LineaPresupuestal",
-					EntityCondition.makeCondition("acctgTransTypeId", eventoContableId), UtilMisc.toList("momentoCompara","comparacion"), UtilMisc.toList("secuencia")));
+			//Se crea el mapa de Lineas Presupuestales, el motor contable lo requiere , sin embargo en este proceso no se utiliza
+			Map<String,GenericValue> mapaSecuenciaPresupuestal = FastMap.newInstance();
+			List<String> fieldsToSelect = delegator.getModelEntity("ValidaPagoFacturas").getAllFieldNames();
+			EntityCondition condicionValida = UtilImport.condicionesSinProcesar(userLoginId);
 			
 			String momentoIdCompara = new String();
 			boolean validacionCompara = true;
-			if(UtilValidate.isNotEmpty(PrimeraLineaPresupuestal)){
+			
+			if (UtilValidate.isNotEmpty(PrimeraLineaPresupuestal)) {
 				validacionCompara = UtilValidate.isNotEmpty(PrimeraLineaPresupuestal.getString("comparacion"));
 				momentoIdCompara = PrimeraLineaPresupuestal.getString("momentoCompara");
 			}
 			
-			if(UtilValidate.isNotEmpty(LineaPresupuestal)){
-				if(UtilValidate.isNotEmpty(LineaPresupuestal.getString("catalogoAbono"))){
-					tieneAuxAbono = true;
-				}
-				if(UtilValidate.isNotEmpty(LineaPresupuestal.getString("catalogoCargo"))){
-					tieneAuxCargo = true;
-				}
-			}
-			
-			List<String> orderBy = UtilMisc.toList("renglon");
-			List<String> fieldsToSelect = delegator.getModelEntity("DataImportCompDevNomPresClave").getAllFieldNames();
-			
-			EntityCondition condicionClave = UtilImport.condicionesSinProcesar(userLoginId);
-			
-			if(validacionCompara){
-				condicionClave = EntityCondition.makeCondition(EntityOperator.AND,
-						condicionClave,
-		                EntityCondition.makeCondition("momentoId", EntityOperator.EQUALS, momentoIdCompara),
-		                EntityCondition.makeCondition("ciclo", EntityOperator.EQUALS, String.valueOf(anio)),
-		    	        EntityCondition.makeCondition("mesId", EntityOperator.EQUALS, UtilImport.formatoMes.format(mes)));
+			// ---- Se obtiene la validacion presupuestal
+			if (validacionCompara) {
+				//Se guarda el momento a comparar , para esto se genera una transaccion temporal
+				TransactionUtil.begin();
+				delegator.storeByCondition("DataImportFacturas", UtilMisc.toMap("momentoId",momentoIdCompara), UtilImport.condicionesSinProcesar(userLoginId));
+				TransactionUtil.commit();
 			} else {
-				fieldsToSelect.remove("momentoId");
-				fieldsToSelect.remove("ciclo");
-				fieldsToSelect.remove("mesId");
 				fieldsToSelect.remove("montoControl");
 			}
 			
-			List<GenericValue> listDataImportCompDevNomPresClave = delegator.findByCondition(
-					"DataImportCompDevNomPresClave", condicionClave, fieldsToSelect, orderBy);
+			List<String> orderBy = UtilMisc.toList("dataImportFacturasId");
+			List<GenericValue> listDataImportFacturas = delegator.findByCondition("DataImportFacturas", UtilImport.condicionesSinProcesar(userLoginId), null, orderBy);
+			List<GenericValue> listValidaFacturas = delegator.findByCondition("ValidaPagoFacturas", condicionValida , fieldsToSelect , orderBy);
+			Map<String,GenericValue> mapDataImportFacturas = FastMap.newInstance();
 			
-			List<GenericValue> listDataImportCompDevNomPres = delegator.findByCondition(
-					"DataImportCompDevNomPres", UtilImport.condicionesSinProcesar(userLoginId), null, orderBy);
-			
-			Map<String,GenericValue> mapDataImportCompDevNomPresClave = FastMap.newInstance();
-			
-			for (GenericValue DataImportCompDevNomPresClave : listDataImportCompDevNomPresClave) {
-				mapDataImportCompDevNomPresClave.put(DataImportCompDevNomPresClave.getString("idCompDevNominaPres"), DataImportCompDevNomPresClave);
+			for (GenericValue DataImportFacturas : listDataImportFacturas) {
+				mapDataImportFacturas.put(DataImportFacturas.getString("dataImportFacturasId"), DataImportFacturas);
 			}
-
-			BigDecimal monto =  BigDecimal.ZERO;
-			BigDecimal montoCompara =  BigDecimal.ZERO;
-			String idCompDevNominaPres = new String();
-			for (GenericValue DataImportCompDevNomPres : listDataImportCompDevNomPres) {
+			
+			Map<String,Map<String,Object>> mapRenglonFacturasLinea = FastMap.newInstance();
+			Map<String,Object> mapTipoFacturasLinea = FastMap.newInstance();
+			List<LineaMotorContable> listLineaMotorContable = FastList.newInstance();
+			List<GenericValue> listFacturas = FastList.newInstance();
+			String dataImportFacturasId = new String();
+			BigDecimal monto = BigDecimal.ZERO;
+			BigDecimal montoCompara = BigDecimal.ZERO;
+			Map<String,String> mapaCuentaBanco = FastMap.newInstance();
+			
+			for (GenericValue ValidaFacturas : listValidaFacturas) {
+				LineaMotorContable LineaMotorContable = new LineaMotorContable();
+				dataImportFacturasId = ValidaFacturas.getString("dataImportFacturasId");
+				GenericValue DataImportFacturas = mapDataImportFacturas.get(dataImportFacturasId);
 				
-				idCompDevNominaPres = DataImportCompDevNomPres.getString("idCompDevNominaPres");
-				GenericValue DataImportCompDevNomPresClave = mapDataImportCompDevNomPresClave.get(idCompDevNominaPres);
-				
-				UtilImport.limpiarRegistroError(DataImportCompDevNomPres);
-				
-				if(UtilValidate.isEmpty(DataImportCompDevNomPresClave)){
-					UtilImport.registrarError(DataImportCompDevNomPres, "No existe la clave presupuestal");
-					error = true;
-				}
-				if(UtilValidate.isNotEmpty(DataImportCompDevNomPresClave)){
-					if(UtilValidate.isNotEmpty(DataImportCompDevNomPresClave.getString("inactivo"))){
-						UtilImport.registrarError(DataImportCompDevNomPres, 
-								"La clave presupuestal ["+DataImportCompDevNomPres.getString("clavePresupuestal")+"] esta inactiva");
-						error = true;
-					}
-				}
-				monto = UtilNumber.getBigDecimal(DataImportCompDevNomPres.getBigDecimal("monto"));
-				if(UtilValidate.isEmpty(DataImportCompDevNomPres.getBigDecimal("monto"))){
-					UtilImport.registrarError(DataImportCompDevNomPres, 
-							"Es necesario ingresar el monto  ");
-					error = true;
-				}
-				if(validacionCompara && UtilValidate.isNotEmpty(DataImportCompDevNomPresClave)){
-					montoCompara = UtilNumber.getBigDecimal(DataImportCompDevNomPresClave.getBigDecimal("montoControl"));
-					if(monto.compareTo(montoCompara) > 0){
-						UtilImport.registrarError(DataImportCompDevNomPres, 
-								"No existe suficiencia presupuestal : "+
-									montoCompara.subtract(monto));
-						error = true;
-					}
-				}
-				
-				// Creamos la lineaMotor y se llena
-				LineaMotorContable lineaMotorContable = new LineaMotorContable();
-				lineaMotorContable.setClavePresupuestal(DataImportCompDevNomPres.getString("clavePresupuestal"));
-				lineaMotorContable.setMontoPresupuestal(DataImportCompDevNomPres.getBigDecimal("monto"));
-				
-				if(UtilValidate.isNotEmpty(LineaPresupuestal)){
-					LineaPresupuestalCopia = (GenericValue) LineaPresupuestal.clone();
-	
-					if(tieneAuxAbono && UtilValidate.isEmpty(DataImportCompDevNomPresClave.getString("auxiliarAbono"))){
-						UtilImport.registrarError(DataImportCompDevNomPres, 
-								"Es necesario ingresar el auxiliar de abono");
-						error = true;
-					} else if(tieneAuxAbono) {
-						LineaPresupuestalCopia.set("catalogoAbono",
-								LineaPresupuestal.getString("catalogoAbono").equalsIgnoreCase("BANCO") ? "BANCO" : 
-									DataImportCompDevNomPresClave.getString("auxiliarAbono"));
-					}
-					if(tieneAuxCargo && UtilValidate.isEmpty(DataImportCompDevNomPresClave.getString("auxiliarCargo"))){
-						UtilImport.registrarError(DataImportCompDevNomPres, 
-								"Es necesario ingresar el auxiliar de cargo");
-						error = true;
-					} else if(tieneAuxCargo) {
-						LineaPresupuestalCopia.set("catalogoCargo",
-								LineaPresupuestal.getString("catalogoCargo").equalsIgnoreCase("BANCO") ? "BANCO" : 
-									DataImportCompDevNomPresClave.getString("auxiliarCargo"));
+				for (GenericValue LineaPresupuestal : listLineasPresupuestales) {
+					String cuentaBancaria = DataImportFacturas.getString("cuentaBancariaId");
+					String catalogoAbono = LineaPresupuestal.getString("catalogoAbono");
+					Debug.log("Busca a poner el catalogo abono darky" + catalogoAbono + " secuencia de linea "+LineaPresupuestal.getString("secuencia") + " Evento contable " + eventoContableId);
+					
+					if(UtilValidate.isNotEmpty(catalogoAbono)){
+						LineaPresupuestal.set("catalogoAbono",LineaPresupuestal.getString("catalogoAbono").equalsIgnoreCase("BANCO") ? "BANCO" : cuentaBancaria);
+						Debug.log("Entra a poner el catalogo abono darky y la cuenta bancaria " + cuentaBancaria);
 					}
 					
-					Map<String, GenericValue> mapalineasPresupuestales = FastMap.newInstance();
-					mapalineasPresupuestales.put(LineaPresupuestalCopia.getString("secuencia"), LineaPresupuestalCopia);
+					mapaSecuenciaPresupuestal.put(LineaPresupuestal.getString("secuencia"), LineaPresupuestal);
+				}
+				
+				UtilImport.limpiarRegistroError(DataImportFacturas);
+				
+				if (UtilValidate.isEmpty(ValidaFacturas.getString("clavePresupuestalCve"))) {
+					UtilImport.registrarError(DataImportFacturas, "No existe la clave presupuestal");
+					error = true;
+				} else {
+					LineaMotorContable.setClavePresupuestal(ValidaFacturas.getString("clavePresupuestalCve"));
+				}
+				
+				if (UtilValidate.isNotEmpty(ValidaFacturas.getString("inactivo"))) {
+					UtilImport.registrarError(DataImportFacturas, "La clave presupuestal [" + ValidaFacturas.getString("clavePresupuestal") + "] esta inactiva");
+					error = true;
+				}
+				
+				monto = UtilNumber.getBigDecimal(ValidaFacturas.getBigDecimal("monto"));
+				
+				if (UtilValidate.isEmpty(DataImportFacturas.getBigDecimal("monto"))) {
+					UtilImport.registrarError(DataImportFacturas, "Es necesario ingresar el monto ");
+					error = true;
+				}
+				
+				if (validacionCompara) {
+					montoCompara = UtilNumber.getBigDecimal(ValidaFacturas.getBigDecimal("montoControl"));
 					
-					lineaMotorContable.setLineasPresupuestales(mapalineasPresupuestales);
+					if (monto.compareTo(montoCompara) > 0) {
+						UtilImport.registrarError(DataImportFacturas, "No existe suficiencia presupuestal : " + montoCompara.subtract(monto));
+						error = true;
+					} else {
+						LineaMotorContable.setMontoPresupuestal(monto);
+					}
+				} else {
+					LineaMotorContable.setMontoPresupuestal(monto);
 				}
 				
-				listLineaMotor.add(lineaMotorContable);
-				
-			}
-			
-			/*
-			 * Contabilidad
-			 */
-			
-			List<GenericValue> listDataImportCompDevNomCont = delegator.findByCondition(
-					"DataImportCompDevNomCont", UtilImport.condicionesSinProcesar(userLoginId), null, orderBy);
-			
-			List<GenericValue> lineasContables = delegator.findByAnd("LineaContable", "acctgTransTypeId", eventoContableId);
-			
-			Map<String, GenericValue> mapLineaContable = FastMap.newInstance();
-			for (GenericValue LineaContable : lineasContables) {
-				mapLineaContable.put(LineaContable.getString("descripcion").trim().toUpperCase(), LineaContable);
-			}
-			
-			Map<String, GenericValue> mapaLineasContable = FastMap.newInstance();
-			
-			for (GenericValue DataImportCompDevNomCont : listDataImportCompDevNomCont) {
-				//Obtenemos la lineaContable del mapa
-				GenericValue LineaContable = (GenericValue) mapLineaContable.get(
-						DataImportCompDevNomCont.getString("descripcionLinea").trim().toUpperCase()).clone();
-				
-				if(UtilValidate.isEmpty(LineaContable)){
-					UtilImport.registrarError(DataImportCompDevNomCont, 
-							"La descripci\u00f3n ["+DataImportCompDevNomCont.getString("descripcionLinea")+
-								"] no existe en el evento ["+eventoContableId+"]");
-					continue;
+				if (UtilValidate.isEmpty(ValidaFacturas.getDate("fechaContable"))) {
+					UtilImport.registrarError(DataImportFacturas, "Debe ingresar la fecha contable");
+					error = true;
+				} else {
+					LineaMotorContable.setFecha(UtilDateTime.toTimestamp(ValidaFacturas.getDate("fechaContable")));
 				}
 				
-				if(UtilValidate.isNotEmpty(LineaContable.getString("catalogoAbono"))){
-					if(UtilValidate.isEmpty(DataImportCompDevNomCont.getString("auxiliarAbono"))){
-						UtilImport.registrarError(DataImportCompDevNomCont,
-								"Es necesario ingresar el auxiliar de abono  ");
+				if (UtilValidate.isEmpty(ValidaFacturas.getString("conceptoPago"))) {
+					UtilImport.registrarError(DataImportFacturas, "Debe ingresar el concepto del pago");
+					error = true;
+				}
+				
+				if (UtilValidate.isEmpty(ValidaFacturas.getString("cuentaBancariaId"))) {
+					UtilImport.registrarError(DataImportFacturas, "Debe ingresar la cuenta bancaria");
+					error = true;
+				} else {
+					if (UtilValidate.isEmpty(ValidaFacturas.getString("cuentaBancariaIdCta"))) {
+						UtilImport.registrarError(DataImportFacturas, "El identificador de la cuenta bancaria es incorrecto o no existe");
+						error = true;
+					} else {
+						mapaCuentaBanco.put(ValidaFacturas.getString("cuentaBancariaIdCta"),ValidaFacturas.getString("bancoId"));
+					}
+				}
+				
+				if (UtilValidate.isEmpty(ValidaFacturas.getString("moneda"))) {
+					UtilImport.registrarError(DataImportFacturas, "Debe ingresar la moneda");
+					error = true;
+				} else {
+					if(UtilValidate.isEmpty(ValidaFacturas.getString("uomId"))){
+						UtilImport.registrarError(DataImportFacturas, "El identificador de la moneda es incorrecto o no existe");
 						error = true;
 					}
-					LineaContable.set("catalogoAbono", DataImportCompDevNomCont.getString("auxiliarAbono"));
 				}
 				
-				if(UtilValidate.isNotEmpty(LineaContable.getString("catalogoCargo"))){
-					if(UtilValidate.isEmpty(DataImportCompDevNomCont.getString("auxiliarCargo"))){
-						UtilImport.registrarError(DataImportCompDevNomCont,
-								"Es necesario ingresar el auxiliar de cargo  ");
+				if(UtilValidate.isEmpty(ValidaFacturas.getString("metodoPago"))){
+					UtilImport.registrarError(DataImportFacturas, "Debe ingresar el m\u00f3todo de pago");
+					error = true;
+				} else {
+					if(UtilValidate.isEmpty(ValidaFacturas.getString("paymentTypeId"))){
+						UtilImport.registrarError(DataImportFacturas, "El identificador del m\u00f3todo de pago es incorrecto o no existe");
 						error = true;
 					}
-					LineaContable.set("catalogoCargo", DataImportCompDevNomCont.getString("auxiliarCargo"));
 				}
 				
-				LineaContable.set("monto", DataImportCompDevNomCont.getBigDecimal("monto"));
-				mapaLineasContable.put(DataImportCompDevNomCont.getString("descripcionLinea"),LineaContable);
-			}
-			
-			if(!listLineaMotor.isEmpty()){
-				listLineaMotor.get(0).setLineasContables(mapaLineasContable);
+				LineaMotorContable.setLineasPresupuestales(mapaSecuenciaPresupuestal);
+				//Se agrega la linea motor para la primera poliza
+				listLineaMotorContable.add(LineaMotorContable);
+				mapTipoFacturasLinea.put("LineaMotorContable", LineaMotorContable);
+				//Ahora se crea el registro de facturas
+				GenericValue Facturas = GenericValue.create(delegator.getModelEntity("Facturas"));
+				
+				Facturas.setAllFields(ValidaFacturas.getAllFields(), false, null, false);
+				listFacturas.add(Facturas);
+				mapTipoFacturasLinea.put("Facturas", Facturas);
+				mapRenglonFacturasLinea.put(dataImportFacturasId, mapTipoFacturasLinea);
+				mapTipoFacturasLinea = FastMap.newInstance();
 			}
 			
 			TransactionUtil.begin(43200);
 			
-			if(!error){
+			if (!error) {
+				Map<String,Object> result = ServiceUtil.returnSuccess();
 				
-				// Hacemos la poliza.
-				Debug.logInfo("CDN-transacciones",MODULE);
-				Debug.logInfo("Total de lineas motor.- " + listLineaMotor.size(),MODULE);
-
-				Map<String, Object> input = FastMap.newInstance();
-				input.put("fechaRegistro", UtilDateTime.nowTimestamp());
-				input.put("fechaContable", fechaContable);
-				input.put("eventoContableId", eventoContableId);
-				input.put("usuario", userLoginId);
-				input.put("organizationId", organizationPartyId);
-				input.put("currency", "MXN");
-				input.put("descripcion", descripcion);
-				input.put("tipoClaveId", tipoClave);
-				input.put("lineasMotor", listLineaMotor);
-				input.put("tipoMovimiento", tipoMovimiento);
-				Map<String, Object> result = dctx.getDispatcher().runSync("creaTransaccionMotor", input, 43200, false);
-				
-				if (ServiceUtil.isError(result)) {
-					return ServiceUtil.returnError(ServiceUtil.getErrorMessage(result));
-				} else {
-					GenericValue AcctgTrans = (GenericValue) result.get("transaccion");
-					regreso = ServiceUtil.returnSuccess("Se gener\u00f3 la p\u00f3liza "+AcctgTrans.getString("poliza"));
-					for (GenericValue DataImportCompDevNomPres : listDataImportCompDevNomPres) {
-						UtilImport.registrarExitoso(DataImportCompDevNomPres);
+				for (Entry<String, Map<String, Object>> RenglonFacturasLinea : mapRenglonFacturasLinea.entrySet()) {
+					Map<String,Object> mapaProducto = FastMap.newInstance();
+					Map<String,Object> mapaMontoClave = FastMap.newInstance();
+					Map<String,Object> montoMap = FastMap.newInstance();
+					Map<String,Object> clavePresupuestalMap = FastMap.newInstance();
+					Map<String,Object> catalogoCargoContMap = FastMap.newInstance();
+					Map<String,Object> catalogoAbonoContMap = FastMap.newInstance();
+					Map<String,Object> catalogoCargoPresMap = FastMap.newInstance();
+					Map<String,Object> catalogoAbonoPresMap = FastMap.newInstance();
+					int iteracion = 0;
+					
+					GenericValue DataImportFacturas = mapDataImportFacturas.get(RenglonFacturasLinea.getKey());
+					String llaveSimple = Integer.toString(iteracion);
+					
+					mapaMontoClave.put(llaveSimple, DataImportFacturas.getString("monto"));
+					clavePresupuestalMap.put(llaveSimple,DataImportFacturas.getString("clavePresupuestal"));
+					
+					LineaMotorContable lineaMotor = (LineaMotorContable) RenglonFacturasLinea.getValue().get("LineaMotorContable");
+					GenericValue Facturas = (GenericValue) RenglonFacturasLinea.getValue().get("Facturas");
+					
+					List<GenericValue> DetallePresupuesto = delegator.findByCondition("LineaPresupuestal", EntityCondition.makeCondition("acctgTransTypeId",EntityOperator.EQUALS, eventoContableId), null, null);
+					
+					for (GenericValue DetalleLinea : DetallePresupuesto) {
+						String llaveCompuesta = DetalleLinea.getString("descripcion").replaceAll("\\s","");
+						llaveCompuesta = llaveCompuesta+iteracion;
+						catalogoAbonoPresMap.put(llaveCompuesta, DataImportFacturas.getString("cuentaBancariaId"));
+						montoMap.put(llaveCompuesta,DetalleLinea.getString("monto"));
 					}
-					for (GenericValue DataImportCompDevNomCont : listDataImportCompDevNomCont) {
-						UtilImport.registrarExitoso(DataImportCompDevNomCont);
+					 
+					Map context2 = FastMap.newInstance();
+					context2.put("clavePresupuestalMap", clavePresupuestalMap);
+					context2.put("montoMap", montoMap);
+					context2.put("catalogoCargoContMap", catalogoCargoContMap);
+					context2.put("catalogoAbonoContMap", catalogoAbonoContMap);
+					context2.put("catalogoCargoPresMap", catalogoCargoPresMap);
+					context2.put("catalogoAbonoPresMap", catalogoAbonoPresMap);
+					
+					Map<String, Object> input = FastMap.newInstance();
+					input.put("fechaRegistro", UtilDateTime.nowTimestamp());
+					input.put("fechaContable", lineaMotor.getFecha());
+					input.put("eventoContableId", eventoContableId);
+					input.put("usuario", userLoginId);
+					input.put("organizationId", organizationPartyId);
+					input.put("currency", "MXN");
+					input.put("tipoClaveId", tipoClave);
+					input.put("lineasMotor",UtilCommon.getLineasContables(eventoContableId, delegator, context2, "" ,DataImportFacturas.getString("cuentaBancariaId"), mapaMontoClave, mapaProducto));
+					//input.put("lineasMotor", UtilMisc.toList(lineaMotor));
+					input.put("descripcion", DataImportFacturas.getString("conceptoPago")+DataImportFacturas.getString("nombreExterno"));
+					
+					result = dispatcher.runSync("creaTransaccionMotor",input, 43200, false);
+					
+					if (ServiceUtil.isError(result)) {
+						Debug.logError("Hubo Error al crear la poliza del renglon "+DataImportFacturas.getString("renglon"), MODULE);
+						return ServiceUtil.returnError(ServiceUtil.getErrorMessage(result));
+					} else {
+						GenericValue AcctgTrans = (GenericValue) result.get("transaccion");
+						DataImportFacturas.setString("poliza", AcctgTrans.getString("poliza"));
+						
+						Facturas.put("acctgTransId", AcctgTrans.getString("acctgTransId"));
+					}
+					
+					DataImportFacturas.store();
+					Facturas.setNextSeqId();
+					Facturas.create();
+					
+					iteracion++;
+					
+				}
+				
+				if (ServiceUtil.isSuccess(result)) {
+					regreso = ServiceUtil.returnSuccess("Se realiz\u00f3 correctamente la importaci\u00f3n de los ("+listDataImportFacturas.size()+") pagos");
+					
+					for (GenericValue DataImportIngresoPres : listDataImportFacturas) {
+						UtilImport.registrarExitoso(DataImportIngresoPres);
 					}
 				}
+				
 			}
-			
-			delegator.storeAll(listDataImportCompDevNomPres);
-			delegator.storeAll(listDataImportCompDevNomCont);
+
+			delegator.storeAll(listDataImportFacturas);
 			
 			TransactionUtil.commit();
-			
-		} catch (ParseException | GenericEntityException | GenericServiceException | NullPointerException e) {
+		} catch (GenericEntityException | NullPointerException | GenericServiceException e) {
 			e.printStackTrace();
 			return ServiceUtil.returnError(e.getMessage());
 		}
 		
 		return regreso;
-	}
-	
-	/**
-	 * Metodo que regresa el objeto LineaPresupuestal que tiene matriz de conversion 'tipoMatrizId'
-	 * @param delegator
-	 * @return
-	 * @throws GenericEntityException
-	 */
-	private static GenericValue getLineaPresupuestalMatriz(Delegator delegator) throws GenericEntityException{
-		
-		EntityConditionList<EntityExpr> matrizCondition = EntityCondition.makeCondition(
-					UtilMisc.toList(EntityCondition.makeCondition("acctgTransTypeId", EntityOperator.EQUALS,eventoContableId),
-							EntityCondition.makeCondition("tipoMatrizId", EntityOperator.NOT_EQUAL, null)));
-
-		List<GenericValue> lineaPresupuestal = delegator.findByCondition("LineaPresupuestal", matrizCondition, null, null);				
-
-		if (lineaPresupuestal.isEmpty()) {
-			Debug.logWarning("No se encontr\u00f3 alguna linea presupuestal que utilice matriz en el evento ["+eventoContableId+"]",MODULE);
-			return null;
-		} else {
-			if(lineaPresupuestal.size()>1){
-				throw new GenericEntityException("Evento mal configurado, solo una linea presupuestal debe usar la matriz");
-			}
-			return lineaPresupuestal.get(0);
-		}
 	}
 	
 }
