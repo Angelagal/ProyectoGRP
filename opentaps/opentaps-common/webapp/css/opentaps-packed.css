@@ -5316,20 +5316,26 @@ div.subMenuButton {
 }
 
 .requiredField {
+	content: " *" !important;
 	text-decoration: none;
 	font: bold 10px Verdana, Arial, Helvetica, sans-serif;
-	color: #A00;
+	color: #000000;
+}
+.requiredField::after {
+	content: " *" !important;
+	color: #000000;
 }
 
-.requiredFieldNormal {
+.requiredFieldNormal::after {
+	content: " *" !important;
 	text-decoration: none;
 	font: normal 10px Verdana, Arial, Helvetica, sans-serif;
-	color: #A00;
+	color: #000000;
 }
 
 .requiredColumn {
 	text-decoration: none;
-	color: #A00;
+	color: #000000;
 }
 
 .fieldDateTime {
