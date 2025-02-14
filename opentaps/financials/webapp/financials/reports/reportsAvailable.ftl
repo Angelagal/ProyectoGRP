@@ -28,30 +28,30 @@
      <#-- CONTABLES HCGZ -->
     <@displayReportGroup group="CONAC_CONTABLES" nameOnly=true>
       <li>
-                        <a href="http://localhost:8080/pentaho/api/repos/%3Ahome%3AFINABIEN%3AContables%3AEF0.prpt/viewer" target="_blank">
+                        <a href="http://localhost:8080/pentaho/api/repos/%3Ahome%3AFINABIEN%3AContables%3AEF0-Balanza_de_comprobacion.prpt/viewer" target="_blank">
                             ${uiLabelMap.EF0}
                         </a>
                     </li>
-                    <#--<li>
-                        <a href="http://localhost:8080/pentaho/api/repos/%3Ahome%3AFINABIEN%3AContables%3AEF1.1%2BEstado%2Bde%2BSituaci%25C3%2583%25C2%25B3n%2BFinanciera.prpt/viewer" target="_blank">
-                            EF1.1 Estado de Situacion Financiera
+                    <li>
+                        <a href="http://localhost:8080/pentaho/api/repos/%3Ahome%3AFINABIEN%3AContables%3AEF1.1-Estado_de_situaci%C3%B3n_financiera.prpt/viewer" target="_blank">
+                           ${uiLabelMap.AccountingEF1_1}
                         </a>
                     </li>
                     <li>
-                        <a href="http://localhost:8080/pentaho/api/repos/%3Ahome%3AFINABIEN%3AContables%3AEF1.2%2BEstado%2Bde%2BSituacion%2BFinanciera%2BAnual.prpt/viewer" target="_blank">
+                        <a href="http://localhost:8080/pentaho/api/repos/%3Ahome%3AFINABIEN%3AContables%3AEF1.2-Estado_de_Situacion_Financiera_Anual.prpt/viewer" target="_blank">
                             ${uiLabelMap.AccountingEF1_2}
                         </a>
                     </li>
                     <li>
-                        <a href="http://localhost:8080/pentaho/api/repos/%3Ahome%3AFINABIEN%3AContables%3AEF3.1%2BEstado%2Bde%2BActividades.prpt/viewer" target="_blank">
+                        <a href="http://localhost:8080/pentaho/api/repos/%3Ahome%3AFINABIEN%3AContables%3AEF3.1-Estado_de_actividades.prpt/viewer" target="_blank">
                             ${uiLabelMap.EF31}
                         </a>
                     </li>
                     <li>
-                        <a href="http://localhost:8080/pentaho/api/repos/%3Ahome%3AFINABIEN%3AContables%3AEF3.2%2BEstado%2Bde%2BActividades%2BAnual.prpt/viewer" target="_blank">
+                        <a href="http://localhost:8080/pentaho/api/repos/%3Ahome%3AFINABIEN%3AContables%3AEF3.2-Estado_de_Actividades_Anual.prpt/viewer" target="_blank">
                             ${uiLabelMap.EF32}
                         </a>
-                    </li>-->     
+                    </li>     
     </@displayReportGroup>
 
   </td>
