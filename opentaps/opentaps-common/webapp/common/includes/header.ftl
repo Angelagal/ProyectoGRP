@@ -216,7 +216,7 @@
       <div class="insideHeaderSubtext">
         <b>${uiLabelMap.ProductOrganization}</b>:&nbsp;${applicationSetupOrganization.groupName}&nbsp; 
 		<b>${uiLabelMap.FormFieldTitleCiclo}</b>:&nbsp;${cicloId}&nbsp; 
-        <#--(<@displayLink text="${uiLabelMap.CommonChange}" href="selectOrganizationForm"/>)-->
+        (<@displayLink text="${uiLabelMap.CommonChange}" href="selectOrganizationForm"/>)
       </div>
     </#if>
   
