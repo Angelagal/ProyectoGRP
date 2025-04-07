@@ -117,9 +117,18 @@ public class PartyServices {
         String description = (String) context.get("description");
         String employeeNum = (String) context.get("employeeNum");
 
+        Debug.log("ENRIQUE CARRANZA");
+        Debug.log("context: " + context);
+
+
         // if specified partyId starts with a number, return an error
-        if (UtilValidate.isNotEmpty(partyId) && partyId.matches("\\d+")) {
-            return ServiceUtil.returnError(UtilProperties.getMessage(resource, "party.id_is_digit", locale));
+        // if (UtilValidate.isNotEmpty(partyId) && partyId.matches("\\d+")) {
+        //     return ServiceUtil.returnError(UtilProperties.getMessage(resource, "party.id_is_digit", locale));
+        // }
+
+        // check partyId length
+        if (partyId.length() > 10) {
+            return ServiceUtil.returnError(UtilProperties.getMessage(resource, "party.id_too_long", locale));
         }
 
         // partyId might be empty, so check it and get next seq party id if empty
@@ -130,6 +139,8 @@ public class PartyServices {
                 return ServiceUtil.returnError(UtilProperties.getMessage(resource, "party.id_generation_failure", locale));
             }
         }
+
+    
 
         // check to see if party object exists, if so make sure it is PERSON type party
         GenericValue party = null;
@@ -153,7 +164,7 @@ public class PartyServices {
         	} else if (!employeeNum.matches(REGEX_EMPLOYEE_NUMBER)) {
         		return ServiceUtil.returnError(UtilProperties.getMessage(resource, "person.create.employee_number_regex", locale));
         	}
-        	
+            
             // create a party if one doesn't already exist with an initial status from the input
             String statusId = (String) context.get("statusId");
             if (statusId == null) {
@@ -179,6 +190,7 @@ public class PartyServices {
             
             newPartyMap.put("geoId", context.get("geografica"));
             newPartyMap.put("employeeNum", context.get("employeeNum"));
+            newPartyMap.put("puesto", context.get("puesto"));
             
             party = delegator.makeValue("Party", newPartyMap);
             toBeStored.add(party);
@@ -1264,6 +1276,7 @@ public class PartyServices {
                         andExprs.add(EntityCondition.makeCondition(EntityFunction.UPPER_FIELD("userLoginId"), EntityOperator.LIKE, EntityFunction.UPPER("%"+userLoginId+"%")));
 
                         fieldsToSelect.add("userLoginId");
+                        fieldsToSelect.add("enabled");
                     }
 
                     // ----
@@ -1542,6 +1555,12 @@ public class PartyServices {
         result.put("highIndex", Integer.valueOf(highIndex));
         result.put("lowIndex", Integer.valueOf(lowIndex));
 
+        return result;
+    }
+
+    public static Map<String, Object> findPartyFromJS(DispatchContext dctx, Map<String, ? extends Object> context) {
+        Map<String, Object> result = ServiceUtil.returnSuccess();
+        result.put("nombre", "Enrique");
         return result;
     }
 

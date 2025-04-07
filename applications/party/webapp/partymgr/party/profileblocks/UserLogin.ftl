@@ -18,48 +18,72 @@ under the License.
 -->
 <#-- This file has been modified by Open Source Strategies, Inc. -->
 
-  <div id="partyUserLogins" class="screenlet">
+ <div id="partyUserLogins" class="screenlet">
     <div class="screenlet-title-bar">
-      <ul>
-        <li class="h3">${uiLabelMap.PartyUserName}</li>
-        <#if security.hasEntityPermission("PARTYMGR", "_CREATE", session)>
-          <li><a href="<@ofbizUrl>createnewlogin?partyId=${party.partyId}</@ofbizUrl>">${uiLabelMap.CommonCreateNew}</a></li>
-        </#if>
-      </ul>
-      <br class="clear" />
+        <ul>
+            <li class="h3">${uiLabelMap.PartyUserName}</li>
+            <#if security.hasEntityPermission("PARTYMGR", "_CREATE", session)>
+                <li>
+                    <a id="createNewButton" href="<@ofbizUrl>createnewlogin?partyId=${party.partyId}</@ofbizUrl>">
+                        ${uiLabelMap.CommonCreateNew}
+                    </a>
+                </li>
+            </#if>
+        </ul>
+        <br class="clear" />
     </div>
     <div class="screenlet-body">
-      <#if userLogins?has_content>
-        <table class="basic-table" cellspacing="0">
-          <#list userLogins as userUserLogin>
-            <tr>
-              <td class="label">${uiLabelMap.PartyUserLogin}</td>
-              <td>${userUserLogin.userLoginId}</td>
-              <td>
-                <#assign enabled = uiLabelMap.PartyEnabled>
-                <#if (userUserLogin.enabled)?default("Y") == "N">
-                  <#if userUserLogin.disabledDateTime?exists>
-                    <#assign disabledTime = userUserLogin.disabledDateTime.toString()>
-                  <#else>
-                    <#assign disabledTime = "??">
-                  </#if>
-                  <#assign enabled = uiLabelMap.PartyDisabled + " - " + disabledTime>
-                </#if>
-                ${enabled}
-              </td>
-              <td class="button-col">
-                <#if security.hasEntityPermission("PARTYMGR", "_CREATE", session)>
-                  <a href="<@ofbizUrl>editlogin?partyId=${party.partyId}&amp;userLoginId=${userUserLogin.userLoginId}</@ofbizUrl>">${uiLabelMap.CommonEdit}</a>
-                </#if>
-                <#if security.hasEntityPermission("SECURITY", "_VIEW", session)>
-                  <a href="<@ofbizUrl>EditUserLoginSecurityGroups?partyId=${party.partyId}&amp;userLoginId=${userUserLogin.userLoginId}</@ofbizUrl>">${uiLabelMap.PartySecurityGroups}</a>
-                </#if>
-              </td>
-            </tr>
-          </#list>
-        </table>
-      <#else>
-        ${uiLabelMap.PartyNoUserLogin}
-      </#if>
+        <#if userLogins?has_content>
+            <table class="basic-table" cellspacing="0">
+                <#list userLogins as userUserLogin>
+                    <tr>
+                        <td class="label">${uiLabelMap.PartyUserLogin}</td>
+                        <td>${userUserLogin.userLoginId}</td>
+                        <td>
+                            <#assign enabled = uiLabelMap.PartyEnabled>
+                            <#if (userUserLogin.enabled)?default("Y") == "N">
+                                <#if userUserLogin.disabledDateTime?exists>
+                                    <#assign disabledTime = userUserLogin.disabledDateTime.toString()>
+                                <#else>
+                                    <#assign disabledTime = "??">
+                                </#if>
+                                <#assign enabled = uiLabelMap.PartyDisabled + " - " + disabledTime>
+                            </#if>
+                            ${enabled}
+                        </td>
+                        <td class="button-col">
+                            <#if security.hasEntityPermission("PARTYMGR", "_CREATE", session)>
+                                <a href="<@ofbizUrl>editlogin?partyId=${party.partyId}&amp;userLoginId=${userUserLogin.userLoginId}</@ofbizUrl>">
+                                    ${uiLabelMap.CommonEdit}
+                                </a>
+                            </#if>
+                            <#if security.hasEntityPermission("SECURITY", "_VIEW", session)>
+                                <a href="<@ofbizUrl>EditUserLoginSecurityGroups?partyId=${party.partyId}&amp;userLoginId=${userUserLogin.userLoginId}</@ofbizUrl>">
+                                    ${uiLabelMap.PartySecurityGroups}
+                                </a>
+                            </#if>
+                        </td>
+                    </tr>
+                </#list>
+            </table>
+        <#else>
+            ${uiLabelMap.PartyNoUserLogin}
+        </#if>
     </div>
-  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var table = document.querySelector(".basic-table");
+    var createNewButton = document.getElementById("createNewButton");
+
+    if (table) {
+        var hasRows = table.getElementsByTagName("tr").length > 0;
+        
+        if (createNewButton) {
+            createNewButton.style.display = hasRows ? "none" : "inline-block";
+        }
+    }
+});
+</script>

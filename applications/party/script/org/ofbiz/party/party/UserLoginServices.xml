@@ -1,0 +1,3 @@
+<service-resource>
+    <service name="findUserLogins" engine="groovy" location="UserLoginServices.groovy" invoke="findUserLogins"/>
+</service-resource>

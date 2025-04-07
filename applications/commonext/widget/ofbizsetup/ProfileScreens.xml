@@ -78,7 +78,7 @@
         </section>
     </screen>
 
-    <screen name="viewprofile">
+   <screen name="viewprofile">
         <section>
             <actions>
                 <set field="tabButtonItemTop" value="organization"/>

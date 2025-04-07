@@ -266,12 +266,12 @@
         <field name="conversionFactor"><display also-hidden="false"/></field>
         <field name="fromDate" title="${uiLabelMap.CommonFrom}"><display also-hidden="false"/></field>
         <field name="thruDate" title="${uiLabelMap.CommonThru}"><display also-hidden="false"/></field>
-        <field name="update" title="${uiLabelMap.FinancialsEnterNewRate}" widget-style="buttontext"> 
+        <!--<field name="update" title="${uiLabelMap.FinancialsEnterNewRate}" widget-style="buttontext"> 
             <hyperlink description="${uiLabelMap.FinancialsEnterNewRate}" target="exchangeRates">
                 <parameter param-name="uomId" from-field="uomId"/>
                 <parameter param-name="uomIdTo" from-field="uomIdTo"/>
             </hyperlink>
-        </field>
+        </field>-->
     </form>
     
     <form name="updateExchangeRate" type="single" target="updateExchangeRate" default-service-name="updateFXConversion"
@@ -294,8 +294,11 @@
             </drop-down>			
         </field>
         <field name="conversionFactor" title-style="requiredField"><text/></field>
+        <!--BOTONCITOOOOOO-->
         <field name="submitButton" title="${uiLabelMap.CommonUpdate}"><submit/></field>
     </form>
+
+    
     
     <form name="ListInvoicesForRecurrence" type="list" list-name="invoiceRecurrences" use-row-submit="true"
         paginate-target="invoiceRecurrence" paginate-size-field="invoicesSize" paginate-index-field="invoicesIndex"

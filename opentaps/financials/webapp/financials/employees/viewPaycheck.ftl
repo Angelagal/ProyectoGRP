@@ -70,7 +70,7 @@
           </tr>
 
           <!-- list paycheck gross amount -->
-          <tr class="viewManyTR2">
+      <!--    <tr class="viewManyTR2">
             <#if (paycheck.statusId == "PMNT_NOT_PAID") && (hasUpdatePermission)>
               <form method="post" action="<@ofbizUrl>updatePaycheck</@ofbizUrl>" name="updatePaycheckGrossAmount">
                 <@inputHidden name="paymentId" value="${paycheck.paymentId}"/>
@@ -86,7 +86,7 @@
               <@displayCell text="" />
               <td><@displayCurrency amount=paycheck.amount?default(0.00) currencyUomId=paycheck.currencyUomId class="tableheadtext"/></td>
             </#if>
-          </tr>
+          </tr>-->
 
           <!-- list witholdings -->
           <#if witholdings.size() != 0>

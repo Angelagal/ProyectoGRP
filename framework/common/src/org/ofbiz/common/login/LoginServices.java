@@ -990,26 +990,27 @@ public class LoginServices {
             minPasswordLength = 0;
         }
 
-        if (newPassword != null && !newPassword.isEmpty()) {
+//        if (newPassword != null && !newPassword.isEmpty()) {
 //            if (!(newPassword.length() >= minPasswordLength)) {
 //                Map<String, String> messageMap = UtilMisc.toMap("minPasswordLength", Integer.toString(minPasswordLength));
 //                errMsg = UtilProperties.getMessage(resource,"loginservices.password_must_be_least_characters_long", messageMap, locale);
 //                errorMessageList.add(errMsg);
 //            }
             
-            if (!(newPassword.matches(REGEX_PASSWORD))) {
-                errMsg = UtilProperties.getMessage(resource,"loginservices.password_regex", locale);
-                errorMessageList.add(errMsg);
-            }
-            if (userLogin != null && newPassword.equalsIgnoreCase(userLogin.getString("userLoginId"))) {
-                errMsg = UtilProperties.getMessage(resource,"loginservices.password_may_not_equal_username", locale);
-                errorMessageList.add(errMsg);
-            }
-            if (UtilValidate.isNotEmpty(passwordHint) && (passwordHint.toUpperCase().indexOf(newPassword.toUpperCase()) >= 0)) {
-                errMsg = UtilProperties.getMessage(resource,"loginservices.password_hint_may_not_contain_password", locale);
-                errorMessageList.add(errMsg);
-            }
-        }
+//            if (!(newPassword.matches(REGEX_PASSWORD))) {
+//                errMsg = UtilProperties.getMessage(resource,"loginservices.password_regex", locale);
+//                errorMessageList.add(errMsg);
+//            }
+
+//if (userLogin != null && newPassword.equalsIgnoreCase(userLogin.getString("userLoginId"))) {
+//                errMsg = UtilProperties.getMessage(resource,"loginservices.password_may_not_equal_username", locale);
+//                errorMessageList.add(errMsg);
+//            }
+//            if (UtilValidate.isNotEmpty(passwordHint) && (passwordHint.toUpperCase().indexOf(newPassword.toUpperCase()) >= 0)) {
+//                errMsg = UtilProperties.getMessage(resource,"loginservices.password_hint_may_not_contain_password", locale);
+//                errorMessageList.add(errMsg);
+//            }
+//       }
     }
 
     public static String getHashType() {

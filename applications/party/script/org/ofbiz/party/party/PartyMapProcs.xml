@@ -25,6 +25,7 @@ under the License.
     <process field="firstName"><copy/><not-empty><fail-property resource="PartyUiLabels" property="PartyFirstNameMissing"/></not-empty></process>
     <process field="middleName"><copy/></process>
     <process field="lastName"><copy/><not-empty><fail-property resource="PartyUiLabels" property="PartyLastNameMissingError"/></not-empty></process>
+    <process field="employeeNum"><copy/><not-empty><fail-property resource="PartyUiLabels" property="PartyGroupNumEmployeeIsInvalid"/></not-empty></process>
     <process field="personalTitle"><copy/></process>
     <process field="suffix"><copy/></process>
     <process field="nickname"><copy/></process>

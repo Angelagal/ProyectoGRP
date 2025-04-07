@@ -36,7 +36,7 @@
 	<Geo abbreviation="ZAC" geoCode="MX-32" geoId="ZACATECAS" geoName="Zacatecas" geoSecCode="32" geoTypeId="STATE" parentGeoId="MEX"/>	
 	
 	<!-- Municipios -->
-	<!-- Aguascalientes -->
+	<!--. -->
 	<Geo abbreviation="AGSMP" geoCode="MX-01-001" geoId="MP_AGUASCALIENTES" geoName="Aguascalientes" geoSecCode="001" geoTypeId="MUNICIPALITY" parentGeoId="AGUASCALIENTES"/>
 	<Geo abbreviation="AGSAS" geoCode="MX-01-002" geoId="ASIENTOS" geoName="Asientos" geoSecCode="002" geoTypeId="MUNICIPALITY" parentGeoId="AGUASCALIENTES"/>
 	<Geo abbreviation="CALV" geoCode="MX-01-003" geoId="CALVILLO" geoName="Calvillo" geoSecCode="003" geoTypeId="MUNICIPALITY" parentGeoId="AGUASCALIENTES"/>

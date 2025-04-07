@@ -1530,6 +1530,7 @@ under the License.
       <field name="state" type="indicator"/>
       <field name="geoId" type="indicator"/>
       <field name="employeeNum" type="indicator"/>
+      <field name="puesto" type="indicator"/>
       <prim-key field="partyId"/>
       <relation type="one" fk-name="PARTY_PTY_TYP" rel-entity-name="PartyType">
         <key-map field-name="partyTypeId"/>

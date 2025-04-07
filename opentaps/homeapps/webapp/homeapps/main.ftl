@@ -193,7 +193,7 @@
 				    <#-- Error end -->
 				      
 				    <#-- form -->
-				    <form id="login" method="post" action="<@ofbizUrl>login${previousParams?if_exists}</@ofbizUrl>">
+				   <!-- <form id="login" method="post" action="<@ofbizUrl>login${previousParams?if_exists}</@ofbizUrl>">
 					  <div class="row">
 					  	<div class="col-12">
 					  		<label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
@@ -229,7 +229,203 @@
 					  		</button>
 					  	</div>
 					  </div>
-					</form>
+					</form>-->
+
+
+<form id="login" method="post" action="<@ofbizUrl>login${previousParams?if_exists}</@ofbizUrl>">
+  <div class="row">
+    <div class="col-12">
+      <label class="sr-only" for="username">Username</label>
+      <div class="input-group mb-2 mr-sm-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text key-icon">
+            <img src="/opentaps_images/incUser.png" width="45px" height="45px">
+          </div>
+        </div>
+        <input class="form-control" type="text" id="username" placeholder="Nombre de usuario" name="USERNAME" size="50"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <label class="sr-only" for="password">Password</label>
+      <div class="input-group mb-2 mr-sm-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text key-icon">
+            <img src="/opentaps_images/key.png" width="45px" height="45px">
+          </div>
+        </div>
+        <input class="form-control" type="password" id="password" placeholder="Password" name="PASSWORD" size="50"/>
+      </div>
+    </div>
+  </div>
+
+  <div id="passwordExpiredMessage" style="display:none;">
+    <div class="row">
+      <div class="col-12">
+        <div class="alert alert-warning" role="alert">
+          Tu password ha expirado. Por favor, cámbialo para continuar.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 mt-4">
+      <button style="background-color:#155E29; color:white; border:none; padding: 10px 20px; border-radius: 2px;" type="submit">
+        ${uiLabelMap.CommonLogin}
+        <img src="/opentaps_images/sign.png" width="45px" height="45px">
+      </button>
+    </div>
+  </div>
+</form>
+
+<!-- New Password Form -->
+<form id="updatePassword" name="updatePassword" style="display:none;">
+  <div class="row">
+    <div class="col-12">
+      <label for="updatePassword_newPassword">Nueva contraseña</label>
+      <input type="password" id="updatePassword_newPassword" name="newPassword" placeholder="Nueva contraseña" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <label for="updatePassword_newPasswordVerify">Verifica la nueva contraseña</label>
+      <input type="password" id="updatePassword_newPasswordVerify" name="newPasswordVerify" placeholder="Verificar nueva contraseña" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 mt-4">
+      <button style="background-color:#155E29; color:white; border:none; padding: 10px 20px; border-radius: 2px;" type="submit" onclick="updatePassword();">
+        Guardar
+      </button>
+    </div>
+  </div>
+</form>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  let usernameField = document.getElementById("username");
+  let passwordField = document.getElementById("password");
+  let expirationMessage = document.getElementById("passwordExpiredMessage");
+  let updatePasswordForm = document.getElementById("updatePassword");
+  let updatePasswordNewField = document.getElementById("updatePassword_newPassword");
+  let updatePasswordVerifyField = document.getElementById("updatePassword_newPasswordVerify");
+
+  let warningMessage = document.createElement("div"); // Crear alerta amarilla
+  warningMessage.className = "alert alert-warning";
+  warningMessage.style.display = "none"; // Inicialmente oculta
+  warningMessage.setAttribute("role", "alert");
+  warningMessage.id = "passwordWarningMessage";
+
+  let loginButton = document.querySelector("button[type='submit']");
+  loginButton.parentNode.insertBefore(warningMessage, loginButton);
+
+  usernameField.addEventListener("input", function() {
+    let username = usernameField.value.trim();
+
+    if (username === "") {
+      passwordField.disabled = false;
+      passwordField.value = "";
+      expirationMessage.style.display = "none";
+      warningMessage.style.display = "none";
+      return;
+    }
+
+    fetch("http://localhost:3000/getPasswordInfo?username=" + username)
+      .then(response => response.json())
+      .then(data => {
+        if (data.fechaCreacion) {
+          let passwordCreatedDate = new Date(data.fechaCreacion);
+          let currentDate = new Date();
+          let diffDays = Math.floor((currentDate - passwordCreatedDate) / (1000 * 3600 * 24)); // Días de diferencia
+          let passwordExpirationDays = 5; // Número de días para la expiración
+          let daysRemaining = passwordExpirationDays - diffDays; // Días restantes hasta expiración
+
+          if (daysRemaining < 0) {
+            daysRemaining = 0; // Si la diferencia es negativa, la contraseña ya ha expirado
+          }
+
+          let lastPassword = localStorage.getItem("lastPassword");
+
+          if (daysRemaining > 0) {
+            expirationMessage.style.display = "none";
+            passwordField.disabled = false;
+
+            if (daysRemaining <= 3) {
+              warningMessage.textContent = "Tu password caduca en " + daysRemaining + " días. Cámbiala pronto.";
+              warningMessage.style.display = "block";
+            } else {
+              warningMessage.style.display = "none";
+            }
+          } else {
+            if (lastPassword === data.currentPassword) {
+              expirationMessage.style.display = "none";
+              passwordField.disabled = false;
+              warningMessage.style.display = "none";
+            } else {
+              expirationMessage.style.display = "block";
+              passwordField.disabled = true;
+              warningMessage.style.display = "none";
+            }
+          }
+        }
+      })
+      .catch(error => {
+        console.error("Error obteniendo la información del password:", error);
+        warningMessage.style.display = "none";
+      });
+  });
+
+  // Function to update password
+  window.updatePassword = function() {
+    let newPassword = updatePasswordNewField.value.trim();
+    let newPasswordVerify = updatePasswordVerifyField.value.trim();
+
+    if (newPassword !== newPasswordVerify) {
+      alert("Las contraseñas no coinciden.");
+      return;
+    }
+
+    fetch("http://localhost:3000/updatePassword", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: "admin",
+        password: "opentaps",
+        newPassword: newPassword,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert("Contraseña actualizada correctamente.");
+          expirationMessage.style.display = "none";
+          passwordField.disabled = false;
+          updatePasswordForm.style.display = "none";
+        } else {
+          alert("Error al actualizar la contraseña.");
+        }
+      })
+      .catch(error => {
+        console.error("Error al actualizar la contraseña:", error);
+      });
+  };
+});
+</script>
+
+
+
+
+
+
+
+
 					<div class="row mt-3">
 						<div class="col-12">
 							<h6 class="enlace"><a href="javascript:forgotPasswd()">${uiLabelMap.CommonForgotYourPassword}?</a></h6>

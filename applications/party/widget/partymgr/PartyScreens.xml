@@ -453,6 +453,12 @@ under the License.
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.PageTitleEditPersonalInformation}">
                             <include-form name="EditPerson" location="component://party/widget/partymgr/PartyForms.xml"/>
+                    
+                           <!-- <platform-specific>
+                                <html>
+                                    <html-template location="component://party/webapp/partymgr/party/insertaUsuario.ftl"/>
+                                </html> 
+                            </platform-specific>-->
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>

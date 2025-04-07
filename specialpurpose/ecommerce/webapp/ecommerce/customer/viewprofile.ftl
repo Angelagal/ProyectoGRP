@@ -24,7 +24,7 @@ under the License.
   <tr>
     <td>
       <h2>${uiLabelMap.PartyTheProfileOf}
-        <#if person?exists>
+          <#if person?exists>
           ${person.personalTitle?if_exists}
           ${person.firstName?if_exists}
           ${person.middleName?if_exists}
@@ -39,7 +39,7 @@ under the License.
       <#if showOld>
         <a href="<@ofbizUrl>viewprofile</@ofbizUrl>" class="button">${uiLabelMap.PartyHideOld}</a>
       <#else>
-        <a href="<@ofbizUrl>viewprofile?SHOW_OLD=true</@ofbizUrl>" class="button">${uiLabelMap.PartyShowOld}</a>
+      <a href="<@ofbizUrl>viewprofile?SHOW_OLD=true</@ofbizUrl>" class="button">${uiLabelMap.PartyShowOld}</a>
       </#if>
       <#if (productStore.enableDigProdUpload)?if_exists == "Y">
         <a href="<@ofbizUrl>digitalproductlist</@ofbizUrl>" class="button">${uiLabelMap.EcommerceDigitalProductUpload}</a>
@@ -53,7 +53,7 @@ under the License.
     <a href="<@ofbizUrl>editperson</@ofbizUrl>" class="submenutextright">
     <#if person?exists>${uiLabelMap.CommonUpdate}<#else>${uiLabelMap.CommonCreate}</#if></a>
   </div>
-  <h3>${uiLabelMap.PartyPersonalInformation}</h3>
+ <h3>${uiLabelMap.PartyPersonalInformation}</h3>
   <div class="screenlet-body">
     <#if person?exists>
     <div>
@@ -401,7 +401,7 @@ under the License.
 <div class="screenlet">
   <h3>${uiLabelMap.EcommerceFileManager}</h3>
   <div class="screenlet-body">
-    <table width="100%" border="0" cellpadding="1">
+   <table width="100%" border="0" cellpadding="1">
       <#if partyContent?has_content>
         <#list partyContent as contentRole>
         <#assign content = contentRole.getRelatedOne("Content") />

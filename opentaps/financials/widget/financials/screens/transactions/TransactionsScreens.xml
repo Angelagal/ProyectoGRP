@@ -445,6 +445,20 @@
                                 </or>
                             </condition>
                             <widgets>
+
+
+                            <platform-specific>
+                                <html>
+                                    <html-template location="component://financials/webapp/financials/transactions/historicoCambio.ftl"/>
+                                </html> 
+                            </platform-specific>
+
+                            <!--<platform-specific>
+                                <html>
+                                    <html-template location="component://financials/webapp/financials/transactions/listaHistorico.ftl"/>
+                                </html> 
+                            </platform-specific>-->
+
                                 <frame-container title="${uiLabelMap.FinancialsExchangeRates}">
                                     <include-form name="listExchangeRates" location="component://financials/widget/financials/forms/transactions/TransactionsForms.xml"/>
                                 </frame-container>
@@ -462,6 +476,7 @@
                         <frame-container title="${uiLabelMap.FinancialsExchangeRatesUpdate}">
                           <include-form name="updateExchangeRate" location="component://financials/widget/financials/forms/transactions/TransactionsForms.xml"/>
                         </frame-container> -->
+
                     </decorator-section>
                 </decorator-screen>
             </widgets>
