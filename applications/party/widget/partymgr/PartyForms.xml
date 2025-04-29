@@ -53,9 +53,6 @@ under the License.
             <display />
         </field>
 
-        <field name="puesto" title="Puesto *">
-            <text size="50" maxlength="50" />
-        </field>
 
         <field
             use-when="personInfo==null" name="employeeNum" title="${uiLabelMap.EmployeeNumber} *"
@@ -63,34 +60,154 @@ under the License.
             <text size="6" maxlength="6" />
         </field>
 
-        <field use-when="personInfo!=null" name="employeeNum" title="${uiLabelMap.EmployeeNumber}"
+       <field use-when="personInfo!=null" name="employeeNum" title="${uiLabelMap.EmployeeNumber}"
             tooltip="${uiLabelMap.CommonNotModifRecreat}">
             <display />
         </field>
 
-        <field name="firstName" title="${uiLabelMap.PartyFirstName} *" widget-style="required"
-        tooltip="${uiLabelMap.CommonNotModifRecreat}">
-            <text size="40" minlength="1" maxlength="60" />
+
+        <field name="puesto" title="${uiLabelMap.Puesto}">
+            <text size="50" maxlength="50" />
         </field>
 
-       
-        
-        <field name="lastName" title="${uiLabelMap.PartyLastName} *" widget-style="required"
+       <!-- <field name="puesto" title="${uiLabelMap.Puesto}"
+            tooltip="${uiLabelMap.CommonNotModifRecreat}">
+            <display />
+        </field>
+
+
+        <field
+            use-when="personInfo==null" name="puesto" title="${uiLabelMap.Puesto} *"
+            widget-style="required">
+            <text size="50" maxlength="50" />
+        </field>
+
+        <field use-when="personInfo!=null" name="puesto" title="${uiLabelMap.Puesto}"
+            tooltip="${uiLabelMap.CommonNotModifRecreat}">
+            <display />
+        </field>-->
+
+
+        <!--<field name="firstName" title="${uiLabelMap.PartyFirstName} *" widget-style="required"
         tooltip="${uiLabelMap.CommonNotModifRecreat}">
+            <text size="40" minlength="1" maxlength="60" />
+        </field>-->
+
+
+        <field name="firstName" title="${uiLabelMap.PartyFirstName}"
+            tooltip="${uiLabelMap.CommonNotModifRecreat}">
+            <text size="40" minlength="1" maxlength="60"  />
+        </field>
+
+        <field name="firstName" title="${uiLabelMap.PartyFirstName}"
+            tooltip="${uiLabelMap.CommonNotModifRecreat}">
+            <display />
+        </field>
+
+
+        <field
+            use-when="personInfo==null" name="firstName" title="${uiLabelMap.PartyFirstName} *"
+            widget-style="required">
             <text size="40" maxlength="60" />
         </field>
 
+        <field use-when="personInfo!=null" name="firstName" title="${uiLabelMap.PartyFirstName}"
+            tooltip="${uiLabelMap.CommonNotModifRecreat}">
+            <display />
+        </field>
+       
+        
+       <!--<field name="lastName" title="${uiLabelMap.PartyLastName} *" widget-style="required"
+        tooltip="${uiLabelMap.CommonNotModifRecreat}">
+            <text size="40" maxlength="60" />
+        </field>-->
+
+        <field name="lastName" title="${uiLabelMap.PartyLastName}"
+            tooltip="${uiLabelMap.CommonNotModifRecreat}">
+            <text size="40" minlength="1" maxlength="60"  />
+        </field>
+
+        <field name="lastName" title="${uiLabelMap.PartyLastName}"
+            tooltip="${uiLabelMap.CommonNotModifRecreat}">
+            <display />
+        </field>
+
+
+        <field
+            use-when="personInfo==null" name="lastName" title="${uiLabelMap.PartyLastName} *"
+            widget-style="required">
+            <text size="40" maxlength="60" />
+        </field>
+
+        <field use-when="personInfo!=null" name="lastName" title="${uiLabelMap.PartyLastName}"
+            tooltip="${uiLabelMap.CommonNotModifRecreat}">
+            <display />
+        </field>
        
 
-        <field name="geografica" title="Zona geográfica *" widget-style="required">
+        <field name="geoId" title="Zona geográfica *" widget-style="required">
             <drop-down allow-empty="false" no-current-selected-key="${personInfo.geoCode}">
-                <entity-options entity-name="Geo" key-field-name="geoCode"
-                    description="${stateProvinceGeoId} ${geoName}">
-                    <entity-constraint name="geoTypeId" value="STATE" />
-                    <entity-order-by field-name="geoCode" />
-                </entity-options>
+                <!-- DESDE AQUÍ LA LISTA -->
+                <option key="Aguascalientes" description="Aguascalientes"/>
+                <option key="Baja California" description="Baja California"/>
+                <option key="Baja California Sur" description="Baja California Sur"/>
+                <option key="Campeche" description="Campeche"/>
+                <option key="Chiapas" description="Chiapas"/>
+                <option key="Chihuahua" description="Chihuahua"/>
+                <option key="Ciudad de México" description="Ciudad de México"/>
+                <option key="Coahuila" description="Coahuila"/>
+                <option key="Colima" description="Colima"/>
+                <option key="Durango" description="Durango"/>
+                <option key="Estado de México" description="Estado de México"/>
+                <option key="Guanajuato" description="Guanajuato"/>
+                <option key="Guerrero" description="Guerrero"/>
+                <option key="Hidalgo" description="Hidalgo"/>
+                <option key="Jalisco" description="Jalisco"/>
+                <option key="Michoacán" description="Michoacán"/>
+                <option key="Morelos" description="Morelos"/>
+                <option key="Nayarit" description="Nayarit"/>
+                <option key="Nuevo León" description="Nuevo León"/>
+                <option key="Oaxaca" description="Oaxaca"/>
+                <option key="Puebla" description="Puebla"/>
+                <option key="Querétaro" description="Querétaro"/>
+                <option key="Quintana Roo" description="Quintana Roo"/>
+                <option key="San Luis Potosí" description="San Luis Potosí"/>
+                <option key="Sinaloa" description="Sinaloa"/>
+                <option key="Sonora" description="Sonora"/>
+                <option key="Tabasco" description="Tabasco"/>
+                <option key="Tamaulipas" description="Tamaulipas"/>
+                <option key="Tlaxcala" description="Tlaxcala"/>
+                <option key="Veracruz" description="Veracruz"/>
+                <option key="Yucatán" description="Yucatán"/>
+                <option key="Zacatecas" description="Zacatecas"/>
+
+                    <!-- HASTA AQUÍ LA LISTA -->
             </drop-down>
         </field>
+
+
+        <!-- <field name="geoId" title="${uiLabelMap.Zona Geografica}"
+            tooltip="${uiLabelMap.CommonNotModifRecreat}">
+            <text size="40" minlength="1" maxlength="60"  />
+        </field>-
+
+
+        <field name="geoId" title="${uiLabelMap.Zona_Geografica}"
+            tooltip="${uiLabelMap.CommonNotModifRecreat}">
+            <display />
+        </field>
+
+        <field
+            use-when="personInfo==null" name="geoId" title="${uiLabelMap.Zona_Geografica} *"
+            widget-style="required">
+            <text size="40" maxlength="60" />
+        </field>
+
+        <field use-when="personInfo!=null" name="geoId" title="${uiLabelMap.Zona_Geografica}"
+            tooltip="${uiLabelMap.CommonNotModifRecreat}">
+            <display />
+        </field> -->
+    
 
        <!-- <field name="preferredCurrencyUomId">
             <hidden value="MXN" />

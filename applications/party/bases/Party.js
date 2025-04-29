@@ -13,6 +13,9 @@ const Party = sequelize.define(
         },
         puesto: { // Nuevo campo agregado
             type: DataTypes.STRING,
+        },
+        geo_id: {
+            type: DataTypes.STRING,
         }
     },
     {

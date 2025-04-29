@@ -8,6 +8,7 @@ setTimeout(() => {
 	const inputName = document.getElementById("EditPerson_firstName");
 	const inputLastName = document.getElementById("EditPerson_lastName");
 
+
 	inputName.addEventListener('keydown', (event) => {
 		if (!validarInputText(event)) {
 			event.preventDefault();

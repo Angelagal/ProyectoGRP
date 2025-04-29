@@ -3,8 +3,8 @@
 <html>
 <head>
   <title>Tipo de Cambio</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/partymgr/static/js/vue.js"></script>
+  <script src="/partymgr/static/js/axios.js"></script>
   <style>
     /* Estilos generales */
     body {

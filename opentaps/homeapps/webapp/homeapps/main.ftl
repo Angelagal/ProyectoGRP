@@ -265,7 +265,7 @@
     <div class="row">
       <div class="col-12">
         <div class="alert alert-warning" role="alert">
-          Tu password ha expirado. Por favor, cámbialo para continuar.
+          Tu password ha expirado. Por favor, c&aacute;mbialo para continuar.
         </div>
       </div>
     </div>
@@ -356,7 +356,7 @@ document.addEventListener("DOMContentLoaded", function() {
             passwordField.disabled = false;
 
             if (daysRemaining <= 3) {
-              warningMessage.textContent = "Tu password caduca en " + daysRemaining + " días. Cámbiala pronto.";
+              warningMessage.textContent = "Tu password caduca en " + daysRemaining + " d\u00EDas. C\u00E1mbiala pronto.";
               warningMessage.style.display = "block";
             } else {
               warningMessage.style.display = "none";
@@ -375,7 +375,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       })
       .catch(error => {
-        console.error("Error obteniendo la información del password:", error);
+        console.error("Error obteniendo la informaci\u00F3n del password:", error);
         warningMessage.style.display = "none";
       });
   });
@@ -386,7 +386,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let newPasswordVerify = updatePasswordVerifyField.value.trim();
 
     if (newPassword !== newPasswordVerify) {
-      alert("Las contraseñas no coinciden.");
+      alert("Las contrase\u00F1as no coinciden.");
       return;
     }
 
@@ -404,16 +404,16 @@ document.addEventListener("DOMContentLoaded", function() {
       .then(response => response.json())
       .then(data => {
         if (data.success) {
-          alert("Contraseña actualizada correctamente.");
+          alert("Contrase\u00F1a actualizada correctamente.");
           expirationMessage.style.display = "none";
           passwordField.disabled = false;
           updatePasswordForm.style.display = "none";
         } else {
-          alert("Error al actualizar la contraseña.");
+          alert("Error al actualizar la contrase\u00F1a.");
         }
       })
       .catch(error => {
-        console.error("Error al actualizar la contraseña:", error);
+        console.error("Error al actualizar la contrase\u00F1a:", error);
       });
   };
 });

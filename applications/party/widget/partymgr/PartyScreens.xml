@@ -452,16 +452,20 @@ under the License.
                 <decorator-screen name="CommonPartyDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.PageTitleEditPersonalInformation}">
+                        
                             <include-form name="EditPerson" location="component://party/widget/partymgr/PartyForms.xml"/>
-                    
-                           <!-- <platform-specific>
-                                <html>
-                                    <html-template location="component://party/webapp/partymgr/party/insertaUsuario.ftl"/>
-                                </html> 
-                            </platform-specific>-->
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
+
+                    <!--<screenlet title="Actualizar" id="updateBox" style="width: 60%; margin: 0 auto;">
+                        <platform-specific>
+                            <html>
+                                 <html-template location="component://party/webapp/partymgr/party/insertaUsuario.ftl"/>
+                            </html> 
+                        </platform-specific>
+                    </screenlet>-->
+                   
             </widgets>
         </section>
     </screen>
@@ -497,6 +501,7 @@ under the License.
                 <set field="donePage" from-field="parameters.DONE_PAGE" default-value="viewprofile"/>
                 <set field="partyId" from-field="parameters.partyId"/>
                 <set field="userLoginId" from-field="parameters.userLoginId"/>
+                <set field="layoutSettings.javaScripts[]" value="/partymgr/js/UpdatePassword.js" global="true"/>
                 <entity-one entity-name="UserLogin" value-field="editUserLogin"/>
             </actions>
             <widgets>

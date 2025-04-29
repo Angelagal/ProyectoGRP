@@ -94,8 +94,8 @@ const validatePassword = (password, validarVerificacion = false, opcionesExtra =
     }
 
     if (validarVerificacion) {
-        const inputContrasena = document.getElementById("AddUserLogin_currentPassword");
-        const inputContrasenaValidacion = document.getElementById("AddUserLogin_currentPasswordVerify");
+        const inputContrasena = document.getElementById("newPasswordVerify");
+        const inputContrasenaValidacion = document.getElementById("newPasswordVerify");
 
         if (inputContrasena.value !== inputContrasenaValidacion.value) {
             response.status = false;
@@ -110,48 +110,13 @@ const validatePassword = (password, validarVerificacion = false, opcionesExtra =
     return response;
 };
 
-// Función para generar el userLoginId
-const searchParty = async () => {
-    try {
-        const url = new URL(window.location.href);
-        const params = new URLSearchParams(url.search);
-        const partyId = params.get("partyId");
-
-        const response = await fetch(`http://localhost:3000/parties/${partyId}`);
-        const data = await response.json();
-        const firstName = data.person.first_name;
-        const lastName = data.person.last_name;
-        const firstNameCaracter = firstName.substring(0, 1);
-        const lastNameCaracter = lastName.substring(0,1);
-
-        let codigoInicioSesionUsuario = `USU${data.employee_num}${firstNameCaracter}${lastNameCaracter}`;
-        const inputRUSP = document.getElementById("AddUserLogin_userLoginId");
-        inputRUSP.value = codigoInicioSesionUsuario;
-        inputRUSP.readOnly = true;
-        inputRUSP.style.background = "rgba(0,0,0,0.1)";
-    } catch (error) {
-        console.error(error);
-    }
-};
-
 // Inicializa
 setTimeout(() => {
-    searchParty();
-
-    const inputCiclo = document.getElementById('AddUserLogin_ciclo');
-    const fila = inputCiclo.closest('tr');
-    fila.remove();
-
-    const inputExternalAuthId = document.getElementById('AddUserLogin_externalAuthId');
-    const fila2 = inputExternalAuthId.closest('tr');
-    fila2.remove();
-
-    const inputContrasena = document.getElementById("AddUserLogin_currentPassword");
-    const inputContrasenaValidacion = document.getElementById("AddUserLogin_currentPasswordVerify");
-    const inputUpdatePassword = document.getElementById("updatePassword_newPassword");
-    const inputUpdatePasswordVerify = document.getElementById("updatePassword_newPasswordVerify");
-    const inputLogin = document.getElementById("AddUserLogin_userLoginId");
-    const inputNombre = document.getElementById("AddUserLogin_userName");
+    const inputCiclo = document.getElementById('updatePassword_ciclo');
+    const inputContrasena = document.getElementById("updatePassword_newPassword");
+    const inputContrasenaValidacion = document.getElementById("updatePassword_newPasswordVerify");
+    const inputLogin = document.getElementById("userLoginId");
+    const inputNombre = document.getElementById("userName");
 
     const obtenerOpciones = () => ({
         userLoginId: inputLogin?.value || '',
@@ -169,23 +134,4 @@ setTimeout(() => {
         alert(validacion.mensajes.join("\n"));
         if (!validacion.status) event.target.value = '';
     });
-
-    inputUpdatePassword.addEventListener("change", (event) => {
-        const validacion = validatePassword(event.target.value, false, obtenerOpciones());
-        alert(validacion.mensajes.join("\n"));
-        if (!validacion.status) event.target.value = '';
-    });
-
-    inputUpdatePasswordVerify.addEventListener("change", (event) => {
-        const validacion = validatePassword(event.target.value, false, obtenerOpciones());
-
-        if (inputUpdatePassword.value !== inputUpdatePasswordVerify.value) {
-            validacion.status = false;
-            validacion.mensajes.push("❌ La contraseña de validación debe ser igual que la contraseña original.");
-        }
-
-        alert(validacion.mensajes.join("\n"));
-        if (!validacion.status) event.target.value = '';
-    });
-
 }, 100);

@@ -103,35 +103,30 @@ public class PartyServices {
      * @param context Map containing the input parameters.
      * @return Map with the result of the service, the output parameters.
      */
-    public static Map<String, Object> createPerson(DispatchContext ctx, Map<String, ? extends Object> context) {
+
+
+
+     public static Map<String, Object> createPerson(DispatchContext ctx, Map<String, ? extends Object> context) {
         Map<String, Object> result = FastMap.newInstance();
         Delegator delegator = ctx.getDelegator();
         Timestamp now = UtilDateTime.nowTimestamp();
         List<GenericValue> toBeStored = FastList.newInstance();
         Locale locale = (Locale) context.get("locale");
-        // in most cases userLogin will be null, but get anyway so we can keep track of that info if it is available
+    
         GenericValue userLogin = (GenericValue) context.get("userLogin");
         String organizationPartyId = (String) context.get("organizationPartyId");
-
         String partyId = (String) context.get("partyId");
         String description = (String) context.get("description");
         String employeeNum = (String) context.get("employeeNum");
-
-        Debug.log("ENRIQUE CARRANZA");
-        Debug.log("context: " + context);
-
-
-        // if specified partyId starts with a number, return an error
-        // if (UtilValidate.isNotEmpty(partyId) && partyId.matches("\\d+")) {
-        //     return ServiceUtil.returnError(UtilProperties.getMessage(resource, "party.id_is_digit", locale));
-        // }
-
-        // check partyId length
+        String puesto = (String) context.get("puesto");
+        String geoId = (String) context.get("geoId");
+    
+        // Validación de longitud del partyId
         if (partyId.length() > 10) {
             return ServiceUtil.returnError(UtilProperties.getMessage(resource, "party.id_too_long", locale));
         }
-
-        // partyId might be empty, so check it and get next seq party id if empty
+    
+        // Si no se proporciona partyId, se genera uno nuevo
         if (UtilValidate.isEmpty(partyId)) {
             try {
                 partyId = delegator.getNextSeqId("Party");
@@ -139,107 +134,128 @@ public class PartyServices {
                 return ServiceUtil.returnError(UtilProperties.getMessage(resource, "party.id_generation_failure", locale));
             }
         }
-
     
-
-        // check to see if party object exists, if so make sure it is PERSON type party
+        // Verificación de existencia del party
         GenericValue party = null;
-
         try {
             party = delegator.findByPrimaryKey("Party", UtilMisc.toMap("partyId", partyId));
         } catch (GenericEntityException e) {
             Debug.logWarning(e.getMessage(), module);
         }
-
-        
+    
         BigDecimal saldoInicial = BigDecimal.ZERO;
-        
+    
         if (party != null) {
             if (!"PERSON".equals(party.getString("partyTypeId"))) {
                 return ServiceUtil.returnError(UtilProperties.getMessage(resource, "person.create.party_exists_not_person_type", locale));
             }
         } else {
-        	if (employeeNum == null || employeeNum.isEmpty()) {
-        		return ServiceUtil.returnError(UtilProperties.getMessage(resource, "person.create.employee_number_empty", locale));
-        	} else if (!employeeNum.matches(REGEX_EMPLOYEE_NUMBER)) {
-        		return ServiceUtil.returnError(UtilProperties.getMessage(resource, "person.create.employee_number_regex", locale));
-        	}
-            
-            // create a party if one doesn't already exist with an initial status from the input
+            if (employeeNum == null || employeeNum.isEmpty()) {
+                return ServiceUtil.returnError(UtilProperties.getMessage(resource, "person.create.employee_number_empty", locale));
+            } else if (!employeeNum.matches(REGEX_EMPLOYEE_NUMBER)) {
+                return ServiceUtil.returnError(UtilProperties.getMessage(resource, "person.create.employee_number_regex", locale));
+            }
+    
+            // Creación de nueva entidad Party
             String statusId = (String) context.get("statusId");
             if (statusId == null) {
                 statusId = "PARTY_ENABLED";
             }
-            Map<String, Object> newPartyMap = UtilMisc.toMap("partyId", partyId, "partyTypeId", "PERSON", "description", description, "createdDate", now, "lastModifiedDate", now, "statusId", statusId);
+    
+            Map<String, Object> newPartyMap = UtilMisc.toMap(
+                "partyId", partyId,
+                "partyTypeId", "PERSON",
+                "description", description,
+                "createdDate", now,
+                "lastModifiedDate", now,
+                "statusId", statusId,
+                "employeeNum", employeeNum,
+                "geoId", context.get("geoId")
+            );
+    
+            // Agregar moneda, externalId y usuarios si existen
             String preferredCurrencyUomId = (String) context.get("preferredCurrencyUomId");
-            if (!UtilValidate.isEmpty(preferredCurrencyUomId)) {
+            if (UtilValidate.isNotEmpty(preferredCurrencyUomId)) {
                 newPartyMap.put("preferredCurrencyUomId", preferredCurrencyUomId);
             }
+    
             String externalId = (String) context.get("externalId");
-            if (!UtilValidate.isEmpty(externalId)) {
+            if (UtilValidate.isNotEmpty(externalId)) {
                 newPartyMap.put("externalId", externalId);
             }
+    
             if (userLogin != null) {
                 newPartyMap.put("createdByUserLogin", userLogin.get("userLoginId"));
                 newPartyMap.put("lastModifiedByUserLogin", userLogin.get("userLoginId"));
             }
+    
+            // Agregar saldoInicial si está presente
             saldoInicial = (BigDecimal) context.get("saldoInicial");
-            if(UtilValidate.isNotEmpty(saldoInicial)){
-            	newPartyMap.put("saldoInicial", saldoInicial);
+            if (UtilValidate.isNotEmpty(saldoInicial)) {
+                newPartyMap.put("saldoInicial", saldoInicial);
             }
-            
-            newPartyMap.put("geoId", context.get("geografica"));
-            newPartyMap.put("employeeNum", context.get("employeeNum"));
-            newPartyMap.put("puesto", context.get("puesto"));
-            
+    
+            // Agregar el campo puesto
+            if (UtilValidate.isNotEmpty(puesto)) {
+                newPartyMap.put("puesto", puesto.trim());
+            }
+
+            // Agregar el campo geografico
+            if (UtilValidate.isNotEmpty(geoId)) {
+                newPartyMap.put("geoId", geoId.trim());
+            }
+    
             party = delegator.makeValue("Party", newPartyMap);
             toBeStored.add(party);
-
-            // create the status history
+    
+            // Crear historial de estado
             GenericValue statusRec = delegator.makeValue("PartyStatus",
                     UtilMisc.toMap("partyId", partyId, "statusId", statusId, "statusDate", now));
             toBeStored.add(statusRec);
         }
-
+    
+        // Verificación y creación de Person
         GenericValue person = null;
-
         try {
             person = delegator.findByPrimaryKey("Person", UtilMisc.toMap("partyId", partyId));
         } catch (GenericEntityException e) {
             Debug.logWarning(e.getMessage(), module);
         }
-
+    
         if (person != null) {
             return ServiceUtil.returnError(UtilProperties.getMessage(resource, "person.create.person_exists", locale));
         }
-
+    
         person = delegator.makeValue("Person", UtilMisc.toMap("partyId", partyId));
         person.setNonPKFields(context);
         toBeStored.add(person);
-        
-        
-        //Creamos SaldoCatalogo
+    
+        // Crear SaldoCatalogo
         GenericValue SaldoCatalogo = delegator.makeValue("SaldoCatalogo");
-        SaldoCatalogo.set("catalogoId",partyId);
-        SaldoCatalogo.set("tipoId","PERSON");
-        SaldoCatalogo.set("partyId",organizationPartyId);
-        SaldoCatalogo.set("tipo","A");
-        SaldoCatalogo.set("monto",saldoInicial);
-        SaldoCatalogo.set("periodo",UtilDateTime.getMonthStart(UtilDateTime.nowSqlDate()));
+        SaldoCatalogo.set("catalogoId", partyId);
+        SaldoCatalogo.set("tipoId", "PERSON");
+        SaldoCatalogo.set("partyId", organizationPartyId);
+        SaldoCatalogo.set("tipo", "A");
+        SaldoCatalogo.set("monto", saldoInicial);
+        SaldoCatalogo.set("periodo", UtilDateTime.getMonthStart(UtilDateTime.nowSqlDate()));
         SaldoCatalogo.setNextSeqId();
         toBeStored.add(SaldoCatalogo);
-        
+    
+        // Guardar todo
         try {
             delegator.storeAll(toBeStored);
         } catch (GenericEntityException e) {
             Debug.logWarning(e.getMessage(), module);
             return ServiceUtil.returnError(UtilProperties.getMessage(resource, "person.create.db_error", new Object[] { e.getMessage() }, locale));
         }
-        
+    
         result.put("partyId", partyId);
         result.put(ModelService.RESPONSE_MESSAGE, ModelService.RESPOND_SUCCESS);
         return result;
     }
+    
+
+
 
     /**
      * Sets a party status.
@@ -345,7 +361,8 @@ public class PartyServices {
         party.setNonPKFields(context);
 
         party.set("statusId", oldStatusId);
-        party.set("geoId", context.get("geografica"));
+        party.set("geoId", context.get("geoId"));
+        party.set("puesto", context.get("puesto"));
 
         try {
             person.store();

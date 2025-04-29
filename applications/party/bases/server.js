@@ -400,13 +400,13 @@ app.post("/uom_conversion_dated", async (req, res) => {
 
 //Insertar Usuario
 app.post("/insertar", async (req, res) => {
-  const { party_id, geo_id, employee_num, puesto, first_name, last_name } = req.body;
+  const { party_id, geoId, employee_num, puesto, first_name, last_name } = req.body;
 
-  console.log("Datos recibidos en el backend:", { party_id, geo_id, employee_num, puesto, first_name, last_name });
+  console.log("Datos recibidos en el backend:", { party_id, geoId, employee_num, puesto, first_name, last_name });
 
   // Validación de campos obligatorios
   const camposFaltantes = [];
-  if (!geo_id) camposFaltantes.push("geo_id");
+  if (!geoId) camposFaltantes.push("geoId");
   if (!employee_num) camposFaltantes.push("employee_num");
   if (!puesto) camposFaltantes.push("puesto");
   if (!first_name) camposFaltantes.push("first_name");
@@ -440,7 +440,7 @@ app.post("/insertar", async (req, res) => {
 
     await pool.query(
       `INSERT INTO party (
-        party_id, geo_id, employee_num, puesto, first_name, last_name,
+        party_id, geoId, employee_num, puesto, first_name, last_name,
         created_date, last_modified_date, last_updated_stamp, last_updated_tx_stamp,
         created_stamp, created_tx_stamp
       ) VALUES (
@@ -448,7 +448,7 @@ app.post("/insertar", async (req, res) => {
         $7, $8, $9, $10, $11, $12
       )`,
       [
-        partyId, geo_id, employee_num, puesto, first_name, last_name,
+        partyId, geoId, employee_num, puesto, first_name, last_name,
         fechaActual, fechaActual, fechaActual, fechaActual, fechaActual, fechaActual
       ]
     );
@@ -479,13 +479,13 @@ app.get('/obtenerUsuario/:partyId', async (req, res) => {
   }
 });
 
-// Editar puesto y geo_id
+// Editar puesto y geoId
 app.post('/editar', async (req, res) => {
-  const { party_id, puesto, geo_id } = req.body;
+  const { party_id, puesto, geoId } = req.body;
   try {
     await pool.query(
-      'UPDATE usuario SET puesto = $1, geo_id = $2 WHERE party_id = $3',
-      [puesto, geo_id, party_id]
+      'UPDATE usuario SET puesto = $1, geoId = $2 WHERE party_id = $3',
+      [puesto, geoId, party_id]
     );
     res.json({ mensaje: 'Usuario actualizado correctamente' });
   } catch (err) {
@@ -495,8 +495,49 @@ app.post('/editar', async (req, res) => {
 });
 
 
+// Consulta partiesData
+app.get("/partiesData", async (req, res) => {
+  try {
+    const result = await pool.query(`
+      SELECT per.party_id, per.first_name, per.last_name, p.party_type_id
+      FROM party AS p
+      JOIN person AS per ON p.party_id = per.party_id
+    `);
 
+    if (result.rowCount === 0) {
+      return res.status(404).json({ msg: "No se encontraron datos" });
+    }
 
+    res.json(result.rows);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// 🔄 Editar solo los campos puesto y zona_geografica
+app.put("/editarCampos/:partyId", async (req, res) => {
+  const { partyId } = req.params;
+  const { puesto, geo_id } = req.body;
+
+  if (!puesto || !geo_id) {
+    return res.status(400).json({ error: "Puesto y zona_geografica son obligatorios" });
+  }
+
+  try {
+    const result = await pool.query(
+      "UPDATE party SET puesto = $1, geo_id = $2 WHERE party_id = $3 RETURNING *",
+      [puesto, geo_id, partyId]
+    );
+
+    if (result.rowCount === 0) {
+      return res.status(404).json({ error: "Usuario no encontrado para actualizar" });
+    }
+
+    res.json({ message: "Campos actualizados", usuario: result.rows[0] });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 
 

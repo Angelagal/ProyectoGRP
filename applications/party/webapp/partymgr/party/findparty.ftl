@@ -243,7 +243,11 @@
                       <h2>${uiLabelMap.CommonSearchResults}</h2>
                     </div>
                     <#if partyList?has_content>
-                      <table class="basic-table hover-bar" cellspacing="0">
+
+                    <!---inicio  de  tablita---->
+                      <button onclick="exportarExcel()">Exportar a Excel</button>
+
+                      <table id="tablaUsuarios" class="basic-table hover-bar" cellspacing="0">
                         <tr class="header-row-2">
                           <td style="font-size: 14px;">${uiLabelMap.PartyPartyId}</td>
                           <td style="font-size: 14px;">${uiLabelMap.PartyUserLogin}</td>
@@ -391,6 +395,9 @@
                         <#assign alt_row=!alt_row>
                           </#list>
                           </table>
+
+           <!---final  de  tablita---->
+
                           <#else>
                             <div id="findPartyResults_2">
                               <h3>${uiLabelMap.PartyNoPartiesFound}</h3>
@@ -479,4 +486,14 @@
       }
     }
   };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+  function exportarExcel() {
+    const tabla = document.getElementById('tablaUsuarios');
+    const wb = XLSX.utils.book_new();
+    const ws = XLSX.utils.table_to_sheet(tabla);
+    XLSX.utils.book_append_sheet(wb, ws, 'Usuarios');
+    XLSX.writeFile(wb, 'usuarios.xlsx');
+  }
 </script>

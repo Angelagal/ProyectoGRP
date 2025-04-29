@@ -2,214 +2,151 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Formulario de Usuario</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <title>Editar Usuario</title>
   <style>
-    .success { color: green; }
-    .error { color: red; }
-    input[disabled] {
-      background-color: #eee;
-      color: #666;
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #f4f4f4;
     }
-    .perfil-btn {
-      margin-left: 20px;
+
+    .center-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding-top: 50px;
     }
+
+    .form-container {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+      font-size: 25px; /* Puedes ajustar este valor según tu preferencia */
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+      font-weight: bold;
+      font-size: 20px; /* Puedes ajustar este valor según tu preferencia */
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #235e52;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #235e52;
+    }
+
   </style>
 </head>
 <body>
- <!-- Comprobación rápida -->
-  <p>Party ID recibido: ${partyId!"NO DEFINIDO"}</p>
+  <div class="center-wrapper">
+    <div class="form-container">
+      <h1><p><b>Editar Usuario</b></p></h1>
+      <form id="editForm">
+        <label for="puesto">Puesto:</label>
+        <input type="text" id="puesto" name="puesto" required>
 
-<div id="app">
-  <h1>Formulario de Usuario</h1>
+        <label for="geo_id">Geo ID:</label>
+          <select id="geo_id" name="geo_id" required style="font-size: 18px; padding: 14px; height: 50px; color: #000; background-color: #fff;">
+            <option value="">Seleccione Geo ID</option>
+            <option value="Aguascalientes">Aguascalientes</option>
+            <option value="Baja California">Baja California</option>
+            <option value="Baja California Sur">Baja California Sur</option>
+            <option value="Campeche">Campeche</option>
+            <option value="Chiapas">Chiapas</option>
+            <option value="Chihuahua">Chihuahua</option>
+            <option value="Ciudad de México">Ciudad de M&eacute;xico</option>
+            <option value="Coahuila">Coahuila</option>
+            <option value="Colima">Colima</option>
+            <option value="Durango">Durango</option>
+            <option value="Estado de México">Estado de M&eacute;xico</option>
+            <option value="Guanajuato">Guanajuato</option>
+            <option value="Guerrero">Guerrero</option>
+            <option value="Hidalgo">Hidalgo</option>
+            <option value="Jalisco">Jalisco</option>
+            <option value="Michoacán">Michoac&aacute;n</option>
+            <option value="Morelos">Morelos</option>
+            <option value="Nayarit">Nayarit</option>
+            <option value="Nuevo León">Nuevo Le&oacute;n</option>
+            <option value="Oaxaca">Oaxaca</option>
+            <option value="Puebla">Puebla</option>
+            <option value="Querétaro">Quer&eacute;taro</option>
+            <option value="Quintana Roo">Quintana Roo</option>
+            <option value="San Luis Potosí">San Luis Potos&iacute;</option>
+            <option value="Sinaloa">Sinaloa</option>
+            <option value="Sonora">Sonora</option>
+            <option value="Tabasco">Tabasco</option>
+            <option value="Tamaulipas">Tamaulipas</option>
+            <option value="Tlaxcala">Tlaxcala</option>
+            <option value="Veracruz">Veracruz</option>
+            <option value="Yucatán">Yucat&aacute;n</option>
+            <option value="Zacatecas">Zacatecas</option>
+          </select>
+        <button type="submit">Actualizar</button>
+      </form>
+    </div>
+  </div>
 
-  <form v-if="!formDesactivado" @submit.prevent="submitForm">
-    <label>Party ID (opcional):</label><br>
-    <input type="text" v-model="party_id" :disabled="formDesactivado"><br><br>
+  <script>
+    const partyId = 'PONER_ID_AQUÍ'; // Reemplaza esto dinámicamente o desde backend
 
-    <label>Empleado:</label><br>
-    <input type="text" v-model="employee_num" required :disabled="formDesactivado"><br><br>
+    document.getElementById('editForm').addEventListener('submit', function(event) {
+      event.preventDefault();
 
-    <label>Puesto:</label><br>
-    <input type="text" v-model="puesto" required :disabled="formDesactivado"><br><br>
+      const puesto = document.getElementById('puesto').value;
+      const geo_id = document.getElementById('geo_id').value;
 
-    <label>Nombre(s):</label><br>
-    <input type="text" v-model="first_name" required :disabled="formDesactivado"><br><br>
-
-    <label>Apellido(s):</label><br>
-    <input type="text" v-model="last_name" required :disabled="formDesactivado"><br><br>
-
-    <label>Zona Geográfica:</label><br>
-    <input type="text" v-model="geo_id" required :disabled="formDesactivado" placeholder="Ingresa la zona geográfica"><br><br>
-
-    <button type="submit" :disabled="formDesactivado">Registrar</button>
-
-    <!-- Botón de Perfil -->
-    <a
-      class="perfil-btn"
-      v-if="formDesactivado && party_id"
-      :href="'http://localhost/partymgr/control/viewprofile?partyId=' + party_id"
-      target="_blank"
-    >
-      <button type="button">Perfil</button>
-    </a>
-  </form>
-
-  <!-- Formulario de Edición -->
-  <form v-if="formDesactivado" @submit.prevent="guardarEdicion">
-    <label>Party ID (opcional):</label><br>
-    <input type="text" v-model="party_id" :disabled="formDesactivado"><br><br>
-
-    <label>Empleado:</label><br>
-    <input type="text" v-model="employee_num" required :disabled="formDesactivado"><br><br>
-
-    <label>Puesto:</label><br>
-    <input type="text" v-model="puesto" required :disabled="formDesactivado"><br><br>
-
-    <label>Nombre(s):</label><br>
-    <input type="text" v-model="first_name" required :disabled="formDesactivado"><br><br>
-
-    <label>Apellido(s):</label><br>
-    <input type="text" v-model="last_name" required :disabled="formDesactivado"><br><br>
-
-    <label>Zona Geográfica:</label><br>
-    <input type="text" v-model="geo_id" required :disabled="formDesactivado" placeholder="Ingresa la zona geográfica"><br><br>
-
-    <button type="submit" :disabled="formDesactivado">Guardar Cambios</button>
-
-    <!-- Botón de Perfil -->
-    <a
-      class="perfil-btn"
-      v-if="formDesactivado && party_id"
-      :href="'http://localhost/partymgr/control/viewprofile?partyId=' + party_id"
-      target="_blank"
-    >
-      <button type="button">Perfil</button>
-    </a>
-  </form>
-
-  <p :class="messageClass">{{ message }}</p>
-</div>
-
-<script>
-  new Vue({
-    el: '#app',
-    data: {
-      party_id: '',
-      employee_num: '',
-      puesto: '',
-      first_name: '',
-      last_name: '',
-      geo_id: '',
-      message: '',
-      messageClass: '',
-      formDesactivado: false,
-      palabraIngresada: '',
-      esCorrecta: false
-    },
-    methods: {
-      verificarEnTiempoReal() {
-      this.esCorrecta = this.palabraIngresada === 'Aguascalientes';
-      },
-      // Cargar datos del usuario al acceder a la página de edición
-      cargarDatosUsuario() {
-        const urlParams = new URLSearchParams(window.location.search);
-        this.party_id = urlParams.get('partyId'); // Obtener el partyId de la URL
-
-        if (this.party_id) {
-          axios.get(`http://localhost:3000/obtenerUsuario/${this.party_id}`)
-            .then((response) => {
-              this.employee_num = response.data.employee_num || '';
-              this.puesto = response.data.puesto || '';
-              this.first_name = response.data.first_name || '';
-              this.last_name = response.data.last_name || '';
-              this.geo_id = response.data.geo_id || '';
-              this.formDesactivado = true; // Habilitar el formulario para edición
-            })
-            .catch((error) => {
-              this.message = 'Usuario no encontrado';
-              this.messageClass = 'error';
-            });
-        }
-      },
-      submitForm() {
-        // Validación
-        if (!this.geo_id) {
-          this.message = 'La zona geográfica es obligatoria.';
-          this.messageClass = 'error';
-          return;
-        }
-
-        const formData = {
-          party_id: this.party_id,
-          geo_id: this.geo_id,
-          employee_num: this.employee_num,
-          puesto: this.puesto,
-          first_name: this.first_name,
-          last_name: this.last_name
-        };
-
-        // Enviar datos para registrar
-        axios.post('http://localhost:3000/insertar', formData)
-          .then((response) => {
-            this.message = 'Registro exitoso. ID generado: ' + response.data.party_id;
-            this.messageClass = 'success';
-            this.formDesactivado = true;
-
-            if (!this.party_id) {
-              this.party_id = response.data.party_id;
-            }
-          })
-          .catch((error) => {
-            const msg = error.response && error.response.data && error.response.data.error
-              ? error.response.data.error
-              : 'Error al registrar';
-            this.message = msg;
-            this.messageClass = 'error';
-          });
-      },
-      guardarEdicion() {
-        // Validación
-        if (!this.geo_id) {
-          this.message = 'La zona geográfica es obligatoria.';
-          this.messageClass = 'error';
-          return;
-        }
-
-        const formData = {
-          party_id: this.party_id,
-          geo_id: this.geo_id,
-          puesto: this.puesto
-        };
-
-        // Enviar datos para editar
-        axios.post('http://localhost:3000/editar', formData)
-          .then((response) => {
-            this.message = 'Cambios guardados correctamente.';
-            this.messageClass = 'success';
-            this.formDesactivado = true;
-
-            // Redirigir al perfil
-            if (this.party_id) {
-              setTimeout(() => {
-                window.location.href = `http://localhost/partymgr/control/viewprofile?partyId=${this.party_id}`;
-              }, 2000);
-            } else {
-              this.message = 'No se pudo redirigir: party_id inválido.';
-              this.messageClass = 'error';
-            }
-          })
-          .catch((error) => {
-            this.message = 'Error al guardar los cambios.';
-            this.messageClass = 'error';
-          });
-      }
-    },
-    mounted() {
-      this.cargarDatosUsuario(); // Llamar la función cuando se monta el componente
-    }
-  });
-</script>
+      fetch(`http://localhost:3000/editarCampos/${partyId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ puesto, geo_id })
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert("Campos actualizados correctamente.");
+        console.log(data);
+      })
+      .catch(err => {
+        alert("Error al actualizar.");
+        console.error("Error:", err);
+      });
+    });
+  </script>
 </body>
 </html>
+
