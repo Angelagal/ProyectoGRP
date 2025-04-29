@@ -1,0 +1,40 @@
+Instalacion de Sistema GRP
+
+**Requisitos**
+
+--> Java 8
+--> PgAdmin 4
+--> PostgreSQL 14
+
+**Levantamiento Sistema GRP**
+
+--> Configurar variables de sistema.
+	JAVA_HOME C:\Program Files\Java\jdk1.8.0_221
+	Path %JAVA_HOME%\bin
+
+--> Crear base de datos con el nombre "Contable" o el que vaya asignar.
+
+--> Ubicar carpeta del proyecto en ruta raiz C:\ o en donde vaya a ejecutar el sistema.
+
+--> Modificar credenciales y ruta de conexión a la base de datos en el archivo ubicado en la siguiente ruta.
+	C:\MotorContable\framework\entity\config\entityengine.xml 
+
+--> Abrir archivo entityengine.xml en editor de texto de su preferencia y modificar las siguientes lineas. 
+	470 jdbc-uri="jdbc:postgresql://127.0.0.1/Nombre de la BD" o jdbc-uri="jdbc:postgresql://127.0.0.1:5432/Nombre de la BD" segun sea el caso
+    471 jdbc-username="Nombre de usuario BD"
+    472 jdbc-password="Password BD"
+
+--> Al realizar los cambios procedemos a abrir una terminal y ubicarse dentro de la carpeta del sistema.
+	C:\MotorContable
+
+--> Ejecutar los siguientes comandos.
+	ant clean
+	ant make-base-entities
+	ant run-install
+	ant build
+	startofbiz.bat
+
+--> Al finalizar el levantamiento abrir un navegador e ingresar a la siguiente url localhost/control/main
+	Credenciales para acceso a sistema
+	usuario: admin
+	contraseña: opentaps
