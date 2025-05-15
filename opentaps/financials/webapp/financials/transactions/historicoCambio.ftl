@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>Tipo de Cambio</title>
-  <script src="/partymgr/static/js/vue.js"></script>
+  <script src="/partymgr/static/js/vue.js"></script> 
   <script src="/partymgr/static/js/axios.js"></script>
   <style>
     /* Estilos generales */

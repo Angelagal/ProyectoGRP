@@ -259,11 +259,13 @@
         <field name="reconciledAmount" widget-area-style="tabletextright"><display type="currency" currency="${currencyUomId}"/></field>
     </form>
 
-    <form name="listExchangeRates" type="list" list-name="conversions" default-title-style="boxhead" default-tooltip-style="tabletext" default-widget-style="tabletext" 
+   <form name="listExchangeRates" type="list" list-name="conversions" default-title-style="boxhead" default-tooltip-style="tabletext" default-widget-style="tabletext" 
             header-row-style="boxtop" default-table-style="listTable" even-row-style="viewManyTR2" odd-row-style="viewManyTR1" separate-columns="true" >
         <field name="uomId" title="${uiLabelMap.CommonFrom} ${uiLabelMap.CommonCurrency}"><display also-hidden="false"/></field>
         <field name="uomIdTo" title="${uiLabelMap.CommonTo} ${uiLabelMap.CommonCurrency}"><display also-hidden="false"/></field>
-        <field name="conversionFactor"><display also-hidden="false"/></field>
+<field name="conversionFactor">
+    <display also-hidden="false" type="formatted-number" format="#0.0000"/>
+</field>
         <field name="fromDate" title="${uiLabelMap.CommonFrom}"><display also-hidden="false"/></field>
         <field name="thruDate" title="${uiLabelMap.CommonThru}"><display also-hidden="false"/></field>
         <!--<field name="update" title="${uiLabelMap.FinancialsEnterNewRate}" widget-style="buttontext"> 
