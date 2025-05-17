@@ -30,8 +30,7 @@ public final class StatusTypeConstants {
     public static final String ACCTG_ENREC_STATUS = "ACCTG_ENREC_STATUS";
     /** Agreement. */
     public static final String AGREEMENT = "AGREEMENT";
-    /** Amazon Order Document. */
-    public static final String AMZN_DOC = "AMZN_DOC";
+   
     /** Amazon Order. */
     public static final String AMZN_ORDER = "AMZN_ORDER";
     /** Amazon Product Statuses. */

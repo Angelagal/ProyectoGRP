@@ -33,7 +33,7 @@ under the License.
     <load-component component-location="homeapps"/>
     <load-component component-location="asterisk"/>
     <load-component component-location="search"/>
-    <load-component component-location="amazon"/>
+   
     <load-component component-location="activities"/>
     <load-component component-location="translations"/>
     <load-component component-location="obras"/>    

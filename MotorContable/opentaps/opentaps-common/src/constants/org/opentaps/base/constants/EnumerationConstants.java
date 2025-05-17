@@ -522,8 +522,7 @@ public final class EnumerationConstants {
         private OrderSalesChannel() { }
         /** Affiliate Channel. */
         public static final String AFFIL_SALES_CHANNEL = "AFFIL_SALES_CHANNEL";
-        /** Amazon.com. */
-        public static final String AMAZON_SALES_CHANNEL = "AMAZON_SALES_CHANNEL";
+        
         /** eBay Channel. */
         public static final String EBAY_SALES_CHANNEL = "EBAY_SALES_CHANNEL";
         /** E-Mail Channel. */

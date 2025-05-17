@@ -26,7 +26,7 @@ javaservice.exe                   LGPL                        windows-service/
 JExelApi                          LGPL                        opentaps/opentaps-common/lib
 JFreeChart                        LGPL                        opentaps/opentaps-common/lib
 Pentaho plus modules              Mozilla PL/LGPL/Apache/BSD  opentaps/pentaho/lib
-Apache Axis                       Apache 2.0                  opentaps/amazon/lib/axis-1_4
+
 POI                               Apache 2.0                  opentaps/opentaps-common/lib
 jscalendar                        LGPL                        opentaps/opentaps-common/webapp/js/jscalendar-1.0
 Spring                            Apache 2.0                  opentaps/opentaps-common/lib/pentaho

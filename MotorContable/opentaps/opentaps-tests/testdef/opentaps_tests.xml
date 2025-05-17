@@ -72,8 +72,7 @@
      <!-- data import -->
     <test-case case-name="dataimport-tests"><junit-test-suite class-name="org.opentaps.tests.dataimport.DataImportTests"/></test-case>
 
-    <!-- amazon integration tests -->
-    <test-case case-name="opentaps-amazon-tests"><junit-test-suite class-name="org.opentaps.amazon.tests.AmazonTests"/></test-case>
+   
     
     <!-- asterisk integration tests -->
     <test-case case-name="opentaps-asterisk-tests"><junit-test-suite class-name="org.opentaps.asterisk.tests.AsteriskTests"/></test-case>
