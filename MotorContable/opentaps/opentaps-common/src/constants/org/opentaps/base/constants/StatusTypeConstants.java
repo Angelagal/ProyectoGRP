@@ -31,12 +31,7 @@ public final class StatusTypeConstants {
     /** Agreement. */
     public static final String AGREEMENT = "AGREEMENT";
    
-    /** Amazon Order. */
-    public static final String AMZN_ORDER = "AMZN_ORDER";
-    /** Amazon Product Statuses. */
-    public static final String AMZN_PRODUCT = "AMZN_PRODUCT";
-    /** Amazon Order. */
-    public static final String AMZN_SHIP = "AMZN_SHIP";
+    
     /** Budget. */
     public static final String BUDGET_STATUS = "BUDGET_STATUS";
     public static final class CalendarStatus {
