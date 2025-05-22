@@ -8621,15 +8621,7 @@
         <value xml:lang="zh">新建数据源类型</value>
         <value xml:lang="zh_CN">建立数据源类型</value>
     </property>
-    <property key="Ebay">
-        <value xml:lang="de">eBay</value>
-        <value xml:lang="en">eBay</value>
-        <value xml:lang="es">eBay</value>
-        <value xml:lang="fr">eBay</value>
-        <value xml:lang="hi_IN">eBay</value>
-        <value xml:lang="it">eBay</value>
-        <value xml:lang="th">อีเบย์</value>
-    </property>
+    
     <property key="Example">
         <value xml:lang="ar">مثال</value>
         <value xml:lang="de">Beispiel</value>

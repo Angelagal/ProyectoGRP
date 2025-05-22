@@ -523,8 +523,7 @@ public final class EnumerationConstants {
         /** Affiliate Channel. */
         public static final String AFFIL_SALES_CHANNEL = "AFFIL_SALES_CHANNEL";
         
-        /** eBay Channel. */
-        public static final String EBAY_SALES_CHANNEL = "EBAY_SALES_CHANNEL";
+       
         /** E-Mail Channel. */
         public static final String EMAIL_SALES_CHANNEL = "EMAIL_SALES_CHANNEL";
         /** Fax Channel. */

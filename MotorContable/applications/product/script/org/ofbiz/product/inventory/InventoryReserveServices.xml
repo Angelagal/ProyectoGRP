@@ -413,71 +413,7 @@ under the License.
                     </calculate>
                 </if-compare>
             </if-compare>
-            <if-compare field="inventoryItem.inventoryItemTypeId" operator="equals" value="NON_SERIAL_INV_ITEM">
-                <!-- check reasonenumId reserve for ebay inventory  -->
-                <if-not-empty field="parameters.reserveReasonEnumId">
-                    <if-compare field="parameters.reserveReasonEnumId" value="EBAY_INV_RES" operator="equals">
-                        <set field="ebayReserveReasonEnumId" from-field="parameters.reserveReasonEnumId"/>
-                    </if-compare>
-                </if-not-empty>
-                <!-- reduce atp on inventoryItem if availableToPromise greater than 0, if not the code at the end of this method will handle it -->
-                <if>
-                    <condition>
-                        <and>
-                            <if-compare field="inventoryItem.statusId" operator="not-equals" value="INV_NS_ON_HOLD"/>
-                            <if-compare field="inventoryItem.statusId" operator="not-equals" value="INV_NS_DEFECTIVE"/>
-                            <not><if-empty field="inventoryItem.availableToPromiseTotal"/></not>
-                            <if-compare field="inventoryItem.availableToPromiseTotal" operator="greater" value="0" type="BigDecimal"/>
-                        </and>
-                    </condition>
-                    <then>
-                        <if-compare-field field="parameters.quantityNotReserved" to-field="inventoryItem.availableToPromiseTotal" operator="greater" type="BigDecimal">
-                            <set from-field="inventoryItem.availableToPromiseTotal" field="parameters.deductAmount"/>
-                        <else>
-                            <set from-field="parameters.quantityNotReserved" field="parameters.deductAmount"/>
-                        </else>
-                        </if-compare-field>
-
-                        <!-- instead of updating InventoryItem, add an InventoryItemDetail -->
-                        <set from-field="inventoryItem.inventoryItemId" field="createDetailMap.inventoryItemId"/>
-                        <set from-field="parameters.orderId" field="createDetailMap.orderId"/>
-                        <set from-field="parameters.orderItemSeqId" field="createDetailMap.orderItemSeqId"/>
-                        <calculate field="createDetailMap.availableToPromiseDiff">
-                            <calcop field="parameters.deductAmount" operator="negative"/>
-                        </calculate>
-                        <if-not-empty field="ebayReserveReasonEnumId"><set from-field="parameters.reserveReasonEnumId" field="createDetailMap.reasonEnumId"/></if-not-empty>
-                        <call-service service-name="createInventoryItemDetail" in-map-name="createDetailMap"/>
-                        <clear-field field="createDetailMap"/>
-
-                        <!-- create OrderItemShipGrpInvRes record  and check for reserved from ebay don't need shipgroup-->
-                        <if-empty field="ebayReserveReasonEnumId">
-                            <call-simple-method method-name="getPromisedDateTime"/>
-                            <set from-field="parameters.orderId" field="reserveOisgirMap.orderId"/>
-                            <set from-field="parameters.orderItemSeqId" field="reserveOisgirMap.orderItemSeqId"/>
-                            <set from-field="parameters.shipGroupSeqId" field="reserveOisgirMap.shipGroupSeqId"/>
-                            <set from-field="inventoryItem.inventoryItemId" field="reserveOisgirMap.inventoryItemId"/>
-                            <set from-field="parameters.reserveOrderEnumId" field="reserveOisgirMap.reserveOrderEnumId"/>
-                            <set from-field="parameters.reservedDatetime" field="reserveOisgirMap.reservedDatetime"/>
-                            <set from-field="parameters.deductAmount" field="reserveOisgirMap.quantity" type="BigDecimal"/>
-                            <set from-field="promisedDatetime" field="reserveOisgirMap.promisedDatetime"/>
-                            <set from-field="parameters.priority" field="reserveOisgirMap.priority"/>
-                            <if-not-empty field="parameters.sequenceId">
-                                <set field="reserveOisgirMap.sequenceId" from-field="parameters.sequenceId"/>
-                            </if-not-empty>
-                            <call-service service-name="reserveOrderItemInventory" in-map-name="reserveOisgirMap"/>
-                            <clear-field field="reserveOisgirMap"/>
-                        </if-empty>
-                        <calculate field="parameters.quantityNotReserved">
-                            <calcop operator="subtract" field="parameters.quantityNotReserved">
-                                <calcop operator="get" field="parameters.deductAmount"/>
-                            </calcop>
-                        </calculate>
-                    </then>
-                </if>
-                <!-- keep track of the last non-serialized inventory item for use if inventory is not required for purchase -->
-                <!-- use env variable named lastNonSerInventoryItem -->
-                <set from-field="inventoryItem" field="lastNonSerInventoryItem"/>
-            </if-compare>
+            
         </if-compare>
     </simple-method>
 

@@ -4982,8 +4982,7 @@ public interface CommonMessages extends Messages {
     String dataimportLoginGreeting();
     @DefaultMessage("German")
     String de();
-    @DefaultMessage("eBay")
-    String ebay();
+    
     @DefaultMessage("a new")
     String ecommerceANew();
     @DefaultMessage("About Us")

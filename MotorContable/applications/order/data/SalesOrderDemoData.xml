@@ -32,28 +32,7 @@ under the License.
         autoApproveInvoice="Y" autoApproveOrder="Y" shipIfCaptureFails="Y" requireInventory="N" reserveInventory="Y" inventoryFacilityId="WebStoreWarehouse"
         orderNumberPrefix="B2BS" visualThemeId="EC_DEFAULT" payToPartyId="Company" defaultSalesChannelEnumId="WEB_SALES_CHANNEL"/>
 
-    <!-- ORDER SALES CHANNEL -->
-    <Enumeration enumId="B2C_AU_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2C_AU_CHANNEL"  sequenceId="9" description="B2C eBay Australia Channel"/>
-    <Enumeration enumId="B2C_CA_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2C_CA_CHANNEL"  sequenceId="10" description="B2C eBay Canada Channel"/>
-    <Enumeration enumId="B2C_IE_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2C_IE_CHANNEL"  sequenceId="11" description="B2C eBay Ireland Channel"/>
-    <Enumeration enumId="B2C_SG_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2C_SG_CHANNEL"  sequenceId="12" description="B2C eBay Singapore Channel"/>
-    <Enumeration enumId="B2C_UK_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2C_UK_CHANNEL"  sequenceId="13" description="B2C eBay United Kingdom Channel"/>
-    <Enumeration enumId="B2C_US_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2C_US_CHANNEL"  sequenceId="14" description="B2C eBay United States Channel"/>
-    <Enumeration enumId="B2C_DE_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2C_DE_CHANNEL"  sequenceId="15" description="B2C eBay Germany Channel"/>
-    <Enumeration enumId="B2C_ES_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2C_ES_CHANNEL"  sequenceId="16" description="B2C eBay Spain Channel"/>
-    <Enumeration enumId="B2C_FR_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2C_FR_CHANNEL"  sequenceId="17" description="B2C eBay France Channel"/>
-    <Enumeration enumId="B2C_IT_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2C_IT_CHANNEL"  sequenceId="18" description="B2C eBay Italy Channel"/>
-    <Enumeration enumId="B2B_AU_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2B_AU_CHANNEL"  sequenceId="19" description="B2B eBay Australia Channel"/>
-    <Enumeration enumId="B2B_CA_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2B_CA_CHANNEL"  sequenceId="20" description="B2B eBay Canada Channel"/>
-    <Enumeration enumId="B2B_IE_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2B_IE_CHANNEL"  sequenceId="21" description="B2B eBay Ireland Channel"/>
-    <Enumeration enumId="B2B_SG_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2B_SG_CHANNEL"  sequenceId="22" description="B2B eBay Singapore Channel"/>
-    <Enumeration enumId="B2B_UK_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2B_UK_CHANNEL"  sequenceId="23" description="B2B eBay United Kingdom Channel"/>
-    <Enumeration enumId="B2B_US_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2B_US_CHANNEL"  sequenceId="24" description="B2B eBay United States Channel"/>
-    <Enumeration enumId="B2B_DE_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2B_DE_CHANNEL"  sequenceId="25" description="B2B eBay Germany Channel"/>
-    <Enumeration enumId="B2B_ES_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2B_ES_CHANNEL"  sequenceId="26" description="B2B eBay Spain Channel"/>
-    <Enumeration enumId="B2B_FR_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2B_FR_CHANNEL"  sequenceId="27" description="B2B eBay France Channel"/>
-    <Enumeration enumId="B2B_IT_SALES_CHANNEL" enumTypeId="ORDER_SALES_CHANNEL" enumCode="EBAY_B2B_IT_CHANNEL"  sequenceId="28" description="B2B eBay Italy Channel"/>
-
+  
     <!-- DEMO DATA FOR SALE ORDER REPORT -->
 
     <!-- DEMO DATA FOR B2C AU SALES CHANNEL 1 -->
@@ -86,7 +65,6 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_AU01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_AU01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0"  reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_AU01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_AU01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="5" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_AU01_01" orderId="DEMO_B2C_AU01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="17.0" statusId="PAYMENT_NOT_RECEIVED"/>
     <OrderStatus orderStatusId="DEMO_B2C_AU01_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_AU01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_AU01_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_AU01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_AU01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_AU01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -107,7 +85,6 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_CA01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_CA01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_CA01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_CA01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_CA01_01" orderId="DEMO_B2C_CA01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="14.0" statusId="PAYMENT_NOT_RECEIVED"/>
     <OrderStatus orderStatusId="DEMO_B2C_CA01_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_CA01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_CA01_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_CA01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_CA01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_CA01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -128,7 +105,6 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_IE01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_IE01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_IE01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_IE01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_IE01_01" orderId="DEMO_B2C_IE01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="20.0" statusId="PAYMENT_NOT_RECEIVED"/>
     <OrderStatus orderStatusId="DEMO_B2C_IE01_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_IE01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IE01_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_IE01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IE01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_IE01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -149,7 +125,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_SG01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_SG01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_SG01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_SG01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="4" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_SG01_01" orderId="DEMO_B2C_SG01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="20.0" statusId="PAYMENT_NOT_RECEIVED"/>
+    
     <OrderStatus orderStatusId="DEMO_B2C_SG01_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_SG01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_SG01_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_SG01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_SG01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_SG01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -170,7 +146,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_UK01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="3.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_UK01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="3.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_UK01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_UK01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="7" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_UK01_01" orderId="DEMO_B2C_UK01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="67.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_UK01_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_UK01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_UK01_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_UK01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_UK01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_UK01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -191,7 +167,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_US01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="4.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_US01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="4.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_US01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_US01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="6" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_US01_01" orderId="DEMO_B2C_US01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="66.0" statusId="PAYMENT_NOT_RECEIVED"/>
+    
     <OrderStatus orderStatusId="DEMO_B2C_US01_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_US01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_US01_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_US01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_US01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_US01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -212,7 +188,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_DE01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_DE01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_DE01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_DE01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="3" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_DE01_01" orderId="DEMO_B2C_DE01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="38.0" statusId="PAYMENT_NOT_RECEIVED"/>
+    
     <OrderStatus orderStatusId="DEMO_B2C_DE01_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_DE01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_DE01_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_DE01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_DE01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_DE01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -233,7 +209,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_ES01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_ES01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_ES01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_ES01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="1" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_ES01_01" orderId="DEMO_B2C_ES01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="71.0" statusId="PAYMENT_NOT_RECEIVED"/>
+    
     <OrderStatus orderStatusId="DEMO_B2C_ES01_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_ES01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_ES01_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_ES01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_ES01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_ES01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -254,7 +230,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_FR01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_FR01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_FR01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_FR01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_FR01_01" orderId="DEMO_B2C_FR01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="50.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_FR01_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_FR01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_FR01_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_FR01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_FR01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_FR01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -275,7 +251,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_IT01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_IT01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_IT01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_IT01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_IT01_01" orderId="DEMO_B2C_IT01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="98.0" statusId="PAYMENT_NOT_RECEIVED"/>
+  
     <OrderStatus orderStatusId="DEMO_B2C_IT01_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_IT01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IT01_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_IT01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IT01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_IT01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -296,8 +272,8 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_AU02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_AU02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0"  reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_AU02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_AU02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="5" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_AU02_01" orderId="DEMO_B2C_AU02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="21.0" statusId="PAYMENT_NOT_RECEIVED"/>
-    <OrderStatus orderStatusId="DEMO_B2C_AU02_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_AU02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
+   
+   <OrderStatus orderStatusId="DEMO_B2C_AU02_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_AU02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_AU02_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_AU02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_AU02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_AU02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_AU02_04" statusId="ORDER_APPROVED" orderId="DEMO_B2C_AU02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -317,7 +293,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_CA02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_CA02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_CA02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_CA02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_CA02_01" orderId="DEMO_B2C_CA02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="16.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_CA02_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_CA02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_CA02_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_CA02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_CA02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_CA02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -338,7 +314,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_IE02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_IE02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_IE02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_IE02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_IE02_01" orderId="DEMO_B2C_IE02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="38.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_IE02_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_IE02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IE02_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_IE02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IE02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_IE02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -359,7 +335,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_SG02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="3.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_SG02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="3.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_SG02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_SG02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="4" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_SG02_01" orderId="DEMO_B2C_SG02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="49.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_SG02_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_SG02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_SG02_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_SG02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_SG02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_SG02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -380,7 +356,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_UK02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="3.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_UK02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="3.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_UK02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_UK02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="7" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_UK02_01" orderId="DEMO_B2C_UK02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="67.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_UK02_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_UK02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_UK02_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_UK02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_UK02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_UK02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -401,7 +377,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_US02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_US02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_US02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_US02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="3" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_US02_01" orderId="DEMO_B2C_US02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="33.0" statusId="PAYMENT_NOT_RECEIVED"/>
+    
     <OrderStatus orderStatusId="DEMO_B2C_US02_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_US02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_US02_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_US02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_US02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_US02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -422,7 +398,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_DE02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_DE02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_DE02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_DE02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="3" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_DE02_01" orderId="DEMO_B2C_DE02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="73.0" statusId="PAYMENT_NOT_RECEIVED"/>
+    
     <OrderStatus orderStatusId="DEMO_B2C_DE02_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_DE02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_DE02_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_DE02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_DE02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_DE02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -443,7 +419,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_ES02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_ES02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_ES02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_ES02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_ES02_01" orderId="DEMO_B2C_ES02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="72.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_ES02_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_ES02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_ES02_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_ES02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_ES02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_ES02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -464,7 +440,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_FR02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_FR02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_FR02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_FR02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="5" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_FR02_01" orderId="DEMO_B2C_FR02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="55.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_FR02_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_FR02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_FR02_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_FR02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_FR02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_FR02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -485,7 +461,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_IT02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_IT02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_IT02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_IT02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_IT02_01" orderId="DEMO_B2C_IT02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="50.0" statusId="PAYMENT_NOT_RECEIVED"/>
+  
     <OrderStatus orderStatusId="DEMO_B2C_IT02_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_IT02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IT02_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_IT02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IT02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_IT02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -506,7 +482,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_AU03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="4.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_AU03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="4.0"  reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_AU03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_AU03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="5" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_AU03_01" orderId="DEMO_B2C_AU03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="61.0" statusId="PAYMENT_NOT_RECEIVED"/>
+    
     <OrderStatus orderStatusId="DEMO_B2C_AU03_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_AU03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_AU03_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_AU03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_AU03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_AU03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -527,7 +503,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_CA03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_CA03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_CA03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_CA03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_CA03_01" orderId="DEMO_B2C_CA03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="30.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_CA03_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_CA03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_CA03_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_CA03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_CA03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_CA03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -548,7 +524,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_IE03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_IE03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_IE03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_IE03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="1" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_IE03_01" orderId="DEMO_B2C_IE03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="18.0" statusId="PAYMENT_NOT_RECEIVED"/>
+    
     <OrderStatus orderStatusId="DEMO_B2C_IE03_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_IE03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IE03_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_IE03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IE03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_IE03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -569,7 +545,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_SG03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_SG03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_SG03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_SG03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="3" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_SG03_01" orderId="DEMO_B2C_SG03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="37.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_SG03_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_SG03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_SG03_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_SG03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_SG03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_SG03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -590,7 +566,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_UK03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_UK03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_UK03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_UK03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="5" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_UK03_01" orderId="DEMO_B2C_UK03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="23.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_UK03_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_UK03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_UK03_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_UK03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_UK03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_UK03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -611,7 +587,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_US03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="6.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_US03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="6.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_US03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_US03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="9" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_US03_01" orderId="DEMO_B2C_US03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="99.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_US03_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_US03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_US03_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_US03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_US03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_US03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -632,7 +608,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_DE03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_DE03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_DE03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_DE03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="3" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_DE03_01" orderId="DEMO_B2C_DE03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="38.0" statusId="PAYMENT_NOT_RECEIVED"/>
+  
     <OrderStatus orderStatusId="DEMO_B2C_DE03_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_DE03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_DE03_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_DE03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_DE03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_DE03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -653,7 +629,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_ES03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="4.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_ES03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="4.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_ES03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_ES03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="1" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_ES03_01" orderId="DEMO_B2C_ES03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="141.0" statusId="PAYMENT_NOT_RECEIVED"/>
+  
     <OrderStatus orderStatusId="DEMO_B2C_ES03_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_ES03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_ES03_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_ES03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_ES03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_ES03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -674,7 +650,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_FR03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_FR03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_FR03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_FR03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="5" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_FR03_01" orderId="DEMO_B2C_FR03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="56.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_FR03_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_FR03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_FR03_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_FR03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_FR03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_FR03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -695,7 +671,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_IT03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_IT03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_IT03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_IT03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_IT03_01" orderId="DEMO_B2C_IT03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="100.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_IT03_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_IT03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IT03_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_IT03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IT03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_IT03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -716,7 +692,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_AU01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_AU01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0"  reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_AU01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_AU01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="5" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_AU01_01" orderId="DEMO_B2B_AU01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="17.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_AU01_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_AU01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_AU01_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_AU01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_AU01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_AU01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -737,7 +713,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_CA01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_CA01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_CA01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_CA01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_CA01_01" orderId="DEMO_B2B_CA01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="14.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_CA01_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_CA01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_CA01_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_CA01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_CA01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_CA01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -758,7 +734,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_IE01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_IE01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_IE01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_IE01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_IE01_01" orderId="DEMO_B2B_IE01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="20.0" statusId="PAYMENT_NOT_RECEIVED"/>
+    
     <OrderStatus orderStatusId="DEMO_B2B_IE01_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_IE01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_IE01_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_IE01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_IE01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_IE01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -779,7 +755,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_SG01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_SG01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_SG01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_SG01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="4" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_SG01_01" orderId="DEMO_B2B_SG01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="20.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_SG01_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_SG01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_SG01_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_SG01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_SG01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_SG01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -800,7 +776,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_UK01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="3.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_UK01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="3.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_UK01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_UK01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="7" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_UK01_01" orderId="DEMO_B2B_UK01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="67.0" statusId="PAYMENT_NOT_RECEIVED"/>
+    
     <OrderStatus orderStatusId="DEMO_B2B_UK01_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_UK01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_UK01_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_UK01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_UK01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_UK01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -821,7 +797,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_US01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="4.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_US01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="4.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_US01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_US01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="6" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_US01_01" orderId="DEMO_B2B_US01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="66.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_US01_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_US01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_US01_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_US01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_US01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_US01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -842,7 +818,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_DE01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_DE01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_DE01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_DE01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="3" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_DE01_01" orderId="DEMO_B2B_DE01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="38.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_DE01_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_DE01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_DE01_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_DE01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_DE01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_DE01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -863,7 +839,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_ES01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_ES01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_ES01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_ES01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="1" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_ES01_01" orderId="DEMO_B2B_ES01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="71.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_ES01_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_ES01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_ES01_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_ES01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_ES01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_ES01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -884,7 +860,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_FR01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_FR01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_FR01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_FR01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_FR01_01" orderId="DEMO_B2B_FR01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="50.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_FR01_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_FR01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_FR01_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_FR01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_FR01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_FR01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -905,7 +881,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_IT01" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_IT01" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-12-01 9:00:00.000" createdDatetime="2009-12-01 9:00:00.000" promisedDatetime="2009-12-01 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_IT01_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_IT01" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-01 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_IT01_01" orderId="DEMO_B2B_IT01" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="98.0" statusId="PAYMENT_NOT_RECEIVED"/>
+  
     <OrderStatus orderStatusId="DEMO_B2B_IT01_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_IT01" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_IT01_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_IT01" orderItemSeqId="00001" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_IT01_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_IT01" orderPaymentPreferenceId="9000" statusDatetime="2009-12-01 9:00:00.000" statusUserLogin="admin"/>
@@ -926,7 +902,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_AU02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_AU02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0"  reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_AU02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_AU02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="5" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_AU02_01" orderId="DEMO_B2B_AU02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="21.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_AU02_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_AU02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_AU02_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_AU02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_AU02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_AU02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -947,7 +923,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_CA02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_CA02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_CA02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_CA02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_CA02_01" orderId="DEMO_B2B_CA02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="16.0" statusId="PAYMENT_NOT_RECEIVED"/>
+  
     <OrderStatus orderStatusId="DEMO_B2B_CA02_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_CA02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_CA02_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_CA02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_CA02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_CA02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -968,7 +944,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_IE02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_IE02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_IE02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_IE02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_IE02_01" orderId="DEMO_B2B_IE02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="38.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_IE02_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_IE02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_IE02_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_IE02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_IE02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_IE02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -989,7 +965,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_SG02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="3.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_SG02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="3.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_SG02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_SG02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="4" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_SG02_01" orderId="DEMO_B2B_SG02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="49.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_SG02_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_SG02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_SG02_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_SG02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_SG02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_SG02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -1010,7 +986,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_UK02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="3.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_UK02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="3.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_UK02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_UK02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="7" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_UK02_01" orderId="DEMO_B2B_UK02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="67.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_UK02_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_UK02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_UK02_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_UK02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_UK02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_UK02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -1031,7 +1007,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_US02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_US02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_US02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_US02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="3" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_US02_01" orderId="DEMO_B2B_US02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="33.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_US02_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_US02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_US02_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_US02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_US02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_US02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -1052,7 +1028,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_DE02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_DE02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_DE02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_DE02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="3" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_DE02_01" orderId="DEMO_B2B_DE02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="73.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_DE02_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_DE02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_DE02_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_DE02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_DE02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_DE02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -1073,7 +1049,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_ES02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_ES02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_ES02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_ES02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_ES02_01" orderId="DEMO_B2B_ES02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="72.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_ES02_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_ES02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_ES02_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_ES02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_ES02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_ES02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -1094,7 +1070,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_FR02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_FR02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_FR02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_FR02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="5" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_FR02_01" orderId="DEMO_B2B_FR02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="55.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_FR02_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_FR02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_FR02_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_FR02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_FR02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_FR02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -1115,7 +1091,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_IT02" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_IT02" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-12-03 9:00:00.000" createdDatetime="2009-12-03 9:00:00.000" promisedDatetime="2009-12-03 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_IT02_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_IT02" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-12-03 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_IT02_01" orderId="DEMO_B2B_IT02" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="50.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_IT02_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_IT02" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_IT02_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_IT02" orderItemSeqId="00001" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_IT02_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_IT02" orderPaymentPreferenceId="9000" statusDatetime="2009-12-03 9:00:00.000" statusUserLogin="admin"/>
@@ -1136,7 +1112,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_AU03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="4.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_AU03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="4.0"  reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_AU03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_AU03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="5" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_AU03_01" orderId="DEMO_B2B_AU03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="61.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_AU03_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_AU03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_AU03_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_AU03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_AU03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_AU03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -1157,7 +1133,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_CA03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_CA03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_CA03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_CA03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_CA03_01" orderId="DEMO_B2B_CA03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="30.0" statusId="PAYMENT_NOT_RECEIVED"/>
+    
     <OrderStatus orderStatusId="DEMO_B2B_CA03_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_CA03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_CA03_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_CA03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_CA03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_CA03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -1178,7 +1154,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_IE03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_IE03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_IE03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_IE03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="1" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_IE03_01" orderId="DEMO_B2B_IE03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="18.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_IE03_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_IE03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_IE03_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_IE03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_IE03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_IE03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -1199,7 +1175,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_SG03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_SG03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_SG03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_SG03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="3" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_SG03_01" orderId="DEMO_B2B_SG03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="37.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_SG03_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_SG03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_SG03_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_SG03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_SG03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_SG03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -1220,7 +1196,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_UK03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_UK03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_UK03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_UK03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="5" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_UK03_01" orderId="DEMO_B2B_UK03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="23.0" statusId="PAYMENT_NOT_RECEIVED"/>
+    
     <OrderStatus orderStatusId="DEMO_B2B_UK03_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_UK03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_UK03_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_UK03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_UK03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_UK03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -1241,7 +1217,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_US03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="6.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_US03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="6.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_US03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_US03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="9" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_US03_01" orderId="DEMO_B2B_US03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="99.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_US03_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_US03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_US03_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_US03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_US03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_US03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -1262,7 +1238,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_DE03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_DE03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_DE03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_DE03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="3" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_DE03_01" orderId="DEMO_B2B_DE03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="38.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_DE03_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_DE03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_DE03_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_DE03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_DE03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_DE03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -1283,7 +1259,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_ES03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="4.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_ES03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="4.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_ES03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_ES03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="1" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_ES03_01" orderId="DEMO_B2B_ES03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="141.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_ES03_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_ES03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_ES03_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_ES03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_ES03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_ES03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -1304,7 +1280,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_FR03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_FR03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_FR03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_FR03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="5" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_FR03_01" orderId="DEMO_B2B_FR03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="56.0" statusId="PAYMENT_NOT_RECEIVED"/>
+  
     <OrderStatus orderStatusId="DEMO_B2B_FR03_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_FR03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_FR03_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_FR03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_FR03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_FR03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -1325,7 +1301,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2B_IT03" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2B_IT03" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-11-23 9:00:00.000" createdDatetime="2009-11-23 9:00:00.000" promisedDatetime="2009-11-23 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2B_IT03_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2B_IT03" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-11-23 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2B_IT03_01" orderId="DEMO_B2B_IT03" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="100.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2B_IT03_01" statusId="ORDER_CREATED" orderId="DEMO_B2B_IT03" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_IT03_02" statusId="ITEM_CREATED" orderId="DEMO_B2B_IT03" orderItemSeqId="00001" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2B_IT03_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2B_IT03" orderPaymentPreferenceId="9000" statusDatetime="2009-11-23 9:00:00.000" statusUserLogin="admin"/>
@@ -1346,7 +1322,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_AU04" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_AU04" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0"  reservedDatetime="2009-11-09 9:00:00.000" createdDatetime="2009-11-09 9:00:00.000" promisedDatetime="2009-11-09 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_AU04_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_AU04" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="5" createdDate="2009-11-09 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_AU04_01" orderId="DEMO_B2C_AU04" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="17.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_AU04_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_AU04" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_AU04_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_AU04" orderItemSeqId="00001" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_AU04_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_AU04" orderPaymentPreferenceId="9000" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
@@ -1367,7 +1343,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_CA04" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_CA04" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-09 9:00:00.000" createdDatetime="2009-11-09 9:00:00.000" promisedDatetime="2009-11-09 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_CA04_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_CA04" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-11-09 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_CA04_01" orderId="DEMO_B2C_CA04" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="14.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_CA04_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_CA04" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_CA04_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_CA04" orderItemSeqId="00001" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_CA04_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_CA04" orderPaymentPreferenceId="9000" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
@@ -1388,7 +1364,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_IE04" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_IE04" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-09 9:00:00.000" createdDatetime="2009-11-09 9:00:00.000" promisedDatetime="2009-11-09 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_IE04_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_IE04" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-11-09 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_IE04_01" orderId="DEMO_B2C_IE04" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="20.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_IE04_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_IE04" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IE04_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_IE04" orderItemSeqId="00001" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IE04_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_IE04" orderPaymentPreferenceId="9000" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
@@ -1409,7 +1385,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_SG04" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_SG04" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-09 9:00:00.000" createdDatetime="2009-11-09 9:00:00.000" promisedDatetime="2009-11-09 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_SG04_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_SG04" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="4" createdDate="2009-11-09 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_SG04_01" orderId="DEMO_B2C_SG04" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="20.0" statusId="PAYMENT_NOT_RECEIVED"/>
+  
     <OrderStatus orderStatusId="DEMO_B2C_SG04_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_SG04" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_SG04_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_SG04" orderItemSeqId="00001" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_SG04_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_SG04" orderPaymentPreferenceId="9000" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
@@ -1430,7 +1406,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_UK04" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="3.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_UK04" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="3.0" reservedDatetime="2009-11-09 9:00:00.000" createdDatetime="2009-11-09 9:00:00.000" promisedDatetime="2009-11-09 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_UK04_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_UK04" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="7" createdDate="2009-11-09 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_UK04_01" orderId="DEMO_B2C_UK04" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="67.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_UK04_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_UK04" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_UK04_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_UK04" orderItemSeqId="00001" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_UK04_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_UK04" orderPaymentPreferenceId="9000" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
@@ -1451,7 +1427,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_US04" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="4.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_US04" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="4.0" reservedDatetime="2009-11-09 9:00:00.000" createdDatetime="2009-11-09 9:00:00.000" promisedDatetime="2009-11-09 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_US04_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_US04" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="6" createdDate="2009-11-09 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_US04_01" orderId="DEMO_B2C_US04" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="66.0" statusId="PAYMENT_NOT_RECEIVED"/>
+  
     <OrderStatus orderStatusId="DEMO_B2C_US04_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_US04" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_US04_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_US04" orderItemSeqId="00001" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_US04_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_US04" orderPaymentPreferenceId="9000" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
@@ -1472,7 +1448,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_DE04" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_DE04" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-09 9:00:00.000" createdDatetime="2009-11-09 9:00:00.000" promisedDatetime="2009-11-09 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_DE04_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_DE04" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="3" createdDate="2009-11-09 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_DE04_01" orderId="DEMO_B2C_DE04" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="38.0" statusId="PAYMENT_NOT_RECEIVED"/>
+    
     <OrderStatus orderStatusId="DEMO_B2C_DE04_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_DE04" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_DE04_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_DE04" orderItemSeqId="00001" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_DE04_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_DE04" orderPaymentPreferenceId="9000" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
@@ -1493,7 +1469,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_ES04" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_ES04" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-11-09 9:00:00.000" createdDatetime="2009-11-09 9:00:00.000" promisedDatetime="2009-11-09 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_ES04_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_ES04" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="1" createdDate="2009-11-09 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_ES04_01" orderId="DEMO_B2C_ES04" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="71.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_ES04_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_ES04" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_ES04_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_ES04" orderItemSeqId="00001" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_ES04_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_ES04" orderPaymentPreferenceId="9000" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
@@ -1514,7 +1490,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_FR04" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_FR04" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-09 9:00:00.000" createdDatetime="2009-11-09 9:00:00.000" promisedDatetime="2009-11-09 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_FR04_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_FR04" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-11-09 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_FR04_01" orderId="DEMO_B2C_FR04" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="50.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_FR04_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_FR04" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_FR04_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_FR04" orderItemSeqId="00001" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_FR04_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_FR04" orderPaymentPreferenceId="9000" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
@@ -1535,7 +1511,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_IT04" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_IT04" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-11-09 9:00:00.000" createdDatetime="2009-11-09 9:00:00.000" promisedDatetime="2009-11-09 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_IT04_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_IT04" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-11-09 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_IT04_01" orderId="DEMO_B2C_IT04" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="98.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_IT04_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_IT04" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IT04_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_IT04" orderItemSeqId="00001" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IT04_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_IT04" orderPaymentPreferenceId="9000" statusDatetime="2009-11-09 9:00:00.000" statusUserLogin="admin"/>
@@ -1556,7 +1532,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_AU05" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_AU05" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0"  reservedDatetime="2009-11-19 9:00:00.000" createdDatetime="2009-11-19 9:00:00.000" promisedDatetime="2009-11-19 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_AU05_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_AU05" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="5" createdDate="2009-11-19 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_AU05_01" orderId="DEMO_B2C_AU05" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="17.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_AU05_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_AU05" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_AU05_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_AU05" orderItemSeqId="00001" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_AU05_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_AU05" orderPaymentPreferenceId="9000" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
@@ -1577,7 +1553,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_CA05" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_CA05" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-19 9:00:00.000" createdDatetime="2009-11-19 9:00:00.000" promisedDatetime="2009-11-19 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_CA05_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_CA05" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-11-19 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_CA05_01" orderId="DEMO_B2C_CA05" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="14.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_CA05_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_CA05" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_CA05_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_CA05" orderItemSeqId="00001" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_CA05_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_CA05" orderPaymentPreferenceId="9000" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
@@ -1598,7 +1574,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_IE05" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_IE05" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-19 9:00:00.000" createdDatetime="2009-11-19 9:00:00.000" promisedDatetime="2009-11-19 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_IE05_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_IE05" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-11-19 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_IE05_01" orderId="DEMO_B2C_IE05" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="20.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_IE05_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_IE05" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IE05_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_IE05" orderItemSeqId="00001" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IE05_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_IE05" orderPaymentPreferenceId="9000" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
@@ -1619,7 +1595,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_SG05" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_SG05" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-19 9:00:00.000" createdDatetime="2009-11-19 9:00:00.000" promisedDatetime="2009-11-19 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_SG05_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_SG05" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="4" createdDate="2009-11-19 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_SG05_01" orderId="DEMO_B2C_SG05" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="20.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_SG05_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_SG05" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_SG05_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_SG05" orderItemSeqId="00001" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_SG05_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_SG05" orderPaymentPreferenceId="9000" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
@@ -1640,7 +1616,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_UK05" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="3.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_UK05" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="3.0" reservedDatetime="2009-11-19 9:00:00.000" createdDatetime="2009-11-19 9:00:00.000" promisedDatetime="2009-11-19 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_UK05_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_UK05" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="7" createdDate="2009-11-19 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_UK05_01" orderId="DEMO_B2C_UK05" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="67.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_UK05_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_UK05" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_UK05_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_UK05" orderItemSeqId="00001" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_UK05_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_UK05" orderPaymentPreferenceId="9000" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
@@ -1661,7 +1637,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_US05" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="4.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_US05" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="4.0" reservedDatetime="2009-11-19 9:00:00.000" createdDatetime="2009-11-19 9:00:00.000" promisedDatetime="2009-11-19 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_US05_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_US05" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="6" createdDate="2009-11-19 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_US05_01" orderId="DEMO_B2C_US05" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="66.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_US05_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_US05" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_US05_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_US05" orderItemSeqId="00001" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_US05_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_US05" orderPaymentPreferenceId="9000" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
@@ -1682,7 +1658,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_DE05" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_DE05" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-19 9:00:00.000" createdDatetime="2009-11-19 9:00:00.000" promisedDatetime="2009-11-19 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_DE05_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_DE05" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="3" createdDate="2009-11-19 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_DE05_01" orderId="DEMO_B2C_DE05" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="38.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_DE05_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_DE05" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_DE05_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_DE05" orderItemSeqId="00001" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_DE05_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_DE05" orderPaymentPreferenceId="9000" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
@@ -1703,7 +1679,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_ES05" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_ES05" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-11-19 9:00:00.000" createdDatetime="2009-11-19 9:00:00.000" promisedDatetime="2009-11-19 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_ES05_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_ES05" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="1" createdDate="2009-11-19 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_ES05_01" orderId="DEMO_B2C_ES05" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="71.0" statusId="PAYMENT_NOT_RECEIVED"/>
+    
     <OrderStatus orderStatusId="DEMO_B2C_ES05_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_ES05" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_ES05_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_ES05" orderItemSeqId="00001" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_ES05_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_ES05" orderPaymentPreferenceId="9000" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
@@ -1724,7 +1700,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_FR05" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="1.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_FR05" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="1.0" reservedDatetime="2009-11-19 9:00:00.000" createdDatetime="2009-11-19 9:00:00.000" promisedDatetime="2009-11-19 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_FR05_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_FR05" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-11-19 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_FR05_01" orderId="DEMO_B2C_FR05" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="50.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_FR05_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_FR05" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_FR05_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_FR05" orderItemSeqId="00001" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_FR05_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_FR05" orderPaymentPreferenceId="9000" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
@@ -1745,7 +1721,7 @@ under the License.
     <OrderItemShipGroupAssoc orderId="DEMO_B2C_IT05" orderItemSeqId="00001" shipGroupSeqId="00001" quantity="2.0"/>
     <OrderItemShipGrpInvRes orderId="DEMO_B2C_IT05" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="9001" reserveOrderEnumId="INVRO_FIFO_REC" quantity="2.0" reservedDatetime="2009-11-19 9:00:00.000" createdDatetime="2009-11-19 9:00:00.000" promisedDatetime="2009-11-19 9:00:00.000" priority="2"/>
     <OrderAdjustment orderAdjustmentId="DEMO_B2C_IT05_01" orderAdjustmentTypeId="SHIPPING_CHARGES" orderId="DEMO_B2C_IT05" orderItemSeqId="_NA_" shipGroupSeqId="_NA_" amount="2" createdDate="2009-11-19 9:00:00.000" createdByUserLogin="admin"/>
-    <OrderPaymentPreference orderPaymentPreferenceId="DEMO_B2C_IT05_01" orderId="DEMO_B2C_IT05" paymentMethodTypeId="EXT_EBAY" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="98.0" statusId="PAYMENT_NOT_RECEIVED"/>
+   
     <OrderStatus orderStatusId="DEMO_B2C_IT05_01" statusId="ORDER_CREATED" orderId="DEMO_B2C_IT05" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IT05_02" statusId="ITEM_CREATED" orderId="DEMO_B2C_IT05" orderItemSeqId="00001" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>
     <OrderStatus orderStatusId="DEMO_B2C_IT05_03" statusId="PAYMENT_NOT_RECEIVED" orderId="DEMO_B2C_IT05" orderPaymentPreferenceId="9000" statusDatetime="2009-11-19 9:00:00.000" statusUserLogin="admin"/>

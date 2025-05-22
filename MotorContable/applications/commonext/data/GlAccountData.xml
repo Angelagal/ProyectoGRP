@@ -132,7 +132,7 @@
     <PaymentMethodTypeGlAccount organizationPartyId="ORGPARTYID" paymentMethodTypeId="COMPANY_ACCOUNT" glAccountId="111100"/>
     <PaymentMethodTypeGlAccount organizationPartyId="ORGPARTYID" paymentMethodTypeId="EXT_BILLACT" glAccountId="213000"/>
     <PaymentMethodTypeGlAccount organizationPartyId="ORGPARTYID" paymentMethodTypeId="EXT_COD" glAccountId="112000"/>
-    <PaymentMethodTypeGlAccount organizationPartyId="ORGPARTYID" paymentMethodTypeId="EXT_EBAY" glAccountId="112000"/>
+    
     <PaymentMethodTypeGlAccount organizationPartyId="ORGPARTYID" paymentMethodTypeId="EXT_OFFLINE" glAccountId="112000"/>
     <PaymentMethodTypeGlAccount organizationPartyId="ORGPARTYID" paymentMethodTypeId="EXT_PAYPAL" glAccountId="122500"/>
     <PaymentMethodTypeGlAccount organizationPartyId="ORGPARTYID" paymentMethodTypeId="EXT_WORLDPAY" glAccountId="122500"/>

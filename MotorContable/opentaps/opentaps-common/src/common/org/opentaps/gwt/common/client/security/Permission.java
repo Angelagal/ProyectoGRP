@@ -246,8 +246,7 @@ public enum Permission {
     DATAIMPORT_ADMIN("DATAIMPORT_ADMIN"),
     /** Basic permission to use the Dataimport application. */
     DATAIMPORT_VIEW("DATAIMPORT_VIEW"),
-    /** View operations in the eBay application. */
-    EBAY_VIEW("EBAY_VIEW"),
+   
     /** ALL with the Entity Data Maintenance pages. */
     ENTITY_DATA_ADMIN("ENTITY_DATA_ADMIN"),
     /** Create with the Entity Data Maintenance pages. */

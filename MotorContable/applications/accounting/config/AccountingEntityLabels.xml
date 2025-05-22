@@ -3442,15 +3442,7 @@
         <value xml:lang="th">เงินด่วน</value>
         <value xml:lang="zh">到货付款</value>
     </property>
-    <property key="PaymentMethodType.description.EXT_EBAY">
-        <value xml:lang="de">eBay</value>
-        <value xml:lang="en">eBay</value>
-		<value xml:lang="es">eBay</value>
-        <value xml:lang="fr">eBay</value>
-        <value xml:lang="it">eBay</value>
-        <value xml:lang="nl">eBay</value>
-        <value xml:lang="th">อีเบย์</value>
-    </property>
+   
     <property key="PaymentMethodType.description.EXT_OFFLINE">
         <value xml:lang="de">Zahlung nicht im Netz</value>
         <value xml:lang="en">Offline Payment</value>

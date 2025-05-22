@@ -580,19 +580,7 @@ public class ProductSearchSession {
             }
         }
 
-        // if there is any category selected try to use catalog and add a constraint for it
-        if (UtilValidate.isNotEmpty(parameters.get("SEARCH_CATALOG_ID"))) {
-            String searchCatalogId = (String) parameters.get("SEARCH_CATALOG_ID");
-            if (searchCatalogId != null && !searchCatalogId.equalsIgnoreCase("")) {
-                String topCategory = CatalogWorker.getCatalogTopCategoryId(request, searchCatalogId);
-                if (UtilValidate.isEmpty(topCategory)) {
-                    topCategory = CatalogWorker.getCatalogTopEbayCategoryId(request, searchCatalogId);
-                }
-                List<GenericValue> categories = CategoryWorker.getRelatedCategoriesRet(request, "topLevelList", topCategory, true, false, true);
-                searchAddConstraint(new ProductSearch.CatalogConstraint(searchCatalogId, categories), session);
-                constraintsChanged = true;
-            }
-        }
+      
 
         // if keywords were specified, add a constraint for them
         if (UtilValidate.isNotEmpty(parameters.get("SEARCH_STRING"))) {

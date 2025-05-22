@@ -139,12 +139,7 @@
       </web>
     </module>
 
-    <module>
-      <web>
-        <web-uri>/ebay.war</web-uri>
-        <context-root>/ebay</context-root>
-      </web>
-    </module>
+   
 
     <!-- themes web apps -->
 

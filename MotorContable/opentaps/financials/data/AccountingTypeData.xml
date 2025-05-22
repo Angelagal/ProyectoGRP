@@ -446,7 +446,7 @@ consistent with most standard financial reporting.
     <PaymentMethodType description="Cuenta Empresarial" paymentMethodTypeId="COMPANY_ACCOUNT"/>
     <PaymentMethodType description="Cuenta de Facturación" paymentMethodTypeId="EXT_BILLACT"/>
     <PaymentMethodType description="Pago en la Entrega" paymentMethodTypeId="EXT_COD"/>
-    <PaymentMethodType description="eBay" paymentMethodTypeId="EXT_EBAY"/>
+
     <PaymentMethodType description="Pago Fuera de Línea" paymentMethodTypeId="EXT_OFFLINE"/>
     <PaymentMethodType description="PayPal" paymentMethodTypeId="EXT_PAYPAL"/>
     <PaymentMethodType description="WorldPay" paymentMethodTypeId="EXT_WORLDPAY"/>

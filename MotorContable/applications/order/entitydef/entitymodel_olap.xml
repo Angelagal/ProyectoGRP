@@ -87,9 +87,7 @@ under the License.
             <description>Gross Profit: GrossMerchandizeProfit less GrossShippingProfit.</description>
         </field>
 
-        <field name="eBay" type="currency-precise">
-            <description>eBay Fee: current ebay fee is captured manually by employee and updated into sharepoint list.</description>
-        </field>
+        
         <field name="RRC" type="currency-precise">
             <description>RRC: the total amount of our RRC (refund, replace and cancellation).</description>
         </field>
@@ -98,7 +96,7 @@ under the License.
         </field>
 
         <field name="NBO" type="currency-precise">
-            <description>NBO: NBO which calculation is GrossProfit minus all the fees (eBay,RRC and Others).</description>
+            <description>NBO: NBO which calculation is GrossProfit minus all the fees (RRC and Others).</description>
         </field>
 
         <field name="CountDate" type="currency-precise">

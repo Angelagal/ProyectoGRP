@@ -206,16 +206,9 @@ under the License.
                     <property name="name">GP</property>
                     <property name="dataType">decimal</property>
                 </structure>
-                <structure>
-                    <property name="position">10</property>
-                    <property name="name">eBay</property>
-                    <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="position">11</property>
-                    <property name="name">eBay%</property>
-                    <property name="dataType">decimal</property>
-                </structure>
+               
+               
+
                 <structure>
                     <property name="position">12</property>
                     <property name="name">RRC</property>
@@ -329,14 +322,7 @@ under the License.
                     <property name="columnName">GP</property>
                     <property name="displayName">GP</property>
                 </structure>
-                <structure>
-                    <property name="columnName">eBay</property>
-                    <property name="displayName">eBay</property>
-                </structure>
-                <structure>
-                    <property name="columnName">eBay%</property>
-                    <property name="displayName">eBay%</property>
-                </structure>
+              
                 <structure>
                     <property name="columnName">RRC</property>
                     <property name="displayName">RRC</property>
@@ -445,16 +431,8 @@ under the License.
                         <property name="name">GP</property>
                         <property name="dataType">decimal</property>
                     </structure>
-                    <structure>
-                        <property name="position">10</property>
-                        <property name="name">eBay</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
-                    <structure>
-                        <property name="position">11</property>
-                        <property name="name">eBay%</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
+                 
+                   
                     <structure>
                         <property name="position">12</property>
                         <property name="name">RRC</property>
@@ -596,7 +574,7 @@ if (starschemas)
     GMP = starschema.getString("GrossMerchandizeProfit");
     GSP = starschema.getString("GrossShippingProfit");
     GP = starschema.getString("GrossProfit");
-    eBay = starschema.getString("eBay");
+   
     RRC = starschema.getString("RRC");
     Others = starschema.getString("OtherFree");
     NBO = starschema.getString("NBO");
@@ -623,7 +601,7 @@ if (starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+       
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -646,7 +624,7 @@ if (starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+      
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -668,7 +646,7 @@ if (starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+      
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -690,7 +668,7 @@ if (starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+     
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -712,7 +690,7 @@ if (starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+   
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -734,7 +712,7 @@ if (starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+ 
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -756,7 +734,7 @@ if (starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+   
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -778,7 +756,7 @@ if (starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+        
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -800,7 +778,7 @@ if (starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+       
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -822,7 +800,7 @@ if (starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+   
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -896,16 +874,7 @@ return true;]]></method>
                     <property name="name">GP</property>
                     <property name="dataType">decimal</property>
                 </structure>
-                <structure>
-                    <property name="position">12</property>
-                    <property name="name">eBay</property>
-                    <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="position">13</property>
-                    <property name="name">eBay%</property>
-                    <property name="dataType">decimal</property>
-                </structure>
+              
                 <structure>
                     <property name="position">14</property>
                     <property name="name">RRC</property>
@@ -993,10 +962,7 @@ return true;]]></method>
                     <property name="columnName">GSP</property>
                     <property name="displayName">GSP</property>
                 </structure>
-                <structure>
-                    <property name="columnName">eBay</property>
-                    <property name="displayName">eBay</property>
-                </structure>
+             
                 <structure>
                     <property name="columnName">RRC</property>
                     <property name="displayName">RRC</property>
@@ -1021,10 +987,7 @@ return true;]]></method>
                     <property name="columnName">NBO</property>
                     <property name="displayName">NBO</property>
                 </structure>
-                <structure>
-                    <property name="columnName">eBay%</property>
-                    <property name="displayName">eBay%</property>
-                </structure>
+               
                 <structure>
                     <property name="columnName">RRC%</property>
                     <property name="displayName">RRC%</property>
@@ -1099,16 +1062,8 @@ return true;]]></method>
                         <property name="name">GP</property>
                         <property name="dataType">decimal</property>
                     </structure>
-                    <structure>
-                        <property name="position">12</property>
-                        <property name="name">eBay</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
-                    <structure>
-                        <property name="position">13</property>
-                        <property name="name">eBay%</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
+                   
+                   
                     <structure>
                         <property name="position">14</property>
                         <property name="name">RRC</property>
@@ -1217,7 +1172,7 @@ if (Date_starschemas)
     GMP = Date_starschema.getString("GrossMerchandizeProfit");
     GSP = Date_starschema.getString("GrossShippingProfit");
     GP = Date_starschema.getString("GrossProfit");
-    eBay = Date_starschema.getString("eBay");
+
     RRC = Date_starschema.getString("RRC");
     Others = Date_starschema.getString("OtherFree");
     NBO = Date_starschema.getString("NBO");
@@ -1237,7 +1192,7 @@ if (Date_starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -1259,7 +1214,7 @@ if (Date_starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -1280,7 +1235,7 @@ if (Date_starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -1301,7 +1256,7 @@ if (Date_starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+   
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -1322,7 +1277,7 @@ if (Date_starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+     
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -1343,7 +1298,7 @@ if (Date_starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -1364,7 +1319,7 @@ if (Date_starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+    
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -1385,7 +1340,7 @@ if (Date_starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+    
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -1406,7 +1361,7 @@ if (Date_starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -1427,7 +1382,7 @@ if (Date_starschemas)
         row["GMP"] = GMP;
         row["GSP"] = GSP;
         row["GP"] = GP;
-        row["eBay"] = eBay;
+ 
         row["RRC"] = RRC;
         row["Others"] = Others;
         row["NBO"] = NBO;
@@ -1776,16 +1731,7 @@ return true;]]></method>
                             <expression name="measureExpression">dataSetRow["GP"]</expression>
                             <property name="dataType">decimal</property>
                         </tabular-measure>
-                        <tabular-measure name="eBay" id="1953">
-                            <property name="function">average</property>
-                            <expression name="measureExpression">dataSetRow["eBay"]</expression>
-                            <property name="dataType">decimal</property>
-                        </tabular-measure>
-                        <tabular-measure name="eBay%" id="2218">
-                            <property name="function">average</property>
-                            <expression name="measureExpression">(dataSetRow["eBay"]/dataSetRow["GP"])</expression>
-                            <property name="dataType">decimal</property>
-                        </tabular-measure>
+                     
                         <tabular-measure name="RRC" id="1955">
                             <property name="function">average</property>
                             <expression name="measureExpression">dataSetRow["RRC"]</expression>
@@ -1884,14 +1830,7 @@ return true;]]></method>
                             <expression name="measureExpression">dataSetRow["GP"]</expression>
                             <property name="dataType">decimal</property>
                         </tabular-measure>
-                        <tabular-measure name="eBay1" id="4054">
-                            <expression name="measureExpression">dataSetRow["eBay"]</expression>
-                            <property name="dataType">decimal</property>
-                        </tabular-measure>
-                        <tabular-measure name="eBay%1" id="4055">
-                            <expression name="measureExpression">(dataSetRow["eBay"]/dataSetRow["GP"])</expression>
-                            <property name="dataType">decimal</property>
-                        </tabular-measure>
+                     
                         <tabular-measure name="RRC1" id="4056">
                             <expression name="measureExpression">dataSetRow["RRC"]</expression>
                             <property name="dataType">decimal</property>
@@ -2302,118 +2241,8 @@ return true;]]></method>
                         </extended-item>
                     </property>
                 </extended-item>
-                <extended-item extensionName="MeasureView" id="4082">
-                    <property name="measure">eBay1</property>
-                    <property name="detail">
-                        <extended-item extensionName="CrosstabCell" id="4083">
-                            <property name="content">
-                                <data name="eBay1" id="4085">
-                                    <structure name="numberFormat">
-                                        <property name="category">Currency</property>
-                                        <property name="pattern">$###0</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay1</property>
-                                </data>
-                            </property>
-                        </extended-item>
-                    </property>
-                    <property name="aggregations">
-                        <extended-item extensionName="AggregationCell" id="4133">
-                            <property name="aggregationOnRow">Account_Today/Pod</property>
-                            <property name="aggregationOnColumn">Date_Today/orderDateDateValue</property>
-                            <property name="backgroundColor">#E5E5E5</property>
-                            <property name="content">
-                                <data id="4134">
-                                    <structure name="numberFormat">
-                                        <property name="category">Currency</property>
-                                        <property name="pattern">$###0</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay1_Account_Today/Pod_Date_Today/orderDateDateValue</property>
-                                </data>
-                            </property>
-                        </extended-item>
-                        <extended-item extensionName="AggregationCell" id="4161">
-                            <property name="aggregationOnColumn">Date_Today/orderDateDateValue</property>
-                            <property name="backgroundColor">#BFBFBF</property>
-                            <property name="content">
-                                <data id="4162">
-                                    <structure name="numberFormat">
-                                        <property name="category">Currency</property>
-                                        <property name="pattern">$###0</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay1_Date_Today/orderDateDateValue</property>
-                                </data>
-                            </property>
-                        </extended-item>
-                    </property>
-                    <property name="header">
-                        <extended-item extensionName="CrosstabCell" id="4084">
-                            <property name="content">
-                                <label id="4086">
-                                    <property name="textAlign">center</property>
-                                    <text-property name="text">eBay</text-property>
-                                </label>
-                            </property>
-                            <property name="backgroundColor">#FFFF00</property>
-                        </extended-item>
-                    </property>
-                </extended-item>
-                <extended-item extensionName="MeasureView" id="4087">
-                    <property name="measure">eBay%1</property>
-                    <property name="detail">
-                        <extended-item extensionName="CrosstabCell" id="4088">
-                            <property name="content">
-                                <data name="eBay%1" id="4090">
-                                    <structure name="numberFormat">
-                                        <property name="category">Percent</property>
-                                        <property name="pattern">###0%</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay%1</property>
-                                </data>
-                            </property>
-                        </extended-item>
-                    </property>
-                    <property name="aggregations">
-                        <extended-item extensionName="AggregationCell" id="4135">
-                            <property name="aggregationOnRow">Account_Today/Pod</property>
-                            <property name="aggregationOnColumn">Date_Today/orderDateDateValue</property>
-                            <property name="backgroundColor">#E5E5E5</property>
-                            <property name="content">
-                                <data id="4136">
-                                    <structure name="numberFormat">
-                                        <property name="category">Percent</property>
-                                        <property name="pattern">###0%</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay%1_Account_Today/Pod_Date_Today/orderDateDateValue</property>
-                                </data>
-                            </property>
-                        </extended-item>
-                        <extended-item extensionName="AggregationCell" id="4163">
-                            <property name="aggregationOnColumn">Date_Today/orderDateDateValue</property>
-                            <property name="backgroundColor">#BFBFBF</property>
-                            <property name="content">
-                                <data id="4164">
-                                    <structure name="numberFormat">
-                                        <property name="category">Percent</property>
-                                        <property name="pattern">###0%</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay%1_Date_Today/orderDateDateValue</property>
-                                </data>
-                            </property>
-                        </extended-item>
-                    </property>
-                    <property name="header">
-                        <extended-item extensionName="CrosstabCell" id="4089">
-                            <property name="content">
-                                <label id="4091">
-                                    <property name="textAlign">center</property>
-                                    <text-property name="text">eBay%</text-property>
-                                </label>
-                            </property>
-                            <property name="backgroundColor">#FFFF00</property>
-                        </extended-item>
-                    </property>
-                </extended-item>
+                
+               
                 <extended-item extensionName="MeasureView" id="4092">
                     <property name="measure">RRC1</property>
                     <property name="detail">
@@ -2901,16 +2730,7 @@ return true;]]></method>
                     <expression name="expression">measure["GP1"]</expression>
                     <property name="dataType">decimal</property>
                 </structure>
-                <structure>
-                    <property name="name">eBay1</property>
-                    <expression name="expression">measure["eBay1"]</expression>
-                    <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="name">eBay%1</property>
-                    <expression name="expression">measure["eBay%1"]</expression>
-                    <property name="dataType">decimal</property>
-                </structure>
+              
                 <structure>
                     <property name="name">RRC1</property>
                     <expression name="expression">measure["RRC1"]</expression>
@@ -2991,26 +2811,7 @@ return true;]]></method>
                     </simple-property-list>
                     <property name="aggregateFunction">sum</property>
                 </structure>
-                <structure>
-                    <property name="name">eBay1_Account_Today/Pod_Date_Today/orderDateDateValue</property>
-                    <expression name="expression">measure["eBay1"]</expression>
-                    <property name="dataType">decimal</property>
-                    <simple-property-list name="aggregateOn">
-                        <value>Account_Today/Pod</value>
-                        <value>Date_Today/orderDateDateValue</value>
-                    </simple-property-list>
-                    <property name="aggregateFunction">sum</property>
-                </structure>
-                <structure>
-                    <property name="name">eBay%1_Account_Today/Pod_Date_Today/orderDateDateValue</property>
-                    <expression name="expression">measure["eBay%1"]</expression>
-                    <property name="dataType">decimal</property>
-                    <simple-property-list name="aggregateOn">
-                        <value>Account_Today/Pod</value>
-                        <value>Date_Today/orderDateDateValue</value>
-                    </simple-property-list>
-                    <property name="aggregateFunction">sum</property>
-                </structure>
+                
                 <structure>
                     <property name="name">RRC1_Account_Today/Pod_Date_Today/orderDateDateValue</property>
                     <expression name="expression">measure["RRC1"]</expression>
@@ -3116,24 +2917,7 @@ return true;]]></method>
                     </simple-property-list>
                     <property name="aggregateFunction">sum</property>
                 </structure>
-                <structure>
-                    <property name="name">eBay1_Date_Today/orderDateDateValue</property>
-                    <expression name="expression">measure["eBay1"]</expression>
-                    <property name="dataType">decimal</property>
-                    <simple-property-list name="aggregateOn">
-                        <value>Date_Today/orderDateDateValue</value>
-                    </simple-property-list>
-                    <property name="aggregateFunction">sum</property>
-                </structure>
-                <structure>
-                    <property name="name">eBay%1_Date_Today/orderDateDateValue</property>
-                    <expression name="expression">measure["eBay%1"]</expression>
-                    <property name="dataType">decimal</property>
-                    <simple-property-list name="aggregateOn">
-                        <value>Date_Today/orderDateDateValue</value>
-                    </simple-property-list>
-                    <property name="aggregateFunction">sum</property>
-                </structure>
+               
                 <structure>
                     <property name="name">RRC1_Date_Today/orderDateDateValue</property>
                     <expression name="expression">measure["RRC1"]</expression>
@@ -3523,146 +3307,8 @@ return true;]]></method>
                         </extended-item>
                     </property>
                 </extended-item>
-                <extended-item extensionName="MeasureView" id="2335">
-                    <property name="measure">eBay</property>
-                    <property name="detail">
-                        <extended-item extensionName="CrosstabCell" id="2336">
-                            <property name="content">
-                                <data name="eBay" id="2338">
-                                    <structure name="numberFormat">
-                                        <property name="category">Currency</property>
-                                        <property name="pattern">$###0</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay</property>
-                                </data>
-                            </property>
-                        </extended-item>
-                    </property>
-                    <property name="aggregations">
-                        <extended-item extensionName="AggregationCell" id="2816">
-                            <property name="aggregationOnRow">Account/Pod</property>
-                            <property name="aggregationOnColumn">Date/Today</property>
-                            <property name="backgroundColor">#E5E5E5</property>
-                            <property name="content">
-                                <data id="2817">
-                                    <structure name="numberFormat">
-                                        <property name="category">Currency</property>
-                                        <property name="pattern">$###0</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay_Account/Pod_Date/Today</property>
-                                </data>
-                                <data id="2869">
-                                    <structure name="numberFormat">
-                                        <property name="category">Currency</property>
-                                        <property name="pattern">$###0</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay_lastmonth</property>
-                                </data>
-                            </property>
-                        </extended-item>
-                        <extended-item extensionName="AggregationCell" id="2846">
-                            <property name="aggregationOnColumn">Date/Today</property>
-                            <property name="backgroundColor">#BFBFBF</property>
-                            <property name="content">
-                                <data id="2847">
-                                    <structure name="numberFormat">
-                                        <property name="category">Currency</property>
-                                        <property name="pattern">$###0</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay_Date/Today</property>
-                                </data>
-                                <data id="2883">
-                                    <structure name="numberFormat">
-                                        <property name="category">Currency</property>
-                                        <property name="pattern">$###0</property>
-                                    </structure>
-                                    <property name="resultSetColumn">ebay_total_lastmonth</property>
-                                </data>
-                            </property>
-                        </extended-item>
-                    </property>
-                    <property name="header">
-                        <extended-item extensionName="CrosstabCell" id="2337">
-                            <property name="content">
-                                <label id="2339">
-                                    <property name="textAlign">center</property>
-                                    <text-property name="text">eBay</text-property>
-                                </label>
-                            </property>
-                            <property name="backgroundColor">#1E90FF</property>
-                        </extended-item>
-                    </property>
-                </extended-item>
-                <extended-item extensionName="MeasureView" id="2340">
-                    <property name="measure">eBay%</property>
-                    <property name="detail">
-                        <extended-item extensionName="CrosstabCell" id="2341">
-                            <property name="content">
-                                <data name="eBay%" id="2343">
-                                    <structure name="numberFormat">
-                                        <property name="category">Percent</property>
-                                        <property name="pattern">###0%</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay%</property>
-                                </data>
-                            </property>
-                        </extended-item>
-                    </property>
-                    <property name="aggregations">
-                        <extended-item extensionName="AggregationCell" id="2818">
-                            <property name="aggregationOnRow">Account/Pod</property>
-                            <property name="aggregationOnColumn">Date/Today</property>
-                            <property name="backgroundColor">#E5E5E5</property>
-                            <property name="content">
-                                <data id="2819">
-                                    <structure name="numberFormat">
-                                        <property name="category">Percent</property>
-                                        <property name="pattern">###0%</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay%_Account/Pod_Date/Today</property>
-                                </data>
-                                <data id="2870">
-                                    <structure name="numberFormat">
-                                        <property name="category">Percent</property>
-                                        <property name="pattern">###0%</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay%_lastmonth</property>
-                                </data>
-                            </property>
-                        </extended-item>
-                        <extended-item extensionName="AggregationCell" id="2848">
-                            <property name="aggregationOnColumn">Date/Today</property>
-                            <property name="backgroundColor">#BFBFBF</property>
-                            <property name="content">
-                                <data id="2849">
-                                    <structure name="numberFormat">
-                                        <property name="category">Percent</property>
-                                        <property name="pattern">###0%</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay%_Date/Today</property>
-                                </data>
-                                <data id="2884">
-                                    <structure name="numberFormat">
-                                        <property name="category">Percent</property>
-                                        <property name="pattern">###0%</property>
-                                    </structure>
-                                    <property name="resultSetColumn">eBay%_total_lastmonth</property>
-                                </data>
-                            </property>
-                        </extended-item>
-                    </property>
-                    <property name="header">
-                        <extended-item extensionName="CrosstabCell" id="2342">
-                            <property name="content">
-                                <label id="2344">
-                                    <property name="textAlign">center</property>
-                                    <text-property name="text">eBay%</text-property>
-                                </label>
-                            </property>
-                            <property name="backgroundColor">#1E90FF</property>
-                        </extended-item>
-                    </property>
-                </extended-item>
+                
+               
                 <extended-item extensionName="MeasureView" id="2345">
                     <property name="measure">RRC</property>
                     <property name="detail">
@@ -4240,16 +3886,7 @@ return true;]]></method>
                     <expression name="expression">measure["GP"]</expression>
                     <property name="dataType">decimal</property>
                 </structure>
-                <structure>
-                    <property name="name">eBay</property>
-                    <expression name="expression">measure["eBay"]</expression>
-                    <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="name">eBay%</property>
-                    <expression name="expression">measure["eBay%"]</expression>
-                    <property name="dataType">decimal</property>
-                </structure>
+               
                 <structure>
                     <property name="name">RRC</property>
                     <expression name="expression">measure["RRC"]</expression>
@@ -4362,28 +3999,7 @@ else if(dimension["Account"]["Daily"]==2)
                     <property name="aggregateFunction">SUM</property>
                     <expression name="filterExpr">dimension["Account"]["Daily"]==1</expression>
                 </structure>
-                <structure>
-                    <property name="name">eBay_Account/Pod_Date/Today</property>
-                    <expression name="expression">measure["eBay"]</expression>
-                    <property name="dataType">decimal</property>
-                    <simple-property-list name="aggregateOn">
-                        <value>Account/Pod</value>
-                        <value>Date/Today</value>
-                    </simple-property-list>
-                    <property name="aggregateFunction">SUM</property>
-                    <expression name="filterExpr">dimension["Account"]["Daily"]==1</expression>
-                </structure>
-                <structure>
-                    <property name="name">eBay%_Account/Pod_Date/Today</property>
-                    <expression name="expression">measure["eBay%"]</expression>
-                    <property name="dataType">decimal</property>
-                    <simple-property-list name="aggregateOn">
-                        <value>Account/Pod</value>
-                        <value>Date/Today</value>
-                    </simple-property-list>
-                    <property name="aggregateFunction">AVE</property>
-                    <expression name="filterExpr">dimension["Account"]["Daily"]==1</expression>
-                </structure>
+               
                 <structure>
                     <property name="name">RRC_Account/Pod_Date/Today</property>
                     <expression name="expression">measure["RRC"]</expression>
@@ -4500,26 +4116,7 @@ else if(dimension["Account"]["Daily"]==2)
                     <property name="aggregateFunction">SUM</property>
                     <expression name="filterExpr">dimension["Account"]["Daily"]==1</expression>
                 </structure>
-                <structure>
-                    <property name="name">eBay_Date/Today</property>
-                    <expression name="expression">measure["eBay"]</expression>
-                    <property name="dataType">decimal</property>
-                    <simple-property-list name="aggregateOn">
-                        <value>Date/Today</value>
-                    </simple-property-list>
-                    <property name="aggregateFunction">SUM</property>
-                    <expression name="filterExpr">dimension["Account"]["Daily"]==1</expression>
-                </structure>
-                <structure>
-                    <property name="name">eBay%_Date/Today</property>
-                    <expression name="expression">measure["eBay%"]</expression>
-                    <property name="dataType">decimal</property>
-                    <simple-property-list name="aggregateOn">
-                        <value>Date/Today</value>
-                    </simple-property-list>
-                    <property name="aggregateFunction">AVE</property>
-                    <expression name="filterExpr">dimension["Account"]["Daily"]==1</expression>
-                </structure>
+             
                 <structure>
                     <property name="name">RRC_Date/Today</property>
                     <expression name="expression">measure["RRC"]</expression>
@@ -4646,28 +4243,8 @@ else if(dimension["Account"]["Daily"]==2)
                     <property name="aggregateFunction">SUM</property>
                     <expression name="filterExpr">dimension["Account"]["Daily"]==2</expression>
                 </structure>
-                <structure>
-                    <property name="name">eBay_lastmonth</property>
-                    <expression name="expression">measure["eBay"]</expression>
-                    <property name="dataType">decimal</property>
-                    <simple-property-list name="aggregateOn">
-                        <value>Account/Pod</value>
-                        <value>Date/Today</value>
-                    </simple-property-list>
-                    <property name="aggregateFunction">SUM</property>
-                    <expression name="filterExpr">dimension["Account"]["Daily"]==2</expression>
-                </structure>
-                <structure>
-                    <property name="name">eBay%_lastmonth</property>
-                    <expression name="expression">measure["eBay%"]</expression>
-                    <property name="dataType">decimal</property>
-                    <simple-property-list name="aggregateOn">
-                        <value>Account/Pod</value>
-                        <value>Date/Today</value>
-                    </simple-property-list>
-                    <property name="aggregateFunction">AVE</property>
-                    <expression name="filterExpr">dimension["Account"]["Daily"]==2</expression>
-                </structure>
+            
+                
                 <structure>
                     <property name="name">RRC_lastmonth</property>
                     <expression name="expression">measure["RRC"]</expression>
@@ -4784,26 +4361,7 @@ else if(dimension["Account"]["Daily"]==2)
                     <property name="aggregateFunction">SUM</property>
                     <expression name="filterExpr">dimension["Account"]["Daily"]==2</expression>
                 </structure>
-                <structure>
-                    <property name="name">ebay_total_lastmonth</property>
-                    <expression name="expression">measure["eBay"]</expression>
-                    <property name="dataType">decimal</property>
-                    <simple-property-list name="aggregateOn">
-                        <value>Date/Today</value>
-                    </simple-property-list>
-                    <property name="aggregateFunction">SUM</property>
-                    <expression name="filterExpr">dimension["Account"]["Daily"]==2</expression>
-                </structure>
-                <structure>
-                    <property name="name">eBay%_total_lastmonth</property>
-                    <expression name="expression">measure["eBay%"]</expression>
-                    <property name="dataType">decimal</property>
-                    <simple-property-list name="aggregateOn">
-                        <value>Date/Today</value>
-                    </simple-property-list>
-                    <property name="aggregateFunction">AVE</property>
-                    <expression name="filterExpr">dimension["Account"]["Daily"]==2</expression>
-                </structure>
+               
                 <structure>
                     <property name="name">RRC_total_lastmonth</property>
                     <expression name="expression">measure["RRC"]</expression>

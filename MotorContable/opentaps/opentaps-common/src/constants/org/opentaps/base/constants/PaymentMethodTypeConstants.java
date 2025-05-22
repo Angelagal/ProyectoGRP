@@ -46,8 +46,7 @@ public final class PaymentMethodTypeConstants {
     public static final String EXT_BILL_3RDPTY_COD = "EXT_BILL_3RDPTY_COD";
     /** Cash On Delivery. */
     public static final String EXT_COD = "EXT_COD";
-    /** eBay. */
-    public static final String EXT_EBAY = "EXT_EBAY";
+   
     /** Offline Payment. */
     public static final String EXT_OFFLINE = "EXT_OFFLINE";
     /** PayPal. */

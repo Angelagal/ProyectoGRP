@@ -36,7 +36,7 @@
             <fileset dir="${specialpurpose.dir}/hhfacility/build/lib/" includes="ofbiz-hhfacility.jar"/>
             <fileset dir="${specialpurpose.dir}/assetmaint/build/lib/" includes="ofbiz-assetmaint.jar"/>           
             <fileset dir="${specialpurpose.dir}/googlebase/build/lib/" includes="ofbiz-googlebase.jar"/>
-            <fileset dir="${specialpurpose.dir}/ebay/build/lib/" includes="ofbiz-ebay.jar"/>
+            
             <fileset dir="${specialpurpose.dir}/ecommerce/build/lib/" includes="ofbiz-ecommerce.jar"/>
             <fileset dir="${specialpurpose.dir}/webpos/build/lib/" includes="ofbiz-webpos.jar"/>
         </copy>
@@ -75,9 +75,7 @@
             <fileset dir="${specialpurpose.dir}/googlebase/config"/>
         </jar>
 
-        <jar destfile="${ear.lib.dir}/specialpurpose.ebay.config.jar">
-            <fileset dir="${specialpurpose.dir}/ebay/config"/>
-        </jar>
+        
 
         <jar destfile="${ear.lib.dir}/specialpurpose.ecommerce.config.jar">
             <fileset dir="${specialpurpose.dir}/ecommerce/config"/>
@@ -125,11 +123,7 @@
             <fileset dir="${specialpurpose.dir}/googlebase/webapp/googlebase"/>
         </copy>
 
-        <!-- ebay -->
-        <mkdir dir="${ear.dir}/ebay.war"/>
-        <copy todir="${ear.dir}/ebay.war">
-            <fileset dir="${specialpurpose.dir}/ebay/webapp/ebay"/>
-        </copy>
+        
 
         <!-- ecommerce -->
         <mkdir dir="${ear.dir}/ecommerce.war"/>

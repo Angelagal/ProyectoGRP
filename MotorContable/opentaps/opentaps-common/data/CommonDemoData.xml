@@ -25,8 +25,7 @@
 
     <!-- Set store credits to be handled by billing accounts -->
     <ProductStore productStoreId="9000" storeCreditAccountEnumId="BILLING_ACCOUNT"/>
-    <!-- note: this one is from DemoEbayStoreDate -->
-    <ProductStore productStoreId="90100" storeCreditAccountEnumId="BILLING_ACCOUNT"/>
+    
 
     <!-- Turn this off so the demo store could add additional shipping charges during order packing -->
     <ProductStore productStoreId="9000" prorateShipping="N" />

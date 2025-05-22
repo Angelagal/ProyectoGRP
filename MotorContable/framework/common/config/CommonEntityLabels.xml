@@ -263,15 +263,7 @@
         <value xml:lang="th">LIFO</value>
         <value xml:lang="zh">后进先出法</value>
     </property>
-    <property key="Enumeration.description.EBAY_SALES_CHANNEL">
-        <value xml:lang="de">Verkaufskanal: eBay</value>
-        <value xml:lang="en">eBay Channel</value>
-        <value xml:lang="fr">Canal de vente : eBay</value>
-        <value xml:lang="it">Canale eBay</value>
-        <value xml:lang="pt">Canal eBay</value>
-        <value xml:lang="th">ช่องทาง eBay</value>
-        <value xml:lang="zh">EBay渠道</value>
-    </property>
+   
     <property key="Enumeration.description.EMAIL_SALES_CHANNEL">
         <value xml:lang="de">Verkaufskanal: E-Mail</value>
         <value xml:lang="en">E-Mail Channel</value>

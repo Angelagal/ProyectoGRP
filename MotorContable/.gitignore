@@ -36,8 +36,7 @@ framework/webtools/build/
 framework/widget/build/
 specialpurpose/assetmaint/build/
 specialpurpose/crowd/build/
-specialpurpose/ebay/build/
-specialpurpose/ebaystore/build/
+
 specialpurpose/ecommerce/build/
 specialpurpose/googlebase/build/
 specialpurpose/googlecheckout/build/
@@ -117,3 +116,4 @@ debian/ofbiz/
 debian/stamps/
 debian/orig-work
 .pc
+*.cache.html

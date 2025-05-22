@@ -314,8 +314,7 @@ public final class SecurityPermissionConstants {
     public static final String DATAIMPORT_ADMIN = "DATAIMPORT_ADMIN";
     /** Basic permission to use the Dataimport application. */
     public static final String DATAIMPORT_VIEW = "DATAIMPORT_VIEW";
-    /** View operations in the eBay application.. */
-    public static final String EBAY_VIEW = "EBAY_VIEW";
+    
     /** ALL with the Entity Data Maintenance pages.. */
     public static final String ENTITY_DATA_ADMIN = "ENTITY_DATA_ADMIN";
     /** Create with the Entity Data Maintenance pages.. */

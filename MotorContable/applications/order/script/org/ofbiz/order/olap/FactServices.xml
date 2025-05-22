@@ -300,8 +300,7 @@ under the License.
                 </calcop>
             </calculate>-->
 
-            <!-- eBay -->
-            <set field="fact.eBay" value="7" type="BigDecimal"/>
+           
 
             <!-- RRC -->
             <set field="fact.RRC" value="2" type="BigDecimal"/>
@@ -312,7 +311,7 @@ under the License.
             <!-- Others -->
             <calculate field="fees">
                 <calcop operator="add">
-                    <calcop operator="get" field="fact.eBay"/>
+                    
                     <calcop operator="get" field="fact.RRC"/>
                     <calcop operator="get" field="fact.OtherFree"/>
                 </calcop>
