@@ -117,3 +117,4 @@ debian/stamps/
 debian/orig-work
 .pc
 *.cache.html
+*.jar
