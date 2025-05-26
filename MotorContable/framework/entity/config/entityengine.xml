@@ -469,7 +469,7 @@ access. For a detailed description see the core/docs/entityconfig.html file.
                 jdbc-driver="org.postgresql.Driver"
                 jdbc-uri="jdbc:postgresql://127.0.0.1:5432/contableA1"
                 jdbc-username="postgres"
-                jdbc-password="12345678"
+                jdbc-password="1234"
                 isolation-level="ReadCommitted"
                 pool-minsize="2"
                 pool-maxsize="250"
