@@ -111,12 +111,7 @@
       </web>
     </module>
 
-    <module>
-      <web>
-        <web-uri>/hhfacility.war</web-uri>
-        <context-root>/hhfacility</context-root>
-      </web>
-    </module>
+    
 
     <module>
       <web>

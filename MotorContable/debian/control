@@ -64,6 +64,6 @@ Description: OFBiz - SpecialPurpose Applications
  SCM, MRP, CMMS/EAM, and more.
  .
  This package contains additional specialpurpose applications:
- assetmaint, bi, cmssite, googlebase, googleCheckout, hhfacility,
+ assetmaint, bi, cmssite, googlebase, googleCheckout,
  oagis, pos, projectmgr
 

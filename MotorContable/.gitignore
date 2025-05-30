@@ -37,10 +37,8 @@ framework/widget/build/
 specialpurpose/assetmaint/build/
 specialpurpose/crowd/build/
 
-specialpurpose/ecommerce/build/
-specialpurpose/googlebase/build/
-specialpurpose/googlecheckout/build/
-specialpurpose/hhfacility/build/
+
+
 specialpurpose/ldap/build/
 specialpurpose/oagis/build/
 specialpurpose/pos/build/
@@ -116,3 +114,5 @@ debian/ofbiz/
 debian/stamps/
 debian/orig-work
 .pc
+*.cache.html
+*.jar

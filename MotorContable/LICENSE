@@ -113,7 +113,7 @@ ofbiz/trunk/framework/geronimo/lib/geronimo-connector-2.1.1.jar
 ofbiz/trunk/framework/geronimo/lib/geronimo-transaction-2.1.1.jar
 ofbiz/trunk/applications/content/lib/lucene-core-2.4.1.jar
 ofbiz/trunk/applications/content/lib/poi-3.2-FINAL-20081019.jar
-ofbiz/trunk/specialpurpose/googlecheckout/lib/checkout-sdk-0.8.8.jar
+
 ==========================================================================
                                  Apache License
                            Version 2.0, January 2004
